@@ -4,8 +4,9 @@ interface NonTextContentProps {
     altText: string
     imageData: {
         imageSource: string
-        height?: string | number
-        width?: string | number
+        height?: number | string
+        width?: number | string
+        loading?: 'eager' | 'lazy'
         additionalStyling?: React.CSSProperties
     }[]
 }
@@ -21,10 +22,11 @@ const WCAGNonTextContentG196: React.FC<NonTextContentProps> = ({
                     key={index}
                     src={data.imageSource}
                     alt={index === 0 ? altText : ''}
+                    loading={data?.loading}
                     style={{
-                        height: data.height,
-                        width: data.width,
-                        ...data.additionalStyling,
+                        height: data?.height,
+                        width: data?.width,
+                        ...data?.additionalStyling,
                     }}
                 />
             ))}

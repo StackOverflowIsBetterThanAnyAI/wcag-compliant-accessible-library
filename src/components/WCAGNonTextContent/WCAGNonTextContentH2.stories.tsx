@@ -14,7 +14,7 @@ type StoryH2 = StoryObj<typeof WCAGNonTextContentH2>
 
 // WCAGNonTextComponentH2
 
-export const ImageWithEmptyArray: StoryH2 = {
+export const ImageAndLink: StoryH2 = {
     render: () => (
         <WCAGNonTextContentH2
             altText="four out of five"
@@ -23,7 +23,23 @@ export const ImageWithEmptyArray: StoryH2 = {
                 additionalStyling: { height: 75, width: 75 },
             }}
             link="#home"
+        >
             textContent="Go to the home page"
-        />
+        </WCAGNonTextContentH2>
+    ),
+}
+
+export const TextContentIsADiv: StoryH2 = {
+    render: () => (
+        <WCAGNonTextContentH2
+            altText="four out of five"
+            imageData={{
+                imageSource: starImage,
+                additionalStyling: { height: 75, width: 75 },
+            }}
+            link="#home"
+        >
+            <div style={{ color: '#f0f0f0' }}>Go to the home page</div>
+        </WCAGNonTextContentH2>
     ),
 }

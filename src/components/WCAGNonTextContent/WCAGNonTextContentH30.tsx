@@ -1,28 +1,31 @@
 import React, { ReactNode } from 'react'
 
 interface NonTextContentProps {
-    altText: string
-    imageData: {
+    altText?: string // It may only be missing if the text of the anchor can clearly describe the link
+    imageData?: {
         imageSource: string
+        loading?: 'eager' | 'lazy'
         height?: number | string
         width?: number | string
-        loading?: 'eager' | 'lazy'
         additionalStyling?: React.CSSProperties
     }
     link: string
-    children: ReactNode
+    postImageText?: ReactNode
+    preImageText?: ReactNode
 }
 
-const WCAGNonTextContentH2: React.FC<NonTextContentProps> = ({
+const WCAGNonTextContentH30: React.FC<NonTextContentProps> = ({
     altText,
-    imageData,
     link,
-    children,
+    imageData,
+    postImageText,
+    preImageText,
 }) => {
     return (
         <a href={link}>
+            {preImageText}
             <img
-                src={imageData.imageSource}
+                src={imageData?.imageSource}
                 alt={altText}
                 loading={imageData?.loading}
                 style={{
@@ -31,9 +34,9 @@ const WCAGNonTextContentH2: React.FC<NonTextContentProps> = ({
                     ...imageData?.additionalStyling,
                 }}
             />
-            {children}
+            {postImageText}
         </a>
     )
 }
 
-export default WCAGNonTextContentH2
+export default WCAGNonTextContentH30

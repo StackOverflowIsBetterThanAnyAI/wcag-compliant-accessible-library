@@ -67,23 +67,18 @@ interface NonTextContentProps {
         | 'tooltip'
         | 'treegrid'
     ariaLabelledById: string
-    textContent: string
     children: ReactNode
 }
 
 const WCAGNonTextContentARIA10: React.FC<NonTextContentProps> = ({
     ariaLabelledById,
     role,
-    textContent,
     children,
 }) => {
     return (
-        <>
-            <div role={role} aria-labelledby={ariaLabelledById}>
-                {children}
-            </div>
-            <div id={ariaLabelledById}>{textContent}</div>
-        </>
+        <div role={role} aria-labelledby={ariaLabelledById}>
+            {children}
+        </div>
     )
 }
 

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import WCAGNonTextContentH2 from './WCAGNonTextContentH2'
 // @ts-ignore
-import starImage from '../../images/star.png'
+import starImage from '../../../images/star.png'
 
 const metaH2: Meta<typeof WCAGNonTextContentH2> = {
     component: WCAGNonTextContentH2,
@@ -24,7 +24,7 @@ export const ImageAndLink: StoryH2 = {
             }}
             link="#home"
         >
-            textContent="Go to the home page"
+            Go to the home page
         </WCAGNonTextContentH2>
     ),
 }
@@ -38,8 +38,9 @@ export const TextContentIsADiv: StoryH2 = {
                 additionalStyling: { height: 75, width: 75 },
             }}
             link="#home"
+            textBeforeImage
         >
-            <div style={{ color: '#f0f0f0' }}>Go to the home page</div>
+            <div style={{ color: '#050505' }}>Go to the home page</div>
         </WCAGNonTextContentH2>
     ),
 }

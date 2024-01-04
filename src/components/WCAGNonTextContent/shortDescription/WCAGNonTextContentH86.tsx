@@ -1,7 +1,8 @@
-import React, { ReactNode } from 'react'
+import React, { CSSProperties, ReactNode } from 'react'
 
 interface NonTextContentProps {
     accessibleText: string
+    additionalStyling?: CSSProperties
     descriptionText?: string
     element: 'span' | 'div' | 'abbr' | 'skip'
     originalText: ReactNode
@@ -12,6 +13,7 @@ interface NonTextContentProps {
 
 const WCAGNonTextContentH86: React.FC<NonTextContentProps> = ({
     accessibleText,
+    additionalStyling,
     descriptionText,
     element,
     originalText,
@@ -22,13 +24,21 @@ const WCAGNonTextContentH86: React.FC<NonTextContentProps> = ({
     switch (element) {
         case 'span':
             return (
-                <span aria-label={accessibleText} role={role}>
+                <span
+                    aria-label={accessibleText}
+                    role={role}
+                    style={{ ...additionalStyling }}
+                >
                     {originalText}
                 </span>
             )
         case 'div':
             return (
-                <div aria-label={accessibleText} role={role}>
+                <div
+                    aria-label={accessibleText}
+                    role={role}
+                    style={{ ...additionalStyling }}
+                >
                     {originalText}
                 </div>
             )
@@ -48,7 +58,9 @@ const WCAGNonTextContentH86: React.FC<NonTextContentProps> = ({
                         </figcaption>
                         {originalText}
                     </figure>
-                    <p id={skipId}>{children}</p>
+                    <p id={skipId} style={{ ...additionalStyling }}>
+                        {children}
+                    </p>
                 </>
             )
     }

@@ -1,15 +1,21 @@
-import React, { ReactNode } from 'react'
+import React, { CSSProperties, ReactNode } from 'react'
 
 interface NonTextContentProps {
     accessibleId: string
+    additionalStyling?: CSSProperties
     children: ReactNode
 }
 
 const WCAGNonTextContentARIA15Text: React.FC<NonTextContentProps> = ({
     accessibleId,
+    additionalStyling,
     children,
 }) => {
-    return <p id={accessibleId}>{children}</p>
+    return (
+        <p id={accessibleId} style={{ ...additionalStyling }}>
+            {children}
+        </p>
+    )
 }
 
 export default WCAGNonTextContentARIA15Text

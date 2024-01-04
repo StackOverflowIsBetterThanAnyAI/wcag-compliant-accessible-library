@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import WCAGNonTextContentG196 from './WCAGNonTextContentG196'
 // @ts-ignore
-import starImage from '../../images/star.png'
+import starImage from '../../../images/star.png'
 
 const metaG196: Meta<typeof WCAGNonTextContentG196> = {
     component: WCAGNonTextContentG196,

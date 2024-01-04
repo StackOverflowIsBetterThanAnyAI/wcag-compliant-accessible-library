@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { CSSProperties, ReactNode } from 'react'
 
 interface NonTextContentProps {
     role:
@@ -66,20 +66,26 @@ interface NonTextContentProps {
         | 'toolbar'
         | 'tooltip'
         | 'treegrid'
-    ariaLabel: string
+    additionalStyling?: CSSProperties
+    ariaLabelledById: string
     children: ReactNode
 }
 
-const WCAGNonTextContentARIA6: React.FC<NonTextContentProps> = ({
-    ariaLabel,
+const WCAGNonTextContentARIA10: React.FC<NonTextContentProps> = ({
+    ariaLabelledById,
+    additionalStyling,
     role,
     children,
 }) => {
     return (
-        <div role={role} aria-label={ariaLabel}>
+        <div
+            role={role}
+            aria-labelledby={ariaLabelledById}
+            style={{ ...additionalStyling }}
+        >
             {children}
         </div>
     )
 }
 
-export default WCAGNonTextContentARIA6
+export default WCAGNonTextContentARIA10

@@ -1,6 +1,7 @@
-import React, { ReactNode } from 'react'
+import React, { CSSProperties, ReactNode } from 'react'
 
 interface NonTextContentProps {
+    additionalStyling?: CSSProperties
     imageData?: {
         imageSource: string
         altText?: string // It may only be missing if the text of the anchor can clearly describe the link
@@ -15,13 +16,14 @@ interface NonTextContentProps {
 }
 
 const WCAGNonTextContentH30: React.FC<NonTextContentProps> = ({
+    additionalStyling,
     imageData,
     link,
     postImageText,
     preImageText,
 }) => {
     return (
-        <a href={link}>
+        <a href={link} style={{ ...additionalStyling }}>
             {preImageText}
             {imageData?.map((data, index) => (
                 <img

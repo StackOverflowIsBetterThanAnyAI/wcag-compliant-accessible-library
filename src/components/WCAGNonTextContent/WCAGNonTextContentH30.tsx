@@ -29,7 +29,7 @@ const WCAGNonTextContentH30: React.FC<NonTextContentProps> = ({
                 <img
                     key={index}
                     src={data.imageSource}
-                    alt={data?.altText}
+                    alt={data.altText ?? ''}
                     loading={data?.loading}
                     style={{
                         height: data?.height,

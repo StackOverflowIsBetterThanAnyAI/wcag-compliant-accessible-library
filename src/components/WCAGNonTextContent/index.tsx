@@ -1,1 +1,1 @@
-export { default } from './shortDescription/WCAGNonTextContentARIA6'
+export { default } from './WCAGNonTextContentARIA6'

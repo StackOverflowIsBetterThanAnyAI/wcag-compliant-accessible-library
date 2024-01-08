@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import WCAGNonTextContentARIA15 from './WCAGNonTextContentARIA15'
 import WCAGNonTextContentARIA15Text from './WCAGNonTextContentARIA15Text'
 // @ts-ignore
-import starImage from '../../../images/star.png'
+import starImage from '../../images/star.png'
 
 const metaARIA15: Meta<typeof WCAGNonTextContentARIA15> = {
     component: WCAGNonTextContentARIA15,

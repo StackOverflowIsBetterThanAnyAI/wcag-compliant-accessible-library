@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import WCAGNonTextContentG74 from './WCAGNonTextContentG74'
 import WCAGNonTextContentG74Text from './WCAGNonTextContentG74Text'
 // @ts-ignore
-import starImage from '../../../images/star.png'
+import starImage from '../../images/star.png'
 
 const metaG74: Meta<typeof WCAGNonTextContentG74> = {
     component: WCAGNonTextContentG74,

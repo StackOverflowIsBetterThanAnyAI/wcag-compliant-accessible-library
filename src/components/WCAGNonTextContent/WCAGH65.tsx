@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react'
 
-interface Props {
+interface WCAGH65Props {
     id: string
     inputType:
         | 'button'
@@ -59,7 +59,7 @@ interface Props {
     width?: number | string
 }
 
-const WCAGH65: React.FC<Props> = ({
+const WCAGH65: React.FC<WCAGH65Props> = ({
     accept,
     additionalStyling,
     altText,

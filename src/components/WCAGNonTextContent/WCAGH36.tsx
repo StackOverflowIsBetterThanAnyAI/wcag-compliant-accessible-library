@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react'
 
-interface Props {
+interface WCAGH36Props {
     altText: string
     src: string
     id?: string
@@ -36,7 +36,7 @@ interface Props {
     width?: number | string
 }
 
-const WCAGH36: React.FC<Props> = ({
+const WCAGH36: React.FC<WCAGH36Props> = ({
     accept,
     additionalStyling,
     altText,

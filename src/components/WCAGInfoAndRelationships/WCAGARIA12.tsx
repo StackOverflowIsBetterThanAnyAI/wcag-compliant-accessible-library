@@ -1,13 +1,13 @@
 import React, { CSSProperties, ReactNode } from 'react'
 
-interface Props {
+interface WCAGARIA12Props {
     additionalStyling?: CSSProperties
     ariaLevel?: number
     children: ReactNode
     className?: string
 }
 
-const WCAGARIA12: React.FC<Props> = ({
+const WCAGARIA12: React.FC<WCAGARIA12Props> = ({
     additionalStyling,
     ariaLevel,
     className,

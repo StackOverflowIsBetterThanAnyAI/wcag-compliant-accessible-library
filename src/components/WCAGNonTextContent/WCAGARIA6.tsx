@@ -1,6 +1,6 @@
 import React, { CSSProperties, ReactNode } from 'react'
 
-interface Props {
+interface WCAGARIA6Props {
     role:
         | 'alert'
         | 'alertdialog'
@@ -72,7 +72,7 @@ interface Props {
     children: ReactNode
 }
 
-const WCAGARIA6: React.FC<Props> = ({
+const WCAGARIA6: React.FC<WCAGARIA6Props> = ({
     ariaLabel,
     additionalStyling,
     className,

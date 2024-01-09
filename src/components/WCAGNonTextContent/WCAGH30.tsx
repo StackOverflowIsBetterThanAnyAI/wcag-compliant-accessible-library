@@ -1,6 +1,6 @@
 import React, { CSSProperties, ReactNode } from 'react'
 
-interface Props {
+interface WCAGH30Props {
     additionalStyling?: CSSProperties
     className?: string
     imageData?: {
@@ -16,7 +16,7 @@ interface Props {
     preImageText?: ReactNode
 }
 
-const WCAGH30: React.FC<Props> = ({
+const WCAGH30: React.FC<WCAGH30Props> = ({
     additionalStyling,
     className,
     imageData,

@@ -1,6 +1,6 @@
 import React, { CSSProperties, ReactNode } from 'react'
 
-interface Props {
+interface WCAGH86Props {
     accessibleText: string
     additionalStyling?: CSSProperties
     className?: string
@@ -12,7 +12,7 @@ interface Props {
     children?: ReactNode
 }
 
-const WCAGH86: React.FC<Props> = ({
+const WCAGH86: React.FC<WCAGH86Props> = ({
     accessibleText,
     additionalStyling,
     className,

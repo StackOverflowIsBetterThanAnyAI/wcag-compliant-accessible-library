@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react'
 
-interface Props {
+interface WCAGH24Props {
     areaData: {
         altText?: string // May only be omitted if ypu are creating a hollow shape
         coords: string
@@ -35,7 +35,7 @@ interface Props {
     mapName: string
 }
 
-const WCAGH24: React.FC<Props> = ({
+const WCAGH24: React.FC<WCAGH24Props> = ({
     areaData,
     className,
     imageData,

@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 
-interface Props {
+interface WCAGG73Props {
     additionalStyling?: React.CSSProperties
     buttonText: ReactNode
     childId: string
@@ -11,7 +11,7 @@ interface Props {
     children: ReactNode
 }
 
-const WCAGG73: React.FC<Props> = ({
+const WCAGG73: React.FC<WCAGG73Props> = ({
     additionalStyling,
     buttonText,
     childId,

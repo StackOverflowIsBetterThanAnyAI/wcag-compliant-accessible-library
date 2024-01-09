@@ -1,6 +1,6 @@
 import React, { CSSProperties, ReactNode } from 'react'
 
-interface Props {
+interface WCAGH2Props {
     additionalStyling?: CSSProperties
     altText?: string // It may only be missing if the text of the anchor can clearly describe the link
     className?: string
@@ -16,7 +16,7 @@ interface Props {
     children: ReactNode
 }
 
-const WCAGH2: React.FC<Props> = ({
+const WCAGH2: React.FC<WCAGH2Props> = ({
     additionalStyling,
     altText,
     className,

@@ -1,6 +1,6 @@
 import React from 'react'
 
-interface Props {
+interface WCAGARIA15Props {
     accessibleIds: string
     altText: string
     className?: string
@@ -13,7 +13,7 @@ interface Props {
     }
 }
 
-const WCAGARIA15: React.FC<Props> = ({
+const WCAGARIA15: React.FC<WCAGARIA15Props> = ({
     accessibleIds,
     altText,
     className,

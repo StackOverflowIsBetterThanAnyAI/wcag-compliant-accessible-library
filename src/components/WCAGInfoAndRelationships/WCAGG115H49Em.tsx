@@ -1,12 +1,12 @@
 import React, { CSSProperties, ReactNode } from 'react'
 
-interface Props {
+interface WCAGG115H49Props {
     additionalStyling?: CSSProperties
     className?: string
     children: ReactNode
 }
 
-const G115H49Em: React.FC<Props> = ({
+const G115H49Em: React.FC<WCAGG115H49Props> = ({
     additionalStyling,
     className,
     children,

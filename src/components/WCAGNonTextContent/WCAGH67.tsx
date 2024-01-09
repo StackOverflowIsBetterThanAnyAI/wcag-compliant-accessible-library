@@ -1,6 +1,6 @@
 import React from 'react'
 
-interface Props {
+interface WCAGH67Props {
     className?: string
     imageData: {
         imageSource: string
@@ -11,7 +11,7 @@ interface Props {
     }
 }
 
-const WCAGH67: React.FC<Props> = ({ className, imageData }) => {
+const WCAGH67: React.FC<WCAGH67Props> = ({ className, imageData }) => {
     return (
         <img
             src={imageData.imageSource}

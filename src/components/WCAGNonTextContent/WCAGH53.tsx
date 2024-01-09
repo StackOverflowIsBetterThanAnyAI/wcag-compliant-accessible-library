@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 
-interface Props {
+interface WCAGH53Props {
     className?: string
     objectData: {
         classId?: string
@@ -15,7 +15,11 @@ interface Props {
     children: ReactNode // must contain either text or an element with an alt text
 }
 
-const WCAGH53: React.FC<Props> = ({ className, objectData, children }) => {
+const WCAGH53: React.FC<WCAGH53Props> = ({
+    className,
+    objectData,
+    children,
+}) => {
     return (
         <object
             classID={objectData?.classId}

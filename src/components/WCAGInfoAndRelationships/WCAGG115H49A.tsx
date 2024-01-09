@@ -1,6 +1,6 @@
 import React, { CSSProperties, ReactNode } from 'react'
 
-interface Props {
+interface WCAGG115H49Props {
     additionalStyling?: CSSProperties
     linkData: {
         download?: string
@@ -15,7 +15,7 @@ interface Props {
     children: ReactNode
 }
 
-const G115H49A: React.FC<Props> = ({
+const G115H49A: React.FC<WCAGG115H49Props> = ({
     additionalStyling,
     className,
     linkData,

@@ -1,6 +1,6 @@
 import React, { CSSProperties, ReactNode } from 'react'
 
-interface Props {
+interface WCAGARIA11Props {
     role:
         | 'banner'
         | 'complementary'
@@ -17,7 +17,7 @@ interface Props {
     className?: string
 }
 
-const WCAGARIA11: React.FC<Props> = ({
+const WCAGARIA11: React.FC<WCAGARIA11Props> = ({
     ariaLabel,
     ariaLabelledById,
     additionalStyling,

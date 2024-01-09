@@ -1,6 +1,6 @@
 import React, { CSSProperties, ReactNode } from 'react'
 
-interface Props {
+interface WCAGH44Props {
     inputType:
         | 'checkbox'
         | 'color'
@@ -62,7 +62,7 @@ interface Props {
     wrap?: 'hard' | 'soft'
 }
 
-const WCAGH44: React.FC<Props> = ({
+const WCAGH44: React.FC<WCAGH44Props> = ({
     accept,
     additionalStyling,
     altText,

@@ -1,6 +1,6 @@
 import React from 'react'
 
-interface Props {
+interface WCAGG196Props {
     altText: string
     className?: string
     imageData: {
@@ -12,7 +12,11 @@ interface Props {
     }[]
 }
 
-const WCAGG196: React.FC<Props> = ({ altText, className, imageData }) => {
+const WCAGG196: React.FC<WCAGG196Props> = ({
+    altText,
+    className,
+    imageData,
+}) => {
     return (
         <>
             {imageData.map((data, index) => (

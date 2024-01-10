@@ -1,6 +1,6 @@
 import React, { CSSProperties, ReactNode } from 'react'
 
-interface WCAGH101Props {
+interface WCAGH97H101Props {
     additionalStyling?: CSSProperties
     ariaLabel?: string
     ariaLabelledById?: string
@@ -15,7 +15,7 @@ interface WCAGH101Props {
     children?: ReactNode
 }
 
-const WCAGH101: React.FC<WCAGH101Props> = ({
+const WCAGH97H101: React.FC<WCAGH97H101Props> = ({
     ariaLabel,
     ariaLabelledById,
     additionalStyling,
@@ -53,4 +53,4 @@ const WCAGH101: React.FC<WCAGH101Props> = ({
     )
 }
 
-export default WCAGH101
+export default WCAGH97H101

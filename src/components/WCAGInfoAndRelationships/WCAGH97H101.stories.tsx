@@ -1,20 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import WCAGH101 from './WCAGH101'
+import WCAGH97H101 from './WCAGH97H101'
 
-const metaH101: Meta<typeof WCAGH101> = {
-    component: WCAGH101,
+const metaH97H101: Meta<typeof WCAGH97H101> = {
+    component: WCAGH97H101,
 }
 
-export default metaH101
+export default metaH97H101
 
-type StoryH101 = StoryObj<typeof WCAGH101>
+type StoryH97H101 = StoryObj<typeof WCAGH97H101>
 
-// WCAGNonTextComponentH101
+// WCAGNonTextComponentH97H101
 
-export const AriaLabelledBy: StoryH101 = {
+export const AriaLabelledBy: StoryH97H101 = {
     render: () => (
-        <WCAGH101
+        <WCAGH97H101
             ariaLabelledById="site-nav-heading"
             headline="Site"
             listData={[
@@ -26,9 +26,9 @@ export const AriaLabelledBy: StoryH101 = {
     ),
 }
 
-export const AriaLabel: StoryH101 = {
+export const AriaLabel: StoryH97H101 = {
     render: () => (
-        <WCAGH101
+        <WCAGH97H101
             ariaLabel="Navigation"
             listData={[
                 { displayedName: 'News', href: '/news' },
@@ -39,9 +39,9 @@ export const AriaLabel: StoryH101 = {
     ),
 }
 
-export const Children: StoryH101 = {
+export const Children: StoryH97H101 = {
     render: () => (
-        <WCAGH101 ariaLabel="Navigation" listData={[]}>
+        <WCAGH97H101 ariaLabel="Navigation" listData={[]}>
             <>
                 <li style={{ color: 'red' }}>
                     <a
@@ -63,6 +63,6 @@ export const Children: StoryH101 = {
                     </a>
                 </li>
             </>
-        </WCAGH101>
+        </WCAGH97H101>
     ),
 }

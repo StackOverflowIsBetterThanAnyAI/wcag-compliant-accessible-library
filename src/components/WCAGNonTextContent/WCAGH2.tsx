@@ -3,7 +3,8 @@ import React, { CSSProperties, ReactNode } from 'react'
 interface WCAGH2Props {
     additionalStyling?: CSSProperties
     altText?: string // It may only be missing if the text of the anchor can clearly describe the link
-    className?: string
+    classNameLink?: string
+    classNameImage?: string
     imageData: {
         imageSource: string
         height?: number | string
@@ -19,18 +20,24 @@ interface WCAGH2Props {
 const WCAGH2: React.FC<WCAGH2Props> = ({
     additionalStyling,
     altText,
-    className,
+    classNameImage,
+    classNameLink,
     imageData,
     link,
     textBeforeImage = false,
     children,
 }) => {
     return (
-        <a href={link} style={{ ...additionalStyling }} className={className}>
+        <a
+            href={link}
+            style={{ ...additionalStyling }}
+            className={classNameLink}
+        >
             {textBeforeImage && children}
             <img
                 src={imageData.imageSource}
                 alt={altText ?? ''}
+                className={classNameImage}
                 loading={imageData?.loading}
                 style={{
                     height: imageData?.height,

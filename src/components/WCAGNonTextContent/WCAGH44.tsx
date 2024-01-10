@@ -31,7 +31,8 @@ interface WCAGH44Props {
     autocomplete?: 'on' | 'off'
     autofocus?: boolean
     checked?: boolean
-    className?: string
+    classNameLabel?: string
+    classNameInput?: string
     cols?: number
     dirname?: string
     disabled?: boolean
@@ -69,7 +70,8 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
     autocomplete,
     autofocus = false,
     checked = false,
-    className,
+    classNameLabel,
+    classNameInput,
     cols,
     dirname,
     disabled = false,
@@ -107,13 +109,14 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
     return (
         <>
             {inputType !== 'checkbox' && inputType !== 'radio' && (
-                <label htmlFor={id} hidden={false} className={className}>
+                <label htmlFor={id} hidden={false} className={classNameLabel}>
                     {labelText}
                 </label>
             )}
             {inputType === 'select' && (
                 <select
                     autoFocus={autofocus}
+                    className={classNameInput}
                     disabled={disabled}
                     form={form}
                     multiple={multiple}
@@ -128,6 +131,7 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
             {inputType === 'textarea' && (
                 <textarea
                     autoFocus={autofocus}
+                    className={classNameInput}
                     cols={cols}
                     disabled={disabled}
                     form={form}
@@ -150,6 +154,7 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                     autoComplete={autocomplete}
                     autoFocus={autofocus}
                     checked={checked}
+                    className={classNameInput}
                     dir={dirname}
                     disabled={disabled}
                     form={form}
@@ -181,7 +186,7 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                 />
             )}
             {(inputType === 'checkbox' || inputType === 'radio') && (
-                <label htmlFor={id} hidden={false} className={className}>
+                <label htmlFor={id} hidden={false} className={classNameLabel}>
                     {labelText}
                 </label>
             )}

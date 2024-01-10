@@ -23,7 +23,8 @@ interface WCAGH24Props {
         shape: 'default' | 'rect' | 'circle' | 'poly'
         target?: string
     }[]
-    className?: string
+    classNameImage?: string
+    classNameMap?: string
     imageData: {
         altText: string
         imageSource: string
@@ -37,7 +38,8 @@ interface WCAGH24Props {
 
 const WCAGH24: React.FC<WCAGH24Props> = ({
     areaData,
-    className,
+    classNameImage,
+    classNameMap,
     imageData,
     mapName,
 }) => {
@@ -45,7 +47,7 @@ const WCAGH24: React.FC<WCAGH24Props> = ({
         <>
             <img
                 alt={imageData.altText}
-                className={className}
+                className={classNameImage}
                 src={imageData.imageSource}
                 loading={imageData?.loading}
                 height={imageData?.height}
@@ -53,7 +55,7 @@ const WCAGH24: React.FC<WCAGH24Props> = ({
                 useMap={`#${mapName}`}
                 style={{ ...imageData?.additionalStyling }}
             />
-            <map name={mapName}>
+            <map name={mapName} className={classNameMap}>
                 {areaData?.map((data, index) => (
                     <area
                         key={index}

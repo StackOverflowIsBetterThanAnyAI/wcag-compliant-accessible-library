@@ -2,7 +2,8 @@ import React, { CSSProperties, ReactNode } from 'react'
 
 interface WCAGH30Props {
     additionalStyling?: CSSProperties
-    className?: string
+    classNameLink?: string
+    classNameImage?: string
     imageData?: {
         imageSource: string
         altText?: string // It may only be missing if the text of the anchor can clearly describe the link
@@ -18,18 +19,24 @@ interface WCAGH30Props {
 
 const WCAGH30: React.FC<WCAGH30Props> = ({
     additionalStyling,
-    className,
+    classNameImage,
+    classNameLink,
     imageData,
     link,
     postImageText,
     preImageText,
 }) => {
     return (
-        <a href={link} style={{ ...additionalStyling }} className={className}>
+        <a
+            href={link}
+            style={{ ...additionalStyling }}
+            className={classNameLink}
+        >
             {preImageText}
             {imageData?.map((data, index) => (
                 <img
                     key={index}
+                    className={classNameImage}
                     src={data.imageSource}
                     alt={data.altText ?? ''}
                     loading={data?.loading}

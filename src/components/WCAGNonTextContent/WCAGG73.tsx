@@ -4,7 +4,8 @@ interface WCAGG73Props {
     additionalStyling?: React.CSSProperties
     buttonText: ReactNode
     childId: string
-    className?: string
+    classNameDiv?: string
+    classNameLink?: string
     externalLink?: boolean
     ownId: string
     shortText?: ReactNode
@@ -15,7 +16,8 @@ const WCAGG73: React.FC<WCAGG73Props> = ({
     additionalStyling,
     buttonText,
     childId,
-    className,
+    classNameDiv,
+    classNameLink,
     externalLink = false,
     ownId,
     shortText,
@@ -26,10 +28,15 @@ const WCAGG73: React.FC<WCAGG73Props> = ({
             id={ownId}
             aria-describedby={childId}
             style={{ ...additionalStyling }}
-            className={className}
+            className={classNameDiv}
         >
             {children}
-            <a href={externalLink ? childId : `#${childId}`}>{buttonText}</a>
+            <a
+                href={externalLink ? childId : `#${childId}`}
+                className={classNameLink}
+            >
+                {buttonText}
+            </a>
             {shortText}
         </div>
     )

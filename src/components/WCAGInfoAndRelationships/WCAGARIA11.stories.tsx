@@ -1,9 +1,34 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { Controls, Source, Stories, Subtitle, Title } from '@storybook/blocks'
 
 import WCAGARIA11 from './WCAGARIA11'
 
 const metaARIA11: Meta<typeof WCAGARIA11> = {
+    title: 'WCAGARIA11',
     component: WCAGARIA11,
+    tags: ['autodocs'],
+    parameters: {
+        docs: {
+            page: () => (
+                <>
+                    <Title />
+                    <Subtitle>
+                        You can find the WCAG2.2 documentation for this success
+                        criteria{' '}
+                        <a
+                            href="https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA11"
+                            target="_blank"
+                        >
+                            here.
+                        </a>
+                    </Subtitle>
+                    <Stories />
+                    <Controls />
+                    <Source />
+                </>
+            ),
+        },
+    },
 }
 
 export default metaARIA11

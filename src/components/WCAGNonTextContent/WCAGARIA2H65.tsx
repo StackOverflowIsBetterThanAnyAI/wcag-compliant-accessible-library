@@ -1,12 +1,32 @@
 import React, { CSSProperties } from 'react'
 
-interface WCAGH36Props {
-    altText: string
-    src: string
-    id?: string
-    title?: string
+interface WCAGARIA2H65Props {
+    id: string
+    inputType:
+        | 'button'
+        | 'color'
+        | 'date'
+        | 'datetime-local'
+        | 'email'
+        | 'file'
+        | 'hidden'
+        | 'image'
+        | 'month'
+        | 'number'
+        | 'password'
+        | 'range'
+        | 'reset'
+        | 'search'
+        | 'submit'
+        | 'tel'
+        | 'text'
+        | 'time'
+        | 'url'
+        | 'week'
+    title: string
     accept?: string
     additionalStyling?: CSSProperties
+    altText?: string
     autocomplete?: 'on' | 'off'
     autofocus?: boolean
     checked?: boolean
@@ -31,39 +51,40 @@ interface WCAGH36Props {
     readonly?: boolean
     required?: boolean
     size?: number
+    src?: string
     step?: number
     value?: string
     width?: number | string
 }
 
-const WCAGH36: React.FC<WCAGH36Props> = ({
+const WCAGARIA2H65: React.FC<WCAGARIA2H65Props> = ({
     accept,
     additionalStyling,
     altText,
     autocomplete,
-    autofocus = false,
-    checked = false,
+    autofocus,
     className,
     dirname,
-    disabled = false,
+    disabled,
     form,
     formaction,
     formmethod,
-    formnovalidate = false,
+    formnovalidate,
     formtarget,
     height,
     id,
+    inputType,
     list,
     max,
     maxlength,
     min,
     minlength,
-    multiple = false,
+    multiple,
     name,
     pattern,
     placeholder,
-    readonly = false,
-    required = false,
+    readonly,
+    required,
     size,
     src,
     step,
@@ -73,11 +94,11 @@ const WCAGH36: React.FC<WCAGH36Props> = ({
 }) => {
     return (
         <input
+            aria-required={required}
             accept={accept}
             alt={altText}
             autoComplete={autocomplete}
             autoFocus={autofocus}
-            checked={checked}
             className={className}
             dir={dirname}
             disabled={disabled}
@@ -88,7 +109,7 @@ const WCAGH36: React.FC<WCAGH36Props> = ({
             formTarget={formtarget}
             height={height}
             id={id}
-            type="image"
+            type={inputType}
             list={list}
             max={max}
             maxLength={maxlength}
@@ -111,4 +132,4 @@ const WCAGH36: React.FC<WCAGH36Props> = ({
     )
 }
 
-export default WCAGH36
+export default WCAGARIA2H65

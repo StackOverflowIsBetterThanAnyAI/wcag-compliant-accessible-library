@@ -1,6 +1,6 @@
 import React, { CSSProperties, ReactNode } from 'react'
 
-interface WCAGH85Props {
+interface WCAGARIA2H85Props {
     formData: {
         acceptCharset?: string
         action?: string
@@ -46,7 +46,7 @@ interface WCAGH85Props {
     }[][]
 }
 
-const WCAGH85: React.FC<WCAGH85Props> = ({
+const WCAGARIA2H85: React.FC<WCAGARIA2H85Props> = ({
     formData,
     labelData,
     optionData,
@@ -98,6 +98,7 @@ const WCAGH85: React.FC<WCAGH85Props> = ({
                 {labelData.labelText}
             </label>
             <select
+                aria-required={selectData?.required}
                 id={selectData.id}
                 autoFocus={selectData?.autofocus}
                 className={selectData?.className}
@@ -114,4 +115,4 @@ const WCAGH85: React.FC<WCAGH85Props> = ({
     )
 }
 
-export default WCAGH85
+export default WCAGARIA2H85

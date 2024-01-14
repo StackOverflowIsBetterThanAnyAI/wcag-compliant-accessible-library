@@ -59,9 +59,9 @@ const WCAGH86: React.FC<WCAGH86Props> = ({
                         <figcaption>
                             <p>
                                 {descriptionText}
-                                <div>
+                                <span>
                                     <a href={`#${skipId}`}>{accessibleText}</a>
-                                </div>
+                                </span>
                             </p>
                         </figcaption>
                         {originalText}

@@ -1,6 +1,6 @@
 import React, { CSSProperties, ReactNode } from 'react'
 
-interface WCAGH97H101Props {
+interface WCAGG117H97H101Props {
     additionalStyling?: CSSProperties
     ariaLabel?: string
     ariaLabelledById?: string
@@ -10,12 +10,13 @@ interface WCAGH97H101Props {
         href: string
         referrerpolicy?: React.HTMLAttributeReferrerPolicy
         target?: React.HTMLAttributeAnchorTarget
+        new?: boolean
     }[]
     headline?: string
     children?: ReactNode
 }
 
-const WCAGH97H101: React.FC<WCAGH97H101Props> = ({
+const WCAGG117H97H101: React.FC<WCAGG117H97H101Props> = ({
     ariaLabel,
     ariaLabelledById,
     additionalStyling,
@@ -36,14 +37,17 @@ const WCAGH97H101: React.FC<WCAGH97H101Props> = ({
             )}
             <ul>
                 {listData?.map((data, index) => (
-                    <li>
+                    <li key={index}>
                         <a
-                            key={index}
                             href={data.href}
                             referrerPolicy={data?.referrerpolicy}
                             target={data?.target}
                         >
-                            {data.displayedName}
+                            {data?.new ? (
+                                <strong>{data.displayedName}</strong>
+                            ) : (
+                                data.displayedName
+                            )}
                         </a>
                     </li>
                 ))}
@@ -53,4 +57,4 @@ const WCAGH97H101: React.FC<WCAGH97H101Props> = ({
     )
 }
 
-export default WCAGH97H101
+export default WCAGG117H97H101

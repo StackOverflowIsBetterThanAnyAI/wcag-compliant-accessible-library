@@ -1,6 +1,6 @@
 import React, { CSSProperties, useState } from 'react'
 
-interface WCAGH71Props {
+interface WCAGARIA2H71Props {
     fieldsetData?: {
         disabled?: boolean
         form?: string
@@ -56,7 +56,7 @@ interface WCAGH71Props {
     onClickFunction?: () => void
 }
 
-const WCAGH71: React.FC<WCAGH71Props> = ({
+const WCAGARIA2H71: React.FC<WCAGARIA2H71Props> = ({
     fieldsetData,
     formData,
     inputLabelData,
@@ -92,6 +92,7 @@ const WCAGH71: React.FC<WCAGH71Props> = ({
             {inputLabelData.map((data, dataIndex) => (
                 <div key={dataIndex}>
                     <input
+                        aria-required={data?.inputRequired}
                         onChange={() => handleChange(dataIndex, data.inputType)}
                         id={data.id}
                         type={data.inputType}
@@ -154,4 +155,4 @@ const WCAGH71: React.FC<WCAGH71Props> = ({
     )
 }
 
-export default WCAGH71
+export default WCAGARIA2H71

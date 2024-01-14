@@ -13,6 +13,28 @@ interface WCAGARIA11Props {
     additionalStyling?: CSSProperties
     ariaLabel?: string
     ariaLabelledById?: string
+    divData?: {
+        accesskey?: string
+        contenteditable?: boolean | 'inherit' | 'plaintext-only'
+        dir?: string
+        draggable?: boolean
+        hidden?: boolean
+        id?: string
+        inputmode?:
+            | 'email'
+            | 'search'
+            | 'none'
+            | 'numeric'
+            | 'text'
+            | 'tel'
+            | 'url'
+            | 'decimal'
+        lang?: string
+        spellcheck?: boolean
+        tabindex?: number
+        title?: string
+        translate?: 'yes' | 'no'
+    }
     children: ReactNode
     className?: string
 }
@@ -22,6 +44,7 @@ const WCAGARIA11: React.FC<WCAGARIA11Props> = ({
     ariaLabelledById,
     additionalStyling,
     className,
+    divData,
     role,
     children,
 }) => {
@@ -44,6 +67,18 @@ const WCAGARIA11: React.FC<WCAGARIA11Props> = ({
                     aria-labelledby={ariaLabelledById}
                     style={{ ...additionalStyling }}
                     className={className}
+                    accessKey={divData?.accesskey}
+                    contentEditable={divData?.contenteditable}
+                    dir={divData?.dir}
+                    draggable={divData?.draggable}
+                    hidden={divData?.hidden}
+                    id={divData?.id}
+                    inputMode={divData?.inputmode}
+                    lang={divData?.lang}
+                    spellCheck={divData?.spellcheck}
+                    tabIndex={divData?.tabindex}
+                    title={divData?.title}
+                    translate={divData?.translate}
                 >
                     {children}
                 </div>

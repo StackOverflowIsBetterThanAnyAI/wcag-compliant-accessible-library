@@ -1,20 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import WCAGH85 from './WCAGH85'
+import WCAGARIA2H85 from './WCAGARIA2H85'
 
-const metaH85: Meta<typeof WCAGH85> = {
-    component: WCAGH85,
+const metaARIA2H85: Meta<typeof WCAGARIA2H85> = {
+    component: WCAGARIA2H85,
 }
 
-export default metaH85
+export default metaARIA2H85
 
-type StoryH85 = StoryObj<typeof WCAGH85>
+type StoryARIA2H85 = StoryObj<typeof WCAGARIA2H85>
 
-// WCAGNonTextComponentH85
+// WCAGNonTextComponentARIA2H85
 
-export const Animals: StoryH85 = {
+export const Animals: StoryARIA2H85 = {
     render: () => (
-        <WCAGH85
+        <WCAGARIA2H85
             formData={{
                 action: '/animals/',
                 method: 'post',
@@ -59,9 +59,9 @@ export const Animals: StoryH85 = {
     ),
 }
 
-export const Food: StoryH85 = {
+export const Food: StoryARIA2H85 = {
     render: () => (
-        <WCAGH85
+        <WCAGARIA2H85
             formData={{ action: '/favorite-food/', method: 'post' }}
             labelData={{
                 for: 'food',

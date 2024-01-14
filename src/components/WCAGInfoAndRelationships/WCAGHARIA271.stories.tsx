@@ -1,20 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import WCAGH71 from './WCAGH71'
+import WCAGARIA2H71 from './WCAGARIA2H71'
 
-const metaH71: Meta<typeof WCAGH71> = {
-    component: WCAGH71,
+const metaARIA2H71: Meta<typeof WCAGARIA2H71> = {
+    component: WCAGARIA2H71,
 }
 
-export default metaH71
+export default metaARIA2H71
 
-type StoryH71 = StoryObj<typeof WCAGH71>
+type StoryARIA2H71 = StoryObj<typeof WCAGARIA2H71>
 
-// WCAGNonTextComponentH71
+// WCAGNonTextComponentARIA2H71
 
-export const Checkbox: StoryH71 = {
+export const Checkbox: StoryARIA2H71 = {
     render: () => (
-        <WCAGH71
+        <WCAGARIA2H71
             legendData={{
                 legendText:
                     'I am interested in the following (check all that apply):',
@@ -49,9 +49,9 @@ export const Checkbox: StoryH71 = {
     ),
 }
 
-export const Radio: StoryH71 = {
+export const Radio: StoryARIA2H71 = {
     render: () => (
-        <WCAGH71
+        <WCAGARIA2H71
             legendData={{
                 legendText: 'The play Hamlet was written by:',
             }}

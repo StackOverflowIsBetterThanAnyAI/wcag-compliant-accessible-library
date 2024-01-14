@@ -17,10 +17,14 @@ type StoryH44 = StoryObj<typeof WCAGH44>
 export const Text: StoryH44 = {
     render: () => (
         <WCAGH44
-            id="firstname"
-            name="firstname"
+            inputData={[
+                {
+                    name: 'firstname',
+                    id: 'firstname',
+                    labelText: 'First name:',
+                },
+            ]}
             inputType="text"
-            labelText="First name:"
         />
     ),
 }
@@ -28,10 +32,19 @@ export const Text: StoryH44 = {
 export const Checkbox: StoryH44 = {
     render: () => (
         <WCAGH44
-            id="markuplang"
-            name="computerskills"
+            inputData={[
+                {
+                    name: 'computerskills',
+                    id: 'markuplang',
+                    labelText: 'HTML',
+                },
+                {
+                    name: 'css',
+                    id: 'markuplang',
+                    labelText: 'CSS',
+                },
+            ]}
             inputType="checkbox"
-            labelText="HTML"
         />
     ),
 }
@@ -42,27 +55,31 @@ export const Group: StoryH44 = {
             <fieldset>
                 <legend>Pick the doughnut you would like</legend>
                 <WCAGH44
-                    id="dn-choc"
-                    name="flavor"
+                    inputData={[
+                        {
+                            name: 'flavor',
+                            id: 'dn-choc',
+                            labelText: 'Chocolate',
+                            value: 'chocolate',
+                        },
+                        {
+                            name: 'flavor',
+                            id: 'dn-cream',
+                            labelText: 'Cream Filled',
+                            value: 'cream',
+                        },
+                        {
+                            name: 'flavor',
+                            id: 'dn-rasp',
+                            labelText: 'Raspberry Filled',
+                            value: 'raspberry',
+                        },
+                    ]}
                     inputType="radio"
-                    labelText="Chocolate"
-                    value="chocolate"
-                />
-                <WCAGH44
-                    id="dn-cream"
-                    name="flavor"
-                    inputType="radio"
-                    labelText="Cream"
-                    value="cream"
-                />
-                <WCAGH44
-                    id="dn-raspberry"
-                    name="flavor"
-                    inputType="radio"
-                    labelText="Raspberry"
-                    value="raspberry"
+                    onClickFunction={() => console.log('click')}
                 />
             </fieldset>
+            <input type="submit" value="Purchase Your Doughnut" />
         </form>
     ),
 }
@@ -70,18 +87,22 @@ export const Group: StoryH44 = {
 export const Select: StoryH44 = {
     render: () => (
         <WCAGH44
-            id="car"
-            name="car"
+            inputData={[
+                {
+                    id: 'car',
+                    name: 'car',
+                    labelText: 'Choose a car:',
+                    selectoptions: (
+                        <>
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </>
+                    ),
+                },
+            ]}
             inputType="select"
-            labelText="Choose a car:"
-            selectoptions={
-                <>
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                </>
-            }
         />
     ),
 }

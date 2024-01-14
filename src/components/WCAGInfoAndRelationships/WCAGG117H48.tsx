@@ -1,14 +1,17 @@
 import React, { ReactNode } from 'react'
 
-interface WCAGH48Props {
+interface WCAGG117H48Props {
     listType: 'description' | 'ordered' | 'unordered'
-    listItems?: string[]
+    listItems?: {
+        itemName: string
+        new?: boolean
+    }[]
     classNameParent?: string
     classNameChildren?: string
     children?: ReactNode
 }
 
-const WCAGH48: React.FC<WCAGH48Props> = ({
+const WCAGG117H48: React.FC<WCAGG117H48Props> = ({
     listType,
     listItems,
     classNameChildren,
@@ -23,12 +26,18 @@ const WCAGH48: React.FC<WCAGH48Props> = ({
                         <div>
                             {listItems?.map((data, itemIndex) =>
                                 itemIndex % 2 === 0 ? (
-                                    <dt className={classNameChildren}>
-                                        {data}
+                                    <dt
+                                        key={itemIndex}
+                                        className={classNameChildren}
+                                    >
+                                        {data.itemName}
                                     </dt>
                                 ) : (
-                                    <dd className={classNameChildren}>
-                                        {data}
+                                    <dd
+                                        key={itemIndex}
+                                        className={classNameChildren}
+                                    >
+                                        {data.itemName}
                                     </dd>
                                 )
                             )}
@@ -36,10 +45,10 @@ const WCAGH48: React.FC<WCAGH48Props> = ({
                     ) : (
                         <>
                             <dt className={classNameChildren}>
-                                {listItems && listItems[0]}
+                                {listItems && listItems[0]?.itemName}
                             </dt>
                             <dd className={classNameChildren}>
-                                {listItems && listItems[1]}
+                                {listItems && listItems[1]?.itemName}
                             </dd>
                         </>
                     )}
@@ -52,7 +61,11 @@ const WCAGH48: React.FC<WCAGH48Props> = ({
                     {!children &&
                         listItems?.map((data, itemIndex) => (
                             <li key={itemIndex} className={classNameChildren}>
-                                {data}
+                                {data?.new ? (
+                                    <strong>{data.itemName}</strong>
+                                ) : (
+                                    data.itemName
+                                )}
                             </li>
                         ))}
                     {!listItems && children}
@@ -64,7 +77,11 @@ const WCAGH48: React.FC<WCAGH48Props> = ({
                     {!children &&
                         listItems?.map((data, itemIndex) => (
                             <li key={itemIndex} className={classNameChildren}>
-                                {data}
+                                {data?.new ? (
+                                    <strong>{data.itemName}</strong>
+                                ) : (
+                                    data.itemName
+                                )}
                             </li>
                         ))}
                     {!listItems && children}
@@ -73,4 +90,4 @@ const WCAGH48: React.FC<WCAGH48Props> = ({
     }
 }
 
-export default WCAGH48
+export default WCAGG117H48

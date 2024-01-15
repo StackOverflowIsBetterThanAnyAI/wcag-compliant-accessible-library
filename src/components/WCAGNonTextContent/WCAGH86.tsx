@@ -1,26 +1,23 @@
 import React, { CSSProperties, ReactNode } from 'react'
+import { GlobalAttributes } from '../interfaces/GlobalAttributes'
 
 interface WCAGH86Props {
     accessibleText: string
     additionalStyling?: CSSProperties
     className?: string
-    descriptionText?: string
-    element: 'span' | 'div' | 'abbr' | 'skip'
-    originalText: ReactNode
+    elementData?: GlobalAttributes
+    element: 'span' | 'div' | 'abbr'
     role?: 'img'
-    skipId?: string
-    children?: ReactNode
+    children: ReactNode
 }
 
 const WCAGH86: React.FC<WCAGH86Props> = ({
     accessibleText,
     additionalStyling,
     className,
-    descriptionText,
+    elementData,
     element,
-    originalText,
     role,
-    skipId,
     children,
 }) => {
     switch (element) {
@@ -31,8 +28,20 @@ const WCAGH86: React.FC<WCAGH86Props> = ({
                     role={role}
                     style={{ ...additionalStyling }}
                     className={className}
+                    accessKey={elementData?.accesskey}
+                    contentEditable={elementData?.contenteditable}
+                    dir={elementData?.dir}
+                    draggable={elementData?.draggable}
+                    hidden={elementData?.hiddenDiv}
+                    id={elementData?.id}
+                    inputMode={elementData?.inputmode}
+                    lang={elementData?.lang}
+                    spellCheck={elementData?.spellcheck}
+                    tabIndex={elementData?.tabindex}
+                    title={elementData?.title}
+                    translate={elementData?.translate}
                 >
-                    {originalText}
+                    {children}
                 </span>
             )
         case 'div':
@@ -42,38 +51,42 @@ const WCAGH86: React.FC<WCAGH86Props> = ({
                     role={role}
                     style={{ ...additionalStyling }}
                     className={className}
+                    accessKey={elementData?.accesskey}
+                    contentEditable={elementData?.contenteditable}
+                    dir={elementData?.dir}
+                    draggable={elementData?.draggable}
+                    hidden={elementData?.hiddenDiv}
+                    id={elementData?.id}
+                    inputMode={elementData?.inputmode}
+                    lang={elementData?.lang}
+                    spellCheck={elementData?.spellcheck}
+                    tabIndex={elementData?.tabindex}
+                    title={elementData?.title}
+                    translate={elementData?.translate}
                 >
-                    {originalText}
+                    {children}
                 </div>
             )
         case 'abbr':
             return (
-                <abbr title={accessibleText} className={className}>
-                    {originalText}
+                <abbr
+                    title={accessibleText}
+                    style={{ ...additionalStyling }}
+                    className={className}
+                    accessKey={elementData?.accesskey}
+                    contentEditable={elementData?.contenteditable}
+                    dir={elementData?.dir}
+                    draggable={elementData?.draggable}
+                    hidden={elementData?.hiddenDiv}
+                    id={elementData?.id}
+                    inputMode={elementData?.inputmode}
+                    lang={elementData?.lang}
+                    spellCheck={elementData?.spellcheck}
+                    tabIndex={elementData?.tabindex}
+                    translate={elementData?.translate}
+                >
+                    {children}
                 </abbr>
-            )
-        case 'skip':
-            return (
-                <>
-                    <figure>
-                        <figcaption>
-                            <p>
-                                {descriptionText}
-                                <span>
-                                    <a href={`#${skipId}`}>{accessibleText}</a>
-                                </span>
-                            </p>
-                        </figcaption>
-                        {originalText}
-                    </figure>
-                    <p
-                        id={skipId}
-                        style={{ ...additionalStyling }}
-                        className={className}
-                    >
-                        {children}
-                    </p>
-                </>
             )
     }
 }

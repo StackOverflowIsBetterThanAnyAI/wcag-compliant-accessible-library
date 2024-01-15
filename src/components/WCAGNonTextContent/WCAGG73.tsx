@@ -1,11 +1,11 @@
 import React, { ReactNode } from 'react'
-import { DivAttributes } from '../interfaces/DivAttributes'
+import { GlobalAttributes } from '../interfaces/GlobalAttributes'
 
-interface WCAGG73Props extends DivAttributes {
+interface WCAGG73Props extends GlobalAttributes {
     additionalStyling?: React.CSSProperties
     buttonText: ReactNode
     childId: string
-    divData?: DivAttributes
+    divData?: GlobalAttributes
     classNameDiv?: string
     classNameLink?: string
     externalLink?: boolean

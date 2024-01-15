@@ -14,10 +14,6 @@ type StoryG196 = StoryObj<typeof WCAGG196>
 
 // WCAGNonTextComponentG196
 
-export const ImageWithEmptyArray: StoryG196 = {
-    render: () => <WCAGG196 altText="four out of five" imageData={[]} />,
-}
-
 export const ImageWithOneStar: StoryG196 = {
     render: () => (
         <WCAGG196
@@ -38,18 +34,45 @@ export const ImageWithOneStarAndSize: StoryG196 = {
     ),
 }
 
-export const ImageWithAdditionalStyling: StoryG196 = {
+export const ImageWithAdditionalAttributes: StoryG196 = {
     render: () => (
         <WCAGG196
             altText="four out of five"
             imageData={[
-                { imageSource: starImage, height: 75, width: 75 },
-                { imageSource: starImage, height: 75, width: 75 },
-                { imageSource: starImage, height: 75, width: 75 },
-                { imageSource: starImage, height: 75, width: 75 },
                 {
                     imageSource: starImage,
-                    additionalStyling: { height: 125, width: 125 },
+                    height: 25,
+                    width: 25,
+                    loading: 'lazy',
+                    referrerpolicy: 'no-referrer',
+                },
+                {
+                    imageSource: starImage,
+                    height: 35,
+                    width: 35,
+                    loading: 'lazy',
+                    referrerpolicy: 'no-referrer-when-downgrade',
+                },
+                {
+                    imageSource: starImage,
+                    height: 45,
+                    width: 45,
+                    loading: 'lazy',
+                    referrerpolicy: 'origin',
+                },
+                {
+                    imageSource: starImage,
+                    height: 55,
+                    width: 55,
+                    loading: 'eager',
+                    referrerpolicy: 'origin-when-cross-origin',
+                },
+                {
+                    imageSource: starImage,
+                    height: 65,
+                    width: 65,
+                    loading: 'eager',
+                    referrerpolicy: 'same-origin',
                 },
             ]}
         />

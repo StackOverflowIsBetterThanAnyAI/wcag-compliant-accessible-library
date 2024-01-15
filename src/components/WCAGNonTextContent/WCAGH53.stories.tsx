@@ -17,9 +17,7 @@ type StoryH53 = StoryObj<typeof WCAGH53>
 export const ObjectWidthClassIdAndParagraph: StoryH53 = {
     render: () => (
         <WCAGH53 objectData={{ classId: 'id' }}>
-            <p>
-                Here is some text that describes the object and its operation.
-            </p>
+            <p>This is some text that describes the object.</p>
         </WCAGH53>
     ),
 }
@@ -27,7 +25,7 @@ export const ObjectWidthClassIdAndParagraph: StoryH53 = {
 export const ObjectWidthClassIdAndAltText: StoryH53 = {
     render: () => (
         <WCAGH53 objectData={{ classId: 'id' }}>
-            <img src={starImage} alt="Star Image" height={75} width={75} />
+            <img src={starImage} alt="A happy star." height={75} width={75} />
         </WCAGH53>
     ),
 }

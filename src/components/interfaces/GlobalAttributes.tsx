@@ -1,4 +1,4 @@
-export interface DivAttributes {
+export interface GlobalAttributes {
     accesskey?: string
     contenteditable?: boolean | 'inherit' | 'plaintext-only'
     dir?: string

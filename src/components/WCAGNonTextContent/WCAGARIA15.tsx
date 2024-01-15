@@ -1,16 +1,11 @@
 import React from 'react'
+import { ImageAttributes } from '../interfaces/ImageAttributes'
 
 interface WCAGARIA15Props {
     accessibleIds: string
     altText: string
     className?: string
-    imageData: {
-        imageSource: string
-        height?: number | string
-        width?: number | string
-        loading?: 'eager' | 'lazy'
-        additionalStyling?: React.CSSProperties
-    }
+    imageData: ImageAttributes
 }
 
 const WCAGARIA15: React.FC<WCAGARIA15Props> = ({
@@ -25,7 +20,9 @@ const WCAGARIA15: React.FC<WCAGARIA15Props> = ({
             alt={altText}
             aria-describedby={accessibleIds}
             className={className}
+            crossOrigin={imageData?.crossorigin}
             loading={imageData?.loading}
+            referrerPolicy={imageData?.referrerpolicy}
             style={{
                 height: imageData?.height,
                 width: imageData?.width,

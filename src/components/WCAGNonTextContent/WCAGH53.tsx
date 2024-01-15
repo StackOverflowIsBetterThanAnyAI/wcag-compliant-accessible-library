@@ -1,17 +1,9 @@
 import React, { ReactNode } from 'react'
+import { ObjectAttributes } from '../interfaces/ObjectAttributes'
 
 interface WCAGH53Props {
     className?: string
-    objectData: {
-        classId?: string
-        data?: string
-        form?: string
-        name?: string
-        type?: string
-        useMap?: string
-        height?: number | string
-        width?: number | string
-    }
+    objectData: ObjectAttributes
     children: ReactNode // must contain either text or an element with an alt text
 }
 
@@ -31,6 +23,7 @@ const WCAGH53: React.FC<WCAGH53Props> = ({
             useMap={objectData?.useMap}
             height={objectData?.height}
             width={objectData?.width}
+            style={{ ...objectData?.additionalStyling }}
         >
             {children}
         </object>

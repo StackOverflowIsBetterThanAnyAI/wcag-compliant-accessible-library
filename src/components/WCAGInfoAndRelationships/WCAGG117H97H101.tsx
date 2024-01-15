@@ -9,7 +9,7 @@ interface WCAGG117H97H101Props {
         displayedName: ReactNode
         href: string
         referrerpolicy?: React.HTMLAttributeReferrerPolicy
-        target?: React.HTMLAttributeAnchorTarget
+        target?: '_blank' | '_parent' | '_self' | '_top'
         new?: boolean
     }[]
     headline?: string

@@ -1,12 +1,12 @@
 import React, { ReactNode } from 'react'
-import { DivAttributes } from '../interfaces/DivAttributes'
+import { GlobalAttributes } from '../interfaces/GlobalAttributes'
 
-interface WCAGG74Props extends DivAttributes {
+interface WCAGG74Props extends GlobalAttributes {
     accessibleIds: string
     additionalStyling?: React.CSSProperties
     className?: string
     shortText: ReactNode
-    divData?: DivAttributes
+    divData?: GlobalAttributes
     children: ReactNode
 }
 

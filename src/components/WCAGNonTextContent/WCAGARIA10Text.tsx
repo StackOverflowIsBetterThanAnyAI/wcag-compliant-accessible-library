@@ -1,11 +1,11 @@
 import React, { CSSProperties, ReactNode } from 'react'
-import { DivAttributes } from '../interfaces/DivAttributes'
+import { GlobalAttributes } from '../interfaces/GlobalAttributes'
 
-interface WCAGARIA10Props extends DivAttributes {
+interface WCAGARIA10Props extends GlobalAttributes {
     additionalStyling?: CSSProperties
     ariaLabelledById: string
     className?: string
-    divData?: DivAttributes
+    divData?: GlobalAttributes
     children: ReactNode
 }
 

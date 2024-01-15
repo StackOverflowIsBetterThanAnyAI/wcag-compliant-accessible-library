@@ -1,8 +1,9 @@
 import React, { CSSProperties, ReactNode } from 'react'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
-import { DivAttributes } from '../interfaces/DivAttributes'
+import { GlobalAttributes } from '../interfaces/GlobalAttributes'
 
-interface WCAGARIA6Props extends DivAttributes, WAIARIAAttributes {
+interface WCAGARIA6Props {
+    ariaLabel: string
     role:
         | 'alert'
         | 'alertdialog'
@@ -38,10 +39,8 @@ interface WCAGARIA6Props extends DivAttributes, WAIARIAAttributes {
         | 'menuitemcheckbox' // should be avoided
         | 'menuitemradio' // should be avoided
         | 'navigation'
-        // none
         | 'note'
         | 'option' // should be avoided
-        //presentation
         | 'progressbar' // should be avoided
         | 'radio' // should be avoided
         | 'radiogroup' // should be avoided
@@ -56,7 +55,6 @@ interface WCAGARIA6Props extends DivAttributes, WAIARIAAttributes {
         | 'slider'
         | 'spinbutton'
         | 'status'
-        //suggestion
         | 'switch'
         | 'tab'
         | 'table' // should be avoided
@@ -67,18 +65,17 @@ interface WCAGARIA6Props extends DivAttributes, WAIARIAAttributes {
         | 'toolbar'
         | 'tooltip'
         | 'treegrid'
-    additionalStyling?: CSSProperties
-    ariaLabel: string
-    divData?: DivAttributes
     additionalAriaAttributes?: Omit<WAIARIAAttributes, 'label' | 'labelledby'>
+    additionalStyling?: CSSProperties
     className?: string
+    divData?: GlobalAttributes
     children: ReactNode
 }
 
 const WCAGARIA6: React.FC<WCAGARIA6Props> = ({
-    ariaLabel,
     additionalAriaAttributes,
     additionalStyling,
+    ariaLabel,
     className,
     divData,
     role,

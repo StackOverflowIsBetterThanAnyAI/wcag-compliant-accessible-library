@@ -8,7 +8,7 @@ interface WCAGG115H49Props {
         hreflang?: string
         ping?: string
         referrerpolicy?: React.HTMLAttributeReferrerPolicy
-        target?: React.HTMLAttributeAnchorTarget
+        target?: '_blank' | '_parent' | '_self' | '_top'
         type?: string
     }
     className?: string

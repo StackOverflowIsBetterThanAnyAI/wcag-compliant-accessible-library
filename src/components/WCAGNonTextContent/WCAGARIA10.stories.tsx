@@ -15,7 +15,7 @@ type StoryARIA10 = StoryObj<typeof WCAGARIA10>
 
 // WCAGNonTextComponentARIA10
 
-export const Image: StoryARIA10 = {
+export const ImagesAsChildren: StoryARIA10 = {
     render: () => (
         <>
             <WCAGARIA10 role="img" ariaLabelledById="star-id1">
@@ -28,29 +28,29 @@ export const Image: StoryARIA10 = {
                 </>
             </WCAGARIA10>
             <WCAGARIA10Text ariaLabelledById="star-id1">
-                four out of five
+                five out of five stars
             </WCAGARIA10Text>
         </>
     ),
 }
 
-export const TextContentIsADiv: StoryARIA10 = {
+export const TextContentIsAReactNode: StoryARIA10 = {
     render: () => (
         <>
             <WCAGARIA10Text ariaLabelledById="star-id1">
-                <div>four out of five</div>
+                <span>five out of five stars</span>
             </WCAGARIA10Text>
             <WCAGARIA10 role="img" ariaLabelledById="star-id1 star-id2">
                 <>
-                    <img src={starImage} alt="" />
-                    <img src={starImage} alt="" />
-                    <img src={starImage} alt="" />
-                    <img src={starImage} alt="" />
-                    <img src={starImage} alt="" />
+                    <img src={starImage} alt="" height={75} width={75} />
+                    <img src={starImage} alt="" height={75} width={75} />
+                    <img src={starImage} alt="" height={75} width={75} />
+                    <img src={starImage} alt="" height={75} width={75} />
+                    <img src={starImage} alt="" height={75} width={75} />
                 </>
             </WCAGARIA10>
             <WCAGARIA10Text ariaLabelledById="star-id2">
-                <div>four out of five</div>
+                <div>five out of five stars</div>
             </WCAGARIA10Text>
         </>
     ),

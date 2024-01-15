@@ -1,7 +1,7 @@
 import React, { CSSProperties, ReactNode } from 'react'
-import { DivAttributes } from '../interfaces/DivAttributes'
+import { GlobalAttributes } from '../interfaces/GlobalAttributes'
 
-interface WCAGARIA11Props extends DivAttributes {
+interface WCAGARIA11Props extends GlobalAttributes {
     role:
         | 'banner'
         | 'complementary'
@@ -14,7 +14,7 @@ interface WCAGARIA11Props extends DivAttributes {
     additionalStyling?: CSSProperties
     ariaLabel?: string
     ariaLabelledById?: string
-    divData?: DivAttributes
+    divData?: GlobalAttributes
     children: ReactNode
     className?: string
 }

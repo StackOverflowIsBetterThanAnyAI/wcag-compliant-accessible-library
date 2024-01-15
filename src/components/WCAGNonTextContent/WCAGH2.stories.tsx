@@ -17,7 +17,6 @@ type StoryH2 = StoryObj<typeof WCAGH2>
 export const ImageAndLink: StoryH2 = {
     render: () => (
         <WCAGH2
-            altText="four out of five"
             imageData={{
                 imageSource: starImage,
                 additionalStyling: { height: 75, width: 75 },
@@ -29,10 +28,38 @@ export const ImageAndLink: StoryH2 = {
     ),
 }
 
+export const ImageAndLinkWithAlt: StoryH2 = {
+    render: () => (
+        <WCAGH2
+            altText="Go to the home page"
+            imageData={{
+                imageSource: starImage,
+                additionalStyling: { height: 75, width: 75 },
+            }}
+            link="#home"
+        >
+            Go
+        </WCAGH2>
+    ),
+}
+
 export const TextContentIsADiv: StoryH2 = {
     render: () => (
         <WCAGH2
-            altText="four out of five"
+            imageData={{
+                imageSource: starImage,
+                additionalStyling: { height: 75, width: 75 },
+            }}
+            link="#home"
+        >
+            <div>Go to the home page</div>
+        </WCAGH2>
+    ),
+}
+
+export const TextBeforeImage: StoryH2 = {
+    render: () => (
+        <WCAGH2
             imageData={{
                 imageSource: starImage,
                 additionalStyling: { height: 75, width: 75 },
@@ -40,7 +67,7 @@ export const TextContentIsADiv: StoryH2 = {
             link="#home"
             textBeforeImage
         >
-            <div style={{ color: '#050505' }}>Go to the home page</div>
+            <div style={{ color: '#020202' }}>Go to the home page</div>
         </WCAGH2>
     ),
 }

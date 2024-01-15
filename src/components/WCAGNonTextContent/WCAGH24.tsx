@@ -21,7 +21,7 @@ interface WCAGH24Props {
             | 'tag'
         href?: string // May only be omitted if ypu are creating a hollow shape
         shape: 'default' | 'rect' | 'circle' | 'poly'
-        target?: string
+        target?: '_blank' | '_parent' | '_self' | '_top'
     }[]
     classNameImage?: string
     classNameMap?: string

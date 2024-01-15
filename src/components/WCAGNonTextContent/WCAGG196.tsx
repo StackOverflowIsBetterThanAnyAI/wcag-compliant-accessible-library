@@ -1,15 +1,10 @@
 import React from 'react'
+import { ImageAttributes } from '../interfaces/ImageAttributes'
 
 interface WCAGG196Props {
     altText: string
+    imageData: ImageAttributes[]
     className?: string
-    imageData: {
-        imageSource: string
-        height?: number | string
-        width?: number | string
-        loading?: 'eager' | 'lazy'
-        additionalStyling?: React.CSSProperties
-    }[]
 }
 
 const WCAGG196: React.FC<WCAGG196Props> = ({
@@ -22,10 +17,13 @@ const WCAGG196: React.FC<WCAGG196Props> = ({
             {imageData.map((data, index) => (
                 <img
                     key={index}
-                    src={data.imageSource}
                     alt={index === 0 ? altText : ''}
+                    src={data.imageSource}
                     className={className}
+                    crossOrigin={data?.crossorigin}
                     loading={data?.loading}
+                    referrerPolicy={data?.referrerpolicy}
+                    sizes={data?.sizes}
                     style={{
                         height: data?.height,
                         width: data?.width,

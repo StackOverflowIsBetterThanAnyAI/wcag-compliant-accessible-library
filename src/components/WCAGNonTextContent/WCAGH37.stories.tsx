@@ -17,7 +17,7 @@ type StoryH37 = StoryObj<typeof WCAGH37>
 export const ImageWithAltAttribute: StoryH37 = {
     render: () => (
         <WCAGH37
-            altText="four out of five"
+            altText="A happy star."
             imageData={{
                 imageSource: starImage,
                 additionalStyling: { height: 75, width: 75 },

@@ -27,7 +27,7 @@ export const Image: StoryARIA15 = {
                 imageData={{ imageSource: starImage, height: 150, width: 150 }}
             />
             <WCAGARIA15Text accessibleId="p2">
-                This is the musch longer text content of Paragraph 2.
+                This is the much longer text content of Paragraph 2.
             </WCAGARIA15Text>
         </>
     ),

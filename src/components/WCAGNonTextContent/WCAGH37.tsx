@@ -1,15 +1,10 @@
 import React from 'react'
+import { ImageAttributes } from '../interfaces/ImageAttributes'
 
 interface WCAGH37Props {
     altText: string
     className?: string
-    imageData: {
-        imageSource: string
-        height?: number | string
-        width?: number | string
-        loading?: 'eager' | 'lazy'
-        additionalStyling?: React.CSSProperties
-    }
+    imageData: ImageAttributes
 }
 
 const WCAGH37: React.FC<WCAGH37Props> = ({ altText, className, imageData }) => {
@@ -18,7 +13,10 @@ const WCAGH37: React.FC<WCAGH37Props> = ({ altText, className, imageData }) => {
             src={imageData.imageSource}
             alt={altText}
             className={className}
+            crossOrigin={imageData?.crossorigin}
             loading={imageData?.loading}
+            referrerPolicy={imageData?.referrerpolicy}
+            sizes={imageData?.sizes}
             style={{
                 height: imageData?.height,
                 width: imageData?.width,

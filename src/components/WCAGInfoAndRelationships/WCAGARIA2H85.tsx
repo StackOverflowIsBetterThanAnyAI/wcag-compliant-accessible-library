@@ -10,8 +10,20 @@ interface WCAGARIA2H85Props {
         method?: 'get' | 'post'
         name?: string
         novalidate?: boolean
-        rel?: string
-        target?: React.HTMLAttributeAnchorTarget
+        rel?:
+            | 'alternate'
+            | 'author'
+            | 'bookmark'
+            | 'help'
+            | 'license'
+            | 'next'
+            | 'nofollow'
+            | 'noreferrer'
+            | 'prefetch'
+            | 'prev'
+            | 'search'
+            | 'tag'
+        target?: '_blank' | '_parent' | '_self' | '_top'
         additionalStyling?: CSSProperties
     }
     labelData: {

@@ -1,6 +1,7 @@
 import React, { CSSProperties, ReactNode } from 'react'
+import { DivAttributes } from '../interfaces/DivAttributes'
 
-interface WCAGARIA11Props {
+interface WCAGARIA11Props extends DivAttributes {
     role:
         | 'banner'
         | 'complementary'
@@ -13,28 +14,7 @@ interface WCAGARIA11Props {
     additionalStyling?: CSSProperties
     ariaLabel?: string
     ariaLabelledById?: string
-    divData?: {
-        accesskey?: string
-        contenteditable?: boolean | 'inherit' | 'plaintext-only'
-        dir?: string
-        draggable?: boolean
-        hidden?: boolean
-        id?: string
-        inputmode?:
-            | 'email'
-            | 'search'
-            | 'none'
-            | 'numeric'
-            | 'text'
-            | 'tel'
-            | 'url'
-            | 'decimal'
-        lang?: string
-        spellcheck?: boolean
-        tabindex?: number
-        title?: string
-        translate?: 'yes' | 'no'
-    }
+    divData?: DivAttributes
     children: ReactNode
     className?: string
 }
@@ -71,7 +51,7 @@ const WCAGARIA11: React.FC<WCAGARIA11Props> = ({
                     contentEditable={divData?.contenteditable}
                     dir={divData?.dir}
                     draggable={divData?.draggable}
-                    hidden={divData?.hidden}
+                    hidden={divData?.hiddenDiv}
                     id={divData?.id}
                     inputMode={divData?.inputmode}
                     lang={divData?.lang}

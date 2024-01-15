@@ -1,6 +1,7 @@
 import React, { CSSProperties, ReactNode } from 'react'
+import { DivAttributes } from '../interfaces/DivAttributes'
 
-interface WCAGARIA10Props {
+interface WCAGARIA10Props extends DivAttributes {
     role:
         | 'alert'
         | 'alertdialog'
@@ -69,28 +70,7 @@ interface WCAGARIA10Props {
     additionalStyling?: CSSProperties
     ariaLabelledById: string
     className?: string
-    divData?: {
-        accesskey?: string
-        contenteditable?: boolean | 'inherit' | 'plaintext-only'
-        dir?: string
-        draggable?: boolean
-        hidden?: boolean
-        id?: string
-        inputmode?:
-            | 'email'
-            | 'search'
-            | 'none'
-            | 'numeric'
-            | 'text'
-            | 'tel'
-            | 'url'
-            | 'decimal'
-        lang?: string
-        spellcheck?: boolean
-        tabindex?: number
-        title?: string
-        translate?: 'yes' | 'no'
-    }
+    divData?: DivAttributes
     children: ReactNode
 }
 
@@ -112,7 +92,7 @@ const WCAGARIA10: React.FC<WCAGARIA10Props> = ({
             contentEditable={divData?.contenteditable}
             dir={divData?.dir}
             draggable={divData?.draggable}
-            hidden={divData?.hidden}
+            hidden={divData?.hiddenDiv}
             id={divData?.id}
             inputMode={divData?.inputmode}
             lang={divData?.lang}

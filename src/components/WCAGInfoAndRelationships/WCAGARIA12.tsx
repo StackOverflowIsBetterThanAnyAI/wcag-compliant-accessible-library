@@ -1,32 +1,12 @@
 import React, { CSSProperties, ReactNode } from 'react'
+import { DivAttributes } from '../interfaces/DivAttributes'
 
-interface WCAGARIA12Props {
+interface WCAGARIA12Props extends DivAttributes {
     additionalStyling?: CSSProperties
     ariaLevel?: number
     children: ReactNode
     className?: string
-    divData?: {
-        accesskey?: string
-        contenteditable?: boolean | 'inherit' | 'plaintext-only'
-        dir?: string
-        draggable?: boolean
-        hidden?: boolean
-        id?: string
-        inputmode?:
-            | 'email'
-            | 'search'
-            | 'none'
-            | 'numeric'
-            | 'text'
-            | 'tel'
-            | 'url'
-            | 'decimal'
-        lang?: string
-        spellcheck?: boolean
-        tabindex?: number
-        title?: string
-        translate?: 'yes' | 'no'
-    }
+    divData?: DivAttributes
 }
 
 const WCAGARIA12: React.FC<WCAGARIA12Props> = ({
@@ -46,7 +26,7 @@ const WCAGARIA12: React.FC<WCAGARIA12Props> = ({
             contentEditable={divData?.contenteditable}
             dir={divData?.dir}
             draggable={divData?.draggable}
-            hidden={divData?.hidden}
+            hidden={divData?.hiddenDiv}
             id={divData?.id}
             inputMode={divData?.inputmode}
             lang={divData?.lang}

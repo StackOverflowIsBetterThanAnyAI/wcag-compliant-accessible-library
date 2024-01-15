@@ -1,32 +1,12 @@
 import React, { ReactNode } from 'react'
+import { DivAttributes } from '../interfaces/DivAttributes'
 
-interface WCAGG74Props {
+interface WCAGG74Props extends DivAttributes {
     accessibleIds: string
     additionalStyling?: React.CSSProperties
     className?: string
     shortText: ReactNode
-    divData?: {
-        accesskey?: string
-        contenteditable?: boolean | 'inherit' | 'plaintext-only'
-        dir?: string
-        draggable?: boolean
-        hidden?: boolean
-        id?: string
-        inputmode?:
-            | 'email'
-            | 'search'
-            | 'none'
-            | 'numeric'
-            | 'text'
-            | 'tel'
-            | 'url'
-            | 'decimal'
-        lang?: string
-        spellcheck?: boolean
-        tabindex?: number
-        title?: string
-        translate?: 'yes' | 'no'
-    }
+    divData?: DivAttributes
     children: ReactNode
 }
 
@@ -47,7 +27,7 @@ const WCAGG74: React.FC<WCAGG74Props> = ({
             contentEditable={divData?.contenteditable}
             dir={divData?.dir}
             draggable={divData?.draggable}
-            hidden={divData?.hidden}
+            hidden={divData?.hiddenDiv}
             id={divData?.id}
             inputMode={divData?.inputmode}
             lang={divData?.lang}

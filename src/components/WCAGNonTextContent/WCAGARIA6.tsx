@@ -1,6 +1,8 @@
 import React, { CSSProperties, ReactNode } from 'react'
+import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
+import { DivAttributes } from '../interfaces/DivAttributes'
 
-interface WCAGARIA6Props {
+interface WCAGARIA6Props extends DivAttributes, WAIARIAAttributes {
     role:
         | 'alert'
         | 'alertdialog'
@@ -67,88 +69,8 @@ interface WCAGARIA6Props {
         | 'treegrid'
     additionalStyling?: CSSProperties
     ariaLabel: string
-    divData?: {
-        accesskey?: string
-        contenteditable?: boolean | 'inherit' | 'plaintext-only'
-        dir?: string
-        draggable?: boolean
-        hidden?: boolean
-        id?: string
-        inputmode?:
-            | 'email'
-            | 'search'
-            | 'none'
-            | 'numeric'
-            | 'text'
-            | 'tel'
-            | 'url'
-            | 'decimal'
-        lang?: string
-        spellcheck?: boolean
-        tabindex?: number
-        title?: string
-        translate?: 'yes' | 'no'
-    }
-    additionalAriaAttributes?: {
-        activeDescendant?: string
-        atomic?: boolean
-        autocomplete?: 'none' | 'inline' | 'list' | 'both'
-        braillelabel?: string
-        brailleroledescription?: string
-        busy?: boolean
-        checked?: 'false' | 'true' | 'mixed' | undefined
-        colcount?: number
-        colindex?: number
-        colindextext?: string
-        colspan?: number
-        controls?: string
-        current?: 'page' | 'step' | 'location' | 'date' | 'time' | true | false
-        describedby?: string
-        description?: string
-        details?: string
-        disabled?: boolean
-        errormessage?: string
-        expanded?: 'false' | 'true' | undefined
-        flowto?: string
-        haspopup?:
-            | 'false'
-            | 'true'
-            | 'menu'
-            | 'listbox'
-            | 'tree'
-            | 'grid'
-            | 'dialog'
-        hidden?: 'false' | 'true' | undefined
-        invalid?: 'grammar' | 'false' | 'spelling' | 'true'
-        keyshortcuts?: string
-        //label?: string
-        //labelledby?: string
-        level?: number
-        live?: 'assertive' | 'off' | 'polite'
-        modal?: boolean
-        multiline?: boolean
-        multiselectable?: boolean
-        orientation?: 'horizontal' | 'vertical' | undefined
-        owns?: string
-        placeholder?: string
-        posinset?: number
-        pressed?: 'false' | 'mixed' | 'true' | undefined
-        readonly?: boolean
-        relevant?: 'additions' | 'all' | 'removals' | 'text' | 'additions text'
-        required?: boolean
-        roledescription?: string
-        rowcount?: number
-        rowindex?: number
-        rowindextext?: string
-        rowspan?: number
-        selected?: 'false' | 'true' | undefined
-        setsize?: number
-        sort?: 'ascending' | 'descending' | 'none' | 'other'
-        valuemax?: number
-        valuemin?: number
-        valuenow?: number
-        valuetext?: string
-    }
+    divData?: DivAttributes
+    additionalAriaAttributes?: Omit<WAIARIAAttributes, 'label' | 'labelledby'>
     className?: string
     children: ReactNode
 }
@@ -172,7 +94,7 @@ const WCAGARIA6: React.FC<WCAGARIA6Props> = ({
             contentEditable={divData?.contenteditable}
             dir={divData?.dir}
             draggable={divData?.draggable}
-            hidden={divData?.hidden}
+            hidden={divData?.hiddenDiv}
             id={divData?.id}
             inputMode={divData?.inputmode}
             lang={divData?.lang}

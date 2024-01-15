@@ -39,8 +39,12 @@ type StoryARIA6 = StoryObj<typeof WCAGARIA6>
 
 export const Alert: StoryARIA6 = {
     render: () => (
-        <WCAGARIA6 role="alert" ariaLabel="This is an alert!">
-            <span>Watch out. This in an alert!</span>
+        <WCAGARIA6
+            role="alert"
+            ariaLabel="This is an alert!"
+            additionalAriaAttributes={{ hidden: false }}
+        >
+            Watch out. This in an alert!
         </WCAGARIA6>
     ),
 }

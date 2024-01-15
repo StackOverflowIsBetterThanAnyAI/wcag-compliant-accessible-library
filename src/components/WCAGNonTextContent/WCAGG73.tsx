@@ -1,31 +1,11 @@
 import React, { ReactNode } from 'react'
+import { DivAttributes } from '../interfaces/DivAttributes'
 
-interface WCAGG73Props {
+interface WCAGG73Props extends DivAttributes {
     additionalStyling?: React.CSSProperties
     buttonText: ReactNode
     childId: string
-    divData?: {
-        accesskey?: string
-        contenteditable?: boolean | 'inherit' | 'plaintext-only'
-        dir?: string
-        draggable?: boolean
-        hidden?: boolean
-        id?: string
-        inputmode?:
-            | 'email'
-            | 'search'
-            | 'none'
-            | 'numeric'
-            | 'text'
-            | 'tel'
-            | 'url'
-            | 'decimal'
-        lang?: string
-        spellcheck?: boolean
-        tabindex?: number
-        title?: string
-        translate?: 'yes' | 'no'
-    }
+    divData?: DivAttributes
     classNameDiv?: string
     classNameLink?: string
     externalLink?: boolean
@@ -56,7 +36,7 @@ const WCAGG73: React.FC<WCAGG73Props> = ({
             contentEditable={divData?.contenteditable}
             dir={divData?.dir}
             draggable={divData?.draggable}
-            hidden={divData?.hidden}
+            hidden={divData?.hiddenDiv}
             inputMode={divData?.inputmode}
             lang={divData?.lang}
             spellCheck={divData?.spellcheck}

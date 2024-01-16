@@ -3,7 +3,7 @@ export interface GlobalAttributes {
     contenteditable?: boolean | 'inherit' | 'plaintext-only'
     dir?: string
     draggable?: boolean
-    hiddenDiv?: boolean
+    hiddenElement?: boolean
     id?: string
     inputmode?:
         | 'email'

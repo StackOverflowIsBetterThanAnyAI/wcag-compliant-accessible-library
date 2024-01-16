@@ -15,7 +15,7 @@ type StoryARIA15 = StoryObj<typeof WCAGARIA15>
 
 // WCAGNonTextComponentARIA15
 
-export const Image: StoryARIA15 = {
+export const OneImage: StoryARIA15 = {
     render: () => (
         <>
             <WCAGARIA15Text accessibleId="p1">
@@ -23,11 +23,48 @@ export const Image: StoryARIA15 = {
             </WCAGARIA15Text>
             <WCAGARIA15
                 accessibleIds="p1 p2"
-                altText="Happy Star"
-                imageData={{ imageSource: starImage, height: 150, width: 150 }}
+                imageData={[
+                    {
+                        altText: 'A happy star.',
+                        imageSource: starImage,
+                        height: 50,
+                        width: 50,
+                    },
+                ]}
             />
             <WCAGARIA15Text accessibleId="p2">
                 This is the much longer text content of Paragraph 2.
+            </WCAGARIA15Text>
+        </>
+    ),
+}
+
+export const TwoImages: StoryARIA15 = {
+    render: () => (
+        <>
+            <WCAGARIA15Text accessibleId="p1">
+                Short text content.
+            </WCAGARIA15Text>
+            <WCAGARIA15
+                accessibleIds="p1 p2"
+                imageData={[
+                    {
+                        altText: 'A happy star.',
+                        imageSource: starImage,
+                        height: 50,
+                        width: 50,
+                    },
+                    {
+                        altText: 'Another happy star.',
+                        imageSource: starImage,
+                        height: 50,
+                        width: 50,
+                    },
+                ]}
+            />
+            <WCAGARIA15Text accessibleId="p2">
+                This is the much longer text content of Paragraph 2 which
+                describes both images.
             </WCAGARIA15Text>
         </>
     ),

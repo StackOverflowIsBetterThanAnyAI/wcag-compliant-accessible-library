@@ -19,11 +19,16 @@ export const Chart: StoryG73 = {
     render: () => (
         <>
             <WCAGG73
-                childId="long-description1"
                 buttonText="Go to the long description."
                 ownId="chart"
+                childId="long-description1"
                 shortText={<p>Short description.</p>}
             >
+                <div>
+                    <img src={starImage} height={50} width={50} />
+                    <img src={starImage} height={50} width={50} />
+                    <img src={starImage} height={50} width={50} />
+                </div>
                 <div>
                     <img src={starImage} height={50} width={50} />
                     <img src={starImage} height={50} width={50} />
@@ -35,7 +40,13 @@ export const Chart: StoryG73 = {
                 ownId="long-description"
                 parentId="chart"
             >
-                This is a very long description of three star images.
+                This is a very long description
+                <br />
+                of six happy stars which are
+                <br />
+                placed in two rows
+                <br />
+                with three stars each.
             </WCAGG73Text>
         </>
     ),

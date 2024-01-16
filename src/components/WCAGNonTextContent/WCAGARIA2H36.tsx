@@ -1,107 +1,73 @@
 import React, { CSSProperties } from 'react'
+import { InputAttributes } from '../interfaces/InputAttributes'
 
 interface WCAGARIA2H36Props {
     altText: string
     src: string
-    id?: string
-    title?: string
     additionalStyling?: CSSProperties
-    autocomplete?: 'on' | 'off'
-    autofocus?: boolean
+    inputData?: Omit<
+        InputAttributes,
+        | 'accept'
+        | 'autocapitalize'
+        | 'capture'
+        | 'checked'
+        | 'dirname'
+        | 'max'
+        | 'maxlength'
+        | 'min'
+        | 'minlength'
+        | 'multiple'
+        | 'pattern'
+        | 'placeholder'
+        | 'size'
+        | 'step'
+        | 'type'
+        | 'value'
+    >
+    role?:
+        | 'button'
+        | 'link'
+        | 'menuitem'
+        | 'menuitemcheckbox'
+        | 'menuitemradio'
+        | 'radio'
+        | 'switch'
     className?: string
-    dirname?: string
-    disabled?: boolean
-    form?: string
-    formaction?: string
-    formmethod?: 'get' | 'post'
-    formnovalidate?: boolean
-    formtarget?: string
-    height?: number | string
-    list?: string
-    max?: string
-    maxlength?: number
-    min?: string
-    minlength?: number
-    multiple?: boolean
-    name?: string
-    pattern?: string
-    placeholder?: string
-    readonly?: boolean
-    required?: boolean
-    size?: number
-    step?: number
-    value?: string
-    width?: number | string
 }
 
 const WCAGARIA2H36: React.FC<WCAGARIA2H36Props> = ({
     additionalStyling,
     altText,
-    autocomplete,
-    autofocus,
     className,
-    dirname,
-    disabled,
-    form,
-    formaction,
-    formmethod,
-    formnovalidate,
-    formtarget,
-    height,
-    id,
-    list,
-    max,
-    maxlength,
-    min,
-    minlength,
-    multiple,
-    name,
-    pattern,
-    placeholder,
-    readonly,
-    required,
-    size,
+    inputData,
+    role,
     src,
-    step,
-    title,
-    value,
-    width,
 }) => {
     return (
         <input
-            aria-required={required}
             alt={altText}
-            autoComplete={autocomplete}
-            autoFocus={autofocus}
-            className={className}
-            dir={dirname}
-            disabled={disabled}
-            form={form}
-            formAction={formaction}
-            formMethod={formmethod}
-            formNoValidate={formnovalidate}
-            formTarget={formtarget}
-            height={height}
-            id={id}
             type="image"
-            list={list}
-            max={max}
-            maxLength={maxlength}
-            min={min}
-            minLength={minlength}
-            multiple={multiple}
-            name={name}
-            pattern={pattern}
-            placeholder={placeholder}
-            readOnly={readonly}
-            required={required}
-            size={size}
             src={src}
-            step={step}
-            title={title}
-            value={value}
-            width={width}
-            style={{ ...additionalStyling }}
+            role={role}
+            className={className}
+            autoComplete={inputData?.autocomplete}
+            autoFocus={inputData?.autofocus}
+            disabled={inputData?.disabled}
+            form={inputData?.form}
+            formAction={inputData?.formaction}
+            formMethod={inputData?.formmethod}
+            formNoValidate={inputData?.formnovalidate}
+            formTarget={inputData?.formtarget}
+            id={inputData?.id}
+            list={inputData?.list}
+            name={inputData?.name}
+            readOnly={inputData?.readonly}
+            required={inputData?.required}
+            style={{
+                height: inputData?.height,
+                width: inputData?.width,
+                ...additionalStyling,
+            }}
         />
     )
 }

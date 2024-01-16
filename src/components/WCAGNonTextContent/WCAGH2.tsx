@@ -10,8 +10,20 @@ interface WCAGH2Props {
     classNameImage?: string
     classNameLink?: string
     linkData?: LinkAttributes
+    role?:
+        | 'button'
+        | 'checkbox'
+        | 'menuitem'
+        | 'menuitemcheckbox'
+        | 'menuitemradio'
+        | 'option'
+        | 'radio'
+        | 'switch'
+        | 'tab'
+        | 'treeitem'
     textBeforeImage?: boolean
     children: ReactNode
+    onClickFunction?: () => void
 }
 
 const WCAGH2: React.FC<WCAGH2Props> = ({
@@ -22,14 +34,18 @@ const WCAGH2: React.FC<WCAGH2Props> = ({
     imageData,
     link,
     linkData,
+    role,
     textBeforeImage,
     children,
+    onClickFunction,
 }) => {
     return (
         <a
             href={link}
             style={{ ...additionalStyling }}
             className={classNameLink}
+            onClick={() => onClickFunction}
+            role={role}
             download={linkData?.download}
             hrefLang={linkData?.hreflang}
             media={linkData?.media}
@@ -45,6 +61,7 @@ const WCAGH2: React.FC<WCAGH2Props> = ({
                 src={imageData.imageSource}
                 className={classNameImage}
                 crossOrigin={imageData?.crossorigin}
+                decoding={imageData?.decoding}
                 loading={imageData?.loading}
                 referrerPolicy={imageData?.referrerpolicy}
                 sizes={imageData?.sizes}

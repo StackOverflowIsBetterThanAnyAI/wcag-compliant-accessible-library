@@ -1,39 +1,13 @@
-import React, { CSSProperties } from 'react'
+import React from 'react'
+import { ImageAttributes } from '../interfaces/ImageAttributes'
+import { AreaAttributes } from '../interfaces/AreaAttributes'
 
 interface WCAGH24Props {
-    areaData: {
-        altText?: string // May only be omitted if ypu are creating a hollow shape
-        coords: string
-        download?: string
-        referrerpolicy?: React.HTMLAttributeReferrerPolicy
-        rel?:
-            | 'alternate'
-            | 'author'
-            | 'bookmark'
-            | 'help'
-            | 'license'
-            | 'next'
-            | 'nofollow'
-            | 'noreferrer'
-            | 'prefetch'
-            | 'prev'
-            | 'search'
-            | 'tag'
-        href?: string // May only be omitted if ypu are creating a hollow shape
-        shape: 'default' | 'rect' | 'circle' | 'poly'
-        target?: '_blank' | '_parent' | '_self' | '_top'
-    }[]
+    areaData: AreaAttributes[]
+    imageData: ImageAttributes & { altText: string }
+    mapName: string
     classNameImage?: string
     classNameMap?: string
-    imageData: {
-        altText: string
-        imageSource: string
-        loading?: 'eager' | 'lazy'
-        height?: number | string
-        width?: number | string
-        additionalStyling?: CSSProperties
-    }
-    mapName: string
 }
 
 const WCAGH24: React.FC<WCAGH24Props> = ({
@@ -49,22 +23,29 @@ const WCAGH24: React.FC<WCAGH24Props> = ({
                 alt={imageData.altText}
                 className={classNameImage}
                 src={imageData.imageSource}
+                crossOrigin={imageData?.crossorigin}
+                decoding={imageData?.decoding}
                 loading={imageData?.loading}
-                height={imageData?.height}
-                width={imageData?.width}
+                referrerPolicy={imageData?.referrerpolicy}
                 useMap={`#${mapName}`}
-                style={{ ...imageData?.additionalStyling }}
+                style={{
+                    height: imageData?.height,
+                    width: imageData?.width,
+                    ...imageData?.additionalStyling,
+                }}
             />
             <map name={mapName} className={classNameMap}>
-                {areaData?.map((data, index) => (
+                {areaData?.map((data, dataIndex) => (
                     <area
-                        key={index}
-                        alt={data.altText}
+                        key={dataIndex}
+                        alt={data?.altText ?? ''}
                         coords={data.coords}
                         download={data?.download}
                         referrerPolicy={data?.referrerpolicy}
                         rel={data?.rel}
-                        href={data.href}
+                        href={data?.href}
+                        hrefLang={data?.hreflang}
+                        media={data?.media}
                         shape={data.shape}
                         target={data?.target}
                     />

@@ -3,32 +3,36 @@ import { ImageAttributes } from '../interfaces/ImageAttributes'
 
 interface WCAGARIA15Props {
     accessibleIds: string
-    altText: string
     className?: string
-    imageData: ImageAttributes
+    imageData: (ImageAttributes & { altText: string })[]
 }
 
 const WCAGARIA15: React.FC<WCAGARIA15Props> = ({
     accessibleIds,
-    altText,
     className,
     imageData,
 }) => {
     return (
-        <img
-            src={imageData.imageSource}
-            alt={altText}
-            aria-describedby={accessibleIds}
-            className={className}
-            crossOrigin={imageData?.crossorigin}
-            loading={imageData?.loading}
-            referrerPolicy={imageData?.referrerpolicy}
-            style={{
-                height: imageData?.height,
-                width: imageData?.width,
-                ...imageData?.additionalStyling,
-            }}
-        />
+        <>
+            {imageData.map((data, dataIndex) => (
+                <img
+                    key={dataIndex}
+                    src={data.imageSource}
+                    alt={data.altText}
+                    aria-describedby={accessibleIds}
+                    className={className}
+                    crossOrigin={data?.crossorigin}
+                    decoding={data?.decoding}
+                    loading={data?.loading}
+                    referrerPolicy={data?.referrerpolicy}
+                    style={{
+                        height: data?.height,
+                        width: data?.width,
+                        ...data?.additionalStyling,
+                    }}
+                />
+            ))}
+        </>
     )
 }
 

@@ -79,13 +79,15 @@ const WCAGARIA2H71: React.FC<WCAGARIA2H71Props> = ({
         inputLabelData.map((data) => data?.inputChecked ?? false)
     )
 
-    const handleChange = (index: number, type: 'checkbox' | 'radio') => {
+    const handleChange = (itemIndex: number, type: 'checkbox' | 'radio') => {
         if (type === 'radio') {
-            const newCheckedStates = checkedStates.map((_, i) => i === index)
+            const newCheckedStates = checkedStates.map(
+                (_, i) => i === itemIndex
+            )
             setCheckedStates(newCheckedStates)
         } else {
             const newCheckedStates = [...checkedStates]
-            newCheckedStates[index] = !newCheckedStates[index]
+            newCheckedStates[itemIndex] = !newCheckedStates[itemIndex]
             setCheckedStates(newCheckedStates)
         }
         onClickFunction && onClickFunction()

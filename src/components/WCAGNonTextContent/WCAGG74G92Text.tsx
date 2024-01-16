@@ -1,15 +1,15 @@
-import React, { CSSProperties } from 'react'
+import React, { ReactNode } from 'react'
 import { GlobalAttributes } from '../interfaces/GlobalAttributes'
 
-interface WCAGARIA15Props {
+interface WCAGG74G92Props {
     accessibleId: string
-    additionalStyling?: CSSProperties
-    pData?: Omit<GlobalAttributes, 'id'>
+    additionalStyling?: React.CSSProperties
     className?: string
-    children: string
+    pData?: GlobalAttributes
+    children: ReactNode
 }
 
-const WCAGARIA15Text: React.FC<WCAGARIA15Props> = ({
+const WCAGG74G92Text: React.FC<WCAGG74G92Props> = ({
     accessibleId,
     additionalStyling,
     className,
@@ -38,4 +38,4 @@ const WCAGARIA15Text: React.FC<WCAGARIA15Props> = ({
     )
 }
 
-export default WCAGARIA15Text
+export default WCAGG74G92Text

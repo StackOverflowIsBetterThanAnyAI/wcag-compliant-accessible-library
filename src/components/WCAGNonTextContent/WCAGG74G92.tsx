@@ -1,10 +1,15 @@
-import React, { CSSProperties, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import { GlobalAttributes } from '../interfaces/GlobalAttributes'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
-interface WCAGARIA10Props {
-    ariaLabelledById: string
-    role:
+interface WCAGG74G92Props extends GlobalAttributes {
+    accessibleIds: string
+    additionalAriaAttributes?: WAIARIAAttributes
+    additionalStyling?: React.CSSProperties
+    className?: string
+    shortText: ReactNode
+    divData?: GlobalAttributes
+    role?:
         | 'alert'
         | 'alertdialog'
         | 'application' // should be avoided
@@ -65,26 +70,22 @@ interface WCAGARIA10Props {
         | 'toolbar'
         | 'tooltip'
         | 'treegrid'
-    additionalAriaAttributes?: Omit<WAIARIAAttributes, 'label' | 'labelledby'>
-    additionalStyling?: CSSProperties
-    className?: string
-    divData?: GlobalAttributes
     children: ReactNode
 }
 
-const WCAGARIA10: React.FC<WCAGARIA10Props> = ({
+const WCAGG74G92: React.FC<WCAGG74G92Props> = ({
+    accessibleIds,
     additionalAriaAttributes,
     additionalStyling,
-    ariaLabelledById,
     className,
     divData,
     role,
+    shortText,
     children,
 }) => {
     return (
         <div
-            role={role}
-            aria-labelledby={ariaLabelledById}
+            aria-describedby={accessibleIds}
             style={{ ...additionalStyling }}
             className={className}
             accessKey={divData?.accesskey}
@@ -160,7 +161,6 @@ const WCAGARIA10: React.FC<WCAGARIA10Props> = ({
             }
             aria-controls={additionalAriaAttributes?.controls}
             aria-current={additionalAriaAttributes?.current}
-            aria-describedby={additionalAriaAttributes?.describedby}
             aria-description={additionalAriaAttributes?.description}
             aria-details={additionalAriaAttributes?.details}
             aria-disabled={
@@ -274,6 +274,7 @@ const WCAGARIA10: React.FC<WCAGARIA10Props> = ({
                     : undefined
             }
             aria-keyshortcuts={additionalAriaAttributes?.keyshortcuts}
+            aria-label={additionalAriaAttributes?.label}
             aria-level={
                 role === 'comment' || role === 'row'
                     ? additionalAriaAttributes?.level
@@ -468,8 +469,9 @@ const WCAGARIA10: React.FC<WCAGARIA10Props> = ({
             }
         >
             {children}
+            {shortText}
         </div>
     )
 }
 
-export default WCAGARIA10
+export default WCAGG74G92

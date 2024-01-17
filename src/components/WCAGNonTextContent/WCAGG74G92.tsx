@@ -105,7 +105,7 @@ const WCAGG74G92: React.FC<WCAGG74G92Props> = ({
                 role === 'combobox' ||
                 role === 'group' ||
                 role === 'textbox'
-                    ? additionalAriaAttributes?.activeDescendant
+                    ? additionalAriaAttributes?.activedescendant
                     : undefined
             }
             aria-atomic={additionalAriaAttributes?.atomic}

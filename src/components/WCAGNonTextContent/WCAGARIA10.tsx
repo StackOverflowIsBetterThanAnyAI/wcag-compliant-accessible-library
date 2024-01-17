@@ -104,7 +104,7 @@ const WCAGARIA10: React.FC<WCAGARIA10Props> = ({
                 role === 'combobox' ||
                 role === 'group' ||
                 role === 'textbox'
-                    ? additionalAriaAttributes?.activeDescendant
+                    ? additionalAriaAttributes?.activedescendant
                     : undefined
             }
             aria-atomic={additionalAriaAttributes?.atomic}

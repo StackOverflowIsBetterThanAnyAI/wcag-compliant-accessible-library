@@ -1,5 +1,5 @@
 export interface WAIARIAAttributes {
-    activeDescendant?: string
+    activedescendant?: string
     atomic?: boolean
     autocomplete?: 'none' | 'inline' | 'list' | 'both'
     braillelabel?: string

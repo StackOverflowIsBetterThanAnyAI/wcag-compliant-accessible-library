@@ -1,5 +1,6 @@
 import React, { CSSProperties, ReactNode } from 'react'
 import { GlobalAttributes } from '../interfaces/GlobalAttributes'
+import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
 interface WCAGH86Props {
     accessibleText: string
@@ -8,11 +9,50 @@ interface WCAGH86Props {
     elementData?: GlobalAttributes
     element: 'span' | 'div' | 'abbr'
     role?: 'img'
+    additionalAriaAttributes?: Omit<
+        WAIARIAAttributes,
+        | 'activedescendant'
+        | 'autocomplete'
+        | 'checked'
+        | 'colcount'
+        | 'colindex'
+        | 'colindextext'
+        | 'colspan'
+        | 'disabled'
+        | 'errormessage'
+        | 'expanded'
+        | 'haspopup'
+        | 'invalid'
+        | 'label'
+        | 'labelledby'
+        | 'level'
+        | 'modal'
+        | 'multiline'
+        | 'multiselectable'
+        | 'orientation'
+        | 'placeholder'
+        | 'posinset'
+        | 'pressed'
+        | 'readonly'
+        | 'required'
+        | 'rowcount'
+        | 'rowindex'
+        | 'rowindextext'
+        | 'rowspan'
+        | 'selected'
+        | 'setsize'
+        | 'sort'
+        | 'valuemax'
+        | 'valuemin'
+        | 'valuenow'
+        | 'valuetext'
+    >
     children: ReactNode
 }
 
 const WCAGH86: React.FC<WCAGH86Props> = ({
     accessibleText,
+    additionalAriaAttributes,
     additionalStyling,
     className,
     elementData,
@@ -40,6 +80,25 @@ const WCAGH86: React.FC<WCAGH86Props> = ({
                     tabIndex={elementData?.tabindex}
                     title={elementData?.title}
                     translate={elementData?.translate}
+                    aria-atomic={additionalAriaAttributes?.atomic}
+                    aria-braillelabel={additionalAriaAttributes?.braillelabel}
+                    aria-brailleroledescription={
+                        additionalAriaAttributes?.brailleroledescription
+                    }
+                    aria-busy={additionalAriaAttributes?.busy}
+                    aria-controls={additionalAriaAttributes?.controls}
+                    aria-current={additionalAriaAttributes?.current}
+                    aria-describedby={additionalAriaAttributes?.describedby}
+                    aria-description={additionalAriaAttributes?.description}
+                    aria-details={additionalAriaAttributes?.details}
+                    aria-flowto={additionalAriaAttributes?.flowto}
+                    aria-hidden={additionalAriaAttributes?.hidden}
+                    aria-keyshortcuts={additionalAriaAttributes?.keyshortcuts}
+                    aria-owns={additionalAriaAttributes?.owns}
+                    aria-relevant={additionalAriaAttributes?.relevant}
+                    aria-roledescription={
+                        additionalAriaAttributes?.roledescription
+                    }
                 >
                     {children}
                 </span>
@@ -63,6 +122,25 @@ const WCAGH86: React.FC<WCAGH86Props> = ({
                     tabIndex={elementData?.tabindex}
                     title={elementData?.title}
                     translate={elementData?.translate}
+                    aria-atomic={additionalAriaAttributes?.atomic}
+                    aria-braillelabel={additionalAriaAttributes?.braillelabel}
+                    aria-brailleroledescription={
+                        additionalAriaAttributes?.brailleroledescription
+                    }
+                    aria-busy={additionalAriaAttributes?.busy}
+                    aria-controls={additionalAriaAttributes?.controls}
+                    aria-current={additionalAriaAttributes?.current}
+                    aria-describedby={additionalAriaAttributes?.describedby}
+                    aria-description={additionalAriaAttributes?.description}
+                    aria-details={additionalAriaAttributes?.details}
+                    aria-flowto={additionalAriaAttributes?.flowto}
+                    aria-hidden={additionalAriaAttributes?.hidden}
+                    aria-keyshortcuts={additionalAriaAttributes?.keyshortcuts}
+                    aria-owns={additionalAriaAttributes?.owns}
+                    aria-relevant={additionalAriaAttributes?.relevant}
+                    aria-roledescription={
+                        additionalAriaAttributes?.roledescription
+                    }
                 >
                     {children}
                 </div>
@@ -84,6 +162,25 @@ const WCAGH86: React.FC<WCAGH86Props> = ({
                     spellCheck={elementData?.spellcheck}
                     tabIndex={elementData?.tabindex}
                     translate={elementData?.translate}
+                    aria-atomic={additionalAriaAttributes?.atomic}
+                    aria-braillelabel={additionalAriaAttributes?.braillelabel}
+                    aria-brailleroledescription={
+                        additionalAriaAttributes?.brailleroledescription
+                    }
+                    aria-busy={additionalAriaAttributes?.busy}
+                    aria-controls={additionalAriaAttributes?.controls}
+                    aria-current={additionalAriaAttributes?.current}
+                    aria-describedby={additionalAriaAttributes?.describedby}
+                    aria-description={additionalAriaAttributes?.description}
+                    aria-details={additionalAriaAttributes?.details}
+                    aria-flowto={additionalAriaAttributes?.flowto}
+                    aria-hidden={additionalAriaAttributes?.hidden}
+                    aria-keyshortcuts={additionalAriaAttributes?.keyshortcuts}
+                    aria-owns={additionalAriaAttributes?.owns}
+                    aria-relevant={additionalAriaAttributes?.relevant}
+                    aria-roledescription={
+                        additionalAriaAttributes?.roledescription
+                    }
                 >
                     {children}
                 </abbr>

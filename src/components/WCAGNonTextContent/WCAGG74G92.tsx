@@ -88,6 +88,7 @@ const WCAGG74G92: React.FC<WCAGG74G92Props> = ({
             aria-describedby={accessibleIds}
             style={{ ...additionalStyling }}
             className={className}
+            role={role}
             accessKey={divData?.accesskey}
             contentEditable={divData?.contenteditable}
             dir={divData?.dir}

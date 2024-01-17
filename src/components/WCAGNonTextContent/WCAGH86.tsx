@@ -151,6 +151,7 @@ const WCAGH86: React.FC<WCAGH86Props> = ({
                     title={accessibleText}
                     style={{ ...additionalStyling }}
                     className={className}
+                    role={role}
                     accessKey={elementData?.accesskey}
                     contentEditable={elementData?.contenteditable}
                     dir={elementData?.dir}

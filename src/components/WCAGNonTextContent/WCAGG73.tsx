@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import { GlobalAttributes } from '../interfaces/GlobalAttributes'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
+import { LinkAttributes } from '../interfaces/LinkAttributes'
 
 interface WCAGG73Props extends GlobalAttributes {
     additionalAriaAttributes?: WAIARIAAttributes
@@ -11,6 +12,7 @@ interface WCAGG73Props extends GlobalAttributes {
     classNameDiv?: string
     classNameLink?: string
     externalLink?: boolean
+    linkData?: Omit<LinkAttributes, 'href' | 'download' | 'hreflang'>
     ownId: string
     role?:
         | 'alert'
@@ -86,6 +88,7 @@ const WCAGG73: React.FC<WCAGG73Props> = ({
     classNameLink,
     divData,
     externalLink,
+    linkData,
     ownId,
     role,
     shortText,
@@ -97,6 +100,7 @@ const WCAGG73: React.FC<WCAGG73Props> = ({
             aria-describedby={childId}
             style={{ ...additionalStyling }}
             className={classNameDiv}
+            role={role}
             accessKey={divData?.accesskey}
             contentEditable={divData?.contenteditable}
             dir={divData?.dir}
@@ -480,6 +484,12 @@ const WCAGG73: React.FC<WCAGG73Props> = ({
             <a
                 href={externalLink ? childId : `#${childId}`}
                 className={classNameLink}
+                media={linkData?.media}
+                ping={linkData?.ping}
+                referrerPolicy={linkData?.referrerpolicy}
+                rel={linkData?.rel}
+                target={linkData?.target}
+                type={linkData?.type}
             >
                 {buttonText}
             </a>

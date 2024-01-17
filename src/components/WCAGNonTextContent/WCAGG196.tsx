@@ -24,6 +24,8 @@ interface WCAGG196Props {
         | 'treeitem'
     additionalAriaAttributes?: Omit<
         WAIARIAAttributes,
+        | 'braillelabel'
+        | 'brailleroledescription'
         | 'label'
         | 'labelledby'
         | 'activedescendant'
@@ -71,10 +73,6 @@ const WCAGG196: React.FC<WCAGG196Props> = ({
                         ...data?.additionalStyling,
                     }}
                     aria-atomic={additionalAriaAttributes?.atomic}
-                    aria-braillelabel={additionalAriaAttributes?.braillelabel}
-                    aria-brailleroledescription={
-                        additionalAriaAttributes?.brailleroledescription
-                    }
                     aria-busy={additionalAriaAttributes?.busy}
                     aria-checked={
                         role === 'checkbox' ||

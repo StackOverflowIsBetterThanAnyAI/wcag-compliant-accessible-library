@@ -19,7 +19,7 @@ export const OneImage: StoryARIA15 = {
     render: () => (
         <>
             <WCAGARIA15Text accessibleId="p1">
-                Short text content.
+                Short text description.
             </WCAGARIA15Text>
             <WCAGARIA15
                 accessibleIds="p1 p2"
@@ -27,13 +27,15 @@ export const OneImage: StoryARIA15 = {
                     {
                         altText: 'A happy star.',
                         imageSource: starImage,
+                        role: 'separator',
                         height: 50,
                         width: 50,
                     },
                 ]}
             />
             <WCAGARIA15Text accessibleId="p2">
-                This is the much longer text content of Paragraph 2.
+                This is the much longer text content of Paragraph 2 which
+                describes one happy star looking at you.
             </WCAGARIA15Text>
         </>
     ),
@@ -43,7 +45,7 @@ export const TwoImages: StoryARIA15 = {
     render: () => (
         <>
             <WCAGARIA15Text accessibleId="p1">
-                Short text content.
+                Short text description.
             </WCAGARIA15Text>
             <WCAGARIA15
                 accessibleIds="p1 p2"
@@ -64,7 +66,8 @@ export const TwoImages: StoryARIA15 = {
             />
             <WCAGARIA15Text accessibleId="p2">
                 This is the much longer text content of Paragraph 2 which
-                describes both images.
+                describes both images that contain one happy star each looking
+                at you.
             </WCAGARIA15Text>
         </>
     ),

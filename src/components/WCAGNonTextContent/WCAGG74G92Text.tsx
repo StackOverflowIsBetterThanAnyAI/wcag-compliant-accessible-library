@@ -3,7 +3,6 @@ import { GlobalAttributes } from '../interfaces/GlobalAttributes'
 
 interface WCAGG74G92Props {
     accessibleId: string
-    additionalStyling?: React.CSSProperties
     className?: string
     pData?: GlobalAttributes
     role?:
@@ -72,7 +71,6 @@ interface WCAGG74G92Props {
 
 const WCAGG74G92Text: React.FC<WCAGG74G92Props> = ({
     accessibleId,
-    additionalStyling,
     className,
     pData,
     role,
@@ -81,7 +79,7 @@ const WCAGG74G92Text: React.FC<WCAGG74G92Props> = ({
     return (
         <p
             id={accessibleId}
-            style={{ ...additionalStyling }}
+            style={{ ...pData?.additionalStyling }}
             className={className}
             role={role}
             accessKey={pData?.accesskey}

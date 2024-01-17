@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import { GlobalAttributes } from '../interfaces/GlobalAttributes'
 
 interface WCAGARIA11Props extends GlobalAttributes {
@@ -11,7 +11,6 @@ interface WCAGARIA11Props extends GlobalAttributes {
         | 'navigation'
         | 'region'
         | 'search'
-    additionalStyling?: CSSProperties
     ariaLabel?: string
     ariaLabelledById?: string
     divData?: GlobalAttributes
@@ -22,7 +21,6 @@ interface WCAGARIA11Props extends GlobalAttributes {
 const WCAGARIA11: React.FC<WCAGARIA11Props> = ({
     ariaLabel,
     ariaLabelledById,
-    additionalStyling,
     className,
     divData,
     role,
@@ -35,7 +33,7 @@ const WCAGARIA11: React.FC<WCAGARIA11Props> = ({
                     role={role}
                     aria-label={ariaLabel}
                     aria-labelledby={ariaLabelledById}
-                    style={{ ...additionalStyling }}
+                    style={{ ...divData?.additionalStyling }}
                     className={className}
                 >
                     {children}
@@ -45,7 +43,7 @@ const WCAGARIA11: React.FC<WCAGARIA11Props> = ({
                     role={role}
                     aria-label={ariaLabel}
                     aria-labelledby={ariaLabelledById}
-                    style={{ ...additionalStyling }}
+                    style={{ ...divData?.additionalStyling }}
                     className={className}
                     accessKey={divData?.accesskey}
                     contentEditable={divData?.contenteditable}

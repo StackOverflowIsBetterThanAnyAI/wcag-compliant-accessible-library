@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import { GlobalAttributes } from '../interfaces/GlobalAttributes'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
@@ -65,8 +65,15 @@ interface WCAGARIA10Props {
         | 'toolbar'
         | 'tooltip'
         | 'treegrid'
-    additionalAriaAttributes?: Omit<WAIARIAAttributes, 'label' | 'labelledby'>
-    additionalStyling?: CSSProperties
+    additionalAriaAttributes?: Omit<
+        WAIARIAAttributes,
+        | 'braillelabel'
+        | 'brailleroledescription'
+        | 'colindextext'
+        | 'label'
+        | 'labelledby'
+        | 'rowindextext'
+    >
     className?: string
     divData?: GlobalAttributes
     children: ReactNode
@@ -74,7 +81,6 @@ interface WCAGARIA10Props {
 
 const WCAGARIA10: React.FC<WCAGARIA10Props> = ({
     additionalAriaAttributes,
-    additionalStyling,
     ariaLabelledById,
     className,
     divData,
@@ -85,7 +91,7 @@ const WCAGARIA10: React.FC<WCAGARIA10Props> = ({
         <div
             role={role}
             aria-labelledby={ariaLabelledById}
-            style={{ ...additionalStyling }}
+            style={{ ...divData?.additionalStyling }}
             className={className}
             accessKey={divData?.accesskey}
             contentEditable={divData?.contenteditable}
@@ -115,10 +121,6 @@ const WCAGARIA10: React.FC<WCAGARIA10Props> = ({
                     ? additionalAriaAttributes?.autocomplete
                     : undefined
             }
-            aria-braillelabel={additionalAriaAttributes?.braillelabel}
-            aria-brailleroledescription={
-                additionalAriaAttributes?.brailleroledescription
-            }
             aria-busy={additionalAriaAttributes?.busy}
             aria-checked={
                 role === 'checkbox' ||
@@ -142,13 +144,6 @@ const WCAGARIA10: React.FC<WCAGARIA10Props> = ({
                 role === 'row' ||
                 role === 'rowheader'
                     ? additionalAriaAttributes?.colindex
-                    : undefined
-            }
-            aria-colindextext={
-                role === 'cell' ||
-                role === 'columnheader' ||
-                role === 'rowheader'
-                    ? additionalAriaAttributes?.colindextext
                     : undefined
             }
             aria-colspan={
@@ -384,15 +379,6 @@ const WCAGARIA10: React.FC<WCAGARIA10Props> = ({
                 role === 'gridcell' ||
                 role === 'rowheader'
                     ? additionalAriaAttributes?.rowindex
-                    : undefined
-            }
-            aria-rowindextext={
-                role === 'cell' ||
-                role === 'row' ||
-                role === 'columnheader' ||
-                role === 'gridcell' ||
-                role === 'rowheader'
-                    ? additionalAriaAttributes?.rowindextext
                     : undefined
             }
             aria-rowspan={

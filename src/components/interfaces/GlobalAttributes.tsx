@@ -1,5 +1,8 @@
+import { CSSProperties } from 'react'
+
 export interface GlobalAttributes {
     accesskey?: string
+    additionalStyling?: CSSProperties
     contenteditable?: boolean | 'inherit' | 'plaintext-only'
     dir?: string
     draggable?: boolean

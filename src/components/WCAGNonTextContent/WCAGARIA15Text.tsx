@@ -1,9 +1,8 @@
-import React, { CSSProperties } from 'react'
+import React from 'react'
 import { GlobalAttributes } from '../interfaces/GlobalAttributes'
 
 interface WCAGARIA15Props {
     accessibleId: string
-    additionalStyling?: CSSProperties
     pData?: Omit<GlobalAttributes, 'id'>
     role?:
         | 'alert'
@@ -72,7 +71,6 @@ interface WCAGARIA15Props {
 
 const WCAGARIA15Text: React.FC<WCAGARIA15Props> = ({
     accessibleId,
-    additionalStyling,
     className,
     pData,
     role,
@@ -81,7 +79,7 @@ const WCAGARIA15Text: React.FC<WCAGARIA15Props> = ({
     return (
         <p
             id={accessibleId}
-            style={{ ...additionalStyling }}
+            style={{ ...pData?.additionalStyling }}
             className={className}
             role={role}
             accessKey={pData?.accesskey}

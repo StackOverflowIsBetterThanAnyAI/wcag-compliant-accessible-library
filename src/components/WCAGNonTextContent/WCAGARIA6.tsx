@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 import { GlobalAttributes } from '../interfaces/GlobalAttributes'
 
@@ -66,7 +66,6 @@ interface WCAGARIA6Props {
         | 'tooltip'
         | 'treegrid'
     additionalAriaAttributes?: Omit<WAIARIAAttributes, 'label' | 'labelledby'>
-    additionalStyling?: CSSProperties
     className?: string
     divData?: GlobalAttributes
     children: ReactNode
@@ -74,7 +73,6 @@ interface WCAGARIA6Props {
 
 const WCAGARIA6: React.FC<WCAGARIA6Props> = ({
     additionalAriaAttributes,
-    additionalStyling,
     ariaLabel,
     className,
     divData,
@@ -85,7 +83,7 @@ const WCAGARIA6: React.FC<WCAGARIA6Props> = ({
         <div
             role={role}
             aria-label={ariaLabel}
-            style={{ ...additionalStyling }}
+            style={{ ...divData?.additionalStyling }}
             className={className}
             accessKey={divData?.accesskey}
             contentEditable={divData?.contenteditable}

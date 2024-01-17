@@ -1,8 +1,7 @@
-import React, { CSSProperties, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import { GlobalAttributes } from '../interfaces/GlobalAttributes'
 
 interface WCAGARIA12Props extends GlobalAttributes {
-    additionalStyling?: CSSProperties
     ariaLevel?: number
     children: ReactNode
     className?: string
@@ -10,7 +9,6 @@ interface WCAGARIA12Props extends GlobalAttributes {
 }
 
 const WCAGARIA12: React.FC<WCAGARIA12Props> = ({
-    additionalStyling,
     ariaLevel,
     className,
     divData,
@@ -20,7 +18,7 @@ const WCAGARIA12: React.FC<WCAGARIA12Props> = ({
         <div
             role="heading"
             aria-level={ariaLevel}
-            style={{ ...additionalStyling }}
+            style={{ ...divData?.additionalStyling }}
             className={className}
             accessKey={divData?.accesskey}
             contentEditable={divData?.contenteditable}

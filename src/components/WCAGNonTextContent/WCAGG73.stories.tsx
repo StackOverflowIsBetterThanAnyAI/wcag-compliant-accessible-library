@@ -51,3 +51,60 @@ export const Chart: StoryG73 = {
         </>
     ),
 }
+
+export const ChartWithAdditionalAttributes: StoryG73 = {
+    render: () => (
+        <>
+            <WCAGG73
+                buttonText="Go to the long description."
+                ownId="chart"
+                childId="long-description1"
+                shortText={
+                    <p
+                        style={{
+                            backgroundColor: 'black',
+                            color: 'white',
+                            padding: '5px',
+                            margin: '5px',
+                        }}
+                    >
+                        Short description.
+                    </p>
+                }
+            >
+                <div>
+                    <img src={starImage} height={50} width={50} />
+                    <img src={starImage} height={50} width={50} />
+                    <img src={starImage} height={50} width={50} />
+                </div>
+                <div>
+                    <img src={starImage} height={50} width={50} />
+                    <img src={starImage} height={50} width={50} />
+                    <img src={starImage} height={50} width={50} />
+                </div>
+            </WCAGG73>
+            <WCAGG73Text
+                buttonText="Go back to the stars."
+                ownId="long-description"
+                parentId="chart"
+                linkData={{
+                    additionalStyling: {
+                        backgroundColor: 'black',
+                        color: 'white',
+                        padding: '2px 32px',
+                        borderRadius: '8px',
+                    },
+                }}
+                role="img"
+            >
+                This is a very long description
+                <br />
+                of six happy stars which are
+                <br />
+                placed in two rows
+                <br />
+                with three stars each.
+            </WCAGG73Text>
+        </>
+    ),
+}

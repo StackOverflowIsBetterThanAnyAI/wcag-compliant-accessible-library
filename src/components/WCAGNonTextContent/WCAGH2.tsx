@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import { LinkAttributes } from '../interfaces/LinkAttributes'
 import { ImageAttributes } from '../interfaces/ImageAttributes'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
@@ -6,7 +6,6 @@ import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 interface WCAGH2Props {
     imageData: ImageAttributes
     link: string
-    additionalStyling?: CSSProperties
     altText?: string // It may only be missing if the text of the anchor can clearly describe the link
     classNameImage?: string
     classNameLink?: string
@@ -28,6 +27,8 @@ interface WCAGH2Props {
         | 'treeitem'
     additionalAriaAttributes?: Omit<
         WAIARIAAttributes,
+        | 'braillelabel'
+        | 'brailleroledescription'
         | 'label'
         | 'labelledby'
         | 'activedescendant'
@@ -53,7 +54,6 @@ interface WCAGH2Props {
 
 const WCAGH2: React.FC<WCAGH2Props> = ({
     additionalAriaAttributes,
-    additionalStyling,
     altText,
     classNameImage,
     classNameLink,
@@ -67,10 +67,10 @@ const WCAGH2: React.FC<WCAGH2Props> = ({
 }) => {
     return (
         <a
-            href={link}
-            style={{ ...additionalStyling }}
+            href={linkData?.disabled ? undefined : link}
+            style={{ ...linkData?.additionalStyling }}
             className={classNameLink}
-            onClick={() => onClickFunction}
+            onClick={() => onClickFunction && onClickFunction()}
             role={role}
             download={linkData?.download}
             hrefLang={linkData?.hreflang}
@@ -81,10 +81,6 @@ const WCAGH2: React.FC<WCAGH2Props> = ({
             target={linkData?.target}
             type={linkData?.type}
             aria-atomic={additionalAriaAttributes?.atomic}
-            aria-braillelabel={additionalAriaAttributes?.braillelabel}
-            aria-brailleroledescription={
-                additionalAriaAttributes?.brailleroledescription
-            }
             aria-busy={additionalAriaAttributes?.busy}
             aria-checked={
                 role === 'checkbox' ||

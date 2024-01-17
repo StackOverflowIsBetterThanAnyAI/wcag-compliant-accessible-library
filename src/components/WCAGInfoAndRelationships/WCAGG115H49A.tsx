@@ -3,6 +3,7 @@ import React, { CSSProperties, ReactNode } from 'react'
 interface WCAGG115H49Props {
     additionalStyling?: CSSProperties
     linkData: {
+        disabled?: boolean
         download?: string
         href: string
         hreflang?: string
@@ -11,6 +12,7 @@ interface WCAGG115H49Props {
         target?: '_blank' | '_parent' | '_self' | '_top'
         type?: string
     }
+    onClickFunction?: () => void
     className?: string
     children: ReactNode
 }
@@ -19,11 +21,13 @@ const G115H49A: React.FC<WCAGG115H49Props> = ({
     additionalStyling,
     className,
     linkData,
+    onClickFunction,
     children,
 }) => {
     return (
         <a
-            href={linkData.href}
+            href={linkData?.disabled ? undefined : linkData.href}
+            onClick={() => onClickFunction && onClickFunction()}
             download={linkData?.download}
             hrefLang={linkData?.hreflang}
             ping={linkData?.ping}

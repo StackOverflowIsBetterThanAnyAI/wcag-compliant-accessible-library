@@ -6,11 +6,13 @@ interface WCAGG117H97H101Props {
     ariaLabelledById?: string
     className?: string
     listData: {
+        disabled?: boolean
         displayedName: ReactNode
         href: string
         referrerpolicy?: React.HTMLAttributeReferrerPolicy
         target?: '_blank' | '_parent' | '_self' | '_top'
         new?: boolean
+        onClickFunction?: () => void
     }[]
     headline?: string
     children?: ReactNode
@@ -39,7 +41,10 @@ const WCAGG117H97H101: React.FC<WCAGG117H97H101Props> = ({
                 {listData?.map((data, index) => (
                     <li key={index}>
                         <a
-                            href={data.href}
+                            href={data?.disabled ? undefined : data.href}
+                            onClick={() =>
+                                data?.onClickFunction && data?.onClickFunction()
+                            }
                             referrerPolicy={data?.referrerpolicy}
                             target={data?.target}
                         >

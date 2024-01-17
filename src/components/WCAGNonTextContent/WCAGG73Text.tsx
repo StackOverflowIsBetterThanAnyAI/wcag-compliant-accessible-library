@@ -3,7 +3,6 @@ import { GlobalAttributes } from '../interfaces/GlobalAttributes'
 import { LinkAttributes } from '../interfaces/LinkAttributes'
 
 interface WCAGG73Props extends GlobalAttributes {
-    additionalStyling?: React.CSSProperties
     buttonText: ReactNode
     classNameDiv?: string
     classNameLink?: string
@@ -12,6 +11,7 @@ interface WCAGG73Props extends GlobalAttributes {
     parentId: string
     divData?: GlobalAttributes
     linkData?: Omit<LinkAttributes, 'href' | 'download' | 'hreflang'>
+    onClickFunction?: () => void
     role?:
         | 'alert'
         | 'alertdialog'
@@ -77,13 +77,13 @@ interface WCAGG73Props extends GlobalAttributes {
 }
 
 const WCAGG73Text: React.FC<WCAGG73Props> = ({
-    additionalStyling,
     buttonText,
     classNameDiv,
     classNameLink,
     divData,
     externalLink,
     linkData,
+    onClickFunction,
     ownId,
     parentId,
     role,
@@ -92,7 +92,7 @@ const WCAGG73Text: React.FC<WCAGG73Props> = ({
     return (
         <div
             id={ownId}
-            style={{ ...additionalStyling }}
+            style={{ ...divData?.additionalStyling }}
             className={classNameDiv}
             role={role}
             accessKey={divData?.accesskey}
@@ -111,11 +111,13 @@ const WCAGG73Text: React.FC<WCAGG73Props> = ({
             <p>
                 <a
                     href={externalLink ? parentId : `#${parentId}`}
+                    onClick={() => onClickFunction && onClickFunction()}
                     className={classNameLink}
                     media={linkData?.media}
                     ping={linkData?.ping}
                     referrerPolicy={linkData?.referrerpolicy}
                     rel={linkData?.rel}
+                    style={{ ...linkData?.additionalStyling }}
                     target={linkData?.target}
                     type={linkData?.type}
                 >

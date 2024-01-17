@@ -29,6 +29,8 @@ interface WCAGARIA15Props {
             | 'labelledby'
             | 'activedescendant'
             | 'autocomplete'
+            | 'braillelabel'
+            | 'brailleroledescription'
             | 'colcount'
             | 'colindex'
             | 'colindextext'
@@ -72,12 +74,6 @@ const WCAGARIA15: React.FC<WCAGARIA15Props> = ({
                         ...data?.additionalStyling,
                     }}
                     aria-atomic={data?.additionalAriaAttributes?.atomic}
-                    aria-braillelabel={
-                        data?.additionalAriaAttributes?.braillelabel
-                    }
-                    aria-brailleroledescription={
-                        data?.additionalAriaAttributes?.brailleroledescription
-                    }
                     aria-busy={data?.additionalAriaAttributes?.busy}
                     aria-checked={
                         data?.role === 'checkbox' ||

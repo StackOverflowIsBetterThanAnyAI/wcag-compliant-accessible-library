@@ -14,13 +14,28 @@ type StoryARIA2H36 = StoryObj<typeof WCAGARIA2H36>
 
 // WCAGNonTextComponentARIA2H36
 
-export const Image: StoryARIA2H36 = {
+export const ButtonImage: StoryARIA2H36 = {
     render: () => (
         <WCAGARIA2H36
             altText="Search button."
             src={starImage}
-            height={50}
-            width={50}
+            additionalStyling={{ height: 50, width: 50 }}
+            role="button"
+            inputData={{ required: false }}
+            onClickFunction={() => console.log('click')}
+        />
+    ),
+}
+
+export const LinkImage: StoryARIA2H36 = {
+    render: () => (
+        <WCAGARIA2H36
+            altText="Go back to the main content."
+            src={starImage}
+            additionalStyling={{ height: 50, width: 50 }}
+            role="link"
+            inputData={{ required: false }}
+            onClickFunction={() => console.log('click')}
         />
     ),
 }

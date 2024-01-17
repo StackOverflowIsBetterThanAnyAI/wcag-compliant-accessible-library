@@ -17,7 +17,7 @@ type StoryG196 = StoryObj<typeof WCAGG196>
 export const ImageWithOneStar: StoryG196 = {
     render: () => (
         <WCAGG196
-            altText="four out of five"
+            altText="One happy star."
             imageData={[{ imageSource: starImage }]}
         />
     ),
@@ -26,7 +26,7 @@ export const ImageWithOneStar: StoryG196 = {
 export const ImageWithOneStarAndSize: StoryG196 = {
     render: () => (
         <WCAGG196
-            altText="four out of five"
+            altText="One happy star."
             imageData={[
                 { imageSource: starImage, height: 200, width: '200px' },
             ]}
@@ -37,7 +37,7 @@ export const ImageWithOneStarAndSize: StoryG196 = {
 export const ImageWithAdditionalAttributes: StoryG196 = {
     render: () => (
         <WCAGG196
-            altText="four out of five"
+            altText="Five happy stars."
             imageData={[
                 {
                     imageSource: starImage,

@@ -15,10 +15,14 @@ type StoryARIA10 = StoryObj<typeof WCAGARIA10>
 
 // WCAGNonTextComponentARIA10
 
-export const ImagesAsChildren: StoryARIA10 = {
+export const RoleImageWithOneText: StoryARIA10 = {
     render: () => (
         <>
-            <WCAGARIA10 role="img" ariaLabelledById="star-id1">
+            <WCAGARIA10
+                role="img"
+                ariaLabelledById="star-id1"
+                additionalStyling={{ margin: '5px 10px' }}
+            >
                 <>
                     <img src={starImage} alt="" height={50} width={50} />
                     <img src={starImage} alt="" height={50} width={50} />
@@ -28,17 +32,21 @@ export const ImagesAsChildren: StoryARIA10 = {
                 </>
             </WCAGARIA10>
             <WCAGARIA10Text ariaLabelledById="star-id1">
-                five out of five stars
+                This is a short text alternative of five happy stars in a
+                horizontal line looking at you.
             </WCAGARIA10Text>
         </>
     ),
 }
 
-export const TextContentIsAReactNode: StoryARIA10 = {
+export const RoleImageWithReactNodeAsText: StoryARIA10 = {
     render: () => (
         <>
             <WCAGARIA10Text ariaLabelledById="star-id1">
-                <span>five out of five stars</span>
+                <span style={{ color: 'red' }}>
+                    This is a short text alternative of five happy stars in a
+                    horizontal line looking at you.
+                </span>
             </WCAGARIA10Text>
             <WCAGARIA10 role="img" ariaLabelledById="star-id1 star-id2">
                 <>
@@ -50,7 +58,10 @@ export const TextContentIsAReactNode: StoryARIA10 = {
                 </>
             </WCAGARIA10>
             <WCAGARIA10Text ariaLabelledById="star-id2">
-                <div>five out of five stars</div>
+                <div style={{ margin: '5px 25px' }}>
+                    This is a short text alternative of five happy stars in a
+                    horizontal line looking at you.
+                </div>
             </WCAGARIA10Text>
         </>
     ),

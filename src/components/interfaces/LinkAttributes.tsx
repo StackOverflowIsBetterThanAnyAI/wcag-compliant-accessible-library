@@ -1,4 +1,8 @@
+import { CSSProperties } from 'react'
+
 export interface LinkAttributes {
+    additionalStyling?: CSSProperties
+    disabled?: boolean
     download?: string
     hreflang?: string
     media?: string

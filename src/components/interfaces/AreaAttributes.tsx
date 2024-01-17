@@ -1,4 +1,7 @@
+import { CSSProperties } from 'react'
+
 export interface AreaAttributes {
+    additionalStyling?: CSSProperties
     altText?: string // May only be omitted if ypu are creating a hollow shape
     coords: string
     download?: string

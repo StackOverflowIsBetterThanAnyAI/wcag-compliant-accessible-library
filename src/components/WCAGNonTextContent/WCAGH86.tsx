@@ -1,10 +1,9 @@
-import React, { CSSProperties, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import { GlobalAttributes } from '../interfaces/GlobalAttributes'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
 interface WCAGH86Props {
     accessibleText: string
-    additionalStyling?: CSSProperties
     className?: string
     elementData?: GlobalAttributes
     element: 'span' | 'div' | 'abbr'
@@ -53,7 +52,6 @@ interface WCAGH86Props {
 const WCAGH86: React.FC<WCAGH86Props> = ({
     accessibleText,
     additionalAriaAttributes,
-    additionalStyling,
     className,
     elementData,
     element,
@@ -66,7 +64,7 @@ const WCAGH86: React.FC<WCAGH86Props> = ({
                 <span
                     aria-label={accessibleText}
                     role={role}
-                    style={{ ...additionalStyling }}
+                    style={{ ...elementData?.additionalStyling }}
                     className={className}
                     accessKey={elementData?.accesskey}
                     contentEditable={elementData?.contenteditable}
@@ -108,7 +106,7 @@ const WCAGH86: React.FC<WCAGH86Props> = ({
                 <div
                     aria-label={accessibleText}
                     role={role}
-                    style={{ ...additionalStyling }}
+                    style={{ ...elementData?.additionalStyling }}
                     className={className}
                     accessKey={elementData?.accesskey}
                     contentEditable={elementData?.contenteditable}
@@ -149,7 +147,7 @@ const WCAGH86: React.FC<WCAGH86Props> = ({
             return (
                 <abbr
                     title={accessibleText}
-                    style={{ ...additionalStyling }}
+                    style={{ ...elementData?.additionalStyling }}
                     className={className}
                     role={role}
                     accessKey={elementData?.accesskey}

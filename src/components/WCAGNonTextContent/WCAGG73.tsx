@@ -4,8 +4,15 @@ import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 import { LinkAttributes } from '../interfaces/LinkAttributes'
 
 interface WCAGG73Props extends GlobalAttributes {
-    additionalAriaAttributes?: WAIARIAAttributes
-    additionalStyling?: React.CSSProperties
+    additionalAriaAttributes?: Omit<
+        WAIARIAAttributes,
+        | 'braillelabel'
+        | 'brailleroledescription'
+        | 'colindex'
+        | 'colindextext'
+        | 'rowindex'
+        | 'rowindextext'
+    >
     buttonText: ReactNode
     childId: string
     divData?: GlobalAttributes
@@ -13,6 +20,7 @@ interface WCAGG73Props extends GlobalAttributes {
     classNameLink?: string
     externalLink?: boolean
     linkData?: Omit<LinkAttributes, 'href' | 'download' | 'hreflang'>
+    onClickFunction?: () => void
     ownId: string
     role?:
         | 'alert'
@@ -81,7 +89,6 @@ interface WCAGG73Props extends GlobalAttributes {
 
 const WCAGG73: React.FC<WCAGG73Props> = ({
     additionalAriaAttributes,
-    additionalStyling,
     buttonText,
     childId,
     classNameDiv,
@@ -89,6 +96,7 @@ const WCAGG73: React.FC<WCAGG73Props> = ({
     divData,
     externalLink,
     linkData,
+    onClickFunction,
     ownId,
     role,
     shortText,
@@ -98,7 +106,7 @@ const WCAGG73: React.FC<WCAGG73Props> = ({
         <div
             id={ownId}
             aria-describedby={childId}
-            style={{ ...additionalStyling }}
+            style={{ ...divData?.additionalStyling }}
             className={classNameDiv}
             role={role}
             accessKey={divData?.accesskey}
@@ -128,10 +136,6 @@ const WCAGG73: React.FC<WCAGG73Props> = ({
                     ? additionalAriaAttributes?.autocomplete
                     : undefined
             }
-            aria-braillelabel={additionalAriaAttributes?.braillelabel}
-            aria-brailleroledescription={
-                additionalAriaAttributes?.brailleroledescription
-            }
             aria-busy={additionalAriaAttributes?.busy}
             aria-checked={
                 role === 'checkbox' ||
@@ -146,22 +150,6 @@ const WCAGG73: React.FC<WCAGG73Props> = ({
             aria-colcount={
                 role === 'grid' || role === 'table' || role === 'treegrid'
                     ? additionalAriaAttributes?.colcount
-                    : undefined
-            }
-            aria-colindex={
-                role === 'cell' ||
-                role === 'columnheader' ||
-                role === 'gridcell' ||
-                role === 'row' ||
-                role === 'rowheader'
-                    ? additionalAriaAttributes?.colindex
-                    : undefined
-            }
-            aria-colindextext={
-                role === 'cell' ||
-                role === 'columnheader' ||
-                role === 'rowheader'
-                    ? additionalAriaAttributes?.colindextext
                     : undefined
             }
             aria-colspan={
@@ -390,24 +378,6 @@ const WCAGG73: React.FC<WCAGG73Props> = ({
                     ? additionalAriaAttributes?.rowcount
                     : undefined
             }
-            aria-rowindex={
-                role === 'cell' ||
-                role === 'row' ||
-                role === 'columnheader' ||
-                role === 'gridcell' ||
-                role === 'rowheader'
-                    ? additionalAriaAttributes?.rowindex
-                    : undefined
-            }
-            aria-rowindextext={
-                role === 'cell' ||
-                role === 'row' ||
-                role === 'columnheader' ||
-                role === 'gridcell' ||
-                role === 'rowheader'
-                    ? additionalAriaAttributes?.rowindextext
-                    : undefined
-            }
             aria-rowspan={
                 role === 'cell' ||
                 role === 'columnheader' ||
@@ -483,11 +453,13 @@ const WCAGG73: React.FC<WCAGG73Props> = ({
             {children}
             <a
                 href={externalLink ? childId : `#${childId}`}
+                onClick={() => onClickFunction && onClickFunction()}
                 className={classNameLink}
                 media={linkData?.media}
                 ping={linkData?.ping}
                 referrerPolicy={linkData?.referrerpolicy}
                 rel={linkData?.rel}
+                style={{ ...linkData?.additionalStyling }}
                 target={linkData?.target}
                 type={linkData?.type}
             >

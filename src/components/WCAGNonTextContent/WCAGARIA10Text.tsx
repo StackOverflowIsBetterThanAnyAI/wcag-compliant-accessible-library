@@ -1,8 +1,7 @@
-import React, { CSSProperties, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import { GlobalAttributes } from '../interfaces/GlobalAttributes'
 
 interface WCAGARIA10Props extends GlobalAttributes {
-    additionalStyling?: CSSProperties
     ariaLabelledById: string
     className?: string
     divData?: GlobalAttributes
@@ -72,7 +71,6 @@ interface WCAGARIA10Props extends GlobalAttributes {
 
 const WCAGARIA10Text: React.FC<WCAGARIA10Props> = ({
     ariaLabelledById,
-    additionalStyling,
     className,
     divData,
     role,
@@ -81,7 +79,7 @@ const WCAGARIA10Text: React.FC<WCAGARIA10Props> = ({
     return (
         <div
             id={ariaLabelledById}
-            style={{ ...additionalStyling }}
+            style={{ ...divData?.additionalStyling }}
             className={className}
             role={role}
             accessKey={divData?.accesskey}

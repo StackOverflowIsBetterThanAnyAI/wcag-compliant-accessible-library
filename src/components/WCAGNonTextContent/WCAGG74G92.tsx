@@ -4,8 +4,15 @@ import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
 interface WCAGG74G92Props extends GlobalAttributes {
     accessibleIds: string
-    additionalAriaAttributes?: WAIARIAAttributes
-    additionalStyling?: React.CSSProperties
+    additionalAriaAttributes?: Omit<
+        WAIARIAAttributes,
+        | 'braillelabel'
+        | 'brailleroledescription'
+        | 'colindex'
+        | 'colindextext'
+        | 'rowindex'
+        | 'rowindextext'
+    >
     className?: string
     shortText: ReactNode
     divData?: GlobalAttributes
@@ -76,7 +83,6 @@ interface WCAGG74G92Props extends GlobalAttributes {
 const WCAGG74G92: React.FC<WCAGG74G92Props> = ({
     accessibleIds,
     additionalAriaAttributes,
-    additionalStyling,
     className,
     divData,
     role,
@@ -86,7 +92,7 @@ const WCAGG74G92: React.FC<WCAGG74G92Props> = ({
     return (
         <div
             aria-describedby={accessibleIds}
-            style={{ ...additionalStyling }}
+            style={{ ...divData?.additionalStyling }}
             className={className}
             role={role}
             accessKey={divData?.accesskey}
@@ -117,10 +123,6 @@ const WCAGG74G92: React.FC<WCAGG74G92Props> = ({
                     ? additionalAriaAttributes?.autocomplete
                     : undefined
             }
-            aria-braillelabel={additionalAriaAttributes?.braillelabel}
-            aria-brailleroledescription={
-                additionalAriaAttributes?.brailleroledescription
-            }
             aria-busy={additionalAriaAttributes?.busy}
             aria-checked={
                 role === 'checkbox' ||
@@ -135,22 +137,6 @@ const WCAGG74G92: React.FC<WCAGG74G92Props> = ({
             aria-colcount={
                 role === 'grid' || role === 'table' || role === 'treegrid'
                     ? additionalAriaAttributes?.colcount
-                    : undefined
-            }
-            aria-colindex={
-                role === 'cell' ||
-                role === 'columnheader' ||
-                role === 'gridcell' ||
-                role === 'row' ||
-                role === 'rowheader'
-                    ? additionalAriaAttributes?.colindex
-                    : undefined
-            }
-            aria-colindextext={
-                role === 'cell' ||
-                role === 'columnheader' ||
-                role === 'rowheader'
-                    ? additionalAriaAttributes?.colindextext
                     : undefined
             }
             aria-colspan={
@@ -377,24 +363,6 @@ const WCAGG74G92: React.FC<WCAGG74G92Props> = ({
             aria-rowcount={
                 role === 'table' || role === 'grid' || role === 'treegrid'
                     ? additionalAriaAttributes?.rowcount
-                    : undefined
-            }
-            aria-rowindex={
-                role === 'cell' ||
-                role === 'row' ||
-                role === 'columnheader' ||
-                role === 'gridcell' ||
-                role === 'rowheader'
-                    ? additionalAriaAttributes?.rowindex
-                    : undefined
-            }
-            aria-rowindextext={
-                role === 'cell' ||
-                role === 'row' ||
-                role === 'columnheader' ||
-                role === 'gridcell' ||
-                role === 'rowheader'
-                    ? additionalAriaAttributes?.rowindextext
                     : undefined
             }
             aria-rowspan={

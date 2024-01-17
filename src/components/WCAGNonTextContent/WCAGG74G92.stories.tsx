@@ -35,11 +35,14 @@ export const Chart: StoryG74G92 = {
             </WCAGG74G92>
             <h3>Caption that devides both descriptions</h3>
             <WCAGG74G92Text accessibleId="p2">
-                This is a very long description of the Chart.
+                This is a very long description of the Chart containing three
+                happy stars.
                 <br />
-                This is a very long description of the Chart.
+                This is a very long description of the Chart containing three
+                happy stars.
                 <br />
-                This is a very long description of the Chart.
+                This is a very long description of the Chart containing three
+                happy stars.
                 <br />
             </WCAGG74G92Text>
         </>

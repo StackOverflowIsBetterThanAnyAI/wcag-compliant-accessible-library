@@ -1,9 +1,12 @@
+import { CSSProperties } from 'react'
+
 export interface InputAttributes {
     accept?: string
+    additionalStyling?: CSSProperties
     autocapitalize?: 'on' | 'off' | 'words' | 'characters'
     autocomplete?: 'on' | 'off'
     autofocus?: boolean
-    capture?: string
+    capture?: boolean | 'user' | 'environment' | undefined
     checked?: boolean
     dirname?: string
     disabled?: boolean

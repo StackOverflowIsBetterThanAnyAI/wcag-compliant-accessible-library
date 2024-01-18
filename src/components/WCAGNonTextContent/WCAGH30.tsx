@@ -28,6 +28,8 @@ interface WCAGH30Props {
         | 'treeitem'
     additionalAriaAttributes?: Omit<
         WAIARIAAttributes,
+        | 'braillelabel'
+        | 'brailleroledescription'
         | 'label'
         | 'labelledby'
         | 'activedescendant'
@@ -79,10 +81,6 @@ const WCAGH30: React.FC<WCAGH30Props> = ({
             target={linkData?.target}
             type={linkData?.type}
             aria-atomic={additionalAriaAttributes?.atomic}
-            aria-braillelabel={additionalAriaAttributes?.braillelabel}
-            aria-brailleroledescription={
-                additionalAriaAttributes?.brailleroledescription
-            }
             aria-busy={additionalAriaAttributes?.busy}
             aria-checked={
                 role === 'checkbox' ||

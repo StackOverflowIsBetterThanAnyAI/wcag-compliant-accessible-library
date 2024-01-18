@@ -52,13 +52,11 @@ export const AnchorWithMultipleImages: StoryH30 = {
                     imageSource: starImage,
                     height: 75,
                     width: 75,
-                    altText: 'Home Page',
                 },
                 {
                     imageSource: starImage,
                     height: 75,
                     width: 75,
-                    altText: 'Home Page',
                 },
             ]}
             link="#"

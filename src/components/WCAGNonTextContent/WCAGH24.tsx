@@ -4,7 +4,7 @@ import { AreaAttributes } from '../interfaces/AreaAttributes'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
 interface WCAGH24Props {
-    areaData: AreaAttributes[]
+    areaData: (AreaAttributes & { onClickFunction?: () => void })[]
     imageData: ImageAttributes & { altText: string }
     mapName: string
     classNameImage?: string
@@ -27,6 +27,8 @@ interface WCAGH24Props {
         | 'treeitem'
     additionalAriaAttributes?: Omit<
         WAIARIAAttributes,
+        | 'braillelabel'
+        | 'brailleroledescription'
         | 'label'
         | 'labelledby'
         | 'activedescendant'
@@ -74,10 +76,6 @@ const WCAGH24: React.FC<WCAGH24Props> = ({
                     ...imageData?.additionalStyling,
                 }}
                 aria-atomic={additionalAriaAttributes?.atomic}
-                aria-braillelabel={additionalAriaAttributes?.braillelabel}
-                aria-brailleroledescription={
-                    additionalAriaAttributes?.brailleroledescription
-                }
                 aria-busy={additionalAriaAttributes?.busy}
                 aria-checked={
                     role === 'checkbox' ||
@@ -238,6 +236,9 @@ const WCAGH24: React.FC<WCAGH24Props> = ({
                     <area
                         key={dataIndex}
                         alt={data?.altText ?? ''}
+                        onClick={() =>
+                            data?.onClickFunction && data.onClickFunction()
+                        }
                         coords={data.coords}
                         download={data?.download}
                         referrerPolicy={data?.referrerpolicy}

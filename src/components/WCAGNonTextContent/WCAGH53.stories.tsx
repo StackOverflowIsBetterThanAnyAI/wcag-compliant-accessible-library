@@ -24,7 +24,7 @@ export const ObjectWidthClassIdAndParagraph: StoryH53 = {
 
 export const ObjectWidthClassIdAndAltText: StoryH53 = {
     render: () => (
-        <WCAGH53 objectData={{ classId: 'id' }}>
+        <WCAGH53 objectData={{ classId: 'id' }} role="img">
             <img src={starImage} alt="A happy star." height={75} width={75} />
         </WCAGH53>
     ),

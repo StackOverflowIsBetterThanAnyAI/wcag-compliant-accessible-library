@@ -29,6 +29,21 @@ export const Text: StoryH44 = {
     ),
 }
 
+export const TextArea: StoryH44 = {
+    render: () => (
+        <WCAGH44
+            inputData={[
+                {
+                    name: 'firstname',
+                    id: 'firstname',
+                    labelText: 'First name:',
+                },
+            ]}
+            inputType="textarea"
+        />
+    ),
+}
+
 export const Checkbox: StoryH44 = {
     render: () => (
         <WCAGH44

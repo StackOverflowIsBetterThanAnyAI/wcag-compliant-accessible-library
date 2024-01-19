@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ChangeEvent, useState } from 'react'
 import { InputAttributes } from '../interfaces/InputAttributes'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
@@ -75,6 +75,18 @@ const WCAGARIA2H65: React.FC<WCAGARIA2H65Props> = ({
     role,
     title,
 }) => {
+    const [inputValue, setInputValue] = useState<string | number | undefined>(
+        inputData?.value || ''
+    )
+
+    const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const newValue = event.target.value
+        setInputValue(newValue)
+        if (onClickFunction) {
+            onClickFunction()
+        }
+    }
+
     return (
         <input
             role={
@@ -92,7 +104,7 @@ const WCAGARIA2H65: React.FC<WCAGARIA2H65Props> = ({
                     role === 'switch') &&
                 inputData.required
             }
-            onClick={() => onClickFunction && onClickFunction()}
+            onChange={handleInputChange}
             accept={inputData?.accept}
             alt={inputData?.altText}
             autoCapitalize={inputData?.autocapitalize}
@@ -125,7 +137,7 @@ const WCAGARIA2H65: React.FC<WCAGARIA2H65Props> = ({
             src={inputData?.src}
             step={inputData?.step}
             title={title}
-            value={inputData?.value}
+            value={inputValue}
             style={{
                 height: inputData?.height,
                 width: inputData?.width,

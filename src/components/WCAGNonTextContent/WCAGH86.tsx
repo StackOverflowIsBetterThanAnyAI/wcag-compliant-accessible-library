@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { GlobalAttributes } from '../interfaces/GlobalAttributes'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
@@ -12,6 +12,8 @@ interface WCAGH86Props {
         WAIARIAAttributes,
         | 'activedescendant'
         | 'autocomplete'
+        | 'braillelabel'
+        | 'brailleroledescription'
         | 'checked'
         | 'colcount'
         | 'colindex'
@@ -46,7 +48,7 @@ interface WCAGH86Props {
         | 'valuenow'
         | 'valuetext'
     >
-    children: ReactNode
+    children: string
 }
 
 const WCAGH86: React.FC<WCAGH86Props> = ({
@@ -79,10 +81,6 @@ const WCAGH86: React.FC<WCAGH86Props> = ({
                     title={elementData?.title}
                     translate={elementData?.translate}
                     aria-atomic={additionalAriaAttributes?.atomic}
-                    aria-braillelabel={additionalAriaAttributes?.braillelabel}
-                    aria-brailleroledescription={
-                        additionalAriaAttributes?.brailleroledescription
-                    }
                     aria-busy={additionalAriaAttributes?.busy}
                     aria-controls={additionalAriaAttributes?.controls}
                     aria-current={additionalAriaAttributes?.current}
@@ -121,10 +119,6 @@ const WCAGH86: React.FC<WCAGH86Props> = ({
                     title={elementData?.title}
                     translate={elementData?.translate}
                     aria-atomic={additionalAriaAttributes?.atomic}
-                    aria-braillelabel={additionalAriaAttributes?.braillelabel}
-                    aria-brailleroledescription={
-                        additionalAriaAttributes?.brailleroledescription
-                    }
                     aria-busy={additionalAriaAttributes?.busy}
                     aria-controls={additionalAriaAttributes?.controls}
                     aria-current={additionalAriaAttributes?.current}
@@ -162,10 +156,6 @@ const WCAGH86: React.FC<WCAGH86Props> = ({
                     tabIndex={elementData?.tabindex}
                     translate={elementData?.translate}
                     aria-atomic={additionalAriaAttributes?.atomic}
-                    aria-braillelabel={additionalAriaAttributes?.braillelabel}
-                    aria-brailleroledescription={
-                        additionalAriaAttributes?.brailleroledescription
-                    }
                     aria-busy={additionalAriaAttributes?.busy}
                     aria-controls={additionalAriaAttributes?.controls}
                     aria-current={additionalAriaAttributes?.current}

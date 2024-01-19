@@ -33,6 +33,7 @@ export const NumberInput: StoryARIA2H65 = {
                 placeholder: '0',
                 min: '0',
                 max: '9',
+                value: '5',
             }}
             title="Enter any number from zero to nine."
         />

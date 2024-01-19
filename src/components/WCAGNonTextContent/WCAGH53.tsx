@@ -9,6 +9,8 @@ interface WCAGH53Props {
     additionalAriaAttributes?: Omit<
         WAIARIAAttributes,
         | 'autocomplete'
+        | 'braillelabel'
+        | 'brailleroledescription'
         | 'checked'
         | 'colcount'
         | 'colindex'
@@ -67,10 +69,6 @@ const WCAGH53: React.FC<WCAGH53Props> = ({
                     : undefined
             }
             aria-atomic={additionalAriaAttributes?.atomic}
-            aria-braillelabel={additionalAriaAttributes?.braillelabel}
-            aria-brailleroledescription={
-                additionalAriaAttributes?.brailleroledescription
-            }
             aria-busy={additionalAriaAttributes?.busy}
             aria-controls={additionalAriaAttributes?.controls}
             aria-current={additionalAriaAttributes?.current}

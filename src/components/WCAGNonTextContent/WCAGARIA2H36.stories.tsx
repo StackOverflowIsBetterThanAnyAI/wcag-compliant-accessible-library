@@ -19,9 +19,11 @@ export const ButtonImage: StoryARIA2H36 = {
         <WCAGARIA2H36
             altText="Search button."
             src={starImage}
-            additionalStyling={{ height: 50, width: 50 }}
             role="button"
-            inputData={{ required: false }}
+            inputData={{
+                required: false,
+                additionalStyling: { height: 50, width: 50 },
+            }}
             onClickFunction={() => console.log('click')}
         />
     ),
@@ -32,9 +34,11 @@ export const LinkImage: StoryARIA2H36 = {
         <WCAGARIA2H36
             altText="Go back to the main content."
             src={starImage}
-            additionalStyling={{ height: 50, width: 50 }}
             role="link"
-            inputData={{ required: false }}
+            inputData={{
+                required: false,
+                additionalStyling: { height: 50, width: 50 },
+            }}
             onClickFunction={() => console.log('click')}
         />
     ),

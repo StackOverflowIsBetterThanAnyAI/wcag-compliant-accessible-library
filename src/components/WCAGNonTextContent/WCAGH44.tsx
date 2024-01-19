@@ -1,47 +1,18 @@
 import React, { ReactNode, useState } from 'react'
+import { InputAttributes } from '../interfaces/InputAttributes'
 
 interface WCAGH44Props {
-    inputData: {
+    inputData: (Omit<InputAttributes, 'id' | 'name' | 'type'> & {
         id: string
+    } & {
         labelText: ReactNode
-        name: string
-        title?: string
-        accept?: string
-        altText?: string
-        autocomplete?: 'on' | 'off'
-        autofocus?: boolean
-        checked?: boolean
+    } & { name: string } & { title?: string } & { altText?: string } & {
         classNameLabel?: string
-        classNameInput?: string
-        cols?: number
-        dirname?: string
-        disabled?: boolean
-        form?: string
-        formaction?: string
-        formmethod?: 'get' | 'post'
-        formnovalidate?: boolean
-        formtarget?: string
-        height?: number | string
-        list?: string
-        max?: string
-        maxlength?: number
-        min?: string
-        minlength?: number
-        multiple?: boolean
-        pattern?: string
-        placeholder?: string
-        readonly?: boolean
-        required?: boolean
+    } & { classNameInput?: string } & { cols?: number } & {
         selectoptions?: ReactNode
-        rows?: number
-        size?: number
-        src?: string
-        step?: number
-        textareaText?: ReactNode
-        value?: string
-        width?: number | string
+    } & { rows?: number } & { src?: string } & { textareaText?: ReactNode } & {
         wrap?: 'hard' | 'soft'
-    }[]
+    })[]
     inputType:
         | 'checkbox'
         | 'color'
@@ -62,12 +33,10 @@ interface WCAGH44Props {
         | 'week'
         | 'select'
         | 'textarea'
-    classNameLabel?: string
     onClickFunction?: () => void
 }
 
 const WCAGH44: React.FC<WCAGH44Props> = ({
-    classNameLabel,
     inputData,
     inputType,
     onClickFunction,
@@ -97,39 +66,59 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                         <label
                             htmlFor={data.id}
                             hidden={false}
-                            className={classNameLabel}
+                            className={data?.classNameLabel}
                         >
                             {data.labelText}
                         </label>
                     )}
                     {inputType === 'select' && (
                         <select
+                            onChange={() => handleChange(dataIndex, inputType)}
+                            autoCapitalize={data?.autocapitalize}
+                            autoComplete={data?.autocomplete}
                             autoFocus={data?.autofocus}
                             className={data?.classNameInput}
+                            dir={data?.dirname}
                             disabled={data?.disabled}
                             form={data?.form}
+                            id={data.id}
                             multiple={data?.multiple}
                             name={data?.name}
                             required={data?.required}
                             size={data?.size}
+                            title={data?.title}
+                            value={data?.value}
+                            style={{
+                                height: data?.height,
+                                width: data?.width,
+                                ...data?.additionalStyling,
+                            }}
                         >
                             {data.selectoptions}
                         </select>
                     )}
                     {inputType === 'textarea' && (
                         <textarea
+                            onChange={() => handleChange(dataIndex, inputType)}
+                            autoCapitalize={data?.autocapitalize}
+                            autoComplete={data?.autocomplete}
                             autoFocus={data?.autofocus}
                             className={data?.classNameInput}
-                            cols={data?.cols}
+                            dir={data?.dirname}
                             disabled={data?.disabled}
                             form={data?.form}
-                            maxLength={data?.maxlength}
+                            id={data?.id}
                             name={data?.name}
                             placeholder={data?.placeholder}
                             readOnly={data?.readonly}
                             required={data?.required}
-                            rows={data?.rows}
-                            wrap={data?.wrap}
+                            title={data?.title}
+                            value={data?.value}
+                            style={{
+                                height: data?.height,
+                                width: data?.width,
+                                ...data?.additionalStyling,
+                            }}
                         >
                             {data.selectoptions}
                         </textarea>
@@ -139,20 +128,21 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                             onChange={() => handleChange(dataIndex, inputType)}
                             accept={data?.accept}
                             alt={data?.altText}
+                            autoCapitalize={data?.autocapitalize}
                             autoComplete={data?.autocomplete}
                             autoFocus={data?.autofocus}
+                            capture={data?.capture}
                             checked={checkedStates[dataIndex]}
                             className={data?.classNameInput}
                             dir={data?.dirname}
                             disabled={data?.disabled}
                             form={data?.form}
                             formAction={data?.formaction}
+                            formEncType={data?.formenctype}
                             formMethod={data?.formmethod}
                             formNoValidate={data?.formnovalidate}
                             formTarget={data?.formtarget}
-                            height={data?.height}
                             id={data?.id}
-                            type={inputType}
                             list={data?.list}
                             max={data?.max}
                             maxLength={data?.maxlength}
@@ -168,15 +158,20 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                             src={data?.src}
                             step={data?.step}
                             title={data?.title}
+                            type={inputType}
                             value={data?.value}
-                            width={data?.width}
+                            style={{
+                                height: data?.height,
+                                width: data?.width,
+                                ...data?.additionalStyling,
+                            }}
                         />
                     )}
                     {(inputType === 'checkbox' || inputType === 'radio') && (
                         <label
                             htmlFor={data.id}
                             hidden={false}
-                            className={classNameLabel}
+                            className={data?.classNameLabel}
                         >
                             {data.labelText}
                         </label>

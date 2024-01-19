@@ -1,7 +1,7 @@
+//@ts-nocheck
 import type { Meta, StoryObj } from '@storybook/react'
 
 import WCAGH86 from './WCAGH86'
-// @ts-ignore
 import starImage from '../../images/star.png'
 
 const metaH86: Meta<typeof WCAGH86> = {
@@ -24,16 +24,23 @@ export const TextWithSpan: StoryH86 = {
 
 export const TextWithAbbr: StoryH86 = {
     render: () => (
-        <WCAGH86 element="abbr" accessibleText="Austin Rocks">
-            Au5t1N r0xx0rz
+        <WCAGH86 element="abbr" accessibleText="See you later!">
+            CU l8r
         </WCAGH86>
     ),
 }
 
 export const TextWithDiv: StoryH86 = {
     render: () => (
-        <WCAGH86 element="div" accessibleText="a lot of o's" role="img">
-            <div>ooooo ooooo ooo oo o o oooooo</div>
+        <WCAGH86 element="div" accessibleText="a sqaure" role="img">
+            o o o o o o o
+            <br />
+            o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;o
+            <br />
+            o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;o
+            <br />
+            o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;o
+            <br />o o o o o o o
         </WCAGH86>
     ),
 }

@@ -14,6 +14,56 @@ type StoryH44 = StoryObj<typeof WCAGH44>
 
 // WCAGNonTextComponentH44
 
+export const Checkbox: StoryH44 = {
+    render: () => (
+        <WCAGH44
+            inputData={[
+                {
+                    name: 'webprogramming',
+                    id: 'markuplang',
+                    labelText: 'HTML',
+                },
+                {
+                    name: 'css',
+                    id: 'markuplang',
+                    labelText: 'CSS',
+                },
+            ]}
+            inputType="checkbox"
+        />
+    ),
+}
+
+export const Color: StoryH44 = {
+    render: () => (
+        <WCAGH44
+            inputData={[
+                {
+                    name: 'favourite color',
+                    id: 'color',
+                    labelText: 'What is your favourite color?',
+                },
+            ]}
+            inputType="color"
+        />
+    ),
+}
+
+export const Date: StoryH44 = {
+    render: () => (
+        <WCAGH44
+            inputData={[
+                {
+                    name: 'birthday',
+                    id: 'bday',
+                    labelText: 'When is your birthday?',
+                },
+            ]}
+            inputType="date"
+        />
+    ),
+}
+
 export const Text: StoryH44 = {
     render: () => (
         <WCAGH44
@@ -34,32 +84,12 @@ export const TextArea: StoryH44 = {
         <WCAGH44
             inputData={[
                 {
-                    name: 'firstname',
-                    id: 'firstname',
-                    labelText: 'First name:',
+                    name: 'Write an essay containing 250 words!',
+                    id: 'essay',
+                    labelText: 'My essay',
                 },
             ]}
             inputType="textarea"
-        />
-    ),
-}
-
-export const Checkbox: StoryH44 = {
-    render: () => (
-        <WCAGH44
-            inputData={[
-                {
-                    name: 'computerskills',
-                    id: 'markuplang',
-                    labelText: 'HTML',
-                },
-                {
-                    name: 'css',
-                    id: 'markuplang',
-                    labelText: 'CSS',
-                },
-            ]}
-            inputType="checkbox"
         />
     ),
 }

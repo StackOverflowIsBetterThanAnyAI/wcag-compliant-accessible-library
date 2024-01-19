@@ -41,19 +41,30 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
     inputType,
     onClickFunction,
 }) => {
-    const [checkedStates, setCheckedStates] = useState(
-        inputData.map((data) => data?.checked ?? false)
+    const [checkedStatesRadioCheckbox, setCheckedStatesRadioCheckbox] =
+        useState(inputData.map((data) => data?.checked ?? false))
+
+    const [inputValues, setInputValues] = useState<string[]>(
+        inputData.map((data) => data?.value || '')
     )
 
-    const handleChange = (index: number, type: string) => {
+    const handleChange = (index: number, type: string, newValue: string) => {
         if (type === 'radio') {
-            const newCheckedStates = checkedStates.map((_, i) => i === index)
-            setCheckedStates(newCheckedStates)
+            const newCheckedStatesRadioCheckbox =
+                checkedStatesRadioCheckbox.map((_, i) => i === index)
+            setCheckedStatesRadioCheckbox(newCheckedStatesRadioCheckbox)
         }
         if (type === 'checkbox') {
-            const newCheckedStates = [...checkedStates]
-            newCheckedStates[index] = !newCheckedStates[index]
-            setCheckedStates(newCheckedStates)
+            const newCheckedStatesRadioCheckbox = [
+                ...checkedStatesRadioCheckbox,
+            ]
+            newCheckedStatesRadioCheckbox[index] =
+                !newCheckedStatesRadioCheckbox[index]
+            setCheckedStatesRadioCheckbox(newCheckedStatesRadioCheckbox)
+        } else {
+            const newInputValues = [...inputValues]
+            newInputValues[index] = newValue
+            setInputValues(newInputValues)
         }
         onClickFunction && onClickFunction()
     }
@@ -73,7 +84,13 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                     )}
                     {inputType === 'select' && (
                         <select
-                            onChange={() => handleChange(dataIndex, inputType)}
+                            onChange={(e) =>
+                                handleChange(
+                                    dataIndex,
+                                    inputType,
+                                    e.target.value
+                                )
+                            }
                             autoCapitalize={data?.autocapitalize}
                             autoComplete={data?.autocomplete}
                             autoFocus={data?.autofocus}
@@ -87,7 +104,7 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                             required={data?.required}
                             size={data?.size}
                             title={data?.title}
-                            value={data?.value}
+                            value={inputValues[dataIndex]}
                             style={{
                                 height: data?.height,
                                 width: data?.width,
@@ -99,7 +116,13 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                     )}
                     {inputType === 'textarea' && (
                         <textarea
-                            onChange={() => handleChange(dataIndex, inputType)}
+                            onChange={(e) =>
+                                handleChange(
+                                    dataIndex,
+                                    inputType,
+                                    e.target.value
+                                )
+                            }
                             autoCapitalize={data?.autocapitalize}
                             autoComplete={data?.autocomplete}
                             autoFocus={data?.autofocus}
@@ -113,7 +136,7 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                             readOnly={data?.readonly}
                             required={data?.required}
                             title={data?.title}
-                            value={data?.value}
+                            value={inputValues[dataIndex]}
                             style={{
                                 height: data?.height,
                                 width: data?.width,
@@ -125,14 +148,20 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                     )}
                     {inputType !== 'select' && inputType !== 'textarea' && (
                         <input
-                            onChange={() => handleChange(dataIndex, inputType)}
+                            onChange={(e) =>
+                                handleChange(
+                                    dataIndex,
+                                    inputType,
+                                    e.target.value
+                                )
+                            }
                             accept={data?.accept}
                             alt={data?.altText}
                             autoCapitalize={data?.autocapitalize}
                             autoComplete={data?.autocomplete}
                             autoFocus={data?.autofocus}
                             capture={data?.capture}
-                            checked={checkedStates[dataIndex]}
+                            checked={checkedStatesRadioCheckbox[dataIndex]}
                             className={data?.classNameInput}
                             dir={data?.dirname}
                             disabled={data?.disabled}
@@ -159,7 +188,7 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                             step={data?.step}
                             title={data?.title}
                             type={inputType}
-                            value={data?.value}
+                            value={inputValues[dataIndex]}
                             style={{
                                 height: data?.height,
                                 width: data?.width,

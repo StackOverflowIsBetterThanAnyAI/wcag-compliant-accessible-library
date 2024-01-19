@@ -65,7 +65,15 @@ interface WCAGARIA6Props {
         | 'toolbar'
         | 'tooltip'
         | 'treegrid'
-    additionalAriaAttributes?: Omit<WAIARIAAttributes, 'label' | 'labelledby'>
+    additionalAriaAttributes?: Omit<
+        WAIARIAAttributes,
+        | 'braillelabel'
+        | 'brailleroledescription'
+        | 'colindextext'
+        | 'label'
+        | 'labelledby'
+        | 'rowindextext'
+    >
     className?: string
     divData?: GlobalAttributes
     children: ReactNode
@@ -113,10 +121,6 @@ const WCAGARIA6: React.FC<WCAGARIA6Props> = ({
                     ? additionalAriaAttributes?.autocomplete
                     : undefined
             }
-            aria-braillelabel={additionalAriaAttributes?.braillelabel}
-            aria-brailleroledescription={
-                additionalAriaAttributes?.brailleroledescription
-            }
             aria-busy={additionalAriaAttributes?.busy}
             aria-checked={
                 role === 'checkbox' ||
@@ -142,13 +146,13 @@ const WCAGARIA6: React.FC<WCAGARIA6Props> = ({
                     ? additionalAriaAttributes?.colindex
                     : undefined
             }
-            aria-colindextext={
+            /*aria-colindextext={
                 role === 'cell' ||
                 role === 'columnheader' ||
                 role === 'rowheader'
                     ? additionalAriaAttributes?.colindextext
                     : undefined
-            }
+            }*/
             aria-colspan={
                 role === 'cell' ||
                 role === 'columnheader' ||
@@ -386,7 +390,7 @@ const WCAGARIA6: React.FC<WCAGARIA6Props> = ({
                     ? additionalAriaAttributes?.rowindex
                     : undefined
             }
-            aria-rowindextext={
+            /*aria-rowindextext={
                 role === 'cell' ||
                 role === 'row' ||
                 role === 'columnheader' ||
@@ -394,7 +398,7 @@ const WCAGARIA6: React.FC<WCAGARIA6Props> = ({
                 role === 'rowheader'
                     ? additionalAriaAttributes?.rowindextext
                     : undefined
-            }
+            }*/
             aria-rowspan={
                 role === 'cell' ||
                 role === 'columnheader' ||

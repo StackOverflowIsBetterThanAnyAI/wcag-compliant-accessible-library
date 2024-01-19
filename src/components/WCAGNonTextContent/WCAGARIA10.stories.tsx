@@ -21,7 +21,7 @@ export const RoleImageWithOneText: StoryARIA10 = {
             <WCAGARIA10
                 role="img"
                 ariaLabelledById="star-id1"
-                additionalStyling={{ margin: '5px 10px' }}
+                divData={{ additionalStyling: { margin: '5px 10px' } }}
             >
                 <>
                     <img src={starImage} alt="" height={50} width={50} />

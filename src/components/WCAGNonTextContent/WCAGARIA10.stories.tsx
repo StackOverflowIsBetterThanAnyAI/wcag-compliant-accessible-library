@@ -16,6 +16,13 @@ const metaARIA10: Meta<typeof WCAGARIA10> = {
                     <Title />
                     <Subtitle>
                         <p>
+                            This component contains a non-text content, which is
+                            described by an additional element with a text
+                            alternative. The purpose of this component is to
+                            provide a short description of an element which can
+                            be read aloud by assistive technology.
+                        </p>
+                        <p>
                             This component is divided into two parts: The
                             WCAGARIA10 component contains the non-text content,
                             while the WCAGARIA10Text component contains the
@@ -355,7 +362,9 @@ const metaARIA10: Meta<typeof WCAGARIA10> = {
                             stored in the{' '}
                             <strong>additionalAriaAttributes</strong> object.
                             You can use the following WAI-ARIA attributes, but
-                            without the 'aria-' prefix:
+                            without the 'aria-' prefix: But be careful: You
+                            cannot use every WAI-ARIA attribute with every
+                            WAI-ARIA role!
                             <table
                                 style={{
                                     margin: '2% auto',

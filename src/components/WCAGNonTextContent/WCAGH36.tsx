@@ -2,9 +2,32 @@ import React from 'react'
 import { InputAttributes } from '../interfaces/InputAttributes'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
-interface WCAGARIA2H36Props {
+interface WCAGH36Props {
     altText: string
-    inputData: Omit<
+    src: string
+    additionalAriaAttributes?: Omit<
+        WAIARIAAttributes,
+        | 'activedescendant'
+        | 'autocomplete'
+        | 'braillelabel'
+        | 'brailleroledescription'
+        | 'colcount'
+        | 'colindextext'
+        | 'colspan'
+        | 'labelledby'
+        | 'level'
+        | 'modal'
+        | 'multiline'
+        | 'multiselectable'
+        | 'placeholder'
+        | 'required'
+        | 'rowcount'
+        | 'rowindex'
+        | 'rowindextext'
+        | 'rowspan'
+        | 'sort'
+    >
+    inputData?: Omit<
         InputAttributes,
         | 'accept'
         | 'autocapitalize'
@@ -23,7 +46,7 @@ interface WCAGARIA2H36Props {
         | 'step'
         | 'type'
         | 'value'
-    > & { required: boolean }
+    >
     role?:
         | 'button'
         | 'checkbox'
@@ -39,33 +62,11 @@ interface WCAGARIA2H36Props {
         | 'switch'
         | 'tab'
         | 'treeitem'
-    src: string
-    additionalAriaAttributes?: Omit<
-        WAIARIAAttributes,
-        | 'activedescendant'
-        | 'autocomplete'
-        | 'braillelabel'
-        | 'brailleroledescription'
-        | 'colcount'
-        | 'colindextext'
-        | 'colspan'
-        | 'labelledby'
-        | 'level'
-        | 'modal'
-        | 'multiline'
-        | 'multiselectable'
-        | 'placeholder'
-        | 'rowcount'
-        | 'rowindex'
-        | 'rowindextext'
-        | 'rowspan'
-        | 'sort'
-    >
     onClickFunction?: () => void
     className?: string
 }
 
-const WCAGARIA2H36: React.FC<WCAGARIA2H36Props> = ({
+const WCAGH36: React.FC<WCAGH36Props> = ({
     additionalAriaAttributes,
     altText,
     className,
@@ -115,7 +116,6 @@ const WCAGARIA2H36: React.FC<WCAGARIA2H36Props> = ({
             list={inputData?.list}
             name={inputData?.name}
             readOnly={inputData?.readonly}
-            required={inputData.required}
             style={{
                 height: inputData?.height,
                 width: inputData?.width,
@@ -236,11 +236,6 @@ const WCAGARIA2H36: React.FC<WCAGARIA2H36Props> = ({
                     : undefined
             }
             aria-relevant={additionalAriaAttributes?.relevant}
-            aria-required={
-                role === 'checkbox' || role === 'gridcell' || role === 'switch'
-                    ? inputData.required
-                    : undefined
-            }
             aria-roledescription={additionalAriaAttributes?.roledescription}
             aria-selected={
                 role === 'gridcell' || role === 'option' || role === 'tab'
@@ -281,4 +276,4 @@ const WCAGARIA2H36: React.FC<WCAGARIA2H36Props> = ({
     )
 }
 
-export default WCAGARIA2H36
+export default WCAGH36

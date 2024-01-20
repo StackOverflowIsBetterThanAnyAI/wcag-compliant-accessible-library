@@ -24,8 +24,6 @@ interface WCAGARIA15Props {
     } & {
         additionalAriaAttributes?: Omit<
             WAIARIAAttributes,
-            | 'label'
-            | 'labelledby'
             | 'activedescendant'
             | 'autocomplete'
             | 'braillelabel'
@@ -35,6 +33,8 @@ interface WCAGARIA15Props {
             | 'colindextext'
             | 'colspan'
             | 'describedby'
+            | 'label'
+            | 'labelledby'
             | 'level'
             | 'modal'
             | 'multiline'

@@ -15,13 +15,13 @@ const metaARIA10: Meta<typeof WCAGARIA10> = {
                 <>
                     <Title />
                     <Subtitle>
-                        <p>
-                            This component contains a non-text content, which is
+                        <h2>
+                            This component contains non-text content, which is
                             described by an additional element with a text
                             alternative. The purpose of this component is to
                             provide a short description of an element which can
                             be read aloud by assistive technology.
-                        </p>
+                        </h2>
                         <p>
                             This component is divided into two parts: The
                             WCAGARIA10 component contains the non-text content,

@@ -14,11 +14,11 @@ const metaARIA2H36: Meta<typeof WCAGH36> = {
                 <>
                     <Title />
                     <Subtitle>
-                        <p>
+                        <h2>
                             This component adds an alt attribute to images which
                             is displayed when the image cannot be loaded or is
                             read aloud by assistive technology.
-                        </p>
+                        </h2>
                         <p>
                             In order to use this component correctly, you need
                             to provide a descriptive value for the{' '}

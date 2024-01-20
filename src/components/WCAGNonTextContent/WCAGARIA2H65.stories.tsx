@@ -56,3 +56,20 @@ export const PasswordInput: StoryARIA2H65 = {
         </form>
     ),
 }
+
+export const WrongTitleAttribute: StoryARIA2H65 = {
+    render: () => (
+        <form>
+            <WCAGARIA2H65
+                inputType="password"
+                inputData={{
+                    autocomplete: 'off',
+                    required: false,
+                    placeholder: 'password',
+                }}
+                title=""
+                onClickFunction={() => console.log('click')}
+            />
+        </form>
+    ),
+}

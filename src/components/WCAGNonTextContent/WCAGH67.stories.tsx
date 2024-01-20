@@ -29,3 +29,19 @@ export const IgnoredImage: StoryH67 = {
         </>
     ),
 }
+
+export const WrongImageSource: StoryH67 = {
+    render: () => (
+        <>
+            <p>Text before image</p>
+            <WCAGH67
+                imageData={{
+                    imageSource: '',
+                    loading: 'lazy',
+                    additionalStyling: { height: 75, width: 75 },
+                }}
+            />
+            <p>Text after image</p>
+        </>
+    ),
+}

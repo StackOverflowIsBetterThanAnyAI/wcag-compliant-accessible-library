@@ -48,3 +48,37 @@ export const Chart: StoryG74G92 = {
         </>
     ),
 }
+
+export const WrongAccessibleIds: StoryG74G92 = {
+    render: () => (
+        <>
+            <WCAGG74G92
+                accessibleIds=""
+                shortText={
+                    <p id="">
+                        Short description. The long description can be found
+                        after the next caption.
+                    </p>
+                }
+            >
+                <div>
+                    <img src={starImage} height={50} width={50} />
+                    <img src={starImage} height={50} width={50} />
+                    <img src={starImage} height={50} width={50} />
+                </div>
+            </WCAGG74G92>
+            <h3>Caption that devides both descriptions</h3>
+            <WCAGG74G92Text accessibleId="">
+                This is a very long description of the Chart containing three
+                happy stars.
+                <br />
+                This is a very long description of the Chart containing three
+                happy stars.
+                <br />
+                This is a very long description of the Chart containing three
+                happy stars.
+                <br />
+            </WCAGG74G92Text>
+        </>
+    ),
+}

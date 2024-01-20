@@ -71,3 +71,33 @@ export const TextBeforeImage: StoryH2 = {
         </WCAGH2>
     ),
 }
+
+export const WrongLink: StoryH2 = {
+    render: () => (
+        <WCAGH2
+            imageData={{
+                imageSource: starImage,
+                additionalStyling: { height: 75, width: 75 },
+            }}
+            link=""
+            textBeforeImage
+        >
+            <div style={{ color: '#020202' }}>Go to the home page</div>
+        </WCAGH2>
+    ),
+}
+
+export const WrongImageSource: StoryH2 = {
+    render: () => (
+        <WCAGH2
+            imageData={{
+                imageSource: '',
+                additionalStyling: { height: 75, width: 75 },
+            }}
+            link="#home"
+            textBeforeImage
+        >
+            <div style={{ color: '#020202' }}>Go to the home page</div>
+        </WCAGH2>
+    ),
+}

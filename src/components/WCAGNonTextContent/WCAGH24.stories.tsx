@@ -63,3 +63,69 @@ export const ImageWithTwoAreas: StoryH24 = {
         />
     ),
 }
+
+export const WrongMapName: StoryH24 = {
+    render: () => (
+        <WCAGH24
+            imageData={{
+                imageSource: starImage,
+                altText: 'Star',
+                height: 50,
+                width: 50,
+            }}
+            mapName=""
+            areaData={[
+                {
+                    altText: 'part1',
+                    coords: '0, 0, 45, 45',
+                    shape: 'rect',
+                    href: 'element1',
+                },
+            ]}
+        />
+    ),
+}
+
+export const WrongImageData: StoryH24 = {
+    render: () => (
+        <WCAGH24
+            imageData={{
+                imageSource: '',
+                altText: '',
+                height: 50,
+                width: 50,
+            }}
+            mapName="star-map"
+            areaData={[
+                {
+                    altText: 'part1',
+                    coords: '0, 0, 45, 45',
+                    shape: 'rect',
+                    href: 'element1',
+                },
+            ]}
+        />
+    ),
+}
+
+export const WrongAreaData: StoryH24 = {
+    render: () => (
+        <WCAGH24
+            imageData={{
+                imageSource: starImage,
+                altText: 'Star',
+                height: 50,
+                width: 50,
+            }}
+            mapName="star-map"
+            areaData={[
+                {
+                    altText: 'part1',
+                    coords: '',
+                    shape: 'rect',
+                    href: 'element1',
+                },
+            ]}
+        />
+    ),
+}

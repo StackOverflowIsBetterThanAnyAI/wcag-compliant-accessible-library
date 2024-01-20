@@ -78,3 +78,9 @@ export const ImageWithAdditionalAttributes: StoryG196 = {
         />
     ),
 }
+
+export const WrongAltText: StoryG196 = {
+    render: () => (
+        <WCAGG196 altText="" imageData={[{ imageSource: starImage }]} />
+    ),
+}

@@ -25,3 +25,27 @@ export const ImageWithAltAttribute: StoryH37 = {
         />
     ),
 }
+
+export const WrongAltText: StoryH37 = {
+    render: () => (
+        <WCAGH37
+            altText=""
+            imageData={{
+                imageSource: starImage,
+                additionalStyling: { height: 75, width: 75 },
+            }}
+        />
+    ),
+}
+
+export const WrongImageSource: StoryH37 = {
+    render: () => (
+        <WCAGH37
+            altText="A happy star."
+            imageData={{
+                imageSource: '',
+                additionalStyling: { height: 75, width: 75 },
+            }}
+        />
+    ),
+}

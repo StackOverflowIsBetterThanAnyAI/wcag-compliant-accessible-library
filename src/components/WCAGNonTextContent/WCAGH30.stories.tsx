@@ -74,3 +74,7 @@ export const AnchorWithImageAndPreImageText: StoryH30 = {
         />
     ),
 }
+
+export const WrongLink: StoryH30 = {
+    render: () => <WCAGH30 link="" preImageText="Go to the home page" />,
+}

@@ -72,3 +72,55 @@ export const TwoImages: StoryARIA15 = {
         </>
     ),
 }
+
+export const WrongAccessibleIds: StoryARIA15 = {
+    render: () => (
+        <>
+            <WCAGARIA15Text accessibleId="">
+                Short text description.
+            </WCAGARIA15Text>
+            <WCAGARIA15
+                accessibleIds=""
+                imageData={[
+                    {
+                        altText: 'A happy star.',
+                        imageSource: starImage,
+                        role: 'separator',
+                        height: 50,
+                        width: 50,
+                    },
+                ]}
+            />
+            <WCAGARIA15Text accessibleId="">
+                This is the much longer text content of Paragraph 2 which
+                describes one happy star looking at you.
+            </WCAGARIA15Text>
+        </>
+    ),
+}
+
+export const WrongImageData: StoryARIA15 = {
+    render: () => (
+        <>
+            <WCAGARIA15Text accessibleId="p1">
+                Short text description.
+            </WCAGARIA15Text>
+            <WCAGARIA15
+                accessibleIds="p1 p2"
+                imageData={[
+                    {
+                        altText: '',
+                        imageSource: '',
+                        role: 'separator',
+                        height: 50,
+                        width: 50,
+                    },
+                ]}
+            />
+            <WCAGARIA15Text accessibleId="p2">
+                This is the much longer text content of Paragraph 2 which
+                describes one happy star looking at you.
+            </WCAGARIA15Text>
+        </>
+    ),
+}

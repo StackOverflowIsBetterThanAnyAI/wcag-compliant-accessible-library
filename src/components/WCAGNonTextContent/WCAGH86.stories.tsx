@@ -44,3 +44,11 @@ export const TextWithDiv: StoryH86 = {
         </WCAGH86>
     ),
 }
+
+export const WrongAccessibleText: StoryH86 = {
+    render: () => (
+        <WCAGH86 element="span" accessibleText="" role="img">
+            :)
+        </WCAGH86>
+    ),
+}

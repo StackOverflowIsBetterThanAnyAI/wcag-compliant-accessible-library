@@ -151,3 +151,43 @@ export const Select: StoryH44 = {
         />
     ),
 }
+
+export const WrongId: StoryH44 = {
+    render: () => (
+        <WCAGH44
+            inputData={[
+                {
+                    name: 'webprogramming',
+                    id: '',
+                    labelText: 'HTML',
+                },
+                {
+                    name: 'css',
+                    id: '',
+                    labelText: 'CSS',
+                },
+            ]}
+            inputType="checkbox"
+        />
+    ),
+}
+
+export const WrongName: StoryH44 = {
+    render: () => (
+        <WCAGH44
+            inputData={[
+                {
+                    name: '',
+                    id: 'markuplang',
+                    labelText: 'HTML',
+                },
+                {
+                    name: '',
+                    id: 'markuplang',
+                    labelText: 'CSS',
+                },
+            ]}
+            inputType="checkbox"
+        />
+    ),
+}

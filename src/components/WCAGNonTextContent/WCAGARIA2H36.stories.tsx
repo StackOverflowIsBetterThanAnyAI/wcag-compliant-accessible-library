@@ -43,3 +43,33 @@ export const LinkImage: StoryARIA2H36 = {
         />
     ),
 }
+
+export const WrongAltText: StoryARIA2H36 = {
+    render: () => (
+        <WCAGARIA2H36
+            altText=""
+            src={starImage}
+            role="button"
+            inputData={{
+                required: false,
+                additionalStyling: { height: 50, width: 50 },
+            }}
+            onClickFunction={() => console.log('click')}
+        />
+    ),
+}
+
+export const WrongSrcAttribute: StoryARIA2H36 = {
+    render: () => (
+        <WCAGARIA2H36
+            altText="Search button."
+            src=""
+            role="button"
+            inputData={{
+                required: false,
+                additionalStyling: { height: 50, width: 50 },
+            }}
+            onClickFunction={() => console.log('click')}
+        />
+    ),
+}

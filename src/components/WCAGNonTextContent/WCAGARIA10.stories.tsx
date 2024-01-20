@@ -66,3 +66,31 @@ export const RoleImageWithReactNodeAsText: StoryARIA10 = {
         </>
     ),
 }
+
+export const WrongAriaLabelledById: StoryARIA10 = {
+    render: () => (
+        <>
+            <WCAGARIA10Text ariaLabelledById="">
+                <span style={{ color: 'red' }}>
+                    This is a short text alternative of five happy stars in a
+                    horizontal line looking at you.
+                </span>
+            </WCAGARIA10Text>
+            <WCAGARIA10 role="img" ariaLabelledById="">
+                <>
+                    <img src={starImage} alt="" height={75} width={75} />
+                    <img src={starImage} alt="" height={75} width={75} />
+                    <img src={starImage} alt="" height={75} width={75} />
+                    <img src={starImage} alt="" height={75} width={75} />
+                    <img src={starImage} alt="" height={75} width={75} />
+                </>
+            </WCAGARIA10>
+            <WCAGARIA10Text ariaLabelledById="">
+                <div style={{ margin: '5px 25px' }}>
+                    This is a short text alternative of five happy stars in a
+                    horizontal line looking at you.
+                </div>
+            </WCAGARIA10Text>
+        </>
+    ),
+}

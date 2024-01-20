@@ -4,7 +4,7 @@ import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
 interface WCAGH53Props {
     className?: string
-    objectData: ObjectAttributes
+    objectData?: ObjectAttributes
     role?: 'application' | 'document' | 'img'
     additionalAriaAttributes?: Omit<
         WAIARIAAttributes,

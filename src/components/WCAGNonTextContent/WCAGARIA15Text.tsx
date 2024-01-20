@@ -76,27 +76,37 @@ const WCAGARIA15Text: React.FC<WCAGARIA15Props> = ({
     role,
     children,
 }) => {
-    return (
-        <p
-            id={accessibleId}
-            style={{ ...pData?.additionalStyling }}
-            className={className}
-            role={role}
-            accessKey={pData?.accesskey}
-            contentEditable={pData?.contenteditable}
-            dir={pData?.dir}
-            draggable={pData?.draggable}
-            hidden={pData?.hiddenElement}
-            inputMode={pData?.inputmode}
-            lang={pData?.lang}
-            spellCheck={pData?.spellcheck}
-            tabIndex={pData?.tabindex}
-            title={pData?.title}
-            translate={pData?.translate}
-        >
-            {children}
-        </p>
-    )
+    try {
+        if (accessibleId.length < 1) {
+            throw new Error(
+                'Your accessibleId attribute hast to have a length of at least one character!'
+            )
+        }
+        return (
+            <p
+                id={accessibleId}
+                style={{ ...pData?.additionalStyling }}
+                className={className}
+                role={role}
+                accessKey={pData?.accesskey}
+                contentEditable={pData?.contenteditable}
+                dir={pData?.dir}
+                draggable={pData?.draggable}
+                hidden={pData?.hiddenElement}
+                inputMode={pData?.inputmode}
+                lang={pData?.lang}
+                spellCheck={pData?.spellcheck}
+                tabIndex={pData?.tabindex}
+                title={pData?.title}
+                translate={pData?.translate}
+            >
+                {children}
+            </p>
+        )
+    } catch (error: any) {
+        console.error(error.message)
+        return
+    }
 }
 
 export default WCAGARIA15Text

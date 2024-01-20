@@ -76,27 +76,37 @@ const WCAGARIA10Text: React.FC<WCAGARIA10Props> = ({
     role,
     children,
 }) => {
-    return (
-        <div
-            id={ariaLabelledById}
-            style={{ ...divData?.additionalStyling }}
-            className={className}
-            role={role}
-            accessKey={divData?.accesskey}
-            contentEditable={divData?.contenteditable}
-            dir={divData?.dir}
-            draggable={divData?.draggable}
-            hidden={divData?.hiddenElement}
-            inputMode={divData?.inputmode}
-            lang={divData?.lang}
-            spellCheck={divData?.spellcheck}
-            tabIndex={divData?.tabindex}
-            title={divData?.title}
-            translate={divData?.translate}
-        >
-            {children}
-        </div>
-    )
+    try {
+        if (ariaLabelledById.length < 1) {
+            throw new Error(
+                'Your ariaLabelledById attribute hast to have a length of at least one character!'
+            )
+        }
+        return (
+            <div
+                id={ariaLabelledById}
+                style={{ ...divData?.additionalStyling }}
+                className={className}
+                role={role}
+                accessKey={divData?.accesskey}
+                contentEditable={divData?.contenteditable}
+                dir={divData?.dir}
+                draggable={divData?.draggable}
+                hidden={divData?.hiddenElement}
+                inputMode={divData?.inputmode}
+                lang={divData?.lang}
+                spellCheck={divData?.spellcheck}
+                tabIndex={divData?.tabindex}
+                title={divData?.title}
+                translate={divData?.translate}
+            >
+                {children}
+            </div>
+        )
+    } catch (error: any) {
+        console.error(error.message)
+        return
+    }
 }
 
 export default WCAGARIA10Text

@@ -4,10 +4,7 @@ import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
 interface WCAGH86Props {
     accessibleText: string
-    className?: string
-    elementData?: GlobalAttributes
     element: 'span' | 'div' | 'abbr'
-    role?: 'img'
     additionalAriaAttributes?: Omit<
         WAIARIAAttributes,
         | 'activedescendant'
@@ -48,6 +45,9 @@ interface WCAGH86Props {
         | 'valuenow'
         | 'valuetext'
     >
+    className?: string
+    elementData?: GlobalAttributes
+    role?: 'img'
     children: string
 }
 
@@ -60,120 +60,136 @@ const WCAGH86: React.FC<WCAGH86Props> = ({
     role,
     children,
 }) => {
-    switch (element) {
-        case 'span':
-            return (
-                <span
-                    aria-label={accessibleText}
-                    role={role}
-                    style={{ ...elementData?.additionalStyling }}
-                    className={className}
-                    accessKey={elementData?.accesskey}
-                    contentEditable={elementData?.contenteditable}
-                    dir={elementData?.dir}
-                    draggable={elementData?.draggable}
-                    hidden={elementData?.hiddenElement}
-                    id={elementData?.id}
-                    inputMode={elementData?.inputmode}
-                    lang={elementData?.lang}
-                    spellCheck={elementData?.spellcheck}
-                    tabIndex={elementData?.tabindex}
-                    title={elementData?.title}
-                    translate={elementData?.translate}
-                    aria-atomic={additionalAriaAttributes?.atomic}
-                    aria-busy={additionalAriaAttributes?.busy}
-                    aria-controls={additionalAriaAttributes?.controls}
-                    aria-current={additionalAriaAttributes?.current}
-                    aria-describedby={additionalAriaAttributes?.describedby}
-                    aria-description={additionalAriaAttributes?.description}
-                    aria-details={additionalAriaAttributes?.details}
-                    aria-flowto={additionalAriaAttributes?.flowto}
-                    aria-hidden={additionalAriaAttributes?.hidden}
-                    aria-keyshortcuts={additionalAriaAttributes?.keyshortcuts}
-                    aria-owns={additionalAriaAttributes?.owns}
-                    aria-relevant={additionalAriaAttributes?.relevant}
-                    aria-roledescription={
-                        additionalAriaAttributes?.roledescription
-                    }
-                >
-                    {children}
-                </span>
+    try {
+        if (accessibleText.length < 1) {
+            throw new Error(
+                'Your accessibleText attribute hast to have a length of at least one character!'
             )
-        case 'div':
-            return (
-                <div
-                    aria-label={accessibleText}
-                    role={role}
-                    style={{ ...elementData?.additionalStyling }}
-                    className={className}
-                    accessKey={elementData?.accesskey}
-                    contentEditable={elementData?.contenteditable}
-                    dir={elementData?.dir}
-                    draggable={elementData?.draggable}
-                    hidden={elementData?.hiddenElement}
-                    id={elementData?.id}
-                    inputMode={elementData?.inputmode}
-                    lang={elementData?.lang}
-                    spellCheck={elementData?.spellcheck}
-                    tabIndex={elementData?.tabindex}
-                    title={elementData?.title}
-                    translate={elementData?.translate}
-                    aria-atomic={additionalAriaAttributes?.atomic}
-                    aria-busy={additionalAriaAttributes?.busy}
-                    aria-controls={additionalAriaAttributes?.controls}
-                    aria-current={additionalAriaAttributes?.current}
-                    aria-describedby={additionalAriaAttributes?.describedby}
-                    aria-description={additionalAriaAttributes?.description}
-                    aria-details={additionalAriaAttributes?.details}
-                    aria-flowto={additionalAriaAttributes?.flowto}
-                    aria-hidden={additionalAriaAttributes?.hidden}
-                    aria-keyshortcuts={additionalAriaAttributes?.keyshortcuts}
-                    aria-owns={additionalAriaAttributes?.owns}
-                    aria-relevant={additionalAriaAttributes?.relevant}
-                    aria-roledescription={
-                        additionalAriaAttributes?.roledescription
-                    }
-                >
-                    {children}
-                </div>
-            )
-        case 'abbr':
-            return (
-                <abbr
-                    title={accessibleText}
-                    style={{ ...elementData?.additionalStyling }}
-                    className={className}
-                    role={role}
-                    accessKey={elementData?.accesskey}
-                    contentEditable={elementData?.contenteditable}
-                    dir={elementData?.dir}
-                    draggable={elementData?.draggable}
-                    hidden={elementData?.hiddenElement}
-                    id={elementData?.id}
-                    inputMode={elementData?.inputmode}
-                    lang={elementData?.lang}
-                    spellCheck={elementData?.spellcheck}
-                    tabIndex={elementData?.tabindex}
-                    translate={elementData?.translate}
-                    aria-atomic={additionalAriaAttributes?.atomic}
-                    aria-busy={additionalAriaAttributes?.busy}
-                    aria-controls={additionalAriaAttributes?.controls}
-                    aria-current={additionalAriaAttributes?.current}
-                    aria-describedby={additionalAriaAttributes?.describedby}
-                    aria-description={additionalAriaAttributes?.description}
-                    aria-details={additionalAriaAttributes?.details}
-                    aria-flowto={additionalAriaAttributes?.flowto}
-                    aria-hidden={additionalAriaAttributes?.hidden}
-                    aria-keyshortcuts={additionalAriaAttributes?.keyshortcuts}
-                    aria-owns={additionalAriaAttributes?.owns}
-                    aria-relevant={additionalAriaAttributes?.relevant}
-                    aria-roledescription={
-                        additionalAriaAttributes?.roledescription
-                    }
-                >
-                    {children}
-                </abbr>
-            )
+        }
+        switch (element) {
+            case 'span':
+                return (
+                    <span
+                        aria-label={accessibleText}
+                        role={role}
+                        style={{ ...elementData?.additionalStyling }}
+                        className={className}
+                        accessKey={elementData?.accesskey}
+                        contentEditable={elementData?.contenteditable}
+                        dir={elementData?.dir}
+                        draggable={elementData?.draggable}
+                        hidden={elementData?.hiddenElement}
+                        id={elementData?.id}
+                        inputMode={elementData?.inputmode}
+                        lang={elementData?.lang}
+                        spellCheck={elementData?.spellcheck}
+                        tabIndex={elementData?.tabindex}
+                        title={elementData?.title}
+                        translate={elementData?.translate}
+                        aria-atomic={additionalAriaAttributes?.atomic}
+                        aria-busy={additionalAriaAttributes?.busy}
+                        aria-controls={additionalAriaAttributes?.controls}
+                        aria-current={additionalAriaAttributes?.current}
+                        aria-describedby={additionalAriaAttributes?.describedby}
+                        aria-description={additionalAriaAttributes?.description}
+                        aria-details={additionalAriaAttributes?.details}
+                        aria-flowto={additionalAriaAttributes?.flowto}
+                        aria-hidden={additionalAriaAttributes?.hidden}
+                        aria-keyshortcuts={
+                            additionalAriaAttributes?.keyshortcuts
+                        }
+                        aria-owns={additionalAriaAttributes?.owns}
+                        aria-relevant={additionalAriaAttributes?.relevant}
+                        aria-roledescription={
+                            additionalAriaAttributes?.roledescription
+                        }
+                    >
+                        {children}
+                    </span>
+                )
+            case 'div':
+                return (
+                    <div
+                        aria-label={accessibleText}
+                        role={role}
+                        style={{ ...elementData?.additionalStyling }}
+                        className={className}
+                        accessKey={elementData?.accesskey}
+                        contentEditable={elementData?.contenteditable}
+                        dir={elementData?.dir}
+                        draggable={elementData?.draggable}
+                        hidden={elementData?.hiddenElement}
+                        id={elementData?.id}
+                        inputMode={elementData?.inputmode}
+                        lang={elementData?.lang}
+                        spellCheck={elementData?.spellcheck}
+                        tabIndex={elementData?.tabindex}
+                        title={elementData?.title}
+                        translate={elementData?.translate}
+                        aria-atomic={additionalAriaAttributes?.atomic}
+                        aria-busy={additionalAriaAttributes?.busy}
+                        aria-controls={additionalAriaAttributes?.controls}
+                        aria-current={additionalAriaAttributes?.current}
+                        aria-describedby={additionalAriaAttributes?.describedby}
+                        aria-description={additionalAriaAttributes?.description}
+                        aria-details={additionalAriaAttributes?.details}
+                        aria-flowto={additionalAriaAttributes?.flowto}
+                        aria-hidden={additionalAriaAttributes?.hidden}
+                        aria-keyshortcuts={
+                            additionalAriaAttributes?.keyshortcuts
+                        }
+                        aria-owns={additionalAriaAttributes?.owns}
+                        aria-relevant={additionalAriaAttributes?.relevant}
+                        aria-roledescription={
+                            additionalAriaAttributes?.roledescription
+                        }
+                    >
+                        {children}
+                    </div>
+                )
+            case 'abbr':
+                return (
+                    <abbr
+                        title={accessibleText}
+                        style={{ ...elementData?.additionalStyling }}
+                        className={className}
+                        role={role}
+                        accessKey={elementData?.accesskey}
+                        contentEditable={elementData?.contenteditable}
+                        dir={elementData?.dir}
+                        draggable={elementData?.draggable}
+                        hidden={elementData?.hiddenElement}
+                        id={elementData?.id}
+                        inputMode={elementData?.inputmode}
+                        lang={elementData?.lang}
+                        spellCheck={elementData?.spellcheck}
+                        tabIndex={elementData?.tabindex}
+                        translate={elementData?.translate}
+                        aria-atomic={additionalAriaAttributes?.atomic}
+                        aria-busy={additionalAriaAttributes?.busy}
+                        aria-controls={additionalAriaAttributes?.controls}
+                        aria-current={additionalAriaAttributes?.current}
+                        aria-describedby={additionalAriaAttributes?.describedby}
+                        aria-description={additionalAriaAttributes?.description}
+                        aria-details={additionalAriaAttributes?.details}
+                        aria-flowto={additionalAriaAttributes?.flowto}
+                        aria-hidden={additionalAriaAttributes?.hidden}
+                        aria-keyshortcuts={
+                            additionalAriaAttributes?.keyshortcuts
+                        }
+                        aria-owns={additionalAriaAttributes?.owns}
+                        aria-relevant={additionalAriaAttributes?.relevant}
+                        aria-roledescription={
+                            additionalAriaAttributes?.roledescription
+                        }
+                    >
+                        {children}
+                    </abbr>
+                )
+        }
+    } catch (error: any) {
+        console.error(error.message)
+        return
     }
 }
 

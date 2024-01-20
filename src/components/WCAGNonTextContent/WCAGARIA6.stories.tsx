@@ -325,7 +325,10 @@ const metaARIA6: Meta<typeof WCAGARIA6> = {
                             You can also add an optional customised{' '}
                             <strong>className: string</strong> to your
                             components, which allows you to apply your styling
-                            to your new accessible components.
+                            to your new accessible components. If you prefer
+                            styling your components inline, feel free to use the{' '}
+                            <strong>additionalStyling</strong> variable inside
+                            of the <strong>divData</strong> object.
                         </p>
                         <div>
                             For even more accessibility, you can also use

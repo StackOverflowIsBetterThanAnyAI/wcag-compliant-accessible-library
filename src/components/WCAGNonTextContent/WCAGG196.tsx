@@ -53,6 +53,21 @@ const WCAGG196: React.FC<WCAGG196Props> = ({
     imageData,
     role,
 }) => {
+    const errors: string[] = []
+
+    if (altText.length < 1) {
+        errors.push(
+            'Your altText attribute hast to have a length of at least one character!'
+        )
+    }
+    imageData.forEach((data, dataIndex) => {
+        if (data.imageSource.length < 1) {
+            errors.push(
+                `Your imageSource attribute in imageData[${dataIndex}] has to have a length of at least one character!`
+            )
+        }
+    })
+
     return (
         <>
             {imageData.map((data, dataIndex) => (

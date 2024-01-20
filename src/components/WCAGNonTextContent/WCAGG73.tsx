@@ -4,6 +4,9 @@ import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 import { LinkAttributes } from '../interfaces/LinkAttributes'
 
 interface WCAGG73Props extends GlobalAttributes {
+    buttonText: ReactNode
+    childId: string
+    ownId: string
     additionalAriaAttributes?: Omit<
         WAIARIAAttributes,
         | 'braillelabel'
@@ -13,15 +16,12 @@ interface WCAGG73Props extends GlobalAttributes {
         | 'rowindex'
         | 'rowindextext'
     >
-    buttonText: ReactNode
-    childId: string
-    divData?: GlobalAttributes
     classNameDiv?: string
     classNameLink?: string
+    divData?: GlobalAttributes
     externalLink?: boolean
     linkData?: Omit<LinkAttributes, 'href' | 'download' | 'hreflang'>
     onClickFunction?: () => void
-    ownId: string
     role?:
         | 'alert'
         | 'alertdialog'
@@ -102,6 +102,27 @@ const WCAGG73: React.FC<WCAGG73Props> = ({
     shortText,
     children,
 }) => {
+    const errors: string[] = []
+
+    if (childId.length < 1) {
+        errors.push(
+            'Your childId attribute hast to have a length of at least one character!'
+        )
+    }
+
+    if (ownId.length < 1) {
+        errors.push(
+            'Your ownId attribute hast to have a length of at least one character!'
+        )
+    }
+
+    if (errors.length) {
+        for (let i in errors) {
+            console.error(errors[i])
+        }
+        return
+    }
+
     return (
         <div
             id={ownId}

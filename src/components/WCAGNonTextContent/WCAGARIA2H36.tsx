@@ -4,28 +4,6 @@ import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
 interface WCAGARIA2H36Props {
     altText: string
-    src: string
-    additionalAriaAttributes?: Omit<
-        WAIARIAAttributes,
-        | 'activedescendant'
-        | 'autocomplete'
-        | 'braillelabel'
-        | 'brailleroledescription'
-        | 'colcount'
-        | 'colindextext'
-        | 'colspan'
-        | 'labelledby'
-        | 'level'
-        | 'modal'
-        | 'multiline'
-        | 'multiselectable'
-        | 'placeholder'
-        | 'rowcount'
-        | 'rowindex'
-        | 'rowindextext'
-        | 'rowspan'
-        | 'sort'
-    >
     inputData: Omit<
         InputAttributes,
         | 'accept'
@@ -61,6 +39,28 @@ interface WCAGARIA2H36Props {
         | 'switch'
         | 'tab'
         | 'treeitem'
+    src: string
+    additionalAriaAttributes?: Omit<
+        WAIARIAAttributes,
+        | 'activedescendant'
+        | 'autocomplete'
+        | 'braillelabel'
+        | 'brailleroledescription'
+        | 'colcount'
+        | 'colindextext'
+        | 'colspan'
+        | 'labelledby'
+        | 'level'
+        | 'modal'
+        | 'multiline'
+        | 'multiselectable'
+        | 'placeholder'
+        | 'rowcount'
+        | 'rowindex'
+        | 'rowindextext'
+        | 'rowspan'
+        | 'sort'
+    >
     onClickFunction?: () => void
     className?: string
 }
@@ -74,6 +74,27 @@ const WCAGARIA2H36: React.FC<WCAGARIA2H36Props> = ({
     role,
     src,
 }) => {
+    const errors: string[] = []
+
+    if (altText.length < 1) {
+        errors.push(
+            'Your altText attribute hast to have a length of at least one character!'
+        )
+    }
+
+    if (src.length < 1) {
+        errors.push(
+            'Your src attribute hast to have a length of at least one character!'
+        )
+    }
+
+    if (errors.length) {
+        for (let i in errors) {
+            console.error(errors[i])
+        }
+        return
+    }
+
     return (
         <input
             alt={altText}

@@ -69,6 +69,31 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
         onClickFunction && onClickFunction()
     }
 
+    const errors: string[] = []
+
+    inputData.forEach((data, dataIndex) => {
+        if (data.id.length < 1) {
+            errors.push(
+                `Your id attribute in inputData[${dataIndex}] has to have a length of at least one character!`
+            )
+        }
+    })
+
+    inputData.forEach((data, dataIndex) => {
+        if (data.name.length < 1) {
+            errors.push(
+                `Your name attribute in inputData[${dataIndex}] has to have a length of at least one character!`
+            )
+        }
+    })
+
+    if (errors.length) {
+        for (let i in errors) {
+            console.error(errors[i])
+        }
+        return
+    }
+
     return (
         <>
             {inputData.map((data, dataIndex) => (

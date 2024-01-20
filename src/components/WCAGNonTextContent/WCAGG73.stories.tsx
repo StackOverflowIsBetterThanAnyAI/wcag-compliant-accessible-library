@@ -109,12 +109,12 @@ export const ChartWithAdditionalAttributes: StoryG73 = {
     ),
 }
 
-export const WrongChildIdAndParentId: StoryG73 = {
+export const WrongIds: StoryG73 = {
     render: () => (
         <>
             <WCAGG73
                 buttonText="Go to the long description."
-                ownId="chart"
+                ownId=""
                 childId=""
                 shortText={<p>Short description.</p>}
             >
@@ -131,45 +131,8 @@ export const WrongChildIdAndParentId: StoryG73 = {
             </WCAGG73>
             <WCAGG73Text
                 buttonText="Go back to the stars."
-                ownId="long-description"
+                ownId=""
                 parentId=""
-            >
-                This is a very long description
-                <br />
-                of six happy stars which are
-                <br />
-                placed in two rows
-                <br />
-                with three stars each.
-            </WCAGG73Text>
-        </>
-    ),
-}
-
-export const WrongOwnId: StoryG73 = {
-    render: () => (
-        <>
-            <WCAGG73
-                buttonText="Go to the long description."
-                ownId=""
-                childId="desc"
-                shortText={<p>Short description.</p>}
-            >
-                <div>
-                    <img src={starImage} height={50} width={50} />
-                    <img src={starImage} height={50} width={50} />
-                    <img src={starImage} height={50} width={50} />
-                </div>
-                <div>
-                    <img src={starImage} height={50} width={50} />
-                    <img src={starImage} height={50} width={50} />
-                    <img src={starImage} height={50} width={50} />
-                </div>
-            </WCAGG73>
-            <WCAGG73Text
-                buttonText="Go back to the stars."
-                ownId=""
-                parentId="parent"
             >
                 This is a very long description
                 <br />

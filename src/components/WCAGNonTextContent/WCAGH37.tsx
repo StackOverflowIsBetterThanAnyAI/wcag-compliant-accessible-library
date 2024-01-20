@@ -4,24 +4,7 @@ import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
 interface WCAGH37Props {
     altText: string
-    className?: string
     imageData: ImageAttributes
-    role?:
-        | 'button'
-        | 'checkbox'
-        | 'doc-cover'
-        | 'link'
-        | 'menuitem'
-        | 'menuitemcheckbox'
-        | 'menuitemradio'
-        | 'option'
-        | 'progressbar'
-        | 'scrollbar'
-        | 'separator'
-        | 'slider'
-        | 'switch'
-        | 'tab'
-        | 'treeitem'
     additionalAriaAttributes?: Omit<
         WAIARIAAttributes,
         | 'braillelabel'
@@ -44,6 +27,23 @@ interface WCAGH37Props {
         | 'rowspan'
         | 'sort'
     >
+    className?: string
+    role?:
+        | 'button'
+        | 'checkbox'
+        | 'doc-cover'
+        | 'link'
+        | 'menuitem'
+        | 'menuitemcheckbox'
+        | 'menuitemradio'
+        | 'option'
+        | 'progressbar'
+        | 'scrollbar'
+        | 'separator'
+        | 'slider'
+        | 'switch'
+        | 'tab'
+        | 'treeitem'
 }
 
 const WCAGH37: React.FC<WCAGH37Props> = ({
@@ -53,6 +53,27 @@ const WCAGH37: React.FC<WCAGH37Props> = ({
     imageData,
     role,
 }) => {
+    const errors: string[] = []
+
+    if (altText.length < 1) {
+        errors.push(
+            'Your altText attribute hast to have a length of at least one character!'
+        )
+    }
+
+    if (imageData.imageSource.length < 1) {
+        errors.push(
+            'Your imageData.imageSource attribute hast to have a length of at least one character!'
+        )
+    }
+
+    if (errors.length) {
+        for (let i in errors) {
+            console.error(errors[i])
+        }
+        return
+    }
+
     return (
         <img
             src={imageData.imageSource}

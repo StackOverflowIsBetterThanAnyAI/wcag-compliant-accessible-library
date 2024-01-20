@@ -7,24 +7,6 @@ interface WCAGH24Props {
     areaData: (AreaAttributes & { onClickFunction?: () => void })[]
     imageData: ImageAttributes & { altText: string }
     mapName: string
-    classNameImage?: string
-    classNameMap?: string
-    role?:
-        | 'button'
-        | 'checkbox'
-        | 'doc-cover'
-        | 'link'
-        | 'menuitem'
-        | 'menuitemcheckbox'
-        | 'menuitemradio'
-        | 'option'
-        | 'progressbar'
-        | 'scrollbar'
-        | 'separator'
-        | 'slider'
-        | 'switch'
-        | 'tab'
-        | 'treeitem'
     additionalAriaAttributes?: Omit<
         WAIARIAAttributes,
         | 'braillelabel'
@@ -47,6 +29,24 @@ interface WCAGH24Props {
         | 'rowspan'
         | 'sort'
     >
+    classNameImage?: string
+    classNameMap?: string
+    role?:
+        | 'button'
+        | 'checkbox'
+        | 'doc-cover'
+        | 'link'
+        | 'menuitem'
+        | 'menuitemcheckbox'
+        | 'menuitemradio'
+        | 'option'
+        | 'progressbar'
+        | 'scrollbar'
+        | 'separator'
+        | 'slider'
+        | 'switch'
+        | 'tab'
+        | 'treeitem'
 }
 
 const WCAGH24: React.FC<WCAGH24Props> = ({
@@ -58,6 +58,41 @@ const WCAGH24: React.FC<WCAGH24Props> = ({
     role,
     mapName,
 }) => {
+    const errors: string[] = []
+
+    if (mapName.length < 1) {
+        errors.push(
+            'Your mapName attribute hast to have a length of at least one character!'
+        )
+    }
+
+    if (imageData.altText.length < 1) {
+        errors.push(
+            'Your imageData.altText attribute hast to have a length of at least one character!'
+        )
+    }
+
+    if (imageData.imageSource.length < 1) {
+        errors.push(
+            'Your imageData.imageSource attribute hast to have a length of at least one character!'
+        )
+    }
+
+    areaData.forEach((data, dataIndex) => {
+        if (data.coords.length < 1) {
+            errors.push(
+                `Your coords attribute in areaData[${dataIndex}] has to have a length of at least one character!`
+            )
+        }
+    })
+
+    if (errors.length) {
+        for (let i in errors) {
+            console.error(errors[i])
+        }
+        return
+    }
+
     return (
         <>
             <img

@@ -4,12 +4,12 @@ import { LinkAttributes } from '../interfaces/LinkAttributes'
 
 interface WCAGG73Props extends GlobalAttributes {
     buttonText: ReactNode
-    classNameDiv?: string
-    classNameLink?: string
-    externalLink?: string
     ownId: string
     parentId: string
+    classNameDiv?: string
+    classNameLink?: string
     divData?: GlobalAttributes
+    externalLink?: string
     linkData?: Omit<LinkAttributes, 'href' | 'download' | 'hreflang'>
     onClickFunction?: () => void
     role?:
@@ -89,6 +89,27 @@ const WCAGG73Text: React.FC<WCAGG73Props> = ({
     role,
     children,
 }) => {
+    const errors: string[] = []
+
+    if (parentId.length < 1) {
+        errors.push(
+            'Your parentId attribute hast to have a length of at least one character!'
+        )
+    }
+
+    if (ownId.length < 1) {
+        errors.push(
+            'Your ownId attribute hast to have a length of at least one character!'
+        )
+    }
+
+    if (errors.length) {
+        for (let i in errors) {
+            console.error(errors[i])
+        }
+        return
+    }
+
     return (
         <div
             id={ownId}

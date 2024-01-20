@@ -65,6 +65,27 @@ const WCAGH2: React.FC<WCAGH2Props> = ({
     children,
     onClickFunction,
 }) => {
+    const errors: string[] = []
+
+    if (link.length < 1) {
+        errors.push(
+            'Your link attribute hast to have a length of at least one character!'
+        )
+    }
+
+    if (imageData.imageSource.length < 1) {
+        errors.push(
+            'Your imageData.imageSource attribute hast to have a length of at least one character!'
+        )
+    }
+
+    if (errors.length) {
+        for (let i in errors) {
+            console.error(errors[i])
+        }
+        return
+    }
+
     return (
         <a
             href={linkData?.disabled ? undefined : link}

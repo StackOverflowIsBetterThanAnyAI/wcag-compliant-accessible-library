@@ -4,7 +4,6 @@ import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
 interface WCAGARIA15Props {
     accessibleIds: string
-    className?: string
     imageData: (ImageAttributes & { altText: string } & {
         role?:
             | 'button'
@@ -47,6 +46,7 @@ interface WCAGARIA15Props {
             | 'sort'
         >
     })[]
+    className?: string
 }
 
 const WCAGARIA15: React.FC<WCAGARIA15Props> = ({
@@ -54,6 +54,37 @@ const WCAGARIA15: React.FC<WCAGARIA15Props> = ({
     className,
     imageData,
 }) => {
+    const errors: string[] = []
+
+    if (accessibleIds.length < 1) {
+        errors.push(
+            'Your accessibleIds attribute hast to have a length of at least one character!'
+        )
+    }
+
+    imageData.forEach((data, dataIndex) => {
+        if (data.altText.length < 1) {
+            errors.push(
+                `Your altText attribute in imageData[${dataIndex}] has to have a length of at least one character!`
+            )
+        }
+    })
+
+    imageData.forEach((data, dataIndex) => {
+        if (data.imageSource.length < 1) {
+            errors.push(
+                `Your imageSource attribute in imageData[${dataIndex}] has to have a length of at least one character!`
+            )
+        }
+    })
+
+    if (errors.length) {
+        for (let i in errors) {
+            console.error(errors[i])
+        }
+        return
+    }
+
     return (
         <>
             {imageData.map((data, dataIndex) => (

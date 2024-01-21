@@ -25,12 +25,38 @@ const metaH67: Meta<typeof WCAGH67> = {
                             element, you can store all global img attributes in
                             this object.
                         </p>
-                        <p>
-                            For even more accessibility, you can optionally
-                            assign the value <strong>'presentation'</strong> to
-                            the variable <strong>role: string</strong> to ignore
-                            this element.
-                        </p>
+                        <div>
+                            Feel free to apply the following available WAI-ARIA
+                            role parameter for the attribute{' '}
+                            <strong>role: string</strong> to ignore this element
+                            safely:
+                            <table
+                                style={{
+                                    margin: '2% auto',
+                                    backgroundColor: '#e9e9e9',
+                                    borderSpacing: '15px 2px',
+                                    padding: '2% 5%',
+                                }}
+                            >
+                                <tbody>
+                                    <tr>
+                                        <th
+                                            style={{
+                                                textAlign: 'left',
+                                            }}
+                                        >
+                                            name
+                                        </th>
+                                        <th style={{ textAlign: 'left' }}>
+                                            information
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>presentation</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                         <p>
                             As this component renders a simple img element, you
                             cannot pass any child elements.

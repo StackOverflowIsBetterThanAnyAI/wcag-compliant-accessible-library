@@ -37,6 +37,10 @@ const metaG196: Meta<typeof WCAGG196> = {
                             <strong>role: string</strong> variable. These are
                             the available parameters for the attribute{' '}
                             <strong>role: string</strong>:
+                            <br />
+                            Note: 'should be avoided' means that instead of
+                            these roles you should always try to favour
+                            semantically html-equivalent elements.
                             <table
                                 style={{
                                     margin: '2% auto',

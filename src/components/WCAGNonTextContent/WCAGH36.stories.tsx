@@ -34,8 +34,13 @@ const metaARIA2H36: Meta<typeof WCAGH36> = {
                             roles.
                         </p>
                         <div>
-                            These are the available parameters for the optional
-                            attribute <strong>role: string</strong>:
+                            These are the available WAI-ARIA role parameters for
+                            the optional attribute <strong>role: string</strong>
+                            :
+                            <br />
+                            Note: 'should be avoided' means that instead of
+                            these roles you should always try to favour
+                            semantically html-equivalent elements.
                             <table
                                 style={{
                                     margin: '2% auto',

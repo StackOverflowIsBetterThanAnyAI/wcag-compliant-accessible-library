@@ -4,8 +4,6 @@ import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
 interface WCAGH53Props {
     objectData: ObjectAttributes
-    className?: string
-    role?: 'application' | 'document' | 'img'
     additionalAriaAttributes?: Omit<
         WAIARIAAttributes,
         | 'autocomplete'
@@ -14,8 +12,8 @@ interface WCAGH53Props {
         | 'checked'
         | 'colcount'
         | 'colindex'
-        | 'colspan'
         | 'colindextext'
+        | 'colspan'
         | 'label'
         | 'labelledby'
         | 'level'
@@ -40,6 +38,8 @@ interface WCAGH53Props {
         | 'valuenow'
         | 'valuetext'
     >
+    className?: string
+    role?: 'application' | 'document' | 'img'
     children: ReactNode // must contain either text or an element with an alt text
 }
 

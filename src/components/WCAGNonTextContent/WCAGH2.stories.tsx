@@ -66,6 +66,10 @@ const metaH2: Meta<typeof WCAGH2> = {
                             following values can optionally be used for the
                             WAI-ARIA role in the <strong>role: string</strong>{' '}
                             variable:
+                            <br />
+                            Note: 'should be avoided' means that instead of
+                            these roles you should always try to favour
+                            semantically html-equivalent elements.
                             <table
                                 style={{
                                     margin: '2% auto',

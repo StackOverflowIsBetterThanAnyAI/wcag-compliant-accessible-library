@@ -34,8 +34,12 @@ const metaARIA10: Meta<typeof WCAGARIA10> = {
                             the <strong>WCAGARIA10</strong> component.
                         </p>
                         <div>
-                            These are the available parameters for the attribute{' '}
-                            <strong>role: string</strong>:
+                            These are the available WAI-ARIA role parameters for
+                            the attribute <strong>role: string</strong>:
+                            <br />
+                            Note: 'should be avoided' means that instead of
+                            these roles you should always try to favour
+                            semantically html-equivalent elements.
                             <table
                                 style={{
                                     margin: '2% auto',

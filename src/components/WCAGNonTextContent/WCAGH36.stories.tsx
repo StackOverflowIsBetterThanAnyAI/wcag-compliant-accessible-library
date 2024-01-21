@@ -12,12 +12,15 @@ const metaARIA2H36: Meta<typeof WCAGH36> = {
         docs: {
             page: () => (
                 <>
-                    <Title />
+                    <Title>
+                        WCAGH36: Using alt attributes on images used as submit
+                        buttons
+                    </Title>
                     <Subtitle>
                         <h2>
                             This component adds an alt attribute to images which
-                            is displayed when the image cannot be loaded or is
-                            read aloud by assistive technology.
+                            is visually displayed when the image cannot be
+                            loaded or is read aloud by assistive technology.
                         </h2>
                         <p>
                             In order to use this component correctly, you need
@@ -251,9 +254,9 @@ const metaARIA2H36: Meta<typeof WCAGH36> = {
                         <p>
                             You can also add an optional customised{' '}
                             <strong>className: string</strong> to your
-                            components, which allows you to apply your styling
-                            to your new accessible components. If you prefer
-                            styling your components inline, feel free to use the{' '}
+                            component, which allows you to apply your styling to
+                            your new accessible component. If you prefer styling
+                            your components inline, feel free to use the{' '}
                             <strong>additionalStyling</strong> variable inside
                             of the <strong>inputData</strong> object.
                         </p>

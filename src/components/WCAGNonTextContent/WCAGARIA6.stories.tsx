@@ -10,7 +10,10 @@ const metaARIA6: Meta<typeof WCAGARIA6> = {
         docs: {
             page: () => (
                 <>
-                    <Title />
+                    <Title>
+                        WCAGARIA6: Using aria-label to provide labels for
+                        objects
+                    </Title>
                     <Subtitle>
                         <h2>
                             This component adds a tag to objects which can be
@@ -333,9 +336,9 @@ const metaARIA6: Meta<typeof WCAGARIA6> = {
                         <p>
                             You can also add an optional customised{' '}
                             <strong>className: string</strong> to your
-                            components, which allows you to apply your styling
-                            to your new accessible components. If you prefer
-                            styling your components inline, feel free to use the{' '}
+                            component, which allows you to apply your styling to
+                            your new accessible component. If you prefer styling
+                            your components inline, feel free to use the{' '}
                             <strong>additionalStyling</strong> variable inside
                             of the <strong>divData</strong> object.
                         </p>

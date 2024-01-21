@@ -12,7 +12,10 @@ const metaH2: Meta<typeof WCAGH2> = {
         docs: {
             page: () => (
                 <>
-                    <Title />
+                    <Title>
+                        WCAGH2: Combining adjacent image and text links for the
+                        same resource
+                    </Title>
                     <Subtitle>
                         <h2>
                             This component receives an img element as a child of
@@ -161,9 +164,9 @@ const metaH2: Meta<typeof WCAGH2> = {
                             You can also add an optional customised{' '}
                             <strong>classNameImage: string</strong> or{' '}
                             <strong>classNameLink: string</strong>to your
-                            components, which allows you to apply your styling
-                            to your new accessible components. If you prefer
-                            styling your components inline, feel free to use the{' '}
+                            component, which allows you to apply your styling to
+                            your new accessible component. If you prefer styling
+                            your components inline, feel free to use the{' '}
                             <strong>additionalStyling</strong> variable inside
                             of the <strong>imageData</strong> or{' '}
                             <strong>linkData</strong> objects.

@@ -12,7 +12,7 @@ const metaH53: Meta<typeof WCAGH53> = {
         docs: {
             page: () => (
                 <>
-                    <Title />
+                    <Title>WCAGH53: Using the body of the object element</Title>
                     <Subtitle>
                         <h2>
                             This component returns an object element. It also

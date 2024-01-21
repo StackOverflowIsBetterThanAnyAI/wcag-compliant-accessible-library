@@ -13,7 +13,10 @@ const metaARIA10: Meta<typeof WCAGARIA10> = {
         docs: {
             page: () => (
                 <>
-                    <Title />
+                    <Title>
+                        WCAGARIA10: Using aria-labelledby to provide a text
+                        alternative for non-text content
+                    </Title>
                     <Subtitle>
                         <h2>
                             This component contains non-text content, which is

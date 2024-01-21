@@ -7,16 +7,16 @@ interface WCAGH37Props {
     imageData: ImageAttributes
     additionalAriaAttributes?: Omit<
         WAIARIAAttributes,
-        | 'braillelabel'
-        | 'brailleroledescription'
-        | 'label'
-        | 'labelledby'
         | 'activedescendant'
         | 'autocomplete'
+        | 'braillelabel'
+        | 'brailleroledescription'
         | 'colcount'
         | 'colindex'
         | 'colindextext'
         | 'colspan'
+        | 'label'
+        | 'labelledby'
         | 'level'
         | 'modal'
         | 'multiline'

@@ -11,7 +11,10 @@ const metaH86: Meta<typeof WCAGH86> = {
         docs: {
             page: () => (
                 <>
-                    <Title />
+                    <Title>
+                        WCAGH86: Providing text alternatives for emojis,
+                        emoticons, ASCII art, and leetspeak
+                    </Title>
                     <Subtitle>
                         <h2>
                             This component adds an attribute that contains an

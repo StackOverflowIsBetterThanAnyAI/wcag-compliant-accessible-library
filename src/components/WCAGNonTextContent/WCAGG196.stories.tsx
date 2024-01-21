@@ -12,7 +12,10 @@ const metaG196: Meta<typeof WCAGG196> = {
         docs: {
             page: () => (
                 <>
-                    <Title />
+                    <Title>
+                        WCAGG196: Using a text alternative on one item within a
+                        group of images that describes all items in the group
+                    </Title>
                     <Subtitle>
                         <h2>
                             This component is used to summarise several images
@@ -144,9 +147,9 @@ const metaG196: Meta<typeof WCAGG196> = {
                         <p>
                             You can also add an optional customised{' '}
                             <strong>className: string</strong> to your
-                            components, which allows you to apply your styling
-                            to your new accessible components. If you prefer
-                            styling your components inline, feel free to use the{' '}
+                            component, which allows you to apply your styling to
+                            your new accessible component. If you prefer styling
+                            your components inline, feel free to use the{' '}
                             <strong>additionalStyling</strong> variable inside
                             of the <strong>imageData</strong> object array to
                             style each image individually.

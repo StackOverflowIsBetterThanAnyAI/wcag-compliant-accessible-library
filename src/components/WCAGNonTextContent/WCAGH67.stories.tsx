@@ -12,7 +12,11 @@ const metaH67: Meta<typeof WCAGH67> = {
         docs: {
             page: () => (
                 <>
-                    <Title />
+                    <Title>
+                        WCAGH67: Using null alt text and no title attribute on
+                        img elements for images that assistive technology should
+                        ignore
+                    </Title>
                     <Subtitle>
                         <h2>
                             This component returns an img element which can
@@ -64,9 +68,9 @@ const metaH67: Meta<typeof WCAGH67> = {
                         <p>
                             You can also add an optional customised{' '}
                             <strong>className: string</strong> to your
-                            components, which allows you to apply your styling
-                            to your new accessible components. If you prefer
-                            styling your components inline, feel free to use the{' '}
+                            component, which allows you to apply your styling to
+                            your new accessible component. If you prefer styling
+                            your components inline, feel free to use the{' '}
                             <strong>additionalStyling</strong> variable inside
                             of the <strong>imageData</strong> object.
                         </p>

@@ -13,7 +13,10 @@ const metaARIA15: Meta<typeof WCAGARIA15> = {
         docs: {
             page: () => (
                 <>
-                    <Title />
+                    <Title>
+                        WCAGARIA15: Using aria-describedby to provide
+                        descriptions of images
+                    </Title>
                     <Subtitle>
                         <h2>
                             This component contains a regular image element,

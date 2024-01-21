@@ -2,7 +2,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import WCAGH86 from './WCAGH86'
-import starImage from '../../images/star.png'
 
 const metaH86: Meta<typeof WCAGH86> = {
     component: WCAGH86,

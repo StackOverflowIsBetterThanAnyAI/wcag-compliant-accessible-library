@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import WCAGARIA2H65 from './WCAGARIA2H65'
-// @ts-ignore
-import starImage from '../../images/star.png'
 
 const metaARIA2H65: Meta<typeof WCAGARIA2H65> = {
     component: WCAGARIA2H65,

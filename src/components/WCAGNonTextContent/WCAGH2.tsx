@@ -7,6 +7,28 @@ interface WCAGH2Props {
     imageData: ImageAttributes
     link: string
     altText?: string // It may only be missing if the text of the anchor can clearly describe the link
+    additionalAriaAttributes?: Omit<
+        WAIARIAAttributes,
+        | 'activedescendant'
+        | 'autocomplete'
+        | 'braillelabel'
+        | 'brailleroledescription'
+        | 'colcount'
+        | 'colindex'
+        | 'colindextext'
+        | 'colspan'
+        | 'label'
+        | 'labelledby'
+        | 'level'
+        | 'modal'
+        | 'multiline'
+        | 'multiselectable'
+        | 'rowcount'
+        | 'rowindex'
+        | 'rowindextext'
+        | 'rowspan'
+        | 'sort'
+    >
     classNameImage?: string
     classNameLink?: string
     linkData?: LinkAttributes
@@ -25,31 +47,9 @@ interface WCAGH2Props {
         | 'switch'
         | 'tab'
         | 'treeitem'
-    additionalAriaAttributes?: Omit<
-        WAIARIAAttributes,
-        | 'braillelabel'
-        | 'brailleroledescription'
-        | 'label'
-        | 'labelledby'
-        | 'activedescendant'
-        | 'autocomplete'
-        | 'colcount'
-        | 'colindex'
-        | 'colindextext'
-        | 'colspan'
-        | 'level'
-        | 'modal'
-        | 'multiline'
-        | 'multiselectable'
-        | 'rowcount'
-        | 'rowindex'
-        | 'rowindextext'
-        | 'rowspan'
-        | 'sort'
-    >
     textBeforeImage?: boolean
-    children: ReactNode
     onClickFunction?: () => void
+    children: ReactNode
 }
 
 const WCAGH2: React.FC<WCAGH2Props> = ({

@@ -68,6 +68,13 @@ const WCAGG196: React.FC<WCAGG196Props> = ({
         }
     })
 
+    if (errors.length) {
+        for (let i in errors) {
+            console.error(errors[i])
+        }
+        return
+    }
+
     return (
         <>
             {imageData.map((data, dataIndex) => (

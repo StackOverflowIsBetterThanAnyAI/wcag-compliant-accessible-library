@@ -17,11 +17,11 @@ const metaH2: Meta<typeof WCAGH2> = {
                         same resource
                     </Title>
                     <Subtitle>
-                        <h2>
+                        <strong>
                             This component receives an img element as a child of
-                            an a element. This results in a larger clickable
-                            area for the user.
-                        </h2>
+                            an anchor element. This results in a larger
+                            clickable area for the user.
+                        </strong>
                         <p>
                             In order to use this component correctly, you need
                             to provide the target link which is saved in the{' '}

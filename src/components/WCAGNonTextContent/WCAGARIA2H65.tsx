@@ -8,19 +8,6 @@ interface WCAGARIA2H65Props {
     } & {
         src?: string
     } & { required: boolean }
-    role?:
-        | 'checkbox'
-        | 'combobox'
-        | 'link'
-        | 'menuitem'
-        | 'menuitemcheckbox'
-        | 'menuitemradio'
-        | 'option'
-        | 'radio'
-        | 'searchbox'
-        | 'spinbutton'
-        | 'switch'
-        | 'tab'
     inputType:
         | 'button'
         | 'color'
@@ -64,6 +51,19 @@ interface WCAGARIA2H65Props {
     >
     className?: string
     onClickFunction?: () => void
+    role?:
+        | 'checkbox' // should be avoided
+        | 'combobox'
+        | 'link' // should be avoided
+        | 'menuitem' // should be avoided
+        | 'menuitemcheckbox' // should be avoided
+        | 'menuitemradio' // should be avoided
+        | 'option' // should be avoided
+        | 'radio' // should be avoided
+        | 'searchbox'
+        | 'spinbutton'
+        | 'switch'
+        | 'tab'
 }
 
 const WCAGARIA2H65: React.FC<WCAGARIA2H65Props> = ({

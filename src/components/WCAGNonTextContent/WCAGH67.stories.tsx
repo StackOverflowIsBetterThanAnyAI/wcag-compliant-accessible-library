@@ -18,10 +18,10 @@ const metaH67: Meta<typeof WCAGH67> = {
                         ignore
                     </Title>
                     <Subtitle>
-                        <h2>
+                        <strong>
                             This component returns an img element which can
                             safely be ignored by assistive technologies.
-                        </h2>
+                        </strong>
                         <p>
                             To use this component properly, you must save the
                             data of your image in the <strong>imageData</strong>{' '}

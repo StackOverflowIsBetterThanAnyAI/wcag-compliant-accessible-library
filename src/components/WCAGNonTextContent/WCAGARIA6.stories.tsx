@@ -15,11 +15,11 @@ const metaARIA6: Meta<typeof WCAGARIA6> = {
                         objects
                     </Title>
                     <Subtitle>
-                        <h2>
+                        <strong>
                             This component adds a tag to objects which can be
                             read aloud by assistive technologies. This tag
                             contains a short descriptive text alternative.
-                        </h2>
+                        </strong>
                         <p>
                             In order to use this component correctly, you need
                             to provide one of 60 possible WAI-ARIA roles.

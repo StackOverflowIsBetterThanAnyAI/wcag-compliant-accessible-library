@@ -16,11 +16,11 @@ const metaH86: Meta<typeof WCAGH86> = {
                         emoticons, ASCII art, and leetspeak
                     </Title>
                     <Subtitle>
-                        <h2>
+                        <strong>
                             This component adds an attribute that contains an
                             alternative text for any kind of emoji, emoticon,
                             ASCII art or leetspeak.
-                        </h2>
+                        </strong>
                         <p>
                             In order to use this component correctly, you need
                             to provide the alternative text in the{' '}

@@ -4,21 +4,21 @@ import { AreaAttributes } from '../interfaces/AreaAttributes'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
 interface WCAGH24Props {
-    areaData: (AreaAttributes & { onClickFunction?: () => void })[]
-    imageData: ImageAttributes & { altText: string }
-    mapName: string
+    areaData: (AreaAttributes & { onClickFunction?: () => void })[] //
+    imageData: ImageAttributes & { altText: string } //
+    mapName: string //
     additionalAriaAttributes?: Omit<
         WAIARIAAttributes,
-        | 'braillelabel'
-        | 'brailleroledescription'
-        | 'label'
-        | 'labelledby'
         | 'activedescendant'
         | 'autocomplete'
+        | 'braillelabel'
+        | 'brailleroledescription'
         | 'colcount'
         | 'colindex'
         | 'colindextext'
         | 'colspan'
+        | 'label'
+        | 'labelledby'
         | 'level'
         | 'modal'
         | 'multiline'
@@ -29,20 +29,20 @@ interface WCAGH24Props {
         | 'rowspan'
         | 'sort'
     >
-    classNameImage?: string
-    classNameMap?: string
+    classNameImage?: string //
+    classNameMap?: string //
     role?:
-        | 'button'
-        | 'checkbox'
+        | 'button' // should be avoided
+        | 'checkbox' // should be avoided
         | 'doc-cover'
-        | 'link'
-        | 'menuitem'
-        | 'menuitemcheckbox'
-        | 'menuitemradio'
-        | 'option'
-        | 'progressbar'
+        | 'link' // should be avoided
+        | 'menuitem' // should be avoided
+        | 'menuitemcheckbox' // should be avoided
+        | 'menuitemradio' // should be avoided
+        | 'option' // should be avoided
+        | 'progressbar' // should be avoided
         | 'scrollbar'
-        | 'separator'
+        | 'separator' // should be avoided
         | 'slider'
         | 'switch'
         | 'tab'

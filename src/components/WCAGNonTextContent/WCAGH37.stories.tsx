@@ -14,11 +14,11 @@ const metaH37: Meta<typeof WCAGH37> = {
                 <>
                     <Title>WCAGH37: Using alt attributes on img elements</Title>
                     <Subtitle>
-                        <h2>
+                        <strong>
                             This component adds an alt attribute to images which
                             is visually displayed when the image cannot be
                             loaded or is read aloud by assistive technology.
-                        </h2>
+                        </strong>
                         <p>
                             In order to use this component correctly, you need
                             to provide a descriptive value for the{' '}

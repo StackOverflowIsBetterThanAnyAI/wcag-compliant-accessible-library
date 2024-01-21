@@ -18,7 +18,7 @@ const metaARIA15: Meta<typeof WCAGARIA15> = {
                         descriptions of images
                     </Title>
                     <Subtitle>
-                        <h2>
+                        <strong>
                             This component contains a regular image element,
                             which is described by an additional element with a
                             text alternative. The text alternative does not
@@ -26,7 +26,7 @@ const metaARIA15: Meta<typeof WCAGARIA15> = {
                             content. The purpose of this component is to provide
                             a short description of an element which can be read
                             aloud by assistive technology.
-                        </h2>
+                        </strong>
                         <p>
                             This component is divided into two parts: The
                             WCAGARIA15 component contains the non-text content,

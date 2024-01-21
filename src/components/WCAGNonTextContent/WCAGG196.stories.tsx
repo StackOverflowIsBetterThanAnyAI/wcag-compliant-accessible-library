@@ -17,11 +17,11 @@ const metaG196: Meta<typeof WCAGG196> = {
                         group of images that describes all items in the group
                     </Title>
                     <Subtitle>
-                        <h2>
+                        <strong>
                             This component is used to summarise several images
                             and describe them with a single alt attribute. This
                             avoids duplication.
-                        </h2>
+                        </strong>
                         <p>
                             In order to use this component correctly, you need
                             to provide a value for the{' '}

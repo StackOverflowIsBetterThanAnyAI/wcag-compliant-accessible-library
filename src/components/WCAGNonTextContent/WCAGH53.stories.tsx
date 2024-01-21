@@ -14,12 +14,12 @@ const metaH53: Meta<typeof WCAGH53> = {
                 <>
                     <Title>WCAGH53: Using the body of the object element</Title>
                     <Subtitle>
-                        <h2>
+                        <strong>
                             This component returns an object element. It also
                             contains a child element with either a text
                             description or an element with an alt attribute that
                             describes the object element.
-                        </h2>
+                        </strong>
                         <p>
                             In order to use this component properly, you must
                             save the data of your object element to be displayed

@@ -1,9 +1,15 @@
-import React, { ReactNode, useState } from 'react'
+import React, { CSSProperties, ReactNode, useState } from 'react'
 import { InputAttributes } from '../interfaces/InputAttributes'
+import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
 interface WCAGH44Props {
-    inputData: (Omit<InputAttributes, 'id' | 'name' | 'type'> & {
+    inputData: (Omit<
+        InputAttributes,
+        'additionalStyling' | 'id' | 'name' | 'type'
+    > & {
         id: string
+    } & { additionalStylingInput?: CSSProperties } & {
+        additionalStylingLabel?: CSSProperties
     } & {
         labelText: ReactNode
     } & { name: string } & { title?: string } & { altText?: string } & {
@@ -33,13 +39,63 @@ interface WCAGH44Props {
         | 'week'
         | 'select'
         | 'textarea'
+    additionalAriaAttributes?: Omit<
+        WAIARIAAttributes,
+        | 'activedescendant'
+        | 'autocomplete'
+        | 'checked'
+        | 'colcount'
+        | 'colindex'
+        | 'colindextext'
+        | 'colspan'
+        | 'describedby'
+        | 'disabled'
+        | 'errormessage'
+        | 'expanded'
+        | 'haspopup'
+        | 'invalid'
+        | 'labelledbyid'
+        | 'level'
+        | 'modal'
+        | 'multiline'
+        | 'multiselectable'
+        | 'orientation'
+        | 'placeholder'
+        | 'posinset'
+        | 'pressed'
+        | 'readonly'
+        | 'required'
+        | 'rowcount'
+        | 'rowindex'
+        | 'rowindextext'
+        | 'rowspan'
+        | 'selected'
+        | 'setsize'
+        | 'sort'
+        | 'valuemax'
+        | 'valuemin'
+        | 'valuenow'
+        | 'valuetext'
+    >
     onClickFunction?: () => void
+    role?:
+        | 'menu'
+        | 'button' // should be avoided
+        | 'combobox'
+        | 'menuitemcheckbox' // should be avoided
+        | 'menuitemradio' // should be avoided
+        | 'option' // should be avoided
+        | 'searchbox'
+        | 'spinbutton'
+        | 'switch'
 }
 
 const WCAGH44: React.FC<WCAGH44Props> = ({
+    additionalAriaAttributes,
     inputData,
     inputType,
     onClickFunction,
+    role,
 }) => {
     const [checkedStatesRadioCheckbox, setCheckedStatesRadioCheckbox] =
         useState(inputData.map((data) => data?.checked ?? false))
@@ -67,6 +123,35 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
             setInputValues(newInputValues)
         }
         onClickFunction && onClickFunction()
+    }
+
+    const hasNumberGreaterThanOne = (value: string | undefined): boolean => {
+        if (!value) return true
+        const numericValue = parseInt(value, 10)
+        return !isNaN(numericValue) && numericValue > 1
+    }
+
+    const isRoleAssignable = (role: string | undefined) => {
+        if (!role) return false
+        if (inputType === 'checkbox') {
+            if (
+                role === 'button' ||
+                role === 'menuitemcheckbox' ||
+                role === 'option' ||
+                role === 'switch'
+            )
+                return true
+        }
+        if (inputType === 'text') {
+            if (
+                role === 'combobox' ||
+                role === 'searchbox' ||
+                role === 'spinbutton'
+            )
+                return true
+        }
+        if (inputType === 'radio' && role === 'menuitemradio') return true
+        return false
     }
 
     const errors: string[] = []
@@ -103,6 +188,27 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                             htmlFor={data.id}
                             hidden={false}
                             className={data?.classNameLabel}
+                            style={{ ...data?.additionalStylingLabel }}
+                            aria-atomic={additionalAriaAttributes?.atomic}
+                            aria-busy={additionalAriaAttributes?.busy}
+                            aria-controls={additionalAriaAttributes?.controls}
+                            aria-current={additionalAriaAttributes?.current}
+                            aria-description={
+                                additionalAriaAttributes?.description
+                            }
+                            aria-details={additionalAriaAttributes?.details}
+                            aria-flowto={additionalAriaAttributes?.flowto}
+                            aria-hidden={additionalAriaAttributes?.hidden}
+                            aria-keyshortcuts={
+                                additionalAriaAttributes?.keyshortcuts
+                            }
+                            aria-label={additionalAriaAttributes?.label}
+                            aria-live={additionalAriaAttributes?.live}
+                            aria-owns={additionalAriaAttributes?.owns}
+                            aria-relevant={additionalAriaAttributes?.relevant}
+                            aria-roledescription={
+                                additionalAriaAttributes?.roledescription
+                            }
                         >
                             {data.labelText}
                         </label>
@@ -116,6 +222,13 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                                     e.target.value
                                 )
                             }
+                            role={
+                                !data?.multiple &&
+                                !hasNumberGreaterThanOne(data?.value) &&
+                                role === 'menu'
+                                    ? role
+                                    : undefined
+                            }
                             autoCapitalize={data?.autocapitalize}
                             autoComplete={data?.autocomplete}
                             autoFocus={data?.autofocus}
@@ -125,7 +238,7 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                             form={data?.form}
                             id={data.id}
                             multiple={data?.multiple}
-                            name={data?.name}
+                            name={data.name}
                             required={data?.required}
                             size={data?.size}
                             title={data?.title}
@@ -133,7 +246,7 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                             style={{
                                 height: data?.height,
                                 width: data?.width,
-                                ...data?.additionalStyling,
+                                ...data?.additionalStylingInput,
                             }}
                         >
                             {data.selectoptions}
@@ -156,7 +269,7 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                             disabled={data?.disabled}
                             form={data?.form}
                             id={data?.id}
-                            name={data?.name}
+                            name={data.name}
                             placeholder={data?.placeholder}
                             readOnly={data?.readonly}
                             required={data?.required}
@@ -165,7 +278,7 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                             style={{
                                 height: data?.height,
                                 width: data?.width,
-                                ...data?.additionalStyling,
+                                ...data?.additionalStylingInput,
                             }}
                         >
                             {data.selectoptions}
@@ -180,6 +293,7 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                                     e.target.value
                                 )
                             }
+                            role={isRoleAssignable(role) ? role : undefined}
                             accept={data?.accept}
                             alt={data?.altText}
                             autoCapitalize={data?.autocapitalize}
@@ -203,7 +317,7 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                             min={data?.min}
                             minLength={data?.minlength}
                             multiple={data?.multiple}
-                            name={data?.name}
+                            name={data.name}
                             pattern={data?.pattern}
                             placeholder={data?.placeholder}
                             readOnly={data?.readonly}
@@ -217,7 +331,7 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                             style={{
                                 height: data?.height,
                                 width: data?.width,
-                                ...data?.additionalStyling,
+                                ...data?.additionalStylingInput,
                             }}
                         />
                     )}
@@ -226,6 +340,27 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                             htmlFor={data.id}
                             hidden={false}
                             className={data?.classNameLabel}
+                            style={{ ...data?.additionalStylingLabel }}
+                            aria-atomic={additionalAriaAttributes?.atomic}
+                            aria-busy={additionalAriaAttributes?.busy}
+                            aria-controls={additionalAriaAttributes?.controls}
+                            aria-current={additionalAriaAttributes?.current}
+                            aria-description={
+                                additionalAriaAttributes?.description
+                            }
+                            aria-details={additionalAriaAttributes?.details}
+                            aria-flowto={additionalAriaAttributes?.flowto}
+                            aria-hidden={additionalAriaAttributes?.hidden}
+                            aria-keyshortcuts={
+                                additionalAriaAttributes?.keyshortcuts
+                            }
+                            aria-label={additionalAriaAttributes?.label}
+                            aria-live={additionalAriaAttributes?.live}
+                            aria-owns={additionalAriaAttributes?.owns}
+                            aria-relevant={additionalAriaAttributes?.relevant}
+                            aria-roledescription={
+                                additionalAriaAttributes?.roledescription
+                            }
                         >
                             {data.labelText}
                         </label>

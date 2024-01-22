@@ -31,7 +31,7 @@ interface WCAGH30Props {
     classNameImage?: string
     imageData?: (ImageAttributes & {
         altText?: string /* It may only be missing if the anchor text can describe the image */
-    })[] //
+    })[]
     linkData?: LinkAttributes
     onClickFunction?: () => void
     postImageText?: ReactNode

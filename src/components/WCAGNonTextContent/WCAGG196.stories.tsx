@@ -22,15 +22,28 @@ const metaG196: Meta<typeof WCAGG196> = {
                             and describe them with a single alt attribute. This
                             avoids duplication.
                         </strong>
+                        <p style={{ textAlign: 'center' }}>
+                            <strong>
+                                <i style={{ color: '#ff0000' }}>
+                                    variable name
+                                </i>{' '}
+                                means that this variable is mandatory
+                            </strong>
+                        </p>
                         <p>
                             In order to use this component correctly, you need
                             to provide a value for the{' '}
-                            <strong>altText: string</strong> attribute which
-                            describes all adjacent images.
+                            <strong style={{ color: '#ff0000' }}>
+                                altText: string
+                            </strong>{' '}
+                            attribute which describes all adjacent images.
                         </p>
                         <p>
                             Furthermore, you must save the data of your images
-                            to be described in the <strong>imageData</strong>{' '}
+                            to be described in the{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                imageData
+                            </strong>{' '}
                             object array. All the usual attributes for the img
                             element are possible.
                         </p>

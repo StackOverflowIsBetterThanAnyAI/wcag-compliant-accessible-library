@@ -23,6 +23,14 @@ const metaH30: Meta<typeof WCAGH30> = {
                             The additional text can also be an image with an alt
                             attribute.
                         </strong>
+                        <p style={{ textAlign: 'center' }}>
+                            <strong>
+                                <i style={{ color: '#ff0000' }}>
+                                    variable name
+                                </i>{' '}
+                                means that this variable is mandatory
+                            </strong>
+                        </p>
                         <p>
                             Next, you need to decide how your alternative text
                             looks like. If you want to pass at least one image,
@@ -53,10 +61,14 @@ const metaH30: Meta<typeof WCAGH30> = {
                         </p>
                         <p>
                             As this component renders a simple anchor element,
-                            you are also free to assign every possible property
-                            of the anchor element to the anchor element of this
-                            component optionally. These attributes can be
-                            applied to the <strong>linkData</strong> object.
+                            you need to provide a value for its{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                link: string
+                            </strong>
+                            . You are also free to assign every possible
+                            property of the anchor element to the anchor element
+                            of this component optionally. These attributes can
+                            be applied to the <strong>linkData</strong> object.
                         </p>
                         <p>You cannot pass any elements as a child element.</p>
                         <p>

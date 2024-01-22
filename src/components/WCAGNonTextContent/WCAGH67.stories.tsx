@@ -22,9 +22,20 @@ const metaH67: Meta<typeof WCAGH67> = {
                             This component returns an img element which can
                             safely be ignored by assistive technologies.
                         </strong>
+                        <p style={{ textAlign: 'center' }}>
+                            <strong>
+                                <i style={{ color: '#ff0000' }}>
+                                    variable name
+                                </i>{' '}
+                                means that this variable is mandatory
+                            </strong>
+                        </p>
                         <p>
                             To use this component properly, you must save the
-                            data of your image in the <strong>imageData</strong>{' '}
+                            data of your image in the{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                imageData
+                            </strong>{' '}
                             object. Since this component returns a simple img
                             element, you can store all global img attributes in
                             this object.

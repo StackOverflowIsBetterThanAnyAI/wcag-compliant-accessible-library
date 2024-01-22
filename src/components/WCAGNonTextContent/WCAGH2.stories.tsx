@@ -22,25 +22,38 @@ const metaH2: Meta<typeof WCAGH2> = {
                             an anchor element. This results in a larger
                             clickable area for the user.
                         </strong>
+                        <p style={{ textAlign: 'center' }}>
+                            <strong>
+                                <i style={{ color: '#ff0000' }}>
+                                    variable name
+                                </i>{' '}
+                                means that this variable is mandatory
+                            </strong>
+                        </p>
                         <p>
                             In order to use this component correctly, you need
                             to provide the target link which is saved in the{' '}
-                            <strong>link: string</strong> variable.
+                            <strong style={{ color: '#ff0000' }}>
+                                link: string
+                            </strong>{' '}
+                            variable.
                         </p>
                         <p>
                             Furthermore, you need to provide the data for your
                             image. This information is saved in the{' '}
-                            <strong>imageData</strong> object. The only required
-                            attribute is <strong>imageSource: string</strong>,
-                            but you can also assign all other global image
-                            attributes.
+                            <strong style={{ color: '#ff0000' }}>
+                                imageData
+                            </strong>{' '}
+                            object. The only required attribute is{' '}
+                            <strong>imageSource: string</strong>, but you can
+                            also assign all other global image attributes.
                         </p>
                         <p>
                             In addition to that, you need to supply a{' '}
-                            <strong>child element</strong> which contains the
-                            clickable text. The type of this text could be a
-                            string, a ReactNode or even a whole different
-                            component.
+                            <strong>child: ReactNode</strong> element which
+                            contains the clickable text. The type of this text
+                            could be a string, a ReactNode or even a whole
+                            different component.
                         </p>
                         <p>
                             If you want the text of the child element to be

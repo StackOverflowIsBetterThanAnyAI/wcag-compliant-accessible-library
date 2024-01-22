@@ -19,16 +19,33 @@ const metaH37: Meta<typeof WCAGH37> = {
                             is visually displayed when the image cannot be
                             loaded or is read aloud by assistive technology.
                         </strong>
+                        <p style={{ textAlign: 'center' }}>
+                            <strong>
+                                <i style={{ color: '#ff0000' }}>
+                                    variable name
+                                </i>{' '}
+                                means that this variable is mandatory
+                            </strong>
+                        </p>
                         <p>
                             In order to use this component correctly, you need
                             to provide a descriptive value for the{' '}
-                            <strong>altText: string</strong> attribute.
+                            <strong style={{ color: '#ff0000' }}>
+                                altText: string
+                            </strong>{' '}
+                            attribute.
                         </p>
                         <p>
                             Furthermore, you need to save all your image data in
-                            the <strong>imageData</strong> object. However, the
-                            only mandatory parameter is{' '}
-                            <strong>imageData.imageSource: string</strong> .
+                            the{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                imageData
+                            </strong>{' '}
+                            object. However, the only mandatory parameter is{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                imageData.imageSource: string
+                            </strong>{' '}
+                            .
                         </p>
                         <div>
                             These are the available WAI-ARIA role parameters for

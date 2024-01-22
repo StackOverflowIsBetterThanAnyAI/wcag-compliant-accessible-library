@@ -25,11 +25,20 @@ const metaARIA10: Meta<typeof WCAGARIA10> = {
                             provide a short description of an element which can
                             be read aloud by assistive technology.
                         </strong>
+                        <p style={{ textAlign: 'center' }}>
+                            <strong>
+                                <i style={{ color: '#ff0000' }}>
+                                    variable name
+                                </i>{' '}
+                                means that this variable is mandatory
+                            </strong>
+                        </p>
                         <p>
                             This component is divided into two parts: The
                             WCAGARIA10 component contains the non-text content,
                             while the WCAGARIA10Text component contains the
-                            alternative text.
+                            alternative text, you can use multiple
+                            WCAGARIA10Text components.
                         </p>
                         <p>
                             To be able to use this component correctly, you must
@@ -38,7 +47,11 @@ const metaARIA10: Meta<typeof WCAGARIA10> = {
                         </p>
                         <div>
                             These are the available WAI-ARIA role parameters for
-                            the attribute <strong>role: string</strong>:
+                            the attribute{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                role: string
+                            </strong>
+                            :
                             <br />
                             Note: 'should be avoided' means that instead of
                             these roles you should always try to favour
@@ -331,12 +344,18 @@ const metaARIA10: Meta<typeof WCAGARIA10> = {
                             <strong>role: string</strong> parameter optionally.
                         </p>
                         <p>
-                            To connect the two components, you must assign the
-                            same value to the{' '}
-                            <strong>ariaLabelledById: string</strong> parameter
-                            in the{' '}
-                            <strong>WCAGARIA10 and WCAGARIA10Text</strong>{' '}
-                            components.
+                            To connect the two components, you must assign all{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                ariaLabelledById: string
+                            </strong>{' '}
+                            values of the <strong>WCAGARIA10Text</strong>{' '}
+                            components to the{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                accessibleId: string
+                            </strong>{' '}
+                            variable of the
+                            <strong>WCAGARIA10t</strong> component separated by
+                            a space.
                         </p>
                         <p>
                             As <strong>both</strong> components render a simple
@@ -349,8 +368,12 @@ const metaARIA10: Meta<typeof WCAGARIA10> = {
                         </p>
                         <p>
                             <strong>Both</strong> components can be passed any
-                            element as a child element: be it a string, another
-                            div element or a completely different component.
+                            element as a{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                child: ReactNode
+                            </strong>{' '}
+                            element: be it a string, another div element or a
+                            completely different component.
                         </p>
                         <p>
                             You can also add an optional customised{' '}

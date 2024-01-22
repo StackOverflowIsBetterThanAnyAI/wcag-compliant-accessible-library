@@ -22,16 +22,30 @@ const metaH24: Meta<typeof WCAGH24> = {
                             map that serve the same purpose as the selectable
                             region of the map.
                         </strong>
+                        <p style={{ textAlign: 'center' }}>
+                            <strong>
+                                <i style={{ color: '#ff0000' }}>
+                                    variable name
+                                </i>{' '}
+                                means that this variable is mandatory
+                            </strong>
+                        </p>
                         <p>
                             In order to use this component correctly, you need
                             to provide a value for the{' '}
-                            <strong>mapName: string</strong>. This value
-                            connects the image with its corresponding map.
+                            <strong style={{ color: '#ff0000' }}>
+                                mapName: string
+                            </strong>
+                            . This value connects the image with its
+                            corresponding map.
                         </p>
                         <p>
                             The next step is to specify your image data in the{' '}
-                            <strong>imageData</strong> object. The{' '}
-                            <strong>
+                            <strong style={{ color: '#ff0000' }}>
+                                imageData
+                            </strong>{' '}
+                            object. The{' '}
+                            <strong style={{ color: '#ff0000' }}>
                                 imageData.altText: string and
                                 imageData.imageSource: string
                             </strong>{' '}
@@ -41,9 +55,11 @@ const metaH24: Meta<typeof WCAGH24> = {
                         <p>
                             The values for the individual areas of the image
                             that you want to make clickable are saved in the{' '}
-                            <strong>areaData</strong> object array. You need to
-                            provide values for the{' '}
-                            <strong>
+                            <strong style={{ color: '#ff0000' }}>
+                                areaData
+                            </strong>{' '}
+                            object array. You need to provide values for the{' '}
+                            <strong style={{ color: '#ff0000' }}>
                                 coords: string and shape: 'default' | 'rect' |
                                 'circle' | 'poly'
                             </strong>{' '}

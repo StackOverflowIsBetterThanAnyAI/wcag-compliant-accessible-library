@@ -21,14 +21,27 @@ const metaH86: Meta<typeof WCAGH86> = {
                             alternative text for any kind of emoji, emoticon,
                             ASCII art or leetspeak.
                         </strong>
+                        <p style={{ textAlign: 'center' }}>
+                            <strong>
+                                <i style={{ color: '#ff0000' }}>
+                                    variable name
+                                </i>{' '}
+                                means that this variable is mandatory
+                            </strong>
+                        </p>
                         <p>
                             In order to use this component correctly, you need
                             to provide the alternative text in the{' '}
-                            <strong>accessibleText: string</strong> variable.
+                            <strong style={{ color: '#ff0000' }}>
+                                accessibleText: string
+                            </strong>{' '}
+                            variable.
                         </p>
                         <p>
                             Furthermore, you must specify in the{' '}
-                            <strong>element: 'span' | 'div' | 'abbr'</strong>{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                element: 'span' | 'div' | 'abbr'
+                            </strong>{' '}
                             parameter whether the returned element should be a
                             span, div or abbr element.
                         </p>

@@ -20,12 +20,23 @@ const metaH53: Meta<typeof WCAGH53> = {
                             description or an element with an alt attribute that
                             describes the object element.
                         </strong>
+                        <p style={{ textAlign: 'center' }}>
+                            <strong>
+                                <i style={{ color: '#ff0000' }}>
+                                    variable name
+                                </i>{' '}
+                                means that this variable is mandatory
+                            </strong>
+                        </p>
                         <p>
                             In order to use this component properly, you must
                             save the data of your object element to be displayed
-                            in the <strong>objectData</strong> object. This
-                            object accepts all global attributes of the object
-                            html element.
+                            in the{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                objectData
+                            </strong>{' '}
+                            object. This object accepts all global attributes of
+                            the object html element.
                         </p>
                         <div>
                             For even more accessibility you can also apply one
@@ -78,7 +89,8 @@ const metaH53: Meta<typeof WCAGH53> = {
                             </table>
                         </div>
                         <p>
-                            You can pass any element as a child element: be it a
+                            You can pass any element as a{' '}
+                            <strong>child: ReactNode</strong> element: be it a
                             string, another div element or a completely
                             different component. But don't forget that the child
                             element must either contain some text or an element

@@ -20,11 +20,22 @@ const metaH44: Meta<typeof WCAGH44> = {
                             either an input or a select or a textarea element by
                             requiring a unique ID for both elements.
                         </strong>
+                        <p style={{ textAlign: 'center' }}>
+                            <strong>
+                                <i style={{ color: '#ff0000' }}>
+                                    variable name
+                                </i>{' '}
+                                means that this variable is mandatory
+                            </strong>
+                        </p>
                         <div>
                             In order to use this component correctly, you need
                             to provide the input type. You must select one of
                             the following values and assign it to the variable{' '}
-                            <strong>inputType: string</strong>: By choosing{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                inputType: string
+                            </strong>
+                            : By choosing{' '}
                             <strong>'select' or 'textarea'</strong>, a select or
                             a textarea element are returned, else an input
                             element is returned.
@@ -112,14 +123,25 @@ const metaH44: Meta<typeof WCAGH44> = {
                             to the elements of this component. These attributes
                             can be applied to the <strong>inputData</strong>{' '}
                             object. You need to pass values for the unique{' '}
-                            <strong>id: string</strong>, the{' '}
-                            <strong>labelText: ReactNode</strong> which can
-                            either be a string, a Reactnode or a whole component
-                            and a <strong>name: string</strong> for the second
-                            element. The other properties are optional. The{' '}
-                            <strong>labelText</strong> contains the text that is
-                            describing the select/textarea/input element
-                            accuratelly.
+                            <strong style={{ color: '#ff0000' }}>
+                                id: string
+                            </strong>
+                            , the{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                labelText: ReactNode
+                            </strong>{' '}
+                            which can either be a string, a Reactnode or a whole
+                            component and a{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                name: string
+                            </strong>{' '}
+                            for the second element. The other properties are
+                            optional. The{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                labelText
+                            </strong>{' '}
+                            contains the text that is describing the
+                            select/textarea/input element accuratelly.
                         </p>
                         <p>
                             You can also add an optional customised{' '}

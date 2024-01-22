@@ -24,15 +24,29 @@ const metaARIA2H65: Meta<typeof WCAGARIA2H65> = {
                             visual design doesn't include text an the screen
                             which can be seen as a label for the element.
                         </strong>
+                        <p style={{ textAlign: 'center' }}>
+                            <strong>
+                                <i style={{ color: '#ff0000' }}>
+                                    variable name
+                                </i>{' '}
+                                means that this variable is mandatory
+                            </strong>
+                        </p>
                         <p>
                             In order to use this component correctly, you need
                             to provide a descriptive text for the input element
-                            in the <strong>title: string</strong> parameter.
+                            in the{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                title: string
+                            </strong>{' '}
+                            parameter.
                         </p>
                         <div>
                             Furthermore, you have to specify your wanted{' '}
-                            <strong>inputType</strong>. Choose one of the
-                            following values:
+                            <strong style={{ color: '#ff0000' }}>
+                                inputType
+                            </strong>
+                            . Choose one of the following values:
                             <table
                                 style={{
                                     margin: '2% auto',
@@ -115,12 +129,16 @@ const metaARIA2H65: Meta<typeof WCAGARIA2H65> = {
                         </div>
                         <p>
                             In addition to that, you have to use the{' '}
-                            <strong>inputData</strong> object with its mandatory
-                            parameter{' '}
-                            <strong>inputData.required: boolean</strong>. This
-                            value is necessary for the aria-required value if
-                            you decide to use an optional WAI-ARIA role with the
-                            value{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                inputData
+                            </strong>{' '}
+                            object with its mandatory parameter{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                inputData.required: boolean
+                            </strong>
+                            . This value is necessary for the aria-required
+                            value if you decide to use an optional WAI-ARIA role
+                            with the value{' '}
                             <strong>
                                 'checkbox', 'combobox', 'spinbutton',
                                 'searchbox' or 'switch'
@@ -226,7 +244,10 @@ const metaARIA2H65: Meta<typeof WCAGARIA2H65> = {
                                 </tbody>
                             </table>
                         </div>
-                        <p>You cannot pass any elements as a child element.</p>
+                        <p>
+                            You cannot pass any elements as a{' '}
+                            <strong>child</strong> element.
+                        </p>
                         <p>
                             You can also add an optional customised{' '}
                             <strong>className: string</strong> to your

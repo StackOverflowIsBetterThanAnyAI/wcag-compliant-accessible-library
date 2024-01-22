@@ -27,6 +27,14 @@ const metaARIA15: Meta<typeof WCAGARIA15> = {
                             a short description of an element which can be read
                             aloud by assistive technology.
                         </strong>
+                        <p style={{ textAlign: 'center' }}>
+                            <strong>
+                                <i style={{ color: '#ff0000' }}>
+                                    variable name
+                                </i>{' '}
+                                means that this variable is mandatory
+                            </strong>
+                        </p>
                         <p>
                             This component is divided into two parts: The
                             WCAGARIA15 component contains the non-text content,
@@ -37,25 +45,35 @@ const metaARIA15: Meta<typeof WCAGARIA15> = {
                             To be able to use this component correctly, you must
                             assign an ID to each <strong>WCAGARIA15Text</strong>{' '}
                             component you would like to use in the{' '}
-                            <strong>accessibleId: string</strong> variable.
+                            <strong style={{ color: '#ff0000' }}>
+                                accessibleId: string
+                            </strong>{' '}
+                            variable.
                         </p>
                         <p>
                             Next, you must assign these IDs to the{' '}
-                            <strong>accessibleIds: string</strong> variable in
-                            the <strong>WCAGARIA15</strong> component in the
-                            order in which they are to be read out, separated by
-                            a space.
+                            <strong style={{ color: '#ff0000' }}>
+                                accessibleIds: string
+                            </strong>{' '}
+                            variable in the <strong>WCAGARIA15</strong>{' '}
+                            component in the order in which they are to be read
+                            out, separated by a space.
                         </p>
                         <p>
                             Within the <strong>WCAGARIA15</strong> component you
                             have to set a value for{' '}
-                            <strong>altText: string</strong> inside of the{' '}
-                            <strong>imageData</strong> object array. Optionally
-                            you can also assign any other img attribute to this
-                            component by applying it to the{' '}
-                            <strong>imageData</strong> object array. Inside of
-                            this object array you can also use any of the
-                            following values for the WAI-ARIA{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                altText: string
+                            </strong>{' '}
+                            inside of the{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                imageData
+                            </strong>{' '}
+                            object array. Optionally you can also assign any
+                            other img attribute to this component by applying it
+                            to the <strong>imageData</strong> object array.
+                            Inside of this object array you can also use any of
+                            the following values for the WAI-ARIA{' '}
                             <strong>role: string</strong> variable. You can also
                             pass any number of the following WAI-ARIA attributes
                             to this object array in the variable{' '}
@@ -367,9 +385,11 @@ const metaARIA15: Meta<typeof WCAGARIA15> = {
                         </p>
                         <p>
                             At the same time, this also means that a{' '}
-                            <strong>child element</strong> must be passed, which
-                            can be a string, a ReactNode or even an entire other
-                            component.
+                            <strong style={{ color: '#ff0000' }}>
+                                child: ReactNode
+                            </strong>{' '}
+                            element must be passed, which can be a string, a
+                            ReactNode or even an entire other component.
                         </p>
                         <p>
                             To customise this <strong>WCAGARIA15Text</strong>{' '}

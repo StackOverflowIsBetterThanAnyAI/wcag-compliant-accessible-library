@@ -20,13 +20,25 @@ const metaARIA6: Meta<typeof WCAGARIA6> = {
                             read aloud by assistive technologies. This tag
                             contains a short descriptive text alternative.
                         </strong>
+                        <p style={{ textAlign: 'center' }}>
+                            <strong>
+                                <i style={{ color: '#ff0000' }}>
+                                    variable name
+                                </i>{' '}
+                                means that this variable is mandatory
+                            </strong>
+                        </p>
                         <p>
                             In order to use this component correctly, you need
                             to provide one of 60 possible WAI-ARIA roles.
                         </p>
                         <div>
                             These are the available WAI-ARIA role parameters for
-                            the attribute <strong>role: string</strong>:
+                            the attribute{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                role: string
+                            </strong>
+                            :
                             <br />
                             Note: 'should be avoided' means that instead of
                             these roles you should always try to favour
@@ -321,7 +333,8 @@ const metaARIA6: Meta<typeof WCAGARIA6> = {
                             <strong>divData</strong> object.
                         </p>
                         <p>
-                            You can pass any element as a child element: be it a
+                            You can pass any element as a{' '}
+                            <strong>child: ReactNode</strong> element: be it a
                             string, another div element or a completely
                             different component.
                         </p>
@@ -329,9 +342,11 @@ const metaARIA6: Meta<typeof WCAGARIA6> = {
                             Since this component tells assistive technologies
                             what the child element represents, it is necessary
                             to provide a string that concisely explains this.
-                            This text which is sored inside of the{' '}
-                            <strong>ariaLabel: string</strong> variable is then
-                            read aloud by screen readers.
+                            This text which is stored inside of the{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                ariaLabel: string
+                            </strong>{' '}
+                            variable is then read aloud by screen readers.
                         </p>
                         <p>
                             You can also add an optional customised{' '}

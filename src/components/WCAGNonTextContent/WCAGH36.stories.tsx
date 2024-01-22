@@ -22,15 +22,28 @@ const metaARIA2H36: Meta<typeof WCAGH36> = {
                             is visually displayed when the image cannot be
                             loaded or is read aloud by assistive technology.
                         </strong>
+                        <p style={{ textAlign: 'center' }}>
+                            <strong>
+                                <i style={{ color: '#ff0000' }}>
+                                    variable name
+                                </i>{' '}
+                                means that this variable is mandatory
+                            </strong>
+                        </p>
                         <p>
                             In order to use this component correctly, you need
                             to provide a descriptive value for the{' '}
-                            <strong>altText: string</strong> attribute.
+                            <strong style={{ color: '#ff0000' }}>
+                                altText: string
+                            </strong>{' '}
+                            attribute.
                         </p>
                         <p>
                             You also have to specify a value for the{' '}
-                            <strong>src: string</strong> attribute which refers
-                            to the image.
+                            <strong style={{ color: '#ff0000' }}>
+                                src: string
+                            </strong>{' '}
+                            attribute which refers to the image.
                         </p>
                         <p>
                             Feel free to provide one of these possible WAI-ARIA

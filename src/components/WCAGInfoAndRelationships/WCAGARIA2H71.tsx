@@ -1,37 +1,8 @@
 import React, { CSSProperties, useState } from 'react'
+import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
+import { FormAttributes } from '../interfaces/FormAttributes'
 
 interface WCAGARIA2H71Props {
-    fieldsetData?: {
-        disabled?: boolean
-        form?: string
-        name?: string
-        className?: string
-    }
-    formData?: {
-        acceptCharset?: string
-        action?: string
-        autocomplete?: 'on' | 'off'
-        className?: string
-        enctype?: string
-        method?: 'get' | 'post'
-        name?: string
-        novalidate?: boolean
-        rel?:
-            | 'alternate'
-            | 'author'
-            | 'bookmark'
-            | 'help'
-            | 'license'
-            | 'next'
-            | 'nofollow'
-            | 'noreferrer'
-            | 'prefetch'
-            | 'prev'
-            | 'search'
-            | 'tag'
-        target?: '_blank' | '_parent' | '_self' | '_top'
-        additionalStyling?: CSSProperties
-    }
     inputLabelData: {
         id: string
         inputType: 'checkbox' | 'radio'
@@ -47,7 +18,7 @@ interface WCAGARIA2H71Props {
         inputMax?: number
         inputMaxlength?: number
         inputMin?: number
-        inputMinLength?: number
+        inputMinlength?: number
         inputMultiple?: boolean
         inputName?: string
         inputPattern?: string
@@ -60,20 +31,67 @@ interface WCAGARIA2H71Props {
         labelForm?: string
         classNameInput?: string
         classNameLabel?: string
+        additionalStylingInput?: CSSProperties
+        additionalStylingLabel?: CSSProperties
     }[]
     legendData: {
         legendText: string
+        additionalStylingLegend?: CSSProperties
         classNameLegend?: string
     }
+    additionalAriaAttributes?: Omit<
+        WAIARIAAttributes,
+        | 'activedescendant'
+        | 'autocomplete'
+        | 'braillelabel'
+        | 'brailleroledescription'
+        | 'checked'
+        | 'colcount'
+        | 'colindex'
+        | 'colindextext'
+        | 'colspan'
+        | 'expanded'
+        | 'haspopup'
+        | 'labelledby'
+        | 'level'
+        | 'modal'
+        | 'multiline'
+        | 'multiselectable'
+        | 'placeholder'
+        | 'posinset'
+        | 'pressed'
+        | 'rowcount'
+        | 'rowindex'
+        | 'rowindextext'
+        | 'rowspan'
+        | 'selected'
+        | 'setsize'
+        | 'sort'
+        | 'valuemax'
+        | 'valuemin'
+        | 'valuenow'
+        | 'valuetext'
+    >
+    fieldsetData?: {
+        disabled?: boolean
+        form?: string
+        name?: string
+        classNameFieldset?: string
+        additionalStylingFieldset?: CSSProperties
+    }
+    formData?: FormAttributes
     onClickFunction?: () => void
+    role?: 'presentation' | 'radiogroup'
 }
 
 const WCAGARIA2H71: React.FC<WCAGARIA2H71Props> = ({
+    additionalAriaAttributes,
     fieldsetData,
     formData,
     inputLabelData,
     legendData,
     onClickFunction,
+    role,
 }) => {
     const [checkedStates, setCheckedStates] = useState(
         inputLabelData.map((data) => data?.inputChecked ?? false)
@@ -95,12 +113,62 @@ const WCAGARIA2H71: React.FC<WCAGARIA2H71Props> = ({
 
     const renderFieldset = () => (
         <fieldset
+            role={role}
             disabled={fieldsetData?.disabled}
             form={fieldsetData?.form}
             name={fieldsetData?.name}
-            className={fieldsetData?.className}
+            className={fieldsetData?.classNameFieldset}
+            style={{ ...fieldsetData?.additionalStylingFieldset }}
+            aria-atomic={additionalAriaAttributes?.atomic}
+            aria-busy={additionalAriaAttributes?.busy}
+            aria-controls={additionalAriaAttributes?.controls}
+            aria-current={additionalAriaAttributes?.current}
+            aria-describedby={additionalAriaAttributes?.describedby}
+            aria-description={additionalAriaAttributes?.description}
+            aria-details={additionalAriaAttributes?.details}
+            aria-disabled={
+                role === 'radiogroup'
+                    ? additionalAriaAttributes?.disabled
+                    : undefined
+            }
+            aria-errormessage={
+                role === 'radiogroup'
+                    ? additionalAriaAttributes?.errormessage
+                    : undefined
+            }
+            aria-flowto={additionalAriaAttributes?.flowto}
+            aria-hidden={additionalAriaAttributes?.hidden}
+            aria-invalid={
+                role === 'radiogroup'
+                    ? additionalAriaAttributes?.invalid
+                    : undefined
+            }
+            aria-keyshortcuts={additionalAriaAttributes?.keyshortcuts}
+            aria-label={additionalAriaAttributes?.label}
+            aria-live={additionalAriaAttributes?.live}
+            aria-orientation={
+                role === 'radiogroup'
+                    ? additionalAriaAttributes?.orientation
+                    : undefined
+            }
+            aria-owns={additionalAriaAttributes?.owns}
+            aria-readonly={
+                role === 'radiogroup'
+                    ? additionalAriaAttributes?.readonly
+                    : undefined
+            }
+            aria-relevant={additionalAriaAttributes?.relevant}
+            aria-required={
+                role === 'radiogroup'
+                    ? additionalAriaAttributes?.required
+                    : undefined
+            }
+            aria-roledescription={additionalAriaAttributes?.roledescription}
         >
-            <legend className={legendData?.classNameLegend}>
+            <legend
+                className={legendData?.classNameLegend}
+                style={{ ...legendData?.additionalStylingLegend }}
+            >
                 {legendData.legendText}
             </legend>
             {inputLabelData.map((data, dataIndex) => (
@@ -121,7 +189,7 @@ const WCAGARIA2H71: React.FC<WCAGARIA2H71Props> = ({
                         max={data?.inputMax}
                         maxLength={data?.inputMaxlength}
                         min={data?.inputMin}
-                        minLength={data?.inputMinLength}
+                        minLength={data?.inputMinlength}
                         multiple={data?.inputMultiple}
                         name={data?.inputName}
                         pattern={data?.inputPattern}
@@ -131,11 +199,13 @@ const WCAGARIA2H71: React.FC<WCAGARIA2H71Props> = ({
                         size={data?.inputSize}
                         step={data?.inputStep}
                         value={data?.inputValue}
+                        style={{ ...data?.additionalStylingInput }}
                     />
                     <label
                         htmlFor={data.id}
                         form={data?.labelForm}
                         className={data?.classNameLabel}
+                        style={{ ...data?.additionalStylingLabel }}
                     >
                         {data.labelText}
                     </label>
@@ -148,7 +218,7 @@ const WCAGARIA2H71: React.FC<WCAGARIA2H71Props> = ({
         <>
             {formData ? (
                 <form
-                    className={formData?.className}
+                    className={formData?.classNameForm}
                     acceptCharset={formData?.acceptCharset}
                     action={formData?.action}
                     autoComplete={formData?.autocomplete}
@@ -158,7 +228,7 @@ const WCAGARIA2H71: React.FC<WCAGARIA2H71Props> = ({
                     noValidate={formData?.novalidate}
                     rel={formData?.rel}
                     target={formData?.target}
-                    style={{ ...formData?.additionalStyling }}
+                    style={{ ...formData?.additionalStylingForm }}
                 >
                     {renderFieldset()}
                 </form>

@@ -1,68 +1,80 @@
 import React, { CSSProperties, ReactNode } from 'react'
+import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
+import { FormAttributes } from '../interfaces/FormAttributes'
+import { SelectAttributes } from '../interfaces/SelectAttributes'
 
 interface WCAGARIA2H85Props {
-    formData: {
-        acceptCharset?: string
-        action?: string
-        autocomplete?: 'on' | 'off'
-        className?: string
-        enctype?: string
-        method?: 'get' | 'post'
-        name?: string
-        novalidate?: boolean
-        rel?:
-            | 'alternate'
-            | 'author'
-            | 'bookmark'
-            | 'help'
-            | 'license'
-            | 'next'
-            | 'nofollow'
-            | 'noreferrer'
-            | 'prefetch'
-            | 'prev'
-            | 'search'
-            | 'tag'
-        target?: '_blank' | '_parent' | '_self' | '_top'
-        additionalStyling?: CSSProperties
-    }
+    formData: FormAttributes
     labelData: {
-        for: string
-        className?: string
-        form?: string
         labelText: ReactNode
-    }
-    selectData: {
-        id: string
-        autofocus?: boolean
         className?: string
-        disabled?: boolean
         form?: string
-        seeMultiple?: boolean
-        name: string
-        required?: boolean
-        size?: number
+        additionalStylingLabel?: CSSProperties
     }
+    selectData: SelectAttributes
     optionDataGroup: {
+        labelGroup: string
         className?: string
         disabledGroup?: boolean
-        labelGroup?: string
     }[][]
     optionData: {
+        text: string
+        value: string
         className?: string
         disabled?: boolean
         label?: string
         selected?: boolean
-        text: string
-        value: string
+        additionalStyling?: CSSProperties
     }[][]
+    additionalAriaAttributes?: Omit<
+        WAIARIAAttributes,
+        | 'activedescendant'
+        | 'autocomplete'
+        | 'braillelabel'
+        | 'brailleroledescription'
+        | 'checked'
+        | 'colcount'
+        | 'colindex'
+        | 'colindextext'
+        | 'colspan'
+        | 'disabled'
+        | 'errormessage'
+        | 'expanded'
+        | 'haspopup'
+        | 'invalid'
+        | 'labelledby'
+        | 'level'
+        | 'modal'
+        | 'multiline'
+        | 'multiselectable'
+        | 'orientation'
+        | 'placeholder'
+        | 'posinset'
+        | 'pressed'
+        | 'readonly'
+        | 'required'
+        | 'rowcount'
+        | 'rowindex'
+        | 'rowindextext'
+        | 'rowspan'
+        | 'selected'
+        | 'setsize'
+        | 'sort'
+        | 'valuemax'
+        | 'valuemin'
+        | 'valuenow'
+        | 'valuetext'
+    >
+    role?: 'presentation' | 'search'
 }
 
 const WCAGARIA2H85: React.FC<WCAGARIA2H85Props> = ({
+    additionalAriaAttributes,
     formData,
     labelData,
     optionData,
     optionDataGroup,
+    role,
     selectData,
 }) => {
     const renderOptionGroups = () => {
@@ -76,6 +88,7 @@ const WCAGARIA2H85: React.FC<WCAGARIA2H85Props> = ({
                     disabled={option?.disabled}
                     label={option?.label}
                     selected={option?.selected}
+                    style={{ ...option?.additionalStyling }}
                 >
                     {option.text}
                 </option>
@@ -90,22 +103,39 @@ const WCAGARIA2H85: React.FC<WCAGARIA2H85Props> = ({
     }
     return (
         <form
-            className={formData?.className}
+            role={role}
+            className={formData?.classNameForm}
             acceptCharset={formData?.acceptCharset}
             action={formData?.action}
             autoComplete={formData?.autocomplete}
             encType={formData?.enctype}
-            method={formData?.method}
+            method={formData.method}
             name={formData?.name}
             noValidate={formData?.novalidate}
             rel={formData?.rel}
             target={formData?.target}
-            style={{ ...formData?.additionalStyling }}
+            style={{ ...formData?.additionalStylingForm }}
+            aria-atomic={additionalAriaAttributes?.atomic}
+            aria-busy={additionalAriaAttributes?.busy}
+            aria-controls={additionalAriaAttributes?.controls}
+            aria-current={additionalAriaAttributes?.current}
+            aria-describedby={additionalAriaAttributes?.describedby}
+            aria-description={additionalAriaAttributes?.description}
+            aria-details={additionalAriaAttributes?.details}
+            aria-flowto={additionalAriaAttributes?.flowto}
+            aria-hidden={additionalAriaAttributes?.hidden}
+            aria-keyshortcuts={additionalAriaAttributes?.keyshortcuts}
+            aria-label={additionalAriaAttributes?.label}
+            aria-live={additionalAriaAttributes?.live}
+            aria-owns={additionalAriaAttributes?.owns}
+            aria-relevant={additionalAriaAttributes?.relevant}
+            aria-roledescription={additionalAriaAttributes?.roledescription}
         >
             <label
-                htmlFor={labelData.for}
+                htmlFor={selectData.id}
                 form={labelData?.form}
                 className={labelData?.className}
+                style={{ ...labelData?.additionalStylingLabel }}
             >
                 {labelData.labelText}
             </label>
@@ -120,6 +150,7 @@ const WCAGARIA2H85: React.FC<WCAGARIA2H85Props> = ({
                 name={selectData.name}
                 required={selectData?.required}
                 size={selectData?.size}
+                style={{ ...selectData?.additionalStyling }}
             >
                 {renderOptionGroups()}
             </select>

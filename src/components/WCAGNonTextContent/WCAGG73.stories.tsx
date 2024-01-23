@@ -558,14 +558,6 @@ const metaG73: Meta<typeof WCAGG73> = {
                                         <td>string</td>
                                     </tr>
                                     <tr>
-                                        <td>aria-label</td>
-                                        <td>string</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-labelledby</td>
-                                        <td>string</td>
-                                    </tr>
-                                    <tr>
                                         <td>aria-level</td>
                                         <td>number</td>
                                     </tr>

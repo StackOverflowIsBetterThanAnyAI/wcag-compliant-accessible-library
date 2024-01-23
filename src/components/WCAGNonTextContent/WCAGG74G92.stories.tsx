@@ -512,14 +512,6 @@ const metaG74G92: Meta<typeof WCAGG74G92> = {
                                         <td>string</td>
                                     </tr>
                                     <tr>
-                                        <td>aria-label</td>
-                                        <td>string</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-labelledby</td>
-                                        <td>string</td>
-                                    </tr>
-                                    <tr>
                                         <td>aria-level</td>
                                         <td>number</td>
                                     </tr>

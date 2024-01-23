@@ -24,6 +24,31 @@ const metaARIA2H71: Meta<typeof WCAGARIA2H71> = {
                             users can understand the relationship fo them more
                             easily.
                         </strong>
+                        <p>
+                            Code preview:{' '}
+                            <code>
+                                <br />
+                                &lt;form (optional)&gt;
+                                <br />
+                                &emsp;&lt;fieldset&gt;
+                                <br />
+                                &emsp;&emsp;&lt;legend&gt; legendData.legendText
+                                &lt;/legend&gt;
+                                <br />
+                                &emsp;&emsp;&lt;div&gt;
+                                <br />
+                                &emsp;&emsp;&emsp;&lt;input/&gt;
+                                <br />
+                                &emsp;&emsp;&emsp;&lt;label/&gt;
+                                <em>label text</em>&lt;/label&gt;
+                                <br />
+                                &emsp;&emsp;&lt;/div&gt;
+                                <br />
+                                &emsp;&lt;/fieldset&gt;
+                                <br />
+                                &lt;/form&gt;
+                            </code>
+                        </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>
                                 <i style={{ color: '#ff0000' }}>
@@ -514,6 +539,56 @@ export const Radio: StoryARIA2H71 = {
                 {
                     id: 'dickens',
                     labelText: 'Charles Dickens',
+                    inputType: 'radio',
+                    inputName: 'hamlet',
+                    inputValue: 'e',
+                },
+            ]}
+            formData={{ action: '/adduser', method: 'post' }}
+            onClickFunction={() => console.log('click')}
+        />
+    ),
+}
+
+export const MissingObjectAttributes: StoryARIA2H71 = {
+    render: () => (
+        <WCAGARIA2H71
+            legendData={{
+                legendText: '',
+            }}
+            inputLabelData={[
+                {
+                    id: '',
+                    labelText: '',
+                    inputType: 'radio',
+                    inputName: 'hamlet',
+                    inputValue: 'a',
+                    inputChecked: true,
+                },
+                {
+                    id: '',
+                    labelText: '',
+                    inputType: 'radio',
+                    inputName: 'hamlet',
+                    inputValue: 'b',
+                },
+                {
+                    id: '',
+                    labelText: '',
+                    inputType: 'radio',
+                    inputName: 'hamlet',
+                    inputValue: 'c',
+                },
+                {
+                    id: '',
+                    labelText: '',
+                    inputType: 'radio',
+                    inputName: 'hamlet',
+                    inputValue: 'd',
+                },
+                {
+                    id: '',
+                    labelText: '',
                     inputType: 'radio',
                     inputName: 'hamlet',
                     inputValue: 'e',

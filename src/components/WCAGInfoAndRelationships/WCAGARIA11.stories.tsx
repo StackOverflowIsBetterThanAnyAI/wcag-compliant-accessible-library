@@ -20,6 +20,18 @@ const metaARIA11: Meta<typeof WCAGARIA11> = {
                             sections of a web page by making use of the WAI-ARIA
                             landmark roles.
                         </strong>
+                        <p>
+                            Code preview:
+                            <br />
+                            <code>
+                                &lt;div&gt; child element &lt;/div&gt;
+                            </code>{' '}
+                            or
+                            <br />
+                            <code>
+                                &lt;form&gt; child element &lt;/form&gt;
+                            </code>
+                        </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>
                                 <i style={{ color: '#ff0000' }}>

@@ -111,6 +111,37 @@ const WCAGARIA2H71: React.FC<WCAGARIA2H71Props> = ({
         onClickFunction && onClickFunction()
     }
 
+    const errors: string[] = []
+
+    inputLabelData.forEach((data, dataIndex) => {
+        if (data.id.length < 1) {
+            errors.push(
+                `Your id attribute in imageData[${dataIndex}] has to have a length of at least one character!`
+            )
+        }
+    })
+
+    inputLabelData.forEach((data, dataIndex) => {
+        if (data.labelText.length < 1) {
+            errors.push(
+                `Your labelText attribute in imageData[${dataIndex}] has to have a length of at least one character!`
+            )
+        }
+    })
+
+    if (legendData.legendText.length < 1) {
+        errors.push(
+            `Your legendData.legendText has to have a length of at least one character!`
+        )
+    }
+
+    if (errors.length) {
+        for (let i in errors) {
+            console.error(errors[i])
+        }
+        return
+    }
+
     const renderFieldset = () => (
         <fieldset
             role={role}

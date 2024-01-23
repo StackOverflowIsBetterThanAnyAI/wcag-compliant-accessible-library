@@ -326,10 +326,6 @@ const metaH44: Meta<typeof WCAGH44> = {
                                         <td>string</td>
                                     </tr>
                                     <tr>
-                                        <td>aria-label</td>
-                                        <td>string</td>
-                                    </tr>
-                                    <tr>
                                         <td>aria-live</td>
                                         <td>'assertive' | 'off' | 'polite'</td>
                                     </tr>

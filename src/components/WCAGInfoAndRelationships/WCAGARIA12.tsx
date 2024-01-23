@@ -20,6 +20,8 @@ interface WCAGARIA12Props extends GlobalAttributes {
         | 'expanded'
         | 'haspopup'
         | 'invalid'
+        | 'label'
+        | 'labelledby'
         | 'level'
         | 'modal'
         | 'multiline'
@@ -93,8 +95,6 @@ const WCAGARIA12: React.FC<WCAGARIA12Props> = ({
                 aria-flowto={additionalAriaAttributes?.flowto}
                 aria-hidden={additionalAriaAttributes?.hidden}
                 aria-keyshortcuts={additionalAriaAttributes?.keyshortcuts}
-                aria-label={additionalAriaAttributes?.label}
-                aria-labelledby={additionalAriaAttributes?.labelledby}
                 aria-live={additionalAriaAttributes?.live}
                 aria-owns={additionalAriaAttributes?.owns}
                 aria-relevant={additionalAriaAttributes?.relevant}

@@ -19,6 +19,11 @@ const metaARIA12: Meta<typeof WCAGARIA12> = {
                             This component adds a way for assistive technologies
                             to identify some content as a heading.
                         </strong>
+                        <p>
+                            Code preview:
+                            <br />
+                            <code>&lt;div&gt; child element &lt;/div&gt;</code>
+                        </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>
                                 <i style={{ color: '#ff0000' }}>
@@ -137,14 +142,6 @@ const metaARIA12: Meta<typeof WCAGARIA12> = {
                                     </tr>
                                     <tr>
                                         <td>aria-keyshortcuts</td>
-                                        <td>string</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-label</td>
-                                        <td>string</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-labelledby</td>
                                         <td>string</td>
                                     </tr>
                                     <tr>

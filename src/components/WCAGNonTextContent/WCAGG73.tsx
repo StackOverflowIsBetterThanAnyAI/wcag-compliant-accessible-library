@@ -13,6 +13,8 @@ interface WCAGG73Props extends GlobalAttributes {
         | 'brailleroledescription'
         | 'colindex'
         | 'colindextext'
+        | 'label'
+        | 'labelledby'
         | 'rowindex'
         | 'rowindextext'
     >
@@ -295,7 +297,6 @@ const WCAGG73: React.FC<WCAGG73Props> = ({
                     : undefined
             }
             aria-keyshortcuts={additionalAriaAttributes?.keyshortcuts}
-            aria-label={additionalAriaAttributes?.label}
             aria-level={
                 role === 'comment' || role === 'row'
                     ? additionalAriaAttributes?.level

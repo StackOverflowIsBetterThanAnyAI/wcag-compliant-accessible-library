@@ -26,6 +26,34 @@ const metaARIA2H85: Meta<typeof WCAGARIA2H85> = {
                             there is also as many optgroup elements with the
                             corressponing option elements as you wish.
                         </strong>
+                        <p>
+                            Code preview:
+                            <br />
+                            <code>
+                                &lt;form&gt;
+                                <br />
+                                &emsp;&lt;label&gt; labelData.labelText
+                                &lt;/label&gt;
+                                <br />
+                                &emsp;&emsp;&lt;select&gt;
+                                <br />
+                                &emsp;&emsp;&emsp;&lt;optgroup&gt;
+                                <br />
+                                &emsp;&emsp;&emsp;&emsp;&lt;option&gt;
+                                <em> option </em>
+                                &lt;/option&gt;
+                                <br />
+                                &emsp;&emsp;&emsp;&emsp;&lt;option&gt;
+                                <em> option </em>
+                                &lt;/option&gt;
+                                <br />
+                                &emsp;&emsp;&lt;/optgroup&gt;
+                                <br />
+                                &emsp;&lt;/select&gt;
+                                <br />
+                                &lt;/form&gt;
+                            </code>
+                        </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>
                                 <i style={{ color: '#ff0000' }}>
@@ -103,12 +131,9 @@ const metaARIA2H85: Meta<typeof WCAGARIA2H85> = {
                         </p>
                         <p>
                             These are the available WAI-ARIA role parameters for
-                            the attribute{' '}
-                            <strong style={{ color: '#ff0000' }}>
-                                role: string
-                            </strong>{' '}
-                            which are applied to the form element:{' '}
-                            <strong>'presentation' and 'search'</strong>
+                            the attribute <strong>role: string</strong> which
+                            are applied to the form element:{' '}
+                            <strong>'presentation' and 'search'</strong>.
                         </p>
                         <p>You cannot pass any child elements.</p>
                         <div>

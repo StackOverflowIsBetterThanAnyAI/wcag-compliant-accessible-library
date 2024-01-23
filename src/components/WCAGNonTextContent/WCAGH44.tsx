@@ -54,6 +54,7 @@ interface WCAGH44Props {
         | 'expanded'
         | 'haspopup'
         | 'invalid'
+        | 'label'
         | 'labelledbyid'
         | 'level'
         | 'modal'
@@ -202,7 +203,6 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                             aria-keyshortcuts={
                                 additionalAriaAttributes?.keyshortcuts
                             }
-                            aria-label={additionalAriaAttributes?.label}
                             aria-live={additionalAriaAttributes?.live}
                             aria-owns={additionalAriaAttributes?.owns}
                             aria-relevant={additionalAriaAttributes?.relevant}
@@ -354,7 +354,6 @@ const WCAGH44: React.FC<WCAGH44Props> = ({
                             aria-keyshortcuts={
                                 additionalAriaAttributes?.keyshortcuts
                             }
-                            aria-label={additionalAriaAttributes?.label}
                             aria-live={additionalAriaAttributes?.live}
                             aria-owns={additionalAriaAttributes?.owns}
                             aria-relevant={additionalAriaAttributes?.relevant}

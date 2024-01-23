@@ -1,5 +1,6 @@
 import React, { CSSProperties, ReactNode } from 'react'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
+import { LinkAttributes } from '../interfaces/LinkAttributes'
 
 interface WCAGG117H97H101Props {
     additionalAriaAttributes?: Omit<
@@ -44,15 +45,12 @@ interface WCAGG117H97H101Props {
     ariaLabelledById?: string
     className?: string
     headline?: string
-    listData?: {
+    listData?: (LinkAttributes & {
         displayedName: ReactNode
         href: string
-        disabled?: boolean
-        referrerpolicy?: React.HTMLAttributeReferrerPolicy
-        target?: '_blank' | '_parent' | '_self' | '_top'
         new?: boolean
         onClickFunction?: () => void
-    }[]
+    })[]
     role?:
         | 'doc-index'
         | 'doc-pagelist'
@@ -125,8 +123,15 @@ const WCAGG117H97H101: React.FC<WCAGG117H97H101Props> = ({
                             onClick={() =>
                                 data?.onClickFunction && data?.onClickFunction()
                             }
+                            download={data?.download}
+                            hrefLang={data?.hreflang}
+                            media={data?.media}
+                            ping={data?.ping}
                             referrerPolicy={data?.referrerpolicy}
+                            rel={data?.rel}
                             target={data?.target}
+                            type={data?.type}
+                            style={{ ...data?.additionalStyling }}
                         >
                             {data?.new ? (
                                 <strong>{data.displayedName}</strong>

@@ -4,7 +4,8 @@ import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
 interface WCAGARIA15Props {
     accessibleIds: string
-    imageData: (ImageAttributes & { altText: string } & {
+    imageData: (ImageAttributes & {
+        altText: string
         role?:
             | 'button'
             | 'checkbox'
@@ -21,7 +22,6 @@ interface WCAGARIA15Props {
             | 'switch'
             | 'tab'
             | 'treeitem'
-    } & {
         additionalAriaAttributes?: Omit<
             WAIARIAAttributes,
             | 'activedescendant'

@@ -5,9 +5,9 @@ import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 interface WCAGARIA2H65Props {
     inputData: Omit<InputAttributes, 'type' | 'required'> & {
         altText?: string
-    } & {
         src?: string
-    } & { required: boolean }
+        required: boolean
+    }
     inputType:
         | 'button'
         | 'color'

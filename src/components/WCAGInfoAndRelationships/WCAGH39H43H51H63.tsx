@@ -3,7 +3,6 @@ import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
 interface WCAGH39H43H51H63Props {
     tableContent: {
-        //
         text: string
         isHeader?: boolean
         rowspan?: number
@@ -12,7 +11,7 @@ interface WCAGH39H43H51H63Props {
         headers?: string
         scope?: 'col' | 'colgroup' | 'row' | 'rowgroup'
     }[][]
-    tableType: 'data' | 'layout' //
+    tableType: 'data' | 'layout'
     additionalAriaAttributes?: Omit<
         WAIARIAAttributes,
         | 'braillelabel'
@@ -21,19 +20,19 @@ interface WCAGH39H43H51H63Props {
         | 'labelledby'
         | 'rowindextext'
     >
-    additionalStylingTable?: CSSProperties //
-    additionalStylingRow?: CSSProperties //
-    additionalStylingHeader?: CSSProperties //
-    additionalStylingCell?: CSSProperties //
-    additionalStylingCaption?: CSSProperties //
-    captionText?: string //
-    classNameTable?: string //
-    classNameRow?: string //
-    classNameHeader?: string //
-    classNameCell?: string //
-    classNameCaption?: string //
-    role?: //
-    | 'alert'
+    additionalStylingTable?: CSSProperties
+    additionalStylingRow?: CSSProperties
+    additionalStylingHeader?: CSSProperties
+    additionalStylingCell?: CSSProperties
+    additionalStylingCaption?: CSSProperties
+    captionText?: string
+    classNameTable?: string
+    classNameRow?: string
+    classNameHeader?: string
+    classNameCell?: string
+    classNameCaption?: string
+    role?:
+        | 'alert'
         | 'alertdialog'
         | 'application' // should be avoided
         | 'article' // should be avoided

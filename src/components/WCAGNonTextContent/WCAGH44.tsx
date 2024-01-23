@@ -8,15 +8,19 @@ interface WCAGH44Props {
         'additionalStyling' | 'id' | 'name' | 'type'
     > & {
         id: string
-    } & { additionalStylingInput?: CSSProperties } & {
+        additionalStylingInput?: CSSProperties
         additionalStylingLabel?: CSSProperties
-    } & {
         labelText: ReactNode
-    } & { name: string } & { title?: string } & { altText?: string } & {
+        name: string
+        title?: string
+        altText?: string
         classNameLabel?: string
-    } & { classNameInput?: string } & { cols?: number } & {
+        classNameInput?: string
+        cols?: number
         selectoptions?: ReactNode
-    } & { rows?: number } & { src?: string } & { textareaText?: ReactNode } & {
+        rows?: number
+        src?: string
+        textareaText?: ReactNode
         wrap?: 'hard' | 'soft'
     })[]
     inputType:

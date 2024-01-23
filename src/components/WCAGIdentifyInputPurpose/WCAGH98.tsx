@@ -159,6 +159,45 @@ const WCAGH98: React.FC<WCAGH98Props> = ({
     role,
     submitData,
 }) => {
+    const errors: string[] = []
+
+    if (formData.id.length < 1) {
+        errors.push(
+            `Your formData.id attribute has to have a length of at least one character!`
+        )
+    }
+
+    inputData.forEach((data, dataIndex) => {
+        if (data.autocomplete === 'off' && data.type !== 'password') {
+            errors.push(
+                `Your autocomplete attribute in inputData[${dataIndex}] should have a different value than 'off'!`
+            )
+        }
+    })
+
+    inputData.forEach((data, dataIndex) => {
+        if (data.type === 'password' && data.autocomplete !== 'off') {
+            errors.push(
+                `You cannot set a different autocomplete value than 'off' in inputData[${dataIndex}] if your input type is 'password'!`
+            )
+        }
+    })
+
+    inputData.forEach((data, dataIndex) => {
+        if (data.id.length < 1) {
+            errors.push(
+                `Your id attribute in inputData[${dataIndex}] has to have a length of at least one character!`
+            )
+        }
+    })
+
+    if (errors.length) {
+        for (let i in errors) {
+            console.error(errors[i])
+        }
+        return
+    }
+
     return (
         <form
             role={role}

@@ -104,7 +104,7 @@ const metaWCAGH98: Meta<typeof WCAGH98> = {
                                     <li>week</li>
                                 </ul>
                             </section>
-                            <p>
+                            <div>
                                 Keep in mind: If you are selecting 'password',
                                 you must select 'off' for your autocomplete
                                 attribute.
@@ -193,7 +193,7 @@ const metaWCAGH98: Meta<typeof WCAGH98> = {
                                 </strong>{' '}
                                 object inside of the <strong>inputData</strong>{' '}
                                 object array.
-                            </p>
+                            </div>
                         </div>
                         <div>
                             These are the available WAI-ARIA role values for the
@@ -480,6 +480,80 @@ export const SpanLabelText: StoryWCAGH98 = {
                     id: 'input6',
                     type: 'password',
                     autocomplete: 'off',
+                    labelText: (
+                        <span style={{ paddingRight: '25px', margin: '5px' }}>
+                            Your password (no autocomplete):
+                        </span>
+                    ),
+                },
+            ]}
+            submitData={{
+                value: 'Submit',
+                onClickFunction: () => console.log('submitting'),
+            }}
+        />
+    ),
+}
+
+export const WrongAttributes: StoryWCAGH98 = {
+    render: () => (
+        <WCAGH98
+            formData={{ method: 'post', id: '' }}
+            inputData={[
+                {
+                    id: 'input1',
+                    type: 'text',
+                    autocomplete: 'off',
+                    labelText: (
+                        <span style={{ paddingRight: '25px', margin: '5px' }}>
+                            First name:
+                        </span>
+                    ),
+                },
+                {
+                    id: '',
+                    type: 'text',
+                    autocomplete: 'family-name',
+                    labelText: (
+                        <span style={{ paddingRight: '25px', margin: '5px' }}>
+                            Family name:
+                        </span>
+                    ),
+                },
+                {
+                    id: 'input3',
+                    type: 'date',
+                    autocomplete: 'off',
+                    labelText: (
+                        <span style={{ paddingRight: '25px', margin: '5px' }}>
+                            Your birthday:
+                        </span>
+                    ),
+                },
+                {
+                    id: '',
+                    type: 'text',
+                    autocomplete: 'cc-name',
+                    labelText: (
+                        <span style={{ paddingRight: '25px', margin: '5px' }}>
+                            Your credit card number:
+                        </span>
+                    ),
+                },
+                {
+                    id: 'input5',
+                    type: 'month',
+                    autocomplete: 'off',
+                    labelText: (
+                        <span style={{ paddingRight: '25px', margin: '5px' }}>
+                            Expiry Date:
+                        </span>
+                    ),
+                },
+                {
+                    id: '',
+                    type: 'password',
+                    autocomplete: 'on',
                     labelText: (
                         <span style={{ paddingRight: '25px', margin: '5px' }}>
                             Your password (no autocomplete):

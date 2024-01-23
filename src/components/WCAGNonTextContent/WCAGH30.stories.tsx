@@ -24,7 +24,7 @@ const metaH30: Meta<typeof WCAGH30> = {
                             attribute.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>
                                 &lt;a&gt;

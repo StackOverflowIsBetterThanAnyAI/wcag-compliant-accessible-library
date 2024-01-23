@@ -26,7 +26,7 @@ const metaARIA10: Meta<typeof WCAGARIA10> = {
                             be read aloud by assistive technology.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br /> WCAGARIA10:
                             <br />
                             <code>

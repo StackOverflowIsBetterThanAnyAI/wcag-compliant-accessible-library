@@ -23,7 +23,7 @@ const metaH24: Meta<typeof WCAGH24> = {
                             region of the map.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>
                                 &lt;&gt;

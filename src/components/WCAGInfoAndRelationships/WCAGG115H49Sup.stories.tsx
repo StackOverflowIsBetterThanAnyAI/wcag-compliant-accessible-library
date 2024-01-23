@@ -23,7 +23,7 @@ const metaG115H49Sup: Meta<typeof WCAGG115H49Sup> = {
                             semantic elements, in this case: the sup element.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>&lt;sup&gt; child element &lt;/sup&gt;</code>
                         </p>

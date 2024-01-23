@@ -25,7 +25,7 @@ const metaARIA2H65: Meta<typeof WCAGARIA2H65> = {
                             which can be seen as a label for the element.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>&lt;/input title="description"&gt;</code>
                         </p>

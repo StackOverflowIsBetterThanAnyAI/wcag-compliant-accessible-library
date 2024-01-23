@@ -21,7 +21,7 @@ const metaARIA6: Meta<typeof WCAGARIA6> = {
                             contains a short descriptive text alternative.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>
                                 &lt;div aria-label="description"&gt; children

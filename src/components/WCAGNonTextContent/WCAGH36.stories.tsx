@@ -23,7 +23,7 @@ const metaARIA2H36: Meta<typeof WCAGH36> = {
                             loaded or is read aloud by assistive technology.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>
                                 &lt;input type="image" alt="description" /&gt;

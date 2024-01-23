@@ -23,7 +23,7 @@ const metaG115H49Sub: Meta<typeof WCAGG115H49Sub> = {
                             semantic elements, in this case: the sub element.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>&lt;sub&gt; child element &lt;/sub&gt;</code>
                         </p>

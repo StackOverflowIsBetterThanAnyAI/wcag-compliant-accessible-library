@@ -22,7 +22,7 @@ const metaH86: Meta<typeof WCAGH86> = {
                             ASCII art or leetspeak.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>
                                 &lt;span aria-label="description"&gt;

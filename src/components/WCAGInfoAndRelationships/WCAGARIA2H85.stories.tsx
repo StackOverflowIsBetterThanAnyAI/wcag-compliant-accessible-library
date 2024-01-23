@@ -27,7 +27,7 @@ const metaARIA2H85: Meta<typeof WCAGARIA2H85> = {
                             corressponing option elements as you wish.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>
                                 &lt;form&gt;

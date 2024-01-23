@@ -23,7 +23,7 @@ const metaH67: Meta<typeof WCAGH67> = {
                             safely be ignored by assistive technologies.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>&lt;img alt=""/&gt;</code>
                         </p>

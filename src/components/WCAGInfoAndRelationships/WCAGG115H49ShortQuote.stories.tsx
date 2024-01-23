@@ -23,7 +23,7 @@ const metaG115H49ShortQuote: Meta<typeof WCAGG115H49ShortQuote> = {
                             semantic elements, in this case: the q element.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>&lt;q&gt; child element &lt;/q&gt;</code>
                         </p>

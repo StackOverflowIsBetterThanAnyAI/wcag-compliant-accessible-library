@@ -24,7 +24,7 @@ const metaG115H49Quote: Meta<typeof WCAGG115H49Quote> = {
                             element.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>
                                 &lt;blockquote&gt; child element

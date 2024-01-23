@@ -21,7 +21,7 @@ const metaH44: Meta<typeof WCAGH44> = {
                             requiring a unique ID for both elements.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>
                                 &lt;&gt;

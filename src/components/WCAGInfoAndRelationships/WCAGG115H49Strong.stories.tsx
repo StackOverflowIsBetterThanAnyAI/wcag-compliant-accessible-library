@@ -23,7 +23,7 @@ const metaG115H49Strong: Meta<typeof WCAGG115H49Strong> = {
                             semantic elements, in this case: the strong element.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>
                                 &lt;strong&gt; child element &lt;/strong&gt;

@@ -29,7 +29,7 @@ const metaG117H97H101: Meta<typeof WCAGG117H97H101> = {
                             highlight recently added items in these lists.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>
                                 &lt;nav&gt;

@@ -23,7 +23,7 @@ const metaH2: Meta<typeof WCAGH2> = {
                             clickable area for the user.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>
                                 &lt;a&gt;

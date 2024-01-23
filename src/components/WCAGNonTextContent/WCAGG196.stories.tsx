@@ -23,7 +23,7 @@ const metaG196: Meta<typeof WCAGG196> = {
                             avoids duplication.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>
                                 &lt;&gt;

@@ -28,7 +28,7 @@ const metaG73: Meta<typeof WCAGG73> = {
                             links to the long description and vice versa.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br /> WCAGG73:
                             <br />
                             <code>

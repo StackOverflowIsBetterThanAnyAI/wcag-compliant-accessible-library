@@ -20,7 +20,7 @@ const metaH37: Meta<typeof WCAGH37> = {
                             loaded or is read aloud by assistive technology.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>&lt;img alt="description" /&gt;</code>
                         </p>

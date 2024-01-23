@@ -23,7 +23,7 @@ const metaG115H49A: Meta<typeof WCAGG115H49A> = {
                             semantic elements, in this case: the anchor element.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>&lt;a&gt; child element &lt;/a&gt;</code>
                         </p>

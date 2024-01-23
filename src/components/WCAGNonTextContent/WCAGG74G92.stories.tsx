@@ -31,7 +31,7 @@ const metaG74G92: Meta<typeof WCAGG74G92> = {
                             the long description.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br /> WCAGG74G92:
                             <br />
                             <code>

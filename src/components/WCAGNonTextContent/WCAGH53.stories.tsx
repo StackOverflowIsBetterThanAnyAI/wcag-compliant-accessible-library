@@ -21,7 +21,7 @@ const metaH53: Meta<typeof WCAGH53> = {
                             describes the object element.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>&lt;object&gt; children &lt;/object&gt;</code>
                         </p>

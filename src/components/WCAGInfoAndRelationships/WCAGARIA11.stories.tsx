@@ -21,7 +21,7 @@ const metaARIA11: Meta<typeof WCAGARIA11> = {
                             landmark roles.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>
                                 &lt;div&gt; child element &lt;/div&gt;

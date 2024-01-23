@@ -24,7 +24,7 @@ const metaG117H48: Meta<typeof WCAGG117H48> = {
                             their purpuses (ul, ol and dl elements).
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>
                                 &lt;ul&gt;

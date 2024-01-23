@@ -25,7 +25,7 @@ const metaARIA2H71: Meta<typeof WCAGARIA2H71> = {
                             easily.
                         </strong>
                         <p>
-                            Code preview:{' '}
+                            Abstract code preview:{' '}
                             <code>
                                 <br />
                                 &lt;form (optional)&gt;

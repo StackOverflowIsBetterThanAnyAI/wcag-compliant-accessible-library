@@ -30,7 +30,7 @@ const metaH39H43H51H63: Meta<typeof WCAGH39H43H51H63> = {
                             their purpuses (ul, ol and dl elements).
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>
                                 &lt;ul&gt;&lt;ul&gt;<em> item </em>

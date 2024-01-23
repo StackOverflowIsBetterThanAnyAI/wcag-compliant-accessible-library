@@ -23,7 +23,7 @@ const metaG115H49Em: Meta<typeof WCAGG115H49Em> = {
                             semantic elements, in this case: the em element.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>&lt;em&gt; child element &lt;/em&gt;</code>
                         </p>

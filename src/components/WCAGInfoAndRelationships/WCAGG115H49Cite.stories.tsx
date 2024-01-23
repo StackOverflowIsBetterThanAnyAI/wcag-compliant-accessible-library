@@ -23,7 +23,7 @@ const metaG115H49Cite: Meta<typeof WCAGG115H49Cite> = {
                             semantic elements, in this case: the cite element.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>
                                 &lt;cite&gt; child element &lt;/cite&gt;

@@ -20,7 +20,7 @@ const metaARIA12: Meta<typeof WCAGARIA12> = {
                             to identify some content as a heading.
                         </strong>
                         <p>
-                            Code preview:
+                            Abstract code preview:
                             <br />
                             <code>&lt;div&gt; child element &lt;/div&gt;</code>
                         </p>

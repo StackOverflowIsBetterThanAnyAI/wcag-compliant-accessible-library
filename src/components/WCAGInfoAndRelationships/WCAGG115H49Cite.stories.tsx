@@ -53,8 +53,8 @@ const metaG115H49Cite: Meta<typeof WCAGG115H49Cite> = {
                             different component.
                         </p>
                         <div>
-                            These are the available WAI-ARIA role parameters for
-                            the attribute <strong>role: string</strong> which is
+                            These are the available WAI-ARIA role values for the
+                            attribute <strong>role: string</strong> which is
                             applied to the cite element:
                             <br />
                             Note: 'should be avoided' means that instead of
@@ -348,7 +348,8 @@ const metaG115H49Cite: Meta<typeof WCAGG115H49Cite> = {
                             component, which allows you to apply your styling to
                             your new accessible component. If you prefer styling
                             your components inline, feel free to use the{' '}
-                            <strong>additionalStyling</strong> object.
+                            <strong>additionalStyling: CSSProperties</strong>{' '}
+                            object.
                         </p>
                         <div>
                             For even more accessibility, you can also use

@@ -101,15 +101,16 @@ const metaH24: Meta<typeof WCAGH24> = {
                             to your component, which allows you to apply your
                             styling to your new accessible component. If you
                             prefer styling your components inline, feel free to
-                            use the <strong>additionalStyling</strong> variable
-                            inside of the <strong>areaData</strong> object array
-                            and <strong>imageData</strong> object.
+                            use the{' '}
+                            <strong>additionalStyling: CSSProperties</strong>{' '}
+                            object inside of the <strong>areaData</strong>{' '}
+                            object array and <strong>imageData</strong> object.
                         </p>
                         <p>You cannot pass any elements as a child element.</p>
                         <div>
-                            These are the available WAI-ARIA role parameters for
-                            the attribute <strong>role: string</strong> which
-                            can be applied to the image element:
+                            These are the available WAI-ARIA role values for the
+                            attribute <strong>role: string</strong> which can be
+                            applied to the image element:
                             <br />
                             Note: 'should be avoided' means that instead of
                             these roles you should always try to favour

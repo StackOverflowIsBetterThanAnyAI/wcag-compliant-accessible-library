@@ -87,8 +87,9 @@ const metaH67: Meta<typeof WCAGH67> = {
                             component, which allows you to apply your styling to
                             your new accessible component. If you prefer styling
                             your components inline, feel free to use the{' '}
-                            <strong>additionalStyling</strong> variable inside
-                            of the <strong>imageData</strong> object.
+                            <strong>additionalStyling: CSSProperties</strong>{' '}
+                            object inside of the <strong>imageData</strong>{' '}
+                            object.
                         </p>
                         <p>
                             <a

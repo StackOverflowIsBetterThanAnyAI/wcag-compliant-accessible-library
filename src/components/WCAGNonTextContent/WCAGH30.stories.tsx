@@ -100,13 +100,14 @@ const metaH30: Meta<typeof WCAGH30> = {
                             to your component, which allows you to apply your
                             styling to your new accessible component. If you
                             prefer styling your components inline, feel free to
-                            use the <strong>additionalStyling</strong> variable
-                            inside of the <strong>imageData</strong> object
-                            array and <strong>linkData</strong> object.
+                            use the{' '}
+                            <strong>additionalStyling: CSSProperties</strong>{' '}
+                            object inside of the <strong>imageData</strong>{' '}
+                            object array and <strong>linkData</strong> object.
                         </p>
                         <div>
-                            These are the available WAI-ARIA role parameters for
-                            the attribute <strong>role: string</strong> of the
+                            These are the available WAI-ARIA role values for the
+                            attribute <strong>role: string</strong> of the
                             anchor element:
                             <br />
                             Note: 'should be avoided' means that instead of

@@ -135,8 +135,8 @@ const metaG117H48: Meta<typeof WCAGG117H48> = {
                             objects.
                         </p>
                         <div>
-                            These are the available WAI-ARIA role parameters for
-                            the attribute <strong>role: string</strong> which is
+                            These are the available WAI-ARIA role values for the
+                            attribute <strong>role: string</strong> which is
                             applied to the ul / ol or dl element:
                             <br />
                             Note: 'should be avoided' means that instead of

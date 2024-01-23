@@ -68,8 +68,9 @@ const metaARIA12: Meta<typeof WCAGARIA12> = {
                             component, which allows you to apply your styling to
                             your new accessible component. If you prefer styling
                             your components inline, feel free to use the{' '}
-                            <strong>additionalStyling</strong> variable inside
-                            of the <strong>divData</strong> object.
+                            <strong>additionalStyling: CSSProperties</strong>{' '}
+                            object inside of the <strong>divData</strong>{' '}
+                            object.
                         </p>
                         <div>
                             For even more accessibility, you can also use

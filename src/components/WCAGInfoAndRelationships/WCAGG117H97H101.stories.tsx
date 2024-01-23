@@ -94,8 +94,8 @@ const metaG117H97H101: Meta<typeof WCAGG117H97H101> = {
                             be read aloud by assistve technologies.
                         </p>
                         <div>
-                            These are the available WAI-ARIA role parameters for
-                            the attribute <strong>role: string</strong> which is
+                            These are the available WAI-ARIA role values for the
+                            attribute <strong>role: string</strong> which is
                             applied to the nav element:
                             <table
                                 style={{
@@ -145,7 +145,8 @@ const metaG117H97H101: Meta<typeof WCAGG117H97H101> = {
                             component, which allows you to apply your styling to
                             your new accessible component. If you prefer styling
                             your components inline, feel free to use the{' '}
-                            <strong>additionalStyling</strong> object.
+                            <strong>additionalStyling: CSSProperties</strong>{' '}
+                            object.
                         </p>
                         <div>
                             For even more accessibility, you can also use

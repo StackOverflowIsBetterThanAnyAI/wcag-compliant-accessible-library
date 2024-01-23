@@ -41,8 +41,8 @@ const metaARIA6: Meta<typeof WCAGARIA6> = {
                             to provide one of 60 possible WAI-ARIA roles.
                         </p>
                         <div>
-                            These are the available WAI-ARIA role parameters for
-                            the attribute{' '}
+                            These are the available WAI-ARIA role values for the
+                            attribute{' '}
                             <strong style={{ color: '#ff0000' }}>
                                 role: string
                             </strong>
@@ -362,8 +362,9 @@ const metaARIA6: Meta<typeof WCAGARIA6> = {
                             component, which allows you to apply your styling to
                             your new accessible component. If you prefer styling
                             your components inline, feel free to use the{' '}
-                            <strong>additionalStyling</strong> variable inside
-                            of the <strong>divData</strong> object.
+                            <strong>additionalStyling: CSSProperties</strong>{' '}
+                            object inside of the <strong>divData</strong>{' '}
+                            object.
                         </p>
                         <div>
                             For even more accessibility, you can also use

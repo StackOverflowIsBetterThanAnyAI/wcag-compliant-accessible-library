@@ -130,9 +130,9 @@ const metaARIA2H85: Meta<typeof WCAGARIA2H85> = {
                             document.
                         </p>
                         <p>
-                            These are the available WAI-ARIA role parameters for
-                            the attribute <strong>role: string</strong> which
-                            are applied to the form element:{' '}
+                            These are the available WAI-ARIA role values for the
+                            attribute <strong>role: string</strong> which are
+                            applied to the form element:{' '}
                             <strong>'presentation' and 'search'</strong>.
                         </p>
                         <p>You cannot pass any child elements.</p>

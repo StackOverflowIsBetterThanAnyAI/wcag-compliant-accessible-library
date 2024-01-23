@@ -25,16 +25,50 @@ const metaH39H43H51H63: Meta<typeof WCAGH39H43H51H63> = {
                     </Title>
                     <Subtitle>
                         <strong>
-                            The goal of this component is to create lists of
-                            related items using list elements appropriate for
-                            their purpuses (ul, ol and dl elements).
+                            The goal of this component is to present tabular
+                            information in a way that preserves relationships
+                            within the information even when the table cannot
+                            visually be seen. It also uses captions in order to
+                            programmatically associate captions for data tables.
+                            It also makes use of the id, headers and scope
+                            attributes.
                         </strong>
                         <p>
                             Abstract code preview:
                             <br />
                             <code>
-                                &lt;ul&gt;&lt;ul&gt;<em> item </em>
-                                &lt;/ul&gt;&lt;/ul&gt;
+                                &lt;table&gt;
+                                <br />
+                                &emsp;&lt;caption&gt; captionText
+                                &lt;/caption&gt;
+                                <br />
+                                &emsp;&lt;tobdy&gt;
+                                <br />
+                                &emsp;&emsp;&lt;tr&gt;
+                                <br />
+                                &emsp;&emsp;&emsp;&lt;th id="id" scope="col"&gt;
+                                <em> header </em>
+                                &lt;/th&gt;
+                                <br />
+                                &emsp;&emsp;&lt;/tr&gt;
+                                <br />
+                                &emsp;&emsp;&lt;tr headers="id"&gt;
+                                <br />
+                                &emsp;&emsp;&emsp;&lt;td&gt;<em> item </em>
+                                &lt;/td&gt;
+                                <br />
+                                &emsp;&emsp;&lt;/tr&gt;
+                                <br />
+                                &emsp;&emsp;&lt;tr headers="id"&gt;
+                                <br />
+                                &emsp;&emsp;&emsp;&lt;td&gt;<em> item </em>
+                                &lt;/td&gt;
+                                <br />
+                                &emsp;&emsp;&lt;/tr&gt;
+                                <br />
+                                &emsp;&lt;/tobdy&gt;
+                                <br />
+                                &lt;/table&gt;
                             </code>
                         </p>
                         <p style={{ textAlign: 'center' }}>
@@ -45,25 +79,104 @@ const metaH39H43H51H63: Meta<typeof WCAGH39H43H51H63> = {
                                 means that this variable is mandatory
                             </strong>
                         </p>
-                        <p>
-                            There is{' '}
-                            <strong style={{ color: '#ff0000' }}>
-                                no mandatory parameter
-                            </strong>{' '}
-                            for this component.
-                        </p>
-                        <p>
-                            You can pass any{' '}
-                            <strong style={{ color: '#ff0000' }}>
-                                child: ReactNode
-                            </strong>{' '}
-                            element: be it a string, a div element or a whole
-                            different component.
-                        </p>
                         <div>
-                            These are the available WAI-ARIA role parameters for
-                            the attribute <strong>role: string</strong> which is
-                            applied to the q element:
+                            First of all, you need to specify the{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                tableType: 'data' | 'layout'
+                            </strong>
+                            . This information is needed, because if the{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                tableType equals data
+                            </strong>
+                            , you must check following:
+                            <section
+                                style={{
+                                    margin: '2% auto',
+                                    backgroundColor: '#e9e9e9',
+                                    padding: '2% 5%',
+                                }}
+                            >
+                                <strong>Check:</strong>
+                                <ul>
+                                    <li>
+                                        Check that all th elements have a scope
+                                        attribute.
+                                    </li>
+                                    <li>
+                                        Check that all td elements that act as
+                                        headers for other elements have a scope
+                                        attribute.
+                                    </li>
+                                    <li>
+                                        Check that all scope attributes have the
+                                        value row, col, rowgroup, or colgroup.
+                                    </li>
+                                    <li>
+                                        Check that any cell that is associated
+                                        with more than one row and/or one column
+                                        header contains a headers attribute that
+                                        lists the id for all headers associated
+                                        with that cell.
+                                    </li>
+                                    <li>
+                                        If any cell contains an id or headers
+                                        attribute, check that each id listed in
+                                        the headers attribute of the data cell
+                                        matches the id attribute of a cell that
+                                        is used as a header element.
+                                    </li>
+                                    <li>
+                                        If any cell contains an id or headers
+                                        attribute, check that the headers
+                                        attribute of a data cell contains the id
+                                        attribute of all headers associated with
+                                        the data cell.
+                                    </li>
+                                    <li>
+                                        If any cell contains an id or headers
+                                        attribute, check that all ids are unique
+                                        (that is, no two elements in the page
+                                        have the same id).
+                                    </li>
+                                    <li>
+                                        Check that the table has content that is
+                                        presented as a table caption.
+                                    </li>
+                                    <li>
+                                        Check that the table includes a caption
+                                        element.
+                                    </li>
+                                    <li>
+                                        Check that the content of the caption
+                                        element identifies the table.
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                        <p>
+                            Next, setup the table content. You have the two
+                            dimensional{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                tableContent
+                            </strong>{' '}
+                            object array for that. Each item needs a{' '}
+                            <strong style={{ color: '#ff0000' }}>text</strong>{' '}
+                            value which is the name of the cell. If your{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                tableType equals data
+                            </strong>
+                            , you also need to specify an{' '}
+                            <strong>
+                                id: string, headers: string and scope: 'col' |
+                                'colgroup' | 'row' | 'rowgroup'
+                            </strong>{' '}
+                            value for each item.
+                        </p>
+                        <p>You cannot pass any child elements.</p>
+                        <div>
+                            These are the available WAI-ARIA role values for the
+                            attribute <strong>role: string</strong> which is
+                            applied to the table element:
                             <table
                                 style={{
                                     margin: '2% auto',
@@ -317,12 +430,6 @@ const metaH39H43H51H63: Meta<typeof WCAGH39H43H51H63> = {
                                         <td>tab</td>
                                     </tr>
                                     <tr>
-                                        <td>table</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
                                         <td>tablist</td>
                                     </tr>
                                     <tr>
@@ -347,22 +454,43 @@ const metaH39H43H51H63: Meta<typeof WCAGH39H43H51H63> = {
                             </table>
                         </div>
                         <p>
+                            If you want your table to receive a caption element,
+                            you can assign a text value to{' '}
+                            <strong>captionText: string</strong>. If your{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                tableType equals data
+                            </strong>
+                            , you <strong>must</strong> specify a caption.
+                        </p>
+                        <p>
                             You can also add an optional customised{' '}
-                            <strong>className: string</strong> to your
-                            component, which allows you to apply your styling to
-                            your new accessible component. If you prefer styling
-                            your components inline, feel free to use the{' '}
-                            <strong>additionalStyling</strong> object.
+                            <strong>
+                                classNameTable: string, classNameRow: string,
+                                classNameHeader: string, classNameCell: string
+                                and classNameCaption: string
+                            </strong>{' '}
+                            to your component, which allows you to apply your
+                            styling to your new accessible component. If you
+                            prefer styling your components inline, feel free to
+                            use the{' '}
+                            <strong>
+                                additionalStylingTable: CSSProperties,
+                                additionalStylingRow: CSSProperties,
+                                additionalStylingHeader: CSSProperties,
+                                additionalStylingCell: CSSProperties and
+                                additionalStylingCaption: CSSProperties
+                            </strong>{' '}
+                            objects.
                         </p>
                         <div>
                             For even more accessibility, you can also use
                             optional additional WAI-ARIA attributes. They are
                             stored in the{' '}
-                            <strong>additionalAriaAttributes</strong> object.
-                            You can use the following WAI-ARIA attributes, but
-                            without the 'aria-' prefix. But be careful: You
-                            cannot use every WAI-ARIA attribute with every
-                            WAI-ARIA role!
+                            <strong>additionalAriaAttributes</strong> object and
+                            applied to the table element. You can use the
+                            following WAI-ARIA attributes, but without the
+                            'aria-' prefix. But be careful: You cannot use every
+                            WAI-ARIA attribute with every WAI-ARIA role!
                             <table
                                 style={{
                                     margin: '2% auto',
@@ -487,6 +615,10 @@ const metaH39H43H51H63: Meta<typeof WCAGH39H43H51H63> = {
                                         <td>string</td>
                                     </tr>
                                     <tr>
+                                        <td>aria-label</td>
+                                        <td>string</td>
+                                    </tr>
+                                    <tr>
                                         <td>aria-level</td>
                                         <td>number</td>
                                     </tr>
@@ -602,7 +734,7 @@ const metaH39H43H51H63: Meta<typeof WCAGH39H43H51H63> = {
                         </div>
                         <p>
                             <a
-                                href="https://www.w3.org/WAI/WCAG22/Techniques/html/H49"
+                                href="https://www.w3.org/WAI/WCAG22/Techniques/html/H51"
                                 target="_blank"
                             >
                                 You can find the full World Wide Web Consortium,
@@ -706,7 +838,7 @@ export const MultipleHeaders: StoryH39H43H51H63 = {
 export const Scopes: StoryH39H43H51H63 = {
     render: () => (
         <WCAGH39H43H51H63
-            additionalStyling={{ border: 1 }}
+            additionalStylingTable={{ border: 1 }}
             tableType="data"
             captionText="Contact information"
             tableContent={[

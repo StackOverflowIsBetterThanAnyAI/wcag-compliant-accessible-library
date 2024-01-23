@@ -108,13 +108,14 @@ const metaG74G92: Meta<typeof WCAGG74G92> = {
                             you to apply your styling to your new accessible
                             component. If you prefer styling your components
                             inline, feel free to use the{' '}
-                            <strong>additionalStyling</strong> variable inside
-                            of the <strong>divData</strong> object.
+                            <strong>additionalStyling: CSSProperties</strong>{' '}
+                            object inside of the <strong>divData</strong>{' '}
+                            object.
                         </p>
                         <div>
-                            These are the available WAI-ARIA role parameters for
-                            the attribute <strong>role: string</strong> for the
-                            div element of the <strong>WCAGG74G92</strong>{' '}
+                            These are the available WAI-ARIA role values for the
+                            attribute <strong>role: string</strong> for the div
+                            element of the <strong>WCAGG74G92</strong>{' '}
                             component:
                             <br />
                             Note: 'should be avoided' means that instead of
@@ -665,13 +666,15 @@ const metaG74G92: Meta<typeof WCAGG74G92> = {
                             allows you to apply your styling to your new
                             accessible component. If you prefer styling your
                             components inline, feel free to use the
-                            <strong>additionalStyling</strong> variable inside
-                            of the <strong>pData</strong> object.
+                            <strong>
+                                additionalStyling: CSSProperties
+                            </strong>{' '}
+                            object inside of the <strong>pData</strong> object.
                         </p>
                         <div>
-                            These are the available WAI-ARIA role parameters for
-                            the attribute <strong>role: string</strong> for the
-                            p element of the <strong>WCAGG74G92Text</strong>{' '}
+                            These are the available WAI-ARIA role values for the
+                            attribute <strong>role: string</strong> for the p
+                            element of the <strong>WCAGG74G92Text</strong>{' '}
                             component:
                             <br />
                             Note: 'should be avoided' means that instead of

@@ -176,9 +176,9 @@ const metaG196: Meta<typeof WCAGG196> = {
                             component, which allows you to apply your styling to
                             your new accessible component. If you prefer styling
                             your components inline, feel free to use the{' '}
-                            <strong>additionalStyling</strong> variable inside
-                            of the <strong>imageData</strong> object array to
-                            style each image individually.
+                            <strong>additionalStyling: CSSProperties</strong>{' '}
+                            object inside of the <strong>imageData</strong>{' '}
+                            object array to style each image individually.
                         </p>
                         <div>
                             For even more accessibility, you can also use

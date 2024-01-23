@@ -57,8 +57,8 @@ const metaARIA2H36: Meta<typeof WCAGH36> = {
                             roles.
                         </p>
                         <div>
-                            These are the available WAI-ARIA role parameters for
-                            the optional attribute <strong>role: string</strong>
+                            These are the available WAI-ARIA role values for the
+                            optional attribute <strong>role: string</strong>
                             :
                             <br />
                             Note: 'should be avoided' means that instead of
@@ -277,8 +277,9 @@ const metaARIA2H36: Meta<typeof WCAGH36> = {
                             component, which allows you to apply your styling to
                             your new accessible component. If you prefer styling
                             your components inline, feel free to use the{' '}
-                            <strong>additionalStyling</strong> variable inside
-                            of the <strong>inputData</strong> object.
+                            <strong>additionalStyling: CSSProperties</strong>{' '}
+                            object inside of the <strong>inputData</strong>{' '}
+                            object.
                         </p>
                         <div>
                             For even more accessibility, you can also use

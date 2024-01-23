@@ -132,7 +132,10 @@ const metaG73: Meta<typeof WCAGG73> = {
                             you can set <strong>classNameLink: string</strong>.
                             If you prefer styling your components inline, feel
                             free to add your CSS rules in the{' '}
-                            <strong>linkData.additionalStyling</strong> object.
+                            <strong>
+                                linkData.additionalStyling: CSSProperties
+                            </strong>{' '}
+                            object.
                         </p>
                         <p>
                             If you want an additional function to be triggered
@@ -156,7 +159,10 @@ const metaG73: Meta<typeof WCAGG73> = {
                             <strong>classNameDiv: string</strong> parameter or
                             if you prefer styling your components inline, feel
                             free to add your CSS rules inside the{' '}
-                            <strong>divData.additionalStyling</strong> object.
+                            <strong>
+                                divData.additionalStyling: CSSProperties
+                            </strong>{' '}
+                            object.
                         </p>
                         <p>
                             As this component is to be used in situations in
@@ -170,8 +176,8 @@ const metaG73: Meta<typeof WCAGG73> = {
                             different component.
                         </p>
                         <div>
-                            These are the available WAI-ARIA role parameters for
-                            the attribute <strong>role: string</strong> which is
+                            These are the available WAI-ARIA role values for the
+                            attribute <strong>role: string</strong> which is
                             applied to the div container of the{' '}
                             <strong>WCAGG73</strong> component:
                             <br />
@@ -719,7 +725,10 @@ const metaG73: Meta<typeof WCAGG73> = {
                             <strong>classNameDiv: string</strong> parameter or
                             if you prefer styling your components inline, feel
                             free to add your CSS rules inside the{' '}
-                            <strong>divData.additionalStyling</strong> object.
+                            <strong>
+                                divData.additionalStyling: CSSProperties
+                            </strong>{' '}
+                            object.
                         </p>
                         <p>
                             In order to create a link to the non-text content,
@@ -741,7 +750,10 @@ const metaG73: Meta<typeof WCAGG73> = {
                             <strong>classNameLink: string</strong>. If you
                             prefer styling your components inline, feel free to
                             add your CSS rules in the{' '}
-                            <strong>linkData.additionalStyling</strong> object.
+                            <strong>
+                                linkData.additionalStyling: CSSProperties
+                            </strong>{' '}
+                            object.
                         </p>
                         <p>
                             If you want an additional function to be triggered
@@ -749,8 +761,8 @@ const metaG73: Meta<typeof WCAGG73> = {
                             <strong>onClickFunction: () =&gt; void</strong>.
                         </p>
                         <div>
-                            These are the available WAI-ARIA role parameters for
-                            the attribute <strong>role: string</strong> which is
+                            These are the available WAI-ARIA role values for the
+                            attribute <strong>role: string</strong> which is
                             applied to the div container of the{' '}
                             <strong>WCAGG73Text</strong> component:
                             <br />

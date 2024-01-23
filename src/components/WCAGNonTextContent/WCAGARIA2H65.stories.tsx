@@ -156,7 +156,7 @@ const metaARIA2H65: Meta<typeof WCAGARIA2H65> = {
                         </p>
                         <div>
                             Speaking of optional WAI-ARIA roles: Tese are the
-                            available WAI-ARIA role parameters for the attribute{' '}
+                            available WAI-ARIA role values for the attribute{' '}
                             <strong>role: string</strong>:
                             <br />
                             Note: 'should be avoided' means that instead of
@@ -259,8 +259,9 @@ const metaARIA2H65: Meta<typeof WCAGARIA2H65> = {
                             component, which allows you to apply your styling to
                             your new accessible component. If you prefer styling
                             your components inline, feel free to use the{' '}
-                            <strong>additionalStyling</strong> variable inside
-                            of the <strong>inputData</strong> object.
+                            <strong>additionalStyling: CSSProperties</strong>{' '}
+                            object inside of the <strong>inputData</strong>{' '}
+                            object.
                         </p>
                         <p>
                             If you want to trigger an additional function when

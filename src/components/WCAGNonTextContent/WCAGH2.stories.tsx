@@ -193,8 +193,8 @@ const metaH2: Meta<typeof WCAGH2> = {
                             component, which allows you to apply your styling to
                             your new accessible component. If you prefer styling
                             your components inline, feel free to use the{' '}
-                            <strong>additionalStyling</strong> variable inside
-                            of the <strong>imageData</strong> or{' '}
+                            <strong>additionalStyling: CSSProperties</strong>{' '}
+                            object inside of the <strong>imageData</strong> or{' '}
                             <strong>linkData</strong> objects.
                         </p>
                         <p>

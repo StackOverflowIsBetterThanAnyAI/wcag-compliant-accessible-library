@@ -45,8 +45,8 @@ const metaH53: Meta<typeof WCAGH53> = {
                         </p>
                         <div>
                             For even more accessibility you can also apply one
-                            of the following available WAI-ARIA role parameters
-                            for the attribute <strong>role: string</strong>:
+                            of the following available WAI-ARIA role values for
+                            the attribute <strong>role: string</strong>:
                             <br />
                             Note: 'should be avoided' means that instead of
                             these roles you should always try to favour
@@ -107,8 +107,9 @@ const metaH53: Meta<typeof WCAGH53> = {
                             component, which allows you to apply your styling to
                             your new accessible component. If you prefer styling
                             your components inline, feel free to use the{' '}
-                            <strong>additionalStyling</strong> variable inside
-                            of the <strong>objectData</strong> object.
+                            <strong>additionalStyling: CSSProperties</strong>{' '}
+                            object inside of the <strong>objectData</strong>{' '}
+                            object.
                         </p>
                         <div>
                             For even more accessibility, you can also use

@@ -97,9 +97,9 @@ const metaARIA15: Meta<typeof WCAGARIA15> = {
                             <strong>additionalAriaAttributes</strong>.
                         </p>
                         <div>
-                            These are the available WAI-ARIA role parameters for
-                            the attribute <strong>role: string</strong> inside
-                            of the <strong>imageData</strong> object array:
+                            These are the available WAI-ARIA role values for the
+                            attribute <strong>role: string</strong> inside of
+                            the <strong>imageData</strong> object array:
                             <br />
                             Note: 'should be avoided' means that instead of
                             these roles you should always try to favour
@@ -391,8 +391,9 @@ const metaARIA15: Meta<typeof WCAGARIA15> = {
                             components, which allows you to apply your styling
                             to your new accessible components. If you prefer
                             styling your components inline, feel free to use the{' '}
-                            <strong>additionalStyling</strong> variable inside
-                            of the <strong>imageData</strong> object array.
+                            <strong>additionalStyling: CSSProperties</strong>{' '}
+                            object inside of the <strong>imageData</strong>{' '}
+                            object array.
                         </p>
                         <p>
                             The <strong>WCAGARIA15Text</strong> component
@@ -413,8 +414,8 @@ const metaARIA15: Meta<typeof WCAGARIA15> = {
                             component, a string value can be passed for{' '}
                             <strong>className: string</strong>. If you prefer to
                             style your components inline, you can do this in the{' '}
-                            <strong>divData</strong> object in the{' '}
-                            <strong>additionalStyling</strong> attribute.
+                            <strong>additionalStyling: CSSProperties</strong>{' '}
+                            object inside the <strong>divData</strong> object.
                         </p>
                         <div>
                             To make this component even more accessible, you can

@@ -3,6 +3,7 @@ import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
 interface WCAGH39H43H51H63Props {
     tableContent: {
+        //
         text: string
         isHeader?: boolean
         rowspan?: number
@@ -11,7 +12,7 @@ interface WCAGH39H43H51H63Props {
         headers?: string
         scope?: 'col' | 'colgroup' | 'row' | 'rowgroup'
     }[][]
-    tableType: 'data' | 'layout'
+    tableType: 'data' | 'layout' //
     additionalAriaAttributes?: Omit<
         WAIARIAAttributes,
         | 'braillelabel'
@@ -20,15 +21,19 @@ interface WCAGH39H43H51H63Props {
         | 'labelledby'
         | 'rowindextext'
     >
-    additionalStyling?: CSSProperties
-    captionText?: string
-    classNameTable?: string
-    classNameRow?: string
-    classNameHeader?: string
-    classNameCell?: string
-    classNameCaption?: string
-    role?:
-        | 'alert'
+    additionalStylingTable?: CSSProperties //
+    additionalStylingRow?: CSSProperties //
+    additionalStylingHeader?: CSSProperties //
+    additionalStylingCell?: CSSProperties //
+    additionalStylingCaption?: CSSProperties //
+    captionText?: string //
+    classNameTable?: string //
+    classNameRow?: string //
+    classNameHeader?: string //
+    classNameCell?: string //
+    classNameCaption?: string //
+    role?: //
+    | 'alert'
         | 'alertdialog'
         | 'application' // should be avoided
         | 'article' // should be avoided
@@ -93,7 +98,11 @@ const WCAGH39H43H51H63: React.FC<WCAGH39H43H51H63Props> = ({
     additionalAriaAttributes,
     tableContent,
     tableType,
-    additionalStyling,
+    additionalStylingCaption,
+    additionalStylingCell,
+    additionalStylingHeader,
+    additionalStylingRow,
+    additionalStylingTable,
     captionText,
     classNameCell,
     classNameHeader,
@@ -105,7 +114,7 @@ const WCAGH39H43H51H63: React.FC<WCAGH39H43H51H63Props> = ({
     return (
         <table
             className={classNameTable}
-            style={{ ...additionalStyling }}
+            style={{ ...additionalStylingTable }}
             role={role}
             aria-activedescendant={
                 role === 'application' ||
@@ -457,16 +466,26 @@ const WCAGH39H43H51H63: React.FC<WCAGH39H43H51H63Props> = ({
             }
         >
             {captionText && (
-                <caption className={classNameCaption}>{captionText}</caption>
+                <caption
+                    className={classNameCaption}
+                    style={{ ...additionalStylingCaption }}
+                >
+                    {captionText}
+                </caption>
             )}
             <tbody>
                 {tableContent.map((row, rowIndex) => (
-                    <tr key={rowIndex} className={classNameRow}>
+                    <tr
+                        key={rowIndex}
+                        className={classNameRow}
+                        style={{ ...additionalStylingRow }}
+                    >
                         {row.map((cell, cellIndex) =>
                             cell.isHeader ? (
                                 <th
                                     key={cellIndex}
                                     className={classNameHeader}
+                                    style={{ ...additionalStylingHeader }}
                                     scope={
                                         tableType === 'data'
                                             ? cell?.scope
@@ -487,6 +506,7 @@ const WCAGH39H43H51H63: React.FC<WCAGH39H43H51H63Props> = ({
                                 <td
                                     key={cellIndex}
                                     className={classNameCell}
+                                    style={{ ...additionalStylingCell }}
                                     scope={
                                         tableType === 'data'
                                             ? cell?.scope

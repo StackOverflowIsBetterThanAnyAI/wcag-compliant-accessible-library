@@ -72,8 +72,9 @@ const metaARIA2H71: Meta<typeof WCAGARIA2H71> = {
                             be used by you in order to style your components. If
                             you prefer styling your components inline, you can
                             add your styling rules to the{' '}
-                            <strong>additionalStyling</strong> object inside the{' '}
-                            <strong>legendData</strong> object. This{' '}
+                            <strong>additionalStyling: CSSProperties</strong>{' '}
+                            object inside the <strong>legendData</strong>{' '}
+                            object. This{' '}
                             <strong style={{ color: '#ff0000' }}>
                                 legendData
                             </strong>{' '}

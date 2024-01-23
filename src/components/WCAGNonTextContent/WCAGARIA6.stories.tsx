@@ -20,6 +20,14 @@ const metaARIA6: Meta<typeof WCAGARIA6> = {
                             read aloud by assistive technologies. This tag
                             contains a short descriptive text alternative.
                         </strong>
+                        <p>
+                            Code preview:
+                            <br />
+                            <code>
+                                &lt;div aria-label="description"&gt; children
+                                &lt;/div&gt;
+                            </code>
+                        </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>
                                 <i style={{ color: '#ff0000' }}>

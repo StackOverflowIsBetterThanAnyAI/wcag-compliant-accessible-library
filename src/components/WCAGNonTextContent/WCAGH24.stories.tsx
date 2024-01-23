@@ -22,6 +22,25 @@ const metaH24: Meta<typeof WCAGH24> = {
                             map that serve the same purpose as the selectable
                             region of the map.
                         </strong>
+                        <p>
+                            Code preview:
+                            <br />
+                            <code>
+                                &lt;&gt;
+                                <br />
+                                &emsp;&lt;img useMap="#mapName"/&gt;
+                                <br />
+                                &emsp;&lt;map name="mapName"&gt;
+                                <br />
+                                &emsp;&emsp;&lt;area&gt;
+                                <br />
+                                &emsp;&emsp;&lt;/area&gt;
+                                <br />
+                                &emsp;&lt;/map&gt;
+                                <br />
+                                &lt;/&gt;
+                            </code>
+                        </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>
                                 <i style={{ color: '#ff0000' }}>

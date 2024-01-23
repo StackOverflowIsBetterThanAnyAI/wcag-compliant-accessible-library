@@ -20,6 +20,21 @@ const metaH44: Meta<typeof WCAGH44> = {
                             either an input or a select or a textarea element by
                             requiring a unique ID for both elements.
                         </strong>
+                        <p>
+                            Code preview:
+                            <br />
+                            <code>
+                                &lt;&gt;
+                                <br />
+                                &emsp;&lt;label&gt; labelText &lt;/label&gt;
+                                <br />
+                                &emsp;&lt;select/textarea/input&gt;
+                                <em> options </em>&lt;/
+                                select/textarea/input&gt;
+                                <br />
+                                &lt;/&gt;
+                            </code>
+                        </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>
                                 <i style={{ color: '#ff0000' }}>

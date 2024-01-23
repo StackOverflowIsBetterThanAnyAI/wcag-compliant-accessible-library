@@ -22,6 +22,19 @@ const metaG196: Meta<typeof WCAGG196> = {
                             and describe them with a single alt attribute. This
                             avoids duplication.
                         </strong>
+                        <p>
+                            Code preview:
+                            <br />
+                            <code>
+                                &lt;&gt;
+                                <br />
+                                &emsp;&lt;img alt="description" /&gt;
+                                <br />
+                                &emsp;&lt;img/&gt;
+                                <br />
+                                &lt;/&gt;
+                            </code>
+                        </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>
                                 <i style={{ color: '#ff0000' }}>

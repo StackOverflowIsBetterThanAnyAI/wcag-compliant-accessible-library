@@ -22,6 +22,19 @@ const metaH2: Meta<typeof WCAGH2> = {
                             an anchor element. This results in a larger
                             clickable area for the user.
                         </strong>
+                        <p>
+                            Code preview:
+                            <br />
+                            <code>
+                                &lt;a&gt;
+                                <br />
+                                &emsp;children
+                                <br />
+                                &emsp;&lt;img/&gt;
+                                <br />
+                                &lt;/a&gt;
+                            </code>
+                        </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>
                                 <i style={{ color: '#ff0000' }}>

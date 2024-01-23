@@ -24,6 +24,11 @@ const metaARIA2H65: Meta<typeof WCAGARIA2H65> = {
                             visual design doesn't include text an the screen
                             which can be seen as a label for the element.
                         </strong>
+                        <p>
+                            Code preview:
+                            <br />
+                            <code>&lt;/input title="description"&gt;</code>
+                        </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>
                                 <i style={{ color: '#ff0000' }}>

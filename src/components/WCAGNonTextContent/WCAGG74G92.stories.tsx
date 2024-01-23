@@ -30,6 +30,25 @@ const metaG74G92: Meta<typeof WCAGG74G92> = {
                             the non-text content which provides the location of
                             the long description.
                         </strong>
+                        <p>
+                            Code preview:
+                            <br /> WCAGG74G92:
+                            <br />
+                            <code>
+                                &lt;div aria-describedby="long-desc"&gt;
+                                <br />
+                                &emsp; children
+                                <br />
+                                &emsp; shortText &emsp;
+                                <br />
+                                &lt;/div&gt;
+                            </code>
+                            <br />
+                            <br /> WCAGG74G92Text: <br />
+                            <code>
+                                &lt;p id="long-desc"&gt; children &lt;/p&gt;
+                            </code>
+                        </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>
                                 <i style={{ color: '#ff0000' }}>

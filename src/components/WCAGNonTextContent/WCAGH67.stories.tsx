@@ -22,6 +22,11 @@ const metaH67: Meta<typeof WCAGH67> = {
                             This component returns an img element which can
                             safely be ignored by assistive technologies.
                         </strong>
+                        <p>
+                            Code preview:
+                            <br />
+                            <code>&lt;img alt=""/&gt;</code>
+                        </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>
                                 <i style={{ color: '#ff0000' }}>

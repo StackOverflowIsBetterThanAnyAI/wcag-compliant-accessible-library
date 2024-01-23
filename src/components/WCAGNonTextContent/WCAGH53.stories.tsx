@@ -20,6 +20,11 @@ const metaH53: Meta<typeof WCAGH53> = {
                             description or an element with an alt attribute that
                             describes the object element.
                         </strong>
+                        <p>
+                            Code preview:
+                            <br />
+                            <code>&lt;object&gt; children &lt;/object&gt;</code>
+                        </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>
                                 <i style={{ color: '#ff0000' }}>

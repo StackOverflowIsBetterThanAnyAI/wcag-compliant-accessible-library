@@ -22,6 +22,13 @@ const metaARIA2H36: Meta<typeof WCAGH36> = {
                             is visually displayed when the image cannot be
                             loaded or is read aloud by assistive technology.
                         </strong>
+                        <p>
+                            Code preview:
+                            <br />
+                            <code>
+                                &lt;input type="image" alt="description" /&gt;
+                            </code>
+                        </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>
                                 <i style={{ color: '#ff0000' }}>

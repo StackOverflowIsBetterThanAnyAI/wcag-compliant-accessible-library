@@ -21,6 +21,31 @@ const metaH86: Meta<typeof WCAGH86> = {
                             alternative text for any kind of emoji, emoticon,
                             ASCII art or leetspeak.
                         </strong>
+                        <p>
+                            Code preview:
+                            <br />
+                            <code>
+                                &lt;span aria-label="description"&gt;
+                                <em> emoji </em>
+                                &lt;/span&gt;
+                            </code>
+                            <br />
+                            or
+                            <br />
+                            <code>
+                                &lt;div aria-label="description"&gt;
+                                <em> emoji </em>
+                                &lt;/div&gt;
+                            </code>
+                            <br />
+                            or
+                            <br />
+                            <code>
+                                &lt;abbr title="description"&gt;
+                                <em> emoji </em>
+                                &lt;/abbr&gt;
+                            </code>
+                        </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>
                                 <i style={{ color: '#ff0000' }}>

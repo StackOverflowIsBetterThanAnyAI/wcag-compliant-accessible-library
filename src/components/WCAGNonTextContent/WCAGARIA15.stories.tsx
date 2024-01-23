@@ -27,6 +27,23 @@ const metaARIA15: Meta<typeof WCAGARIA15> = {
                             a short description of an element which can be read
                             aloud by assistive technology.
                         </strong>
+                        <p>
+                            Code preview:
+                            <br /> WCAGARIA15:
+                            <br />
+                            <code>
+                                &lt;&gt;
+                                <br />
+                                &emsp;&lt;img aria-describedby="id" /&gt;
+                                <br />
+                                &emsp;&lt;img aria-describedby="id" /&gt;
+                                <br />
+                                &lt;/&gt;
+                            </code>
+                            <br />
+                            <br /> WCAGARIA15Text: <br />
+                            <code>&lt;p id="id"&gt; children &lt;/p&gt;</code>
+                        </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>
                                 <i style={{ color: '#ff0000' }}>

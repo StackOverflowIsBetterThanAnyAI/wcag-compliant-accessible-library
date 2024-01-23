@@ -27,6 +27,38 @@ const metaG73: Meta<typeof WCAGG73> = {
                             a button right beside the non-text content which
                             links to the long description and vice versa.
                         </strong>
+                        <p>
+                            Code preview:
+                            <br /> WCAGG73:
+                            <br />
+                            <code>
+                                &lt;div aria-describedby="long-desc"
+                                id="div-id"&gt;
+                                <br />
+                                &emsp; children <br />
+                                &emsp;&lt;a href="#long-desc"&gt; buttonText
+                                &lt;/a&gt;
+                                <br />
+                                &emsp; shortText &emsp;
+                                <br />
+                                &lt;/div&gt;
+                            </code>
+                            <br />
+                            <br /> WCAGG73Text: <br />
+                            <code>
+                                &lt;div id="long-desc"&gt;
+                                <br />
+                                &emsp; children <br />
+                                &emsp;&lt;p&gt;
+                                <br />
+                                &emsp;&emsp;&lt;a href="#div-id"&gt; buttonText
+                                &lt;/a&gt;
+                                <br />
+                                &emsp;&lt;/p&gt;
+                                <br />
+                                &lt;/div&gt;
+                            </code>
+                        </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>
                                 <i style={{ color: '#ff0000' }}>

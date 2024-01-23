@@ -25,6 +25,20 @@ const metaARIA10: Meta<typeof WCAGARIA10> = {
                             provide a short description of an element which can
                             be read aloud by assistive technology.
                         </strong>
+                        <p>
+                            Code preview:
+                            <br /> WCAGARIA10:
+                            <br />
+                            <code>
+                                &lt;div aria-labelledby="id"&gt; children
+                                &lt;/div&gt;
+                            </code>
+                            <br />
+                            <br /> WCAGARIA10Text: <br />
+                            <code>
+                                &lt;div id="id"&gt; children &lt;/div&gt;
+                            </code>
+                        </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>
                                 <i style={{ color: '#ff0000' }}>

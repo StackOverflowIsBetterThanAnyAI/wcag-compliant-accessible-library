@@ -23,6 +23,22 @@ const metaH30: Meta<typeof WCAGH30> = {
                             The additional text can also be an image with an alt
                             attribute.
                         </strong>
+                        <p>
+                            Code preview:
+                            <br />
+                            <code>
+                                &lt;a&gt;
+                                <br />
+                                &emsp; preImageText <br />
+                                &emsp;&lt;img/&gt;
+                                <br />
+                                &emsp;&lt;img/&gt;
+                                <br />
+                                &emsp;postImageText
+                                <br />
+                                &lt;/a&gt;
+                            </code>
+                        </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>
                                 <i style={{ color: '#ff0000' }}>

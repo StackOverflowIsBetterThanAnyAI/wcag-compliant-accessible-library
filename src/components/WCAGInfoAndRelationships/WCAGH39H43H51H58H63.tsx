@@ -1,18 +1,38 @@
-import React, { CSSProperties, ReactNode } from 'react'
+import React, { CSSProperties } from 'react'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
+import { LangAttributes } from '../interfaces/LangAttributes'
 
-interface WCAGG115H49H58Props {
+interface WCAGH39H43H51H58H63Props {
+    tableContent: {
+        text: string
+        isHeader?: boolean
+        rowspan?: number
+        colspan?: number
+        headers?: string
+        id?: string
+        lang?: LangAttributes
+        scope?: 'col' | 'colgroup' | 'row' | 'rowgroup'
+    }[][]
+    tableType: 'data' | 'layout'
     additionalAriaAttributes?: Omit<
         WAIARIAAttributes,
         | 'braillelabel'
         | 'brailleroledescription'
         | 'colindextext'
-        | 'label'
         | 'labelledby'
         | 'rowindextext'
     >
-    additionalStyling?: CSSProperties
-    className?: string
+    additionalStylingTable?: CSSProperties
+    additionalStylingRow?: CSSProperties
+    additionalStylingHeader?: CSSProperties
+    additionalStylingCell?: CSSProperties
+    additionalStylingCaption?: CSSProperties
+    captionText?: string
+    classNameTable?: string
+    classNameRow?: string
+    classNameHeader?: string
+    classNameCell?: string
+    classNameCaption?: string
     role?:
         | 'alert'
         | 'alertdialog'
@@ -66,7 +86,6 @@ interface WCAGG115H49H58Props {
         | 'status'
         | 'switch'
         | 'tab'
-        | 'table' // should be avoided
         | 'tablist'
         | 'tabpanel'
         | 'textbox' // should be avoided
@@ -74,20 +93,29 @@ interface WCAGG115H49H58Props {
         | 'toolbar'
         | 'tooltip'
         | 'treegrid'
-    children: ReactNode
 }
 
-const G115H49Code: React.FC<WCAGG115H49H58Props> = ({
+const WCAGH39H43H51H58H63: React.FC<WCAGH39H43H51H58H63Props> = ({
     additionalAriaAttributes,
-    additionalStyling,
-    className,
-    children,
+    tableContent,
+    tableType,
+    additionalStylingCaption,
+    additionalStylingCell,
+    additionalStylingHeader,
+    additionalStylingRow,
+    additionalStylingTable,
+    captionText,
+    classNameCell,
+    classNameHeader,
+    classNameRow,
+    classNameTable,
+    classNameCaption,
     role,
 }) => {
     return (
-        <code
-            className={className}
-            style={{ ...additionalStyling }}
+        <table
+            className={classNameTable}
+            style={{ ...additionalStylingTable }}
             role={role}
             aria-activedescendant={
                 role === 'application' ||
@@ -117,7 +145,7 @@ const G115H49Code: React.FC<WCAGG115H49H58Props> = ({
                     : undefined
             }
             aria-colcount={
-                role === 'grid' || role === 'table' || role === 'treegrid'
+                role === 'grid' || role === 'treegrid'
                     ? additionalAriaAttributes?.colcount
                     : undefined
             }
@@ -253,6 +281,7 @@ const G115H49Code: React.FC<WCAGG115H49H58Props> = ({
                     : undefined
             }
             aria-keyshortcuts={additionalAriaAttributes?.keyshortcuts}
+            aria-label={additionalAriaAttributes?.label}
             aria-level={
                 role === 'comment' || role === 'row'
                     ? additionalAriaAttributes?.level
@@ -352,7 +381,7 @@ const G115H49Code: React.FC<WCAGG115H49H58Props> = ({
             }
             aria-roledescription={additionalAriaAttributes?.roledescription}
             aria-rowcount={
-                role === 'table' || role === 'grid' || role === 'treegrid'
+                role === 'grid' || role === 'treegrid'
                     ? additionalAriaAttributes?.rowcount
                     : undefined
             }
@@ -437,9 +466,70 @@ const G115H49Code: React.FC<WCAGG115H49H58Props> = ({
                     : undefined
             }
         >
-            {children}
-        </code>
+            {captionText && (
+                <caption
+                    className={classNameCaption}
+                    style={{ ...additionalStylingCaption }}
+                >
+                    {captionText}
+                </caption>
+            )}
+            <tbody>
+                {tableContent.map((row, rowIndex) => (
+                    <tr
+                        key={rowIndex}
+                        className={classNameRow}
+                        style={{ ...additionalStylingRow }}
+                    >
+                        {row.map((cell, cellIndex) =>
+                            cell.isHeader ? (
+                                <th
+                                    key={cellIndex}
+                                    className={classNameHeader}
+                                    style={{ ...additionalStylingHeader }}
+                                    scope={
+                                        tableType === 'data'
+                                            ? cell?.scope
+                                            : undefined
+                                    }
+                                    rowSpan={cell?.rowspan}
+                                    colSpan={cell?.colspan}
+                                    id={cell?.id}
+                                    headers={
+                                        tableType === 'data' && rowIndex !== 0
+                                            ? cell?.headers
+                                            : undefined
+                                    }
+                                    lang={cell?.lang?.language}
+                                >
+                                    {cell.text}
+                                </th>
+                            ) : (
+                                <td
+                                    key={cellIndex}
+                                    className={classNameCell}
+                                    style={{ ...additionalStylingCell }}
+                                    scope={
+                                        tableType === 'data'
+                                            ? cell?.scope
+                                            : undefined
+                                    }
+                                    headers={
+                                        tableType === 'data'
+                                            ? cell?.headers
+                                            : undefined
+                                    }
+                                    lang={cell?.lang?.language}
+                                >
+                                    {cell.text}
+                                </td>
+                            )
+                        )}
+                    </tr>
+                ))}
+            </tbody>
+        </table>
     )
 }
 
-export default G115H49Code
+export default WCAGH39H43H51H58H63

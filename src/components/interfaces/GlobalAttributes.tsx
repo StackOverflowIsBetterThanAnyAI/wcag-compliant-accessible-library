@@ -17,7 +17,6 @@ export interface GlobalAttributes {
         | 'tel'
         | 'url'
         | 'decimal'
-    lang?: string
     spellcheck?: boolean
     tabindex?: number
     title?: string

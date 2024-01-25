@@ -4,9 +4,9 @@ import { AreaAttributes } from '../interfaces/AreaAttributes'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
 interface WCAGH24Props {
-    areaData: (AreaAttributes & { onClickFunction?: () => void })[] //
-    imageData: ImageAttributes & { altText: string } //
-    mapName: string //
+    areaData: (AreaAttributes & { onClickFunction?: () => void })[]
+    imageData: ImageAttributes & { altText: string }
+    mapName: string
     additionalAriaAttributes?: Omit<
         WAIARIAAttributes,
         | 'activedescendant'
@@ -29,8 +29,8 @@ interface WCAGH24Props {
         | 'rowspan'
         | 'sort'
     >
-    classNameImage?: string //
-    classNameMap?: string //
+    classNameImage?: string
+    classNameMap?: string
     role?:
         | 'button' // should be avoided
         | 'checkbox' // should be avoided

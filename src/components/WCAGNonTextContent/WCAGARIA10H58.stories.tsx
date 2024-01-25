@@ -1,32 +1,49 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Controls, Source, Stories, Subtitle, Title } from '@storybook/blocks'
 
-import WCAGG115H49HCode from './WCAGG115H49Code'
+import WCAGARIA10H58 from './WCAGARIA10H58'
+import WCAGARIA10H58Text from './WCAGARIA10H58Text'
+// @ts-ignore
+import starImage from '../../images/star.png'
 
-const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
-    component: WCAGG115H49HCode,
+const metaARIA10: Meta<typeof WCAGARIA10H58> = {
+    component: WCAGARIA10H58,
     tags: ['autodocs'],
     parameters: {
         docs: {
             page: () => (
                 <>
                     <Title>
-                        WCAGG115: Using semantic elements to mark up structure
+                        WCAGARIA10: Using aria-labelledby to provide a text
+                        alternative for non-text content
                         <br />
-                        WCAGH49: Using semantic markup to mark emphasized or
-                        special text
+                        WCAGH58: Using language attributes to identify changes
+                        in the human language
                     </Title>
                     <Subtitle>
                         <strong>
-                            The goal of this component is to mark up the
-                            structure of the web content using appropriate
-                            semantic elements, in this case: the code element.
+                            This component contains non-text content, which is
+                            described by an additional element with a text
+                            alternative. The purpose of this component is to
+                            provide a short description of an element which can
+                            be read aloud by assistive technology. It also
+                            allows you to specify the human language your
+                            element uses if it is different than the human
+                            language of your web page.
                         </strong>
                         <p>
                             Abstract code preview:
+                            <br /> WCAGARIA10H58:
                             <br />
                             <code>
-                                &lt;code&gt; child element &lt;/code&gt;
+                                &lt;div aria-labelledby="id" lang="de"&gt;
+                                children &lt;/div&gt;
+                            </code>
+                            <br />
+                            <br /> WCAGARIA10H58Text: <br />
+                            <code>
+                                &lt;div id="id" lang="de"&gt; children
+                                &lt;/div&gt;
                             </code>
                         </p>
                         <p style={{ textAlign: 'center' }}>
@@ -38,24 +55,24 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                             </strong>
                         </p>
                         <p>
-                            There is{' '}
-                            <strong style={{ color: '#ff0000' }}>
-                                no mandatory parameter
-                            </strong>{' '}
-                            for this component.
+                            This component is divided into two parts: The
+                            WCAGARIA10H58 component contains the non-text
+                            content, while the WCAGARIA10H58Text component
+                            contains the alternative text, you can use multiple
+                            WCAGARIA10H58Text components.
                         </p>
                         <p>
-                            You can pass any{' '}
-                            <strong style={{ color: '#ff0000' }}>
-                                child: ReactNode
-                            </strong>{' '}
-                            element: be it a string, a div element or a whole
-                            different component.
+                            To be able to use this component correctly, you must
+                            specify one of the 60 possible WAI-ARIA roles for
+                            the <strong>WCAGARIA10H58</strong> component.
                         </p>
                         <div>
                             These are the available WAI-ARIA role values for the
-                            attribute <strong>role: string</strong> which is
-                            applied to the code element:
+                            attribute{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                role: string
+                            </strong>
+                            :
                             <br />
                             Note: 'should be avoided' means that instead of
                             these roles you should always try to favour
@@ -343,21 +360,77 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                             </table>
                         </div>
                         <p>
+                            The same roles can also be assigned to the
+                            <strong>WCAGARIA10H58Text</strong> component via the{' '}
+                            <strong>role: string</strong> parameter optionally.
+                        </p>
+                        <p>
+                            To connect the two components, you must assign all{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                ariaLabelledById: string
+                            </strong>{' '}
+                            values of the <strong>WCAGARIA10H58Text</strong>{' '}
+                            components to the{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                accessibleId: string
+                            </strong>{' '}
+                            variable of the
+                            <strong>WCAGARIA10H58t</strong> component separated
+                            by a space.
+                        </p>
+                        <p>
+                            As <strong>both</strong> components render a simple
+                            div element, you are also free to assign every
+                            possible property of a regular div element to the
+                            div elements of these components optionally. These
+                            attributes can be applied to the{' '}
+                            <strong>divData</strong> object on each component
+                            individually.
+                        </p>
+                        <p>
+                            <strong>Both</strong> components can be passed any
+                            element as a{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                child: ReactNode
+                            </strong>{' '}
+                            element: be it a string, another div element or a
+                            completely different component.
+                        </p>
+                        <p>
                             You can also add an optional customised{' '}
-                            <strong>className: string</strong> to your
-                            component, which allows you to apply your styling to
-                            your new accessible component. If you prefer styling
-                            your components inline, feel free to use the{' '}
+                            <strong>className: string</strong> to{' '}
+                            <strong>both</strong> components, which allows you
+                            to apply your styling to your new accessible
+                            components. If you prefer styling your components
+                            inline, feel free to use the{' '}
                             <strong>additionalStyling: CSSProperties</strong>{' '}
+                            object inside of the <strong>divData</strong>{' '}
                             object.
+                        </p>
+                        <p>
+                            If the human language inside your html element is
+                            different than the human language which is set for
+                            your web page, you must set it to the correct human
+                            language. This works for both components. For this
+                            you have to use the{' '}
+                            <strong>lang.language: string</strong> variable
+                            which accepts one of the{' '}
+                            <a
+                                href="https://www.w3schools.com/tags/ref_language_codes.asp"
+                                target="_blank"
+                            >
+                                language codes defined in ISO 639-1
+                            </a>
+                            .
                         </p>
                         <div>
                             For even more accessibility, you can also use
-                            optional additional WAI-ARIA attributes. They are
+                            optional additional WAI-ARIA attributes on the{' '}
+                            <strong>WCAGARIA10H58</strong> component. They are
                             stored in the{' '}
                             <strong>additionalAriaAttributes</strong> object.
                             You can use the following WAI-ARIA attributes, but
-                            without the 'aria-' prefix. But be careful: You
+                            without the 'aria-' prefix: But be careful: You
                             cannot use every WAI-ARIA attribute with every
                             WAI-ARIA role!
                             <table
@@ -599,7 +672,7 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                         </div>
                         <p>
                             <a
-                                href="https://www.w3.org/WAI/WCAG22/Techniques/html/H49"
+                                href="https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA10"
                                 target="_blank"
                             >
                                 You can find the full World Wide Web Consortium,
@@ -618,20 +691,88 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
     },
 }
 
-export default metaG115H49Code
+export default metaARIA10
 
-type StoryG115H49Code = StoryObj<typeof WCAGG115H49HCode>
+type StoryARIA10 = StoryObj<typeof WCAGARIA10H58>
 
-// WCAGG115H49HCode
+// WCAGNonTextComponentARIA10
 
-export const Code: StoryG115H49Code = {
-    render: () => <WCAGG115H49HCode>let num: number = 15</WCAGG115H49HCode>,
+export const RoleImageWithOneText: StoryARIA10 = {
+    render: () => (
+        <>
+            <WCAGARIA10H58
+                role="img"
+                ariaLabelledById="star-id1"
+                divData={{ additionalStyling: { margin: '5px 10px' } }}
+            >
+                <>
+                    <img src={starImage} alt="" height={50} width={50} />
+                    <img src={starImage} alt="" height={50} width={50} />
+                    <img src={starImage} alt="" height={50} width={50} />
+                    <img src={starImage} alt="" height={50} width={50} />
+                    <img src={starImage} alt="" height={50} width={50} />
+                </>
+            </WCAGARIA10H58>
+            <WCAGARIA10H58Text ariaLabelledById="star-id1">
+                This is a short text alternative of five happy stars in a
+                horizontal line looking at you.
+            </WCAGARIA10H58Text>
+        </>
+    ),
 }
 
-export const CodeWithSpan: StoryG115H49Code = {
+export const RoleImageWithReactNodeAsText: StoryARIA10 = {
     render: () => (
-        <WCAGG115H49HCode>
-            <span>let num: number = 15</span>
-        </WCAGG115H49HCode>
+        <>
+            <WCAGARIA10H58Text ariaLabelledById="star-id1">
+                <span style={{ color: 'red' }}>
+                    This is a short text alternative of five happy stars in a
+                    horizontal line looking at you.
+                </span>
+            </WCAGARIA10H58Text>
+            <WCAGARIA10H58 role="img" ariaLabelledById="star-id1 star-id2">
+                <>
+                    <img src={starImage} alt="" height={75} width={75} />
+                    <img src={starImage} alt="" height={75} width={75} />
+                    <img src={starImage} alt="" height={75} width={75} />
+                    <img src={starImage} alt="" height={75} width={75} />
+                    <img src={starImage} alt="" height={75} width={75} />
+                </>
+            </WCAGARIA10H58>
+            <WCAGARIA10H58Text ariaLabelledById="star-id2">
+                <div style={{ margin: '5px 25px' }}>
+                    This is a short text alternative of five happy stars in a
+                    horizontal line looking at you.
+                </div>
+            </WCAGARIA10H58Text>
+        </>
+    ),
+}
+
+export const WrongAriaLabelledById: StoryARIA10 = {
+    render: () => (
+        <>
+            <WCAGARIA10H58Text ariaLabelledById="">
+                <span style={{ color: 'red' }}>
+                    This is a short text alternative of five happy stars in a
+                    horizontal line looking at you.
+                </span>
+            </WCAGARIA10H58Text>
+            <WCAGARIA10H58 role="img" ariaLabelledById="">
+                <>
+                    <img src={starImage} alt="" height={75} width={75} />
+                    <img src={starImage} alt="" height={75} width={75} />
+                    <img src={starImage} alt="" height={75} width={75} />
+                    <img src={starImage} alt="" height={75} width={75} />
+                    <img src={starImage} alt="" height={75} width={75} />
+                </>
+            </WCAGARIA10H58>
+            <WCAGARIA10H58Text ariaLabelledById="">
+                <div style={{ margin: '5px 25px' }}>
+                    This is a short text alternative of five happy stars in a
+                    horizontal line looking at you.
+                </div>
+            </WCAGARIA10H58Text>
+        </>
     ),
 }

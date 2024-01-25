@@ -1,32 +1,40 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Controls, Source, Stories, Subtitle, Title } from '@storybook/blocks'
 
-import WCAGG115H49HCode from './WCAGG115H49Code'
+import WCAGARIA2H58H65 from './WCAGARIA2H58H65'
 
-const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
-    component: WCAGG115H49HCode,
+const metaARIA2H65: Meta<typeof WCAGARIA2H58H65> = {
+    component: WCAGARIA2H58H65,
     tags: ['autodocs'],
     parameters: {
         docs: {
             page: () => (
                 <>
                     <Title>
-                        WCAGG115: Using semantic elements to mark up structure
+                        WCAGARIA2: Identifying a required field with the
+                        aria-required property
                         <br />
-                        WCAGH49: Using semantic markup to mark emphasized or
-                        special text
+                        WCAGH58: Using language attributes to identify changes
+                        in the human language
+                        <br />
+                        WCAGH65: Using the title attribute to identify form
+                        controls when the label element cannot be used
                     </Title>
                     <Subtitle>
                         <strong>
-                            The goal of this component is to mark up the
-                            structure of the web content using appropriate
-                            semantic elements, in this case: the code element.
+                            This component adds a title attribute to an input
+                            element to provide an accessible name when the
+                            visual design doesn't include text an the screen
+                            which can be seen as a label for the element. It
+                            also allows you to specify the human language your
+                            element uses if it is different than the human
+                            language of your web page.
                         </strong>
                         <p>
                             Abstract code preview:
                             <br />
                             <code>
-                                &lt;code&gt; child element &lt;/code&gt;
+                                &lt;/input title="description" lang="de"&gt;
                             </code>
                         </p>
                         <p style={{ textAlign: 'center' }}>
@@ -38,24 +46,126 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                             </strong>
                         </p>
                         <p>
-                            There is{' '}
+                            In order to use this component correctly, you need
+                            to provide a descriptive text for the input element
+                            in the{' '}
                             <strong style={{ color: '#ff0000' }}>
-                                no mandatory parameter
+                                title: string
                             </strong>{' '}
-                            for this component.
-                        </p>
-                        <p>
-                            You can pass any{' '}
-                            <strong style={{ color: '#ff0000' }}>
-                                child: ReactNode
-                            </strong>{' '}
-                            element: be it a string, a div element or a whole
-                            different component.
+                            parameter.
                         </p>
                         <div>
-                            These are the available WAI-ARIA role values for the
-                            attribute <strong>role: string</strong> which is
-                            applied to the code element:
+                            Furthermore, you have to specify your wanted{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                inputType
+                            </strong>
+                            . Choose one of the following values:
+                            <table
+                                style={{
+                                    margin: '2% auto',
+                                    backgroundColor: '#e9e9e9',
+                                    padding: '2% 5%',
+                                }}
+                            >
+                                <tbody>
+                                    <tr>
+                                        <th
+                                            style={{
+                                                textAlign: 'left',
+                                            }}
+                                        >
+                                            inputType
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>'button'</td>
+                                    </tr>
+                                    <tr>
+                                        <td>'color'</td>
+                                    </tr>
+                                    <tr>
+                                        <td>'date'</td>
+                                    </tr>
+                                    <tr>
+                                        <td>'datetime-local'</td>
+                                    </tr>
+                                    <tr>
+                                        <td>'email'</td>
+                                    </tr>
+                                    <tr>
+                                        <td>'file'</td>
+                                    </tr>
+                                    <tr>
+                                        <td>'hidden'</td>
+                                    </tr>
+                                    <tr>
+                                        <td>'image'</td>
+                                    </tr>
+                                    <tr>
+                                        <td>'month'</td>
+                                    </tr>
+                                    <tr>
+                                        <td>'number'</td>
+                                    </tr>
+                                    <tr>
+                                        <td>'password'</td>
+                                    </tr>
+                                    <tr>
+                                        <td>'range'</td>
+                                    </tr>
+                                    <tr>
+                                        <td>'reset'</td>
+                                    </tr>
+                                    <tr>
+                                        <td>'search'</td>
+                                    </tr>
+                                    <tr>
+                                        <td>'submit'</td>
+                                    </tr>
+                                    <tr>
+                                        <td>'tel'</td>
+                                    </tr>
+                                    <tr>
+                                        <td>'text'</td>
+                                    </tr>
+                                    <tr>
+                                        <td>'time'</td>
+                                    </tr>
+                                    <tr>
+                                        <td>'url'</td>
+                                    </tr>
+                                    <tr>
+                                        <td>'week'</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>
+                            In addition to that, you have to use the{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                inputData
+                            </strong>{' '}
+                            object with its mandatory parameter{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                inputData.required: boolean
+                            </strong>
+                            . This value is necessary for the aria-required
+                            value if you decide to use an optional WAI-ARIA role
+                            with the value{' '}
+                            <strong>
+                                'checkbox', 'combobox', 'spinbutton',
+                                'searchbox' or 'switch'
+                            </strong>
+                            . As this component renders a simple input element,
+                            you are also free to assign every possible property
+                            of the input element to the input element of this
+                            component optionally. These attributes can be
+                            applied to this <strong>input</strong> object.
+                        </p>
+                        <div>
+                            Speaking of optional WAI-ARIA roles: Tese are the
+                            available WAI-ARIA role values for the attribute{' '}
+                            <strong>role: string</strong>:
                             <br />
                             Note: 'should be avoided' means that instead of
                             these roles you should always try to favour
@@ -82,106 +192,13 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                         </th>
                                     </tr>
                                     <tr>
-                                        <td>alert</td>
-                                    </tr>
-                                    <tr>
-                                        <td>alertdialog</td>
-                                    </tr>
-                                    <tr>
-                                        <td>application</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>article</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>banner</td>
-                                    </tr>
-                                    <tr>
-                                        <td>button</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>cell</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
                                         <td>checkbox</td>
                                         <td style={{ color: '#8c1c1c' }}>
                                             should be avoided
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>columnheader</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
                                         <td>combobox</td>
-                                    </tr>
-                                    <tr>
-                                        <td>comment</td>
-                                    </tr>
-                                    <tr>
-                                        <td>complementary</td>
-                                    </tr>
-                                    <tr>
-                                        <td>contentinfo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>definition</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>dialog</td>
-                                    </tr>
-                                    <tr>
-                                        <td>document</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>feed</td>
-                                    </tr>
-                                    <tr>
-                                        <td>form</td>
-                                    </tr>
-                                    <tr>
-                                        <td>grid</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>gridcell</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>group</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>img</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
                                     </tr>
                                     <tr>
                                         <td>link</td>
@@ -194,24 +211,6 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                         <td style={{ color: '#8c1c1c' }}>
                                             should be avoided
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td>log</td>
-                                    </tr>
-                                    <tr>
-                                        <td>main</td>
-                                    </tr>
-                                    <tr>
-                                        <td>marquee</td>
-                                    </tr>
-                                    <tr>
-                                        <td>math</td>
-                                    </tr>
-                                    <tr>
-                                        <td>menu</td>
-                                    </tr>
-                                    <tr>
-                                        <td>menubar</td>
                                     </tr>
                                     <tr>
                                         <td>menuitem</td>
@@ -232,19 +231,7 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>navigation</td>
-                                    </tr>
-                                    <tr>
-                                        <td>note</td>
-                                    </tr>
-                                    <tr>
                                         <td>option</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>progressbar</td>
                                         <td style={{ color: '#8c1c1c' }}>
                                             should be avoided
                                         </td>
@@ -256,55 +243,10 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>radiogroup</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>region</td>
-                                    </tr>
-                                    <tr>
-                                        <td>row</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>rowgroup</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>rowheader</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>scrollbar</td>
-                                    </tr>
-                                    <tr>
-                                        <td>search</td>
-                                    </tr>
-                                    <tr>
                                         <td>searchbox</td>
                                     </tr>
                                     <tr>
-                                        <td>separator</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>slider</td>
-                                    </tr>
-                                    <tr>
                                         <td>spinbutton</td>
-                                    </tr>
-                                    <tr>
-                                        <td>status</td>
                                     </tr>
                                     <tr>
                                         <td>switch</td>
@@ -312,36 +254,28 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                     <tr>
                                         <td>tab</td>
                                     </tr>
-                                    <tr>
-                                        <td>table</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>tablist</td>
-                                    </tr>
-                                    <tr>
-                                        <td>tabpanel</td>
-                                    </tr>
-                                    <tr>
-                                        <td>textbox</td>
-                                    </tr>
-                                    <tr>
-                                        <td>timer</td>
-                                    </tr>
-                                    <tr>
-                                        <td>toolbar</td>
-                                    </tr>
-                                    <tr>
-                                        <td>tooltip</td>
-                                    </tr>
-                                    <tr>
-                                        <td>treegrid</td>
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>
+                        <p>
+                            You cannot pass any elements as a{' '}
+                            <strong>child</strong> element.
+                        </p>
+                        <p>
+                            If the expected human language input inside your
+                            input element is different than the human language
+                            which is set for your web page, you must set it to
+                            the correct human language. For this you have to use
+                            the <strong>lang.language: string</strong> variable
+                            which accepts one of the{' '}
+                            <a
+                                href="https://www.w3schools.com/tags/ref_language_codes.asp"
+                                target="_blank"
+                            >
+                                language codes defined in ISO 639-1
+                            </a>
+                            .
+                        </p>
                         <p>
                             You can also add an optional customised{' '}
                             <strong>className: string</strong> to your
@@ -349,7 +283,13 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                             your new accessible component. If you prefer styling
                             your components inline, feel free to use the{' '}
                             <strong>additionalStyling: CSSProperties</strong>{' '}
+                            object inside of the <strong>inputData</strong>{' '}
                             object.
+                        </p>
+                        <p>
+                            If you want to trigger an additional function when
+                            clicking on this component, you can assign this to{' '}
+                            <strong>onClickFunction: () =&gt; void</strong>.
                         </p>
                         <div>
                             For even more accessibility, you can also use
@@ -401,18 +341,6 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                             'false' | 'true' | 'mixed' |
                                             undefined | false | true
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-colcount</td>
-                                        <td>number</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-colindex</td>
-                                        <td>number</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-colspan</td>
-                                        <td>number</td>
                                     </tr>
                                     <tr>
                                         <td>aria-controls</td>
@@ -484,31 +412,16 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                         <td>string</td>
                                     </tr>
                                     <tr>
-                                        <td>aria-level</td>
-                                        <td>number</td>
+                                        <td>aria-label</td>
+                                        <td>string</td>
+                                    </tr>
+                                    <tr>
+                                        <td>aria-labelledbyid</td>
+                                        <td>string</td>
                                     </tr>
                                     <tr>
                                         <td>aria-live</td>
                                         <td>'assertive' | 'off' | 'polite'</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-modal</td>
-                                        <td>boolean</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-multiline</td>
-                                        <td>boolean</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-multiselectable</td>
-                                        <td>boolean</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-orientation</td>
-                                        <td>
-                                            'horizontal' | 'vertical' |
-                                            undefined
-                                        </td>
                                     </tr>
                                     <tr>
                                         <td>aria-owns</td>
@@ -521,13 +434,6 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                     <tr>
                                         <td>aria-posinset</td>
                                         <td>number</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-pressed</td>
-                                        <td>
-                                            'false' | 'mixed' | 'true' |
-                                            undefined | false | true
-                                        </td>
                                     </tr>
                                     <tr>
                                         <td>aria-readonly</td>
@@ -549,18 +455,6 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                         <td>string</td>
                                     </tr>
                                     <tr>
-                                        <td>aria-rowcount</td>
-                                        <td>number</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-rowindex</td>
-                                        <td>number</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-rowspan</td>
-                                        <td>number</td>
-                                    </tr>
-                                    <tr>
                                         <td>aria-selected</td>
                                         <td>
                                             'false' | 'true' | undefined | false
@@ -570,13 +464,6 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                     <tr>
                                         <td>aria-setsize</td>
                                         <td>number</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-sort</td>
-                                        <td>
-                                            'ascending' | 'descending' | 'none'
-                                            | 'other'
-                                        </td>
                                     </tr>
                                     <tr>
                                         <td>aria-valuemax</td>
@@ -599,7 +486,7 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                         </div>
                         <p>
                             <a
-                                href="https://www.w3.org/WAI/WCAG22/Techniques/html/H49"
+                                href="https://www.w3.org/WAI/WCAG22/Techniques/html/H65"
                                 target="_blank"
                             >
                                 You can find the full World Wide Web Consortium,
@@ -618,20 +505,68 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
     },
 }
 
-export default metaG115H49Code
+export default metaARIA2H65
 
-type StoryG115H49Code = StoryObj<typeof WCAGG115H49HCode>
+type StoryARIA2H65 = StoryObj<typeof WCAGARIA2H58H65>
 
-// WCAGG115H49HCode
+// WCAGNonTextComponentARIA2H65
 
-export const Code: StoryG115H49Code = {
-    render: () => <WCAGG115H49HCode>let num: number = 15</WCAGG115H49HCode>,
+export const TextInput: StoryARIA2H65 = {
+    render: () => (
+        <WCAGARIA2H58H65
+            inputType="text"
+            title="What is your surname?"
+            inputData={{ required: false }}
+        />
+    ),
 }
 
-export const CodeWithSpan: StoryG115H49Code = {
+export const NumberInput: StoryARIA2H65 = {
     render: () => (
-        <WCAGG115H49HCode>
-            <span>let num: number = 15</span>
-        </WCAGG115H49HCode>
+        <WCAGARIA2H58H65
+            inputType="number"
+            inputData={{
+                required: false,
+                placeholder: '0',
+                min: '0',
+                max: '9',
+                value: '5',
+            }}
+            title="Enter any number from zero to nine."
+        />
+    ),
+}
+
+export const PasswordInput: StoryARIA2H65 = {
+    render: () => (
+        <form>
+            <WCAGARIA2H58H65
+                inputType="password"
+                inputData={{
+                    autocomplete: 'off',
+                    required: false,
+                    placeholder: 'password',
+                }}
+                title="Please enter your password."
+                onClickFunction={() => console.log('click')}
+            />
+        </form>
+    ),
+}
+
+export const WrongTitleAttribute: StoryARIA2H65 = {
+    render: () => (
+        <form>
+            <WCAGARIA2H58H65
+                inputType="password"
+                inputData={{
+                    autocomplete: 'off',
+                    required: false,
+                    placeholder: 'password',
+                }}
+                title=""
+                onClickFunction={() => console.log('click')}
+            />
+        </form>
     ),
 }

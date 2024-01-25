@@ -1,5 +1,6 @@
 import React, { CSSProperties, ReactNode } from 'react'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
+import { LangAttributes } from '../interfaces/LangAttributes'
 
 interface WCAGG115H49H58Props {
     additionalAriaAttributes?: Omit<
@@ -12,7 +13,9 @@ interface WCAGG115H49H58Props {
         | 'rowindextext'
     >
     additionalStyling?: CSSProperties
+    quoteSource?: string
     className?: string
+    lang?: LangAttributes
     role?:
         | 'alert'
         | 'alertdialog'
@@ -77,17 +80,21 @@ interface WCAGG115H49H58Props {
     children: ReactNode
 }
 
-const G115H49Code: React.FC<WCAGG115H49H58Props> = ({
+const G115H49ShortQuote: React.FC<WCAGG115H49H58Props> = ({
     additionalAriaAttributes,
     additionalStyling,
+    quoteSource,
     className,
     children,
+    lang,
     role,
 }) => {
     return (
-        <code
+        <q
             className={className}
+            cite={quoteSource}
             style={{ ...additionalStyling }}
+            lang={lang?.language}
             role={role}
             aria-activedescendant={
                 role === 'application' ||
@@ -438,8 +445,8 @@ const G115H49Code: React.FC<WCAGG115H49H58Props> = ({
             }
         >
             {children}
-        </code>
+        </q>
     )
 }
 
-export default G115H49Code
+export default G115H49ShortQuote

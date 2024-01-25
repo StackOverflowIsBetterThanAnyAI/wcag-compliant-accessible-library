@@ -1,5 +1,6 @@
 import React, { CSSProperties, ReactNode } from 'react'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
+import { LangAttributes } from '../interfaces/LangAttributes'
 
 interface WCAGG115H49H58Props {
     additionalAriaAttributes?: Omit<
@@ -13,6 +14,7 @@ interface WCAGG115H49H58Props {
     >
     additionalStyling?: CSSProperties
     className?: string
+    lang?: LangAttributes
     role?:
         | 'alert'
         | 'alertdialog'
@@ -77,17 +79,19 @@ interface WCAGG115H49H58Props {
     children: ReactNode
 }
 
-const G115H49Code: React.FC<WCAGG115H49H58Props> = ({
+const G115H49Sub: React.FC<WCAGG115H49H58Props> = ({
     additionalAriaAttributes,
     additionalStyling,
     className,
     children,
+    lang,
     role,
 }) => {
     return (
-        <code
+        <sub
             className={className}
             style={{ ...additionalStyling }}
+            lang={lang?.language}
             role={role}
             aria-activedescendant={
                 role === 'application' ||
@@ -438,8 +442,8 @@ const G115H49Code: React.FC<WCAGG115H49H58Props> = ({
             }
         >
             {children}
-        </code>
+        </sub>
     )
 }
 
-export default G115H49Code
+export default G115H49Sub

@@ -1,32 +1,44 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Controls, Source, Stories, Subtitle, Title } from '@storybook/blocks'
 
-import WCAGG115H49HCode from './WCAGG115H49Code'
+import WCAGH2H58 from './WCAGH2H58'
+// @ts-ignore
+import starImage from '../../images/star.png'
 
-const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
-    component: WCAGG115H49HCode,
+const metaH2: Meta<typeof WCAGH2H58> = {
+    component: WCAGH2H58,
     tags: ['autodocs'],
     parameters: {
         docs: {
             page: () => (
                 <>
                     <Title>
-                        WCAGG115: Using semantic elements to mark up structure
+                        WCAGH2: Combining adjacent image and text links for the
+                        same resource
                         <br />
-                        WCAGH49: Using semantic markup to mark emphasized or
-                        special text
+                        WCAGH58: Using language attributes to identify changes
+                        in the human language
                     </Title>
                     <Subtitle>
                         <strong>
-                            The goal of this component is to mark up the
-                            structure of the web content using appropriate
-                            semantic elements, in this case: the code element.
+                            This component receives an img element as a child of
+                            an anchor element. This results in a larger
+                            clickable area for the user. It also allows you to
+                            specify the human language your element uses if it
+                            is different than the human language of your web
+                            page.
                         </strong>
                         <p>
                             Abstract code preview:
                             <br />
                             <code>
-                                &lt;code&gt; child element &lt;/code&gt;
+                                &lt;a lang="de"&gt;
+                                <br />
+                                &emsp;children
+                                <br />
+                                &emsp;&lt;img/&gt;
+                                <br />
+                                &lt;/a&gt;
                             </code>
                         </p>
                         <p style={{ textAlign: 'center' }}>
@@ -38,24 +50,72 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                             </strong>
                         </p>
                         <p>
-                            There is{' '}
+                            In order to use this component correctly, you need
+                            to provide the target link which is saved in the{' '}
                             <strong style={{ color: '#ff0000' }}>
-                                no mandatory parameter
+                                link: string
                             </strong>{' '}
-                            for this component.
+                            variable.
                         </p>
                         <p>
-                            You can pass any{' '}
+                            Furthermore, you need to provide the data for your
+                            image. This information is saved in the{' '}
                             <strong style={{ color: '#ff0000' }}>
-                                child: ReactNode
+                                imageData
                             </strong>{' '}
-                            element: be it a string, a div element or a whole
+                            object. The only required attribute is{' '}
+                            <strong>imageSource: string</strong>, but you can
+                            also assign all other global image attributes.
+                        </p>
+                        <p>
+                            In addition to that, you need to supply a{' '}
+                            <strong>child: ReactNode</strong> element which
+                            contains the clickable text. The type of this text
+                            could be a string, a ReactNode or even a whole
                             different component.
                         </p>
+                        <p>
+                            If you want the text of the child element to be
+                            displayed before the image, you must set the value
+                            of the <strong>textBeforeImage: boolean</strong>{' '}
+                            variable to true. Otherwise, the text is displayed
+                            after the image by default.
+                        </p>
+                        <p>
+                            As long as the child elements contains a descriptive
+                            text which describes the reason for the anchor
+                            element, you do not need to specify an alt attribute
+                            for the image. However, if this is not the case, you
+                            need to assign a descriptive value to the{' '}
+                            <strong>altText: string</strong> parameter.
+                        </p>
+                        <p>
+                            If the human language of your child element is
+                            different than the human language which is set for
+                            your web page, you must set it to the correct human
+                            language. For this you have to use the{' '}
+                            <strong>lang.language: string</strong> variable
+                            which accepts one of the{' '}
+                            <a
+                                href="https://www.w3schools.com/tags/ref_language_codes.asp"
+                                target="_blank"
+                            >
+                                language codes defined in ISO 639-1
+                            </a>
+                            .
+                        </p>
+                        <p>
+                            To change the anchor element and the link, all
+                            global anchor attributes can optionally be changed.
+                            These changes are applied in the{' '}
+                            <strong>linkData</strong> object.
+                        </p>
                         <div>
-                            These are the available WAI-ARIA role values for the
-                            attribute <strong>role: string</strong> which is
-                            applied to the code element:
+                            To provide assistive technologies with additional
+                            information about this component, one of the
+                            following values can optionally be used for the
+                            WAI-ARIA role in the <strong>role: string</strong>{' '}
+                            variable:
                             <br />
                             Note: 'should be avoided' means that instead of
                             these roles you should always try to favour
@@ -82,34 +142,7 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                         </th>
                                     </tr>
                                     <tr>
-                                        <td>alert</td>
-                                    </tr>
-                                    <tr>
-                                        <td>alertdialog</td>
-                                    </tr>
-                                    <tr>
-                                        <td>application</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>article</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>banner</td>
-                                    </tr>
-                                    <tr>
                                         <td>button</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>cell</td>
                                         <td style={{ color: '#8c1c1c' }}>
                                             should be avoided
                                         </td>
@@ -121,97 +154,16 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>columnheader</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
+                                        <td>doc-backlink</td>
                                     </tr>
                                     <tr>
-                                        <td>combobox</td>
+                                        <td>doc-biblioref</td>
                                     </tr>
                                     <tr>
-                                        <td>comment</td>
+                                        <td>doc-glossref</td>
                                     </tr>
                                     <tr>
-                                        <td>complementary</td>
-                                    </tr>
-                                    <tr>
-                                        <td>contentinfo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>definition</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>dialog</td>
-                                    </tr>
-                                    <tr>
-                                        <td>document</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>feed</td>
-                                    </tr>
-                                    <tr>
-                                        <td>form</td>
-                                    </tr>
-                                    <tr>
-                                        <td>grid</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>gridcell</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>group</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>img</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>link</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>listbox</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>log</td>
-                                    </tr>
-                                    <tr>
-                                        <td>main</td>
-                                    </tr>
-                                    <tr>
-                                        <td>marquee</td>
-                                    </tr>
-                                    <tr>
-                                        <td>math</td>
-                                    </tr>
-                                    <tr>
-                                        <td>menu</td>
-                                    </tr>
-                                    <tr>
-                                        <td>menubar</td>
+                                        <td>doc-noteref</td>
                                     </tr>
                                     <tr>
                                         <td>menuitem</td>
@@ -232,19 +184,7 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>navigation</td>
-                                    </tr>
-                                    <tr>
-                                        <td>note</td>
-                                    </tr>
-                                    <tr>
                                         <td>option</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>progressbar</td>
                                         <td style={{ color: '#8c1c1c' }}>
                                             should be avoided
                                         </td>
@@ -256,100 +196,32 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>radiogroup</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>region</td>
-                                    </tr>
-                                    <tr>
-                                        <td>row</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>rowgroup</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>rowheader</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>scrollbar</td>
-                                    </tr>
-                                    <tr>
-                                        <td>search</td>
-                                    </tr>
-                                    <tr>
-                                        <td>searchbox</td>
-                                    </tr>
-                                    <tr>
-                                        <td>separator</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>slider</td>
-                                    </tr>
-                                    <tr>
-                                        <td>spinbutton</td>
-                                    </tr>
-                                    <tr>
-                                        <td>status</td>
-                                    </tr>
-                                    <tr>
                                         <td>switch</td>
                                     </tr>
                                     <tr>
                                         <td>tab</td>
                                     </tr>
                                     <tr>
-                                        <td>table</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>tablist</td>
-                                    </tr>
-                                    <tr>
-                                        <td>tabpanel</td>
-                                    </tr>
-                                    <tr>
-                                        <td>textbox</td>
-                                    </tr>
-                                    <tr>
-                                        <td>timer</td>
-                                    </tr>
-                                    <tr>
-                                        <td>toolbar</td>
-                                    </tr>
-                                    <tr>
-                                        <td>tooltip</td>
-                                    </tr>
-                                    <tr>
-                                        <td>treegrid</td>
+                                        <td>treeitem</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                         <p>
                             You can also add an optional customised{' '}
-                            <strong>className: string</strong> to your
+                            <strong>classNameImage: string</strong> or{' '}
+                            <strong>classNameLink: string</strong>to your
                             component, which allows you to apply your styling to
                             your new accessible component. If you prefer styling
                             your components inline, feel free to use the{' '}
                             <strong>additionalStyling: CSSProperties</strong>{' '}
-                            object.
+                            object inside of the <strong>imageData</strong> or{' '}
+                            <strong>linkData</strong> objects.
+                        </p>
+                        <p>
+                            If you want to trigger an additional function when
+                            clicking on this component, you can assign this to{' '}
+                            <strong>onClickFunction: () =&gt; void</strong>.
                         </p>
                         <div>
                             For even more accessibility, you can also use
@@ -378,18 +250,8 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                         </th>
                                     </tr>
                                     <tr>
-                                        <td>aria-activedescendant</td>
-                                        <td>string</td>
-                                    </tr>
-                                    <tr>
                                         <td>aria-atomic</td>
                                         <td>boolean</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-autocomplete</td>
-                                        <td>
-                                            'none' | 'inline' | 'list' | 'both'
-                                        </td>
                                     </tr>
                                     <tr>
                                         <td>aria-busy</td>
@@ -401,18 +263,6 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                             'false' | 'true' | 'mixed' |
                                             undefined | false | true
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-colcount</td>
-                                        <td>number</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-colindex</td>
-                                        <td>number</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-colspan</td>
-                                        <td>number</td>
                                     </tr>
                                     <tr>
                                         <td>aria-controls</td>
@@ -484,24 +334,8 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                         <td>string</td>
                                     </tr>
                                     <tr>
-                                        <td>aria-level</td>
-                                        <td>number</td>
-                                    </tr>
-                                    <tr>
                                         <td>aria-live</td>
                                         <td>'assertive' | 'off' | 'polite'</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-modal</td>
-                                        <td>boolean</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-multiline</td>
-                                        <td>boolean</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-multiselectable</td>
-                                        <td>boolean</td>
                                     </tr>
                                     <tr>
                                         <td>aria-orientation</td>
@@ -549,18 +383,6 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                         <td>string</td>
                                     </tr>
                                     <tr>
-                                        <td>aria-rowcount</td>
-                                        <td>number</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-rowindex</td>
-                                        <td>number</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-rowspan</td>
-                                        <td>number</td>
-                                    </tr>
-                                    <tr>
                                         <td>aria-selected</td>
                                         <td>
                                             'false' | 'true' | undefined | false
@@ -570,13 +392,6 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                     <tr>
                                         <td>aria-setsize</td>
                                         <td>number</td>
-                                    </tr>
-                                    <tr>
-                                        <td>aria-sort</td>
-                                        <td>
-                                            'ascending' | 'descending' | 'none'
-                                            | 'other'
-                                        </td>
                                     </tr>
                                     <tr>
                                         <td>aria-valuemax</td>
@@ -599,7 +414,7 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                         </div>
                         <p>
                             <a
-                                href="https://www.w3.org/WAI/WCAG22/Techniques/html/H49"
+                                href="https://www.w3.org/WAI/WCAG22/Techniques/html/H2"
                                 target="_blank"
                             >
                                 You can find the full World Wide Web Consortium,
@@ -618,20 +433,96 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
     },
 }
 
-export default metaG115H49Code
+export default metaH2
 
-type StoryG115H49Code = StoryObj<typeof WCAGG115H49HCode>
+type StoryH2 = StoryObj<typeof WCAGH2H58>
 
-// WCAGG115H49HCode
+// WCAGNonTextComponentH2
 
-export const Code: StoryG115H49Code = {
-    render: () => <WCAGG115H49HCode>let num: number = 15</WCAGG115H49HCode>,
+export const ImageAndLink: StoryH2 = {
+    render: () => (
+        <WCAGH2H58
+            imageData={{
+                imageSource: starImage,
+                additionalStyling: { height: 75, width: 75 },
+            }}
+            link="#home"
+        >
+            Go to the home page
+        </WCAGH2H58>
+    ),
 }
 
-export const CodeWithSpan: StoryG115H49Code = {
+export const ImageAndLinkWithAlt: StoryH2 = {
     render: () => (
-        <WCAGG115H49HCode>
-            <span>let num: number = 15</span>
-        </WCAGG115H49HCode>
+        <WCAGH2H58
+            altText="Go to the home page"
+            imageData={{
+                imageSource: starImage,
+                additionalStyling: { height: 75, width: 75 },
+            }}
+            link="#home"
+        >
+            Go
+        </WCAGH2H58>
+    ),
+}
+
+export const TextContentIsADiv: StoryH2 = {
+    render: () => (
+        <WCAGH2H58
+            imageData={{
+                imageSource: starImage,
+                additionalStyling: { height: 75, width: 75 },
+            }}
+            link="#home"
+        >
+            <div>Go to the home page</div>
+        </WCAGH2H58>
+    ),
+}
+
+export const TextBeforeImage: StoryH2 = {
+    render: () => (
+        <WCAGH2H58
+            imageData={{
+                imageSource: starImage,
+                additionalStyling: { height: 75, width: 75 },
+            }}
+            link="#home"
+            textBeforeImage
+        >
+            <div style={{ color: '#020202' }}>Go to the home page</div>
+        </WCAGH2H58>
+    ),
+}
+
+export const WrongLink: StoryH2 = {
+    render: () => (
+        <WCAGH2H58
+            imageData={{
+                imageSource: starImage,
+                additionalStyling: { height: 75, width: 75 },
+            }}
+            link=""
+            textBeforeImage
+        >
+            <div style={{ color: '#020202' }}>Go to the home page</div>
+        </WCAGH2H58>
+    ),
+}
+
+export const WrongImageSource: StoryH2 = {
+    render: () => (
+        <WCAGH2H58
+            imageData={{
+                imageSource: '',
+                additionalStyling: { height: 75, width: 75 },
+            }}
+            link="#home"
+            textBeforeImage
+        >
+            <div style={{ color: '#020202' }}>Go to the home page</div>
+        </WCAGH2H58>
     ),
 }

@@ -1,18 +1,31 @@
-import React, { CSSProperties, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
+import { GlobalAttributes } from '../interfaces/GlobalAttributes'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
+import { LinkAttributes } from '../interfaces/LinkAttributes'
+import { LangAttributes } from '../interfaces/LangAttributes'
 
-interface WCAGG115H49H58Props {
+interface WCAGG73H58Props extends GlobalAttributes {
+    buttonText: ReactNode
+    childId: string
+    ownId: string
     additionalAriaAttributes?: Omit<
         WAIARIAAttributes,
         | 'braillelabel'
         | 'brailleroledescription'
+        | 'colindex'
         | 'colindextext'
         | 'label'
         | 'labelledby'
+        | 'rowindex'
         | 'rowindextext'
     >
-    additionalStyling?: CSSProperties
-    className?: string
+    classNameDiv?: string
+    classNameLink?: string
+    divData?: GlobalAttributes
+    externalLink?: boolean
+    lang?: LangAttributes
+    linkData?: Omit<LinkAttributes, 'href' | 'download' | 'hreflang'>
+    onClickFunction?: () => void
     role?:
         | 'alert'
         | 'alertdialog'
@@ -74,21 +87,65 @@ interface WCAGG115H49H58Props {
         | 'toolbar'
         | 'tooltip'
         | 'treegrid'
+    shortText?: ReactNode
     children: ReactNode
 }
 
-const G115H49Code: React.FC<WCAGG115H49H58Props> = ({
+const WCAGG73H58: React.FC<WCAGG73H58Props> = ({
     additionalAriaAttributes,
-    additionalStyling,
-    className,
-    children,
+    buttonText,
+    childId,
+    classNameDiv,
+    classNameLink,
+    divData,
+    externalLink,
+    lang,
+    linkData,
+    onClickFunction,
+    ownId,
     role,
+    shortText,
+    children,
 }) => {
+    const errors: string[] = []
+
+    if (childId.length < 1) {
+        errors.push(
+            'Your childId attribute hast to have a length of at least one character!'
+        )
+    }
+
+    if (ownId.length < 1) {
+        errors.push(
+            'Your ownId attribute hast to have a length of at least one character!'
+        )
+    }
+
+    if (errors.length) {
+        for (let i in errors) {
+            console.error(errors[i])
+        }
+        return
+    }
+
     return (
-        <code
-            className={className}
-            style={{ ...additionalStyling }}
+        <div
+            id={ownId}
+            aria-describedby={childId}
+            style={{ ...divData?.additionalStyling }}
+            lang={lang?.language}
+            className={classNameDiv}
             role={role}
+            accessKey={divData?.accesskey}
+            contentEditable={divData?.contenteditable}
+            dir={divData?.dir}
+            draggable={divData?.draggable}
+            hidden={divData?.hiddenElement}
+            inputMode={divData?.inputmode}
+            spellCheck={divData?.spellcheck}
+            tabIndex={divData?.tabindex}
+            title={divData?.title}
+            translate={divData?.translate}
             aria-activedescendant={
                 role === 'application' ||
                 role === 'combobox' ||
@@ -121,15 +178,6 @@ const G115H49Code: React.FC<WCAGG115H49H58Props> = ({
                     ? additionalAriaAttributes?.colcount
                     : undefined
             }
-            aria-colindex={
-                role === 'cell' ||
-                role === 'columnheader' ||
-                role === 'gridcell' ||
-                role === 'row' ||
-                role === 'rowheader'
-                    ? additionalAriaAttributes?.colindex
-                    : undefined
-            }
             aria-colspan={
                 role === 'cell' ||
                 role === 'columnheader' ||
@@ -139,7 +187,6 @@ const G115H49Code: React.FC<WCAGG115H49H58Props> = ({
             }
             aria-controls={additionalAriaAttributes?.controls}
             aria-current={additionalAriaAttributes?.current}
-            aria-describedby={additionalAriaAttributes?.describedby}
             aria-description={additionalAriaAttributes?.description}
             aria-details={additionalAriaAttributes?.details}
             aria-disabled={
@@ -356,15 +403,6 @@ const G115H49Code: React.FC<WCAGG115H49H58Props> = ({
                     ? additionalAriaAttributes?.rowcount
                     : undefined
             }
-            aria-rowindex={
-                role === 'cell' ||
-                role === 'row' ||
-                role === 'columnheader' ||
-                role === 'gridcell' ||
-                role === 'rowheader'
-                    ? additionalAriaAttributes?.rowindex
-                    : undefined
-            }
             aria-rowspan={
                 role === 'cell' ||
                 role === 'columnheader' ||
@@ -438,8 +476,23 @@ const G115H49Code: React.FC<WCAGG115H49H58Props> = ({
             }
         >
             {children}
-        </code>
+            <a
+                href={externalLink ? childId : `#${childId}`}
+                onClick={() => onClickFunction && onClickFunction()}
+                className={classNameLink}
+                media={linkData?.media}
+                ping={linkData?.ping}
+                referrerPolicy={linkData?.referrerpolicy}
+                rel={linkData?.rel}
+                style={{ ...linkData?.additionalStyling }}
+                target={linkData?.target}
+                type={linkData?.type}
+            >
+                {buttonText}
+            </a>
+            {shortText}
+        </div>
     )
 }
 
-export default G115H49Code
+export default WCAGG73H58

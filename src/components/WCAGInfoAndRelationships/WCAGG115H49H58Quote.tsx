@@ -1,5 +1,6 @@
 import React, { CSSProperties, ReactNode } from 'react'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
+import { LangAttributes } from '../interfaces/LangAttributes'
 
 interface WCAGG115H49H58Props {
     additionalAriaAttributes?: Omit<
@@ -7,12 +8,12 @@ interface WCAGG115H49H58Props {
         | 'braillelabel'
         | 'brailleroledescription'
         | 'colindextext'
-        | 'label'
-        | 'labelledby'
         | 'rowindextext'
     >
     additionalStyling?: CSSProperties
+    quoteSource?: string
     className?: string
+    lang?: LangAttributes
     role?:
         | 'alert'
         | 'alertdialog'
@@ -77,17 +78,21 @@ interface WCAGG115H49H58Props {
     children: ReactNode
 }
 
-const G115H49Code: React.FC<WCAGG115H49H58Props> = ({
+const G115H49Quote: React.FC<WCAGG115H49H58Props> = ({
     additionalAriaAttributes,
     additionalStyling,
+    quoteSource,
     className,
     children,
+    lang,
     role,
 }) => {
     return (
-        <code
+        <blockquote
+            cite={quoteSource}
             className={className}
             style={{ ...additionalStyling }}
+            lang={lang?.language}
             role={role}
             aria-activedescendant={
                 role === 'application' ||
@@ -253,6 +258,8 @@ const G115H49Code: React.FC<WCAGG115H49H58Props> = ({
                     : undefined
             }
             aria-keyshortcuts={additionalAriaAttributes?.keyshortcuts}
+            aria-label={additionalAriaAttributes?.label}
+            aria-labelledby={additionalAriaAttributes?.labelledby}
             aria-level={
                 role === 'comment' || role === 'row'
                     ? additionalAriaAttributes?.level
@@ -438,8 +445,8 @@ const G115H49Code: React.FC<WCAGG115H49H58Props> = ({
             }
         >
             {children}
-        </code>
+        </blockquote>
     )
 }
 
-export default G115H49Code
+export default G115H49Quote

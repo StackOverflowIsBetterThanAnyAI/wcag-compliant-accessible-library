@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Controls, Source, Stories, Subtitle, Title } from '@storybook/blocks'
 
-import WCAGG115H49HCode from './WCAGG115H49Code'
+import WCAGG115H49H58Quote from './WCAGG115H49H58Quote'
 
-const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
-    component: WCAGG115H49HCode,
+const metaG115H49Quote: Meta<typeof WCAGG115H49H58Quote> = {
+    component: WCAGG115H49H58Quote,
     tags: ['autodocs'],
     parameters: {
         docs: {
@@ -15,18 +15,25 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                         <br />
                         WCAGH49: Using semantic markup to mark emphasized or
                         special text
+                        <br />
+                        WCAGH58: Using language attributes to identify changes
+                        in the human language
                     </Title>
                     <Subtitle>
                         <strong>
                             The goal of this component is to mark up the
                             structure of the web content using appropriate
-                            semantic elements, in this case: the code element.
+                            semantic elements, in this case: the blockquote
+                            element. It also allows you to specify the human
+                            language your element uses if it is different than
+                            the human language of your web page.
                         </strong>
                         <p>
                             Abstract code preview:
                             <br />
                             <code>
-                                &lt;code&gt; child element &lt;/code&gt;
+                                &lt;blockquote lang="de"&gt; child element
+                                &lt;/blockquote&gt;
                             </code>
                         </p>
                         <p style={{ textAlign: 'center' }}>
@@ -52,10 +59,29 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                             element: be it a string, a div element or a whole
                             different component.
                         </p>
+                        <p>
+                            If the human language of your child element is
+                            different than the human language which is set for
+                            your web page, you must set it to the correct human
+                            language. For this you have to use the{' '}
+                            <strong>lang.language: string</strong> variable
+                            which accepts one of the{' '}
+                            <a
+                                href="https://www.w3schools.com/tags/ref_language_codes.asp"
+                                target="_blank"
+                            >
+                                language codes defined in ISO 639-1
+                            </a>
+                            .
+                        </p>
+                        <p>
+                            Feel free to apply the source of your quote in the{' '}
+                            <strong>quoteSource: string</strong> parameter.
+                        </p>
                         <div>
                             These are the available WAI-ARIA role values for the
                             attribute <strong>role: string</strong> which is
-                            applied to the code element:
+                            applied to the blockquote element:
                             <br />
                             Note: 'should be avoided' means that instead of
                             these roles you should always try to favour
@@ -484,6 +510,14 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                         <td>string</td>
                                     </tr>
                                     <tr>
+                                        <td>aria-label</td>
+                                        <td>string</td>
+                                    </tr>
+                                    <tr>
+                                        <td>aria-labelledbyid</td>
+                                        <td>string</td>
+                                    </tr>
+                                    <tr>
                                         <td>aria-level</td>
                                         <td>number</td>
                                     </tr>
@@ -618,20 +652,32 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
     },
 }
 
-export default metaG115H49Code
+export default metaG115H49Quote
 
-type StoryG115H49Code = StoryObj<typeof WCAGG115H49HCode>
+type StoryG115H49Quote = StoryObj<typeof WCAGG115H49H58Quote>
 
-// WCAGG115H49HCode
+// WCAGG115H49H58Quote
 
-export const Code: StoryG115H49Code = {
-    render: () => <WCAGG115H49HCode>let num: number = 15</WCAGG115H49HCode>,
+export const Quote: StoryG115H49Quote = {
+    render: () => (
+        <>
+            <WCAGG115H49H58Quote>
+                The greatest glory in living lies not in never falling, but in
+                rising every time we fall.
+            </WCAGG115H49H58Quote>
+            -Nelson Mandela
+        </>
+    ),
 }
 
-export const CodeWithSpan: StoryG115H49Code = {
+export const QuoteWithSpan: StoryG115H49Quote = {
     render: () => (
-        <WCAGG115H49HCode>
-            <span>let num: number = 15</span>
-        </WCAGG115H49HCode>
+        <>
+            <WCAGG115H49H58Quote>
+                The greatest glory in living lies not in never falling, but in
+                rising every time we fall.
+            </WCAGG115H49H58Quote>
+            <span>-Nelson Mandela</span>
+        </>
     ),
 }

@@ -1,32 +1,82 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Controls, Source, Stories, Subtitle, Title } from '@storybook/blocks'
 
-import WCAGG115H49HCode from './WCAGG115H49Code'
+import WCAGH39H43H51H58H63 from './WCAGH39H43H51H58H63'
 
-const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
-    component: WCAGG115H49HCode,
+const metaH39H43H51H63: Meta<typeof WCAGH39H43H51H58H63> = {
+    component: WCAGH39H43H51H58H63,
     tags: ['autodocs'],
     parameters: {
         docs: {
             page: () => (
                 <>
                     <Title>
-                        WCAGG115: Using semantic elements to mark up structure
+                        WCAGH39: Using caption elements to associate data table
+                        captions with data tables
                         <br />
-                        WCAGH49: Using semantic markup to mark emphasized or
-                        special text
+                        WCAGH43: Using id and headers attributes to associate
+                        data cells with header cells in data tables
+                        <br />
+                        WCAGH51: Using table markup to present tabular
+                        information
+                        <br />
+                        WCAGH58: Using language attributes to identify changes
+                        in the human language
+                        <br />
+                        WCAGH63: Using the scope attribute to associate header
+                        cells and data cells in data tables
                     </Title>
                     <Subtitle>
                         <strong>
-                            The goal of this component is to mark up the
-                            structure of the web content using appropriate
-                            semantic elements, in this case: the code element.
+                            The goal of this component is to present tabular
+                            information in a way that preserves relationships
+                            within the information even when the table cannot
+                            visually be seen. It also uses captions in order to
+                            programmatically associate captions for data tables.
+                            It also makes use of the id, headers and scope
+                            attributes. It also allows you to specify the human
+                            language your element uses if it is different than
+                            the human language of your web page.
                         </strong>
                         <p>
                             Abstract code preview:
                             <br />
                             <code>
-                                &lt;code&gt; child element &lt;/code&gt;
+                                &lt;table&gt;
+                                <br />
+                                &emsp;&lt;caption&gt; captionText
+                                &lt;/caption&gt;
+                                <br />
+                                &emsp;&lt;tobdy&gt;
+                                <br />
+                                &emsp;&emsp;&lt;tr&gt;
+                                <br />
+                                &emsp;&emsp;&emsp;&lt;th id="id" scope="col"
+                                lang="de"&gt;
+                                <em> header </em>
+                                &lt;/th&gt;
+                                <br />
+                                &emsp;&emsp;&lt;/tr&gt;
+                                <br />
+                                &emsp;&emsp;&lt;tr headers="id"&gt;
+                                <br />
+                                &emsp;&emsp;&emsp;&lt;td lang="de"&gt;
+                                <em> item </em>
+                                &lt;/td&gt;
+                                <br />
+                                &emsp;&emsp;&lt;/tr&gt;
+                                <br />
+                                &emsp;&emsp;&lt;tr headers="id"&gt;
+                                <br />
+                                &emsp;&emsp;&emsp;&lt;td lang="de"&gt;
+                                <em> item </em>
+                                &lt;/td&gt;
+                                <br />
+                                &emsp;&emsp;&lt;/tr&gt;
+                                <br />
+                                &emsp;&lt;/tobdy&gt;
+                                <br />
+                                &lt;/table&gt;
                             </code>
                         </p>
                         <p style={{ textAlign: 'center' }}>
@@ -37,29 +87,121 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                 means that this variable is mandatory
                             </strong>
                         </p>
-                        <p>
-                            There is{' '}
+                        <div>
+                            First of all, you need to specify the{' '}
                             <strong style={{ color: '#ff0000' }}>
-                                no mandatory parameter
+                                tableType: 'data' | 'layout'
+                            </strong>
+                            . This information is needed, because if the{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                tableType equals data
+                            </strong>
+                            , you must check following:
+                            <section
+                                style={{
+                                    margin: '2% auto',
+                                    backgroundColor: '#e9e9e9',
+                                    padding: '2% 5%',
+                                }}
+                            >
+                                <strong>Check:</strong>
+                                <ul>
+                                    <li>
+                                        Check that all th elements have a scope
+                                        attribute.
+                                    </li>
+                                    <li>
+                                        Check that all td elements that act as
+                                        headers for other elements have a scope
+                                        attribute.
+                                    </li>
+                                    <li>
+                                        Check that all scope attributes have the
+                                        value row, col, rowgroup, or colgroup.
+                                    </li>
+                                    <li>
+                                        Check that any cell that is associated
+                                        with more than one row and/or one column
+                                        header contains a headers attribute that
+                                        lists the id for all headers associated
+                                        with that cell.
+                                    </li>
+                                    <li>
+                                        If any cell contains an id or headers
+                                        attribute, check that each id listed in
+                                        the headers attribute of the data cell
+                                        matches the id attribute of a cell that
+                                        is used as a header element.
+                                    </li>
+                                    <li>
+                                        If any cell contains an id or headers
+                                        attribute, check that the headers
+                                        attribute of a data cell contains the id
+                                        attribute of all headers associated with
+                                        the data cell.
+                                    </li>
+                                    <li>
+                                        If any cell contains an id or headers
+                                        attribute, check that all ids are unique
+                                        (that is, no two elements in the page
+                                        have the same id).
+                                    </li>
+                                    <li>
+                                        Check that the table has content that is
+                                        presented as a table caption.
+                                    </li>
+                                    <li>
+                                        Check that the table includes a caption
+                                        element.
+                                    </li>
+                                    <li>
+                                        Check that the content of the caption
+                                        element identifies the table.
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                        <p>
+                            Next, setup the table content. You have the two
+                            dimensional{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                tableContent
                             </strong>{' '}
-                            for this component.
+                            object array for that. Each item needs a{' '}
+                            <strong style={{ color: '#ff0000' }}>text</strong>{' '}
+                            value which is the name of the cell. If your{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                tableType equals data
+                            </strong>
+                            , you also need to specify an{' '}
+                            <strong>
+                                id: string, headers: string and scope: 'col' |
+                                'colgroup' | 'row' | 'rowgroup'
+                            </strong>{' '}
+                            value for each item.
                         </p>
+                        <p>You cannot pass any child elements.</p>
                         <p>
-                            You can pass any{' '}
-                            <strong style={{ color: '#ff0000' }}>
-                                child: ReactNode
-                            </strong>{' '}
-                            element: be it a string, a div element or a whole
-                            different component.
+                            If the human language inside your cells is different
+                            than the human language which is set for your web
+                            page, you must set it to the correct human language.
+                            For this you have to use the{' '}
+                            <strong>lang.language: string</strong> variable
+                            inside the two dimensional{' '}
+                            <strong>tableContent</strong> object array which
+                            accepts one of the{' '}
+                            <a
+                                href="https://www.w3schools.com/tags/ref_language_codes.asp"
+                                target="_blank"
+                            >
+                                language codes defined in ISO 639-1
+                            </a>
+                            .
                         </p>
                         <div>
                             These are the available WAI-ARIA role values for the
                             attribute <strong>role: string</strong> which is
-                            applied to the code element:
-                            <br />
-                            Note: 'should be avoided' means that instead of
-                            these roles you should always try to favour
-                            semantically html-equivalent elements.
+                            applied to the table element:
                             <table
                                 style={{
                                     margin: '2% auto',
@@ -313,12 +455,6 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                         <td>tab</td>
                                     </tr>
                                     <tr>
-                                        <td>table</td>
-                                        <td style={{ color: '#8c1c1c' }}>
-                                            should be avoided
-                                        </td>
-                                    </tr>
-                                    <tr>
                                         <td>tablist</td>
                                     </tr>
                                     <tr>
@@ -343,23 +479,43 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                             </table>
                         </div>
                         <p>
+                            If you want your table to receive a caption element,
+                            you can assign a text value to{' '}
+                            <strong>captionText: string</strong>. If your{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                tableType equals data
+                            </strong>
+                            , you <strong>must</strong> specify a caption.
+                        </p>
+                        <p>
                             You can also add an optional customised{' '}
-                            <strong>className: string</strong> to your
-                            component, which allows you to apply your styling to
-                            your new accessible component. If you prefer styling
-                            your components inline, feel free to use the{' '}
-                            <strong>additionalStyling: CSSProperties</strong>{' '}
-                            object.
+                            <strong>
+                                classNameTable: string, classNameRow: string,
+                                classNameHeader: string, classNameCell: string
+                                and classNameCaption: string
+                            </strong>{' '}
+                            to your component, which allows you to apply your
+                            styling to your new accessible component. If you
+                            prefer styling your components inline, feel free to
+                            use the{' '}
+                            <strong>
+                                additionalStylingTable: CSSProperties,
+                                additionalStylingRow: CSSProperties,
+                                additionalStylingHeader: CSSProperties,
+                                additionalStylingCell: CSSProperties and
+                                additionalStylingCaption: CSSProperties
+                            </strong>{' '}
+                            objects.
                         </p>
                         <div>
                             For even more accessibility, you can also use
                             optional additional WAI-ARIA attributes. They are
                             stored in the{' '}
-                            <strong>additionalAriaAttributes</strong> object.
-                            You can use the following WAI-ARIA attributes, but
-                            without the 'aria-' prefix. But be careful: You
-                            cannot use every WAI-ARIA attribute with every
-                            WAI-ARIA role!
+                            <strong>additionalAriaAttributes</strong> object and
+                            applied to the table element. You can use the
+                            following WAI-ARIA attributes, but without the
+                            'aria-' prefix. But be careful: You cannot use every
+                            WAI-ARIA attribute with every WAI-ARIA role!
                             <table
                                 style={{
                                     margin: '2% auto',
@@ -484,6 +640,10 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                                         <td>string</td>
                                     </tr>
                                     <tr>
+                                        <td>aria-label</td>
+                                        <td>string</td>
+                                    </tr>
+                                    <tr>
                                         <td>aria-level</td>
                                         <td>number</td>
                                     </tr>
@@ -599,7 +759,7 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                         </div>
                         <p>
                             <a
-                                href="https://www.w3.org/WAI/WCAG22/Techniques/html/H49"
+                                href="https://www.w3.org/WAI/WCAG22/Techniques/html/H51"
                                 target="_blank"
                             >
                                 You can find the full World Wide Web Consortium,
@@ -618,20 +778,124 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
     },
 }
 
-export default metaG115H49Code
+export default metaH39H43H51H63
 
-type StoryG115H49Code = StoryObj<typeof WCAGG115H49HCode>
+type StoryH39H43H51H63 = StoryObj<typeof WCAGH39H43H51H58H63>
 
-// WCAGG115H49HCode
+// WCAGNonTextComponentH39H43H51H63
 
-export const Code: StoryG115H49Code = {
-    render: () => <WCAGG115H49HCode>let num: number = 15</WCAGG115H49HCode>,
+export const Table: StoryH39H43H51H63 = {
+    render: () => (
+        <WCAGH39H43H51H58H63
+            captionText="Schedule for next week:"
+            tableType="layout"
+            tableContent={[
+                [
+                    { text: 'Time', isHeader: true },
+                    { text: 'Monday', isHeader: true },
+                    { text: 'Tuesday', isHeader: true },
+                    { text: 'Wednesday', isHeader: true },
+                    { text: 'Thursday', isHeader: true },
+                    { text: 'Friday', isHeader: true },
+                ],
+                [
+                    { text: '8:00 - 9:00', isHeader: true },
+                    { text: 'Meet with Sam' },
+                    { text: '' },
+                    { text: '' },
+                    { text: '' },
+                    { text: '' },
+                ],
+                [
+                    { text: '9:00 - 10:00', isHeader: true },
+                    { text: '' },
+                    { text: 'Hit the Gym' },
+                    { text: 'Doctor Williams' },
+                    { text: 'Sam again' },
+                    { text: 'Leave for San Antonio' },
+                ],
+                [
+                    { text: '10:00 - 11:00', isHeader: true },
+                    { text: 'Meet with Chris' },
+                    { text: '' },
+                    { text: 'Data Analysis' },
+                    { text: 'Sam again' },
+                    { text: 'Bus' },
+                ],
+            ]}
+        />
+    ),
 }
 
-export const CodeWithSpan: StoryG115H49Code = {
+export const MultipleHeaders: StoryH39H43H51H63 = {
     render: () => (
-        <WCAGG115H49HCode>
-            <span>let num: number = 15</span>
-        </WCAGG115H49HCode>
+        <WCAGH39H43H51H58H63
+            tableType="data"
+            captionText="Schedule for next week:"
+            tableContent={[
+                [
+                    { text: 'Homework', isHeader: true, rowspan: 2, id: 'h' },
+                    { text: 'Exams', isHeader: true, colspan: 3, id: 'e' },
+                    { text: 'Projects', isHeader: true, colspan: 3, id: 'p' },
+                ],
+                [
+                    { text: '1', isHeader: true, id: 'e1', headers: 'e' },
+                    { text: '2', isHeader: true, id: 'e2', headers: 'e' },
+                    { text: 'Final', isHeader: true, id: 'ef', headers: 'e' },
+                    { text: '1', isHeader: true, id: 'p1', headers: 'p' },
+                    { text: '2', isHeader: true, id: 'p2', headers: 'p' },
+                    { text: 'Final', isHeader: true, id: 'pf', headers: 'p' },
+                ],
+                [
+                    { text: '15%', headers: 'h' },
+                    { text: '15%', headers: 'e e1' },
+                    { text: '15%', headers: 'e e2' },
+                    { text: '20%', headers: 'e ef' },
+                    { text: '10%', headers: 'p p1' },
+                    { text: '10%', headers: 'p p2' },
+                    { text: '15%', headers: 'p pf' },
+                ],
+            ]}
+        />
+    ),
+}
+
+export const Scopes: StoryH39H43H51H63 = {
+    render: () => (
+        <WCAGH39H43H51H58H63
+            additionalStylingTable={{ border: 1 }}
+            tableType="data"
+            captionText="Contact information"
+            tableContent={[
+                [
+                    { text: '' },
+                    { text: 'Name', isHeader: true, scope: 'col' },
+                    { text: 'Phone#', isHeader: true, scope: 'col' },
+                    { text: 'Fax#', isHeader: true, scope: 'col' },
+                    { text: 'City', isHeader: true, scope: 'col' },
+                ],
+                [
+                    { text: '1.' },
+                    { text: 'Joel Garner', isHeader: true, scope: 'row' },
+                    { text: '412-212-5421' },
+                    { text: '412-212-5400' },
+                    { text: 'Pittsburgh' },
+                ],
+                [
+                    { text: '2.' },
+                    { text: 'Clive Lloyd', isHeader: true, scope: 'row' },
+                    { text: '410-306-1420' },
+                    { text: '410-306-5400' },
+                    { text: 'Baltimore' },
+                ],
+                [
+                    { text: '3.' },
+                    { text: 'Gordon Greenidge', isHeader: true, scope: 'row' },
+                    { text: '281-565-6720' },
+                    { text: '281-565-6600' },
+                    { text: 'Houston' },
+                ],
+            ]}
+        />
     ),
 }

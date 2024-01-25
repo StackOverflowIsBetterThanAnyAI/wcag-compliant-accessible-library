@@ -1,32 +1,37 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Controls, Source, Stories, Subtitle, Title } from '@storybook/blocks'
 
-import WCAGG115H49HCode from './WCAGG115H49Code'
+import WCAGARIA6H58 from './WCAGARIA6H58'
 
-const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
-    component: WCAGG115H49HCode,
+const metaARIA6: Meta<typeof WCAGARIA6H58> = {
+    component: WCAGARIA6H58,
     tags: ['autodocs'],
     parameters: {
         docs: {
             page: () => (
                 <>
                     <Title>
-                        WCAGG115: Using semantic elements to mark up structure
+                        WCAGARIA6: Using aria-label to provide labels for
+                        objects
                         <br />
-                        WCAGH49: Using semantic markup to mark emphasized or
-                        special text
+                        WCAGH58: Using language attributes to identify changes
+                        in the human language
                     </Title>
                     <Subtitle>
                         <strong>
-                            The goal of this component is to mark up the
-                            structure of the web content using appropriate
-                            semantic elements, in this case: the code element.
+                            This component adds a tag to objects which can be
+                            read aloud by assistive technologies. This tag
+                            contains a short descriptive text alternative. This
+                            component also allows you to specify the human
+                            language your element uses if it is different than
+                            the human language of your web page.
                         </strong>
                         <p>
                             Abstract code preview:
                             <br />
                             <code>
-                                &lt;code&gt; child element &lt;/code&gt;
+                                &lt;div aria-label="description" lang="de"&gt;
+                                children &lt;/div&gt;
                             </code>
                         </p>
                         <p style={{ textAlign: 'center' }}>
@@ -38,24 +43,16 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                             </strong>
                         </p>
                         <p>
-                            There is{' '}
-                            <strong style={{ color: '#ff0000' }}>
-                                no mandatory parameter
-                            </strong>{' '}
-                            for this component.
-                        </p>
-                        <p>
-                            You can pass any{' '}
-                            <strong style={{ color: '#ff0000' }}>
-                                child: ReactNode
-                            </strong>{' '}
-                            element: be it a string, a div element or a whole
-                            different component.
+                            In order to use this component correctly, you need
+                            to provide one of 60 possible WAI-ARIA roles.
                         </p>
                         <div>
                             These are the available WAI-ARIA role values for the
-                            attribute <strong>role: string</strong> which is
-                            applied to the code element:
+                            attribute{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                role: string
+                            </strong>
+                            :
                             <br />
                             Note: 'should be avoided' means that instead of
                             these roles you should always try to favour
@@ -343,12 +340,51 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                             </table>
                         </div>
                         <p>
+                            As this component renders a simple div element, you
+                            are also free to assign every possible property of
+                            the div element to the div element of this component
+                            optionally. These attributes can be applied to the{' '}
+                            <strong>divData</strong> object.
+                        </p>
+                        <p>
+                            You can pass any element as a{' '}
+                            <strong>child: ReactNode</strong> element: be it a
+                            string, another div element or a completely
+                            different component.
+                        </p>
+                        <p>
+                            If the human language of your child element is
+                            different than the human language which is set for
+                            your web page, you must set it to the correct human
+                            language. For this you have to use the{' '}
+                            <strong>lang.language: string</strong> variable
+                            which accepts one of the{' '}
+                            <a
+                                href="https://www.w3schools.com/tags/ref_language_codes.asp"
+                                target="_blank"
+                            >
+                                language codes defined in ISO 639-1
+                            </a>
+                            .
+                        </p>
+                        <p>
+                            Since this component tells assistive technologies
+                            what the child element represents, it is necessary
+                            to provide a string that concisely explains this.
+                            This text which is stored inside of the{' '}
+                            <strong style={{ color: '#ff0000' }}>
+                                ariaLabel: string
+                            </strong>{' '}
+                            variable is then read aloud by screen readers.
+                        </p>
+                        <p>
                             You can also add an optional customised{' '}
                             <strong>className: string</strong> to your
                             component, which allows you to apply your styling to
                             your new accessible component. If you prefer styling
                             your components inline, feel free to use the{' '}
                             <strong>additionalStyling: CSSProperties</strong>{' '}
+                            object inside of the <strong>divData</strong>{' '}
                             object.
                         </p>
                         <div>
@@ -599,7 +635,7 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                         </div>
                         <p>
                             <a
-                                href="https://www.w3.org/WAI/WCAG22/Techniques/html/H49"
+                                href="https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA6"
                                 target="_blank"
                             >
                                 You can find the full World Wide Web Consortium,
@@ -618,20 +654,68 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
     },
 }
 
-export default metaG115H49Code
+export default metaARIA6
 
-type StoryG115H49Code = StoryObj<typeof WCAGG115H49HCode>
+type StoryARIA6 = StoryObj<typeof WCAGARIA6H58>
 
-// WCAGG115H49HCode
+// WCAGNonTextComponentARIA6
 
-export const Code: StoryG115H49Code = {
-    render: () => <WCAGG115H49HCode>let num: number = 15</WCAGG115H49HCode>,
+export const Alert: StoryARIA6 = {
+    render: () => (
+        <WCAGARIA6H58
+            role="alert"
+            ariaLabel="This is an alert!"
+            additionalAriaAttributes={{ hidden: false }}
+        >
+            Watch out. This in an alert!
+        </WCAGARIA6H58>
+    ),
 }
 
-export const CodeWithSpan: StoryG115H49Code = {
+export const Application: StoryARIA6 = {
     render: () => (
-        <WCAGG115H49HCode>
-            <span>let num: number = 15</span>
-        </WCAGG115H49HCode>
+        <WCAGARIA6H58 role="application" ariaLabel="This is an application!">
+            This is now a Desktop Application!
+        </WCAGARIA6H58>
+    ),
+}
+
+export const Button: StoryARIA6 = {
+    render: () => (
+        <WCAGARIA6H58 role="button" ariaLabel="This is a button!">
+            Search
+        </WCAGARIA6H58>
+    ),
+}
+
+export const Comment: StoryARIA6 = {
+    render: () => (
+        <WCAGARIA6H58 role="comment" ariaLabel="This is a comment!">
+            I really like your point!
+        </WCAGARIA6H58>
+    ),
+}
+
+export const Math: StoryARIA6 = {
+    render: () => (
+        <WCAGARIA6H58 role="math" ariaLabel="This is a math!">
+            a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup>
+        </WCAGARIA6H58>
+    ),
+}
+
+export const Status: StoryARIA6 = {
+    render: () => (
+        <WCAGARIA6H58 role="status" ariaLabel="This is a status!">
+            Waiting for update...
+        </WCAGARIA6H58>
+    ),
+}
+
+export const WrongAriaLabel: StoryARIA6 = {
+    render: () => (
+        <WCAGARIA6H58 role="status" ariaLabel="">
+            Waiting for update...
+        </WCAGARIA6H58>
     ),
 }

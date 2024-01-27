@@ -52,6 +52,8 @@ interface WCAGARIA2H58H65Props {
     >
     className?: string
     onClickFunction?: () => void
+    onFocusFunction?: () => void
+    onHoverFunction?: () => void
     lang?: LangAttributes
     role?:
         | 'checkbox' // should be avoided
@@ -75,6 +77,8 @@ const WCAGARIA2H58H65: React.FC<WCAGARIA2H58H65Props> = ({
     inputType,
     lang,
     onClickFunction,
+    onFocusFunction,
+    onHoverFunction,
     role,
     title,
 }) => {
@@ -113,6 +117,8 @@ const WCAGARIA2H58H65: React.FC<WCAGARIA2H58H65Props> = ({
                     inputData.required
                 }
                 onChange={handleInputChange}
+                onFocus={() => onFocusFunction && onFocusFunction()}
+                onMouseOver={() => onHoverFunction && onHoverFunction()}
                 lang={lang?.language}
                 accept={inputData?.accept}
                 alt={inputData?.altText}
@@ -128,7 +134,11 @@ const WCAGARIA2H58H65: React.FC<WCAGARIA2H58H65Props> = ({
                 formEncType={inputData?.formenctype}
                 formMethod={inputData?.formmethod}
                 formNoValidate={inputData?.formnovalidate}
-                formTarget={inputData?.formtarget}
+                formTarget={
+                    inputType === 'submit' || inputType === 'image'
+                        ? inputData?.formtarget
+                        : undefined
+                }
                 id={inputData?.id}
                 type={inputType}
                 list={inputData?.list}

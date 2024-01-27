@@ -4,7 +4,11 @@ import { AreaAttributes } from '../interfaces/AreaAttributes'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 
 interface WCAGH24Props {
-    areaData: (AreaAttributes & { onClickFunction?: () => void })[]
+    areaData: (AreaAttributes & {
+        onClickFunction?: () => void
+        onFocusFunction?: () => void
+        onHoverFunction?: () => void
+    })[]
     imageData: ImageAttributes & { altText: string }
     mapName: string
     additionalAriaAttributes?: Omit<
@@ -273,6 +277,12 @@ const WCAGH24: React.FC<WCAGH24Props> = ({
                         alt={data?.altText ?? ''}
                         onClick={() =>
                             data?.onClickFunction && data.onClickFunction()
+                        }
+                        onFocus={() =>
+                            data?.onFocusFunction && data?.onFocusFunction()
+                        }
+                        onMouseOver={() =>
+                            data?.onHoverFunction && data?.onHoverFunction()
                         }
                         coords={data.coords}
                         download={data?.download}

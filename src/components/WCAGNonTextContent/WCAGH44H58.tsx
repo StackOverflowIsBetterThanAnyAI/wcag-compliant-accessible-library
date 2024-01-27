@@ -19,6 +19,8 @@ interface WCAGH44H58Props {
         classNameInput?: string
         cols?: number
         lang?: LangAttributes
+        onFocusFunction?: () => void
+        onHoverFunction?: () => void
         selectoptions?: ReactNode
         rows?: number
         src?: string
@@ -229,6 +231,12 @@ const WCAGH44H58: React.FC<WCAGH44H58Props> = ({
                                     e.target.value
                                 )
                             }
+                            onFocus={() =>
+                                data?.onFocusFunction && data?.onFocusFunction()
+                            }
+                            onMouseOver={() =>
+                                data?.onHoverFunction && data?.onHoverFunction()
+                            }
                             role={
                                 !data?.multiple &&
                                 !hasNumberGreaterThanOne(data?.value) &&
@@ -268,6 +276,12 @@ const WCAGH44H58: React.FC<WCAGH44H58Props> = ({
                                     e.target.value
                                 )
                             }
+                            onFocus={() =>
+                                data?.onFocusFunction && data?.onFocusFunction()
+                            }
+                            onMouseOver={() =>
+                                data?.onHoverFunction && data?.onHoverFunction()
+                            }
                             autoCapitalize={data?.autocapitalize}
                             autoComplete={data?.autocomplete}
                             autoFocus={data?.autofocus}
@@ -299,6 +313,12 @@ const WCAGH44H58: React.FC<WCAGH44H58Props> = ({
                                     inputType,
                                     e.target.value
                                 )
+                            }
+                            onFocus={() =>
+                                data?.onFocusFunction && data?.onFocusFunction()
+                            }
+                            onMouseOver={() =>
+                                data?.onHoverFunction && data?.onHoverFunction()
                             }
                             role={isRoleAssignable(role) ? role : undefined}
                             accept={data?.accept}

@@ -63,6 +63,8 @@ interface WCAGH36Props {
         | 'tab'
         | 'treeitem'
     onClickFunction?: () => void
+    onFocusFunction?: () => void
+    onHoverFunction?: () => void
     className?: string
 }
 
@@ -72,6 +74,8 @@ const WCAGH36: React.FC<WCAGH36Props> = ({
     className,
     inputData,
     onClickFunction,
+    onFocusFunction,
+    onHoverFunction,
     role,
     src,
 }) => {
@@ -104,6 +108,8 @@ const WCAGH36: React.FC<WCAGH36Props> = ({
             role={role}
             className={className}
             onClick={() => onClickFunction && onClickFunction()}
+            onFocus={() => onFocusFunction && onFocusFunction()}
+            onMouseOver={() => onHoverFunction && onHoverFunction()}
             autoComplete={inputData?.autocomplete}
             autoFocus={inputData?.autofocus}
             disabled={inputData?.disabled}

@@ -161,6 +161,18 @@ const metaARIA2H65: Meta<typeof WCAGARIA2H58H65> = {
                             of the input element to the input element of this
                             component optionally. These attributes can be
                             applied to this <strong>input</strong> object.
+                            <br />
+                            If you set the formTarget of your link to{' '}
+                            <strong>_blank</strong> which means that the link is
+                            opened in a new window, you should add an alert that
+                            tells the user that a new window is opened. If you
+                            do so, you automatically fulfil{' '}
+                            <strong>
+                                WCAGG201: Giving users advanced warning when
+                                opening a new window
+                            </strong>{' '}
+                            which is an advisory technique for the success
+                            criterias 3.2.1 On Focus and 3.2.2 On Input.
                         </p>
                         <div>
                             Speaking of optional WAI-ARIA roles: Tese are the

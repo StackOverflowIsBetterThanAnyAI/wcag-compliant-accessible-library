@@ -36,6 +36,8 @@ interface WCAGH39H58Props {
     lang?: LangAttributes
     linkData?: LinkAttributes
     onClickFunction?: () => void
+    onFocusFunction?: () => void
+    onHoverFunction?: () => void
     postImageText?: ReactNode
     preImageText?: ReactNode
     role?:
@@ -64,6 +66,8 @@ const WCAGH39H58: React.FC<WCAGH39H58Props> = ({
     linkData,
     lang,
     onClickFunction,
+    onFocusFunction,
+    onHoverFunction,
     postImageText,
     preImageText,
     role,
@@ -79,6 +83,8 @@ const WCAGH39H58: React.FC<WCAGH39H58Props> = ({
             <a
                 href={linkData?.disabled ? undefined : link}
                 onClick={() => onClickFunction && onClickFunction()}
+                onFocus={() => onFocusFunction && onFocusFunction()}
+                onMouseOver={() => onHoverFunction && onHoverFunction()}
                 style={{ ...linkData?.additionalStyling }}
                 lang={lang?.language}
                 className={classNameLink}

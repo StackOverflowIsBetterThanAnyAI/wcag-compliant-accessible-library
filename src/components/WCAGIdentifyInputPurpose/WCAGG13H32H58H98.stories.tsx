@@ -1,16 +1,24 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Controls, Source, Stories, Subtitle, Title } from '@storybook/blocks'
 
-import WCAGH58H98 from './WCAGH58H98'
+import WCAGG13H32H58H98 from './WCAGG13H32H58H98'
+// @ts-ignore
+import starImage from '../../images/star.png'
 
-const metaWCAGH58H98: Meta<typeof WCAGH58H98> = {
-    component: WCAGH58H98,
+const metaWCAGG13H32H58H98: Meta<typeof WCAGG13H32H58H98> = {
+    component: WCAGG13H32H58H98,
     tags: ['autodocs'],
     parameters: {
         docs: {
             page: () => (
                 <>
                     <Title>
+                        WCAGG13: Describing what will happen before a change to
+                        a form control that causes a change of context to occur
+                        is made
+                        <br />
+                        WCAGH32: Providing submit buttons
+                        <br />
                         WCAGH58: Using language attributes to identify changes
                         in the human language
                         <br />
@@ -19,16 +27,22 @@ const metaWCAGH58H98: Meta<typeof WCAGH58H98> = {
                     <Subtitle>
                         <strong>
                             This component adds an autocomplete tag to an input
-                            element inside a form container. It also allows you
-                            to specify the human language each label and input
-                            element uses if it is different than the human
-                            language of your web page.
+                            element inside a form container. You may also add a
+                            submit button at the bottom of the form. If you do
+                            so, you should also add an additional text which
+                            explains the user what is about to happen when they
+                            press the button. It also allows you to specify the
+                            human language each label and input element uses if
+                            it is different than the human language of your web
+                            page.
                         </strong>
                         <p>
                             Abstract code preview:
                             <br />
                             <code>
                                 &lt;form&gt;
+                                <br />
+                                &emsp; changedContextText <em>optional</em>
                                 <br />
                                 &emsp;&lt;div&gt;
                                 <br />
@@ -75,7 +89,7 @@ const metaWCAGH58H98: Meta<typeof WCAGH58H98> = {
                             Also mandatory is the{' '}
                             <strong style={{ color: '#ff0000' }}>
                                 inputData
-                            </strong>
+                            </strong>{' '}
                             object array with the{' '}
                             <strong style={{ color: '#ff0000' }}>
                                 id: string and labelText: ReactNode
@@ -195,9 +209,10 @@ const metaWCAGH58H98: Meta<typeof WCAGH58H98> = {
                                 new accessible component. If you prefer styling
                                 your components inline, feel free to use the{' '}
                                 <strong>
-                                    additionalStyling: CSSProperties
+                                    additionalStylingInput: CSSProperties nad
+                                    additionalStylingLabel: CSSProperties
                                 </strong>{' '}
-                                object inside of the <strong>inputData</strong>{' '}
+                                objects inside of the <strong>inputData</strong>{' '}
                                 object array.
                             </div>
                         </div>
@@ -364,7 +379,17 @@ const metaWCAGH58H98: Meta<typeof WCAGH58H98> = {
                             feel welcome to fill in the{' '}
                             <strong>submitData</strong> object. You can add any
                             global input attribute which is compliant to the
-                            submit input type.
+                            submit input type. By adding a submit button, you
+                            fulfil the WCAGH32 technique.
+                            <br />
+                            If you do so, you should also add{' '}
+                            <strong>changedContextText: ReactNode</strong> which
+                            explains to users right at the beginning of the form
+                            what is going to happen when they press the button.
+                            <br />
+                            You can pass your own custom methods which can be
+                            triggered{' '}
+                            <strong>onClick, onFocus and onMouseOver</strong>.
                         </p>
                         <p>
                             <a
@@ -387,15 +412,56 @@ const metaWCAGH58H98: Meta<typeof WCAGH58H98> = {
     },
 }
 
-export default metaWCAGH58H98
+export default metaWCAGG13H32H58H98
 
-type StoryWCAGH58H98 = StoryObj<typeof WCAGH58H98>
+type StoryWCAGG13H32H58H98 = StoryObj<typeof WCAGG13H32H58H98>
 
-// WCAGIdentifyInputPurposeWCAGH58H98
+// WCAGIdentifyInputPurposeWCAGG13H32H58H98
 
-export const StringInput: StoryWCAGH58H98 = {
+export const OneInputElementStyled: StoryWCAGG13H32H58H98 = {
     render: () => (
-        <WCAGH58H98
+        <WCAGG13H32H58H98
+            formData={{
+                method: 'post',
+                id: 'form',
+                action: '/subscribe',
+                additionalStylingForm: {
+                    border: '4px solid #ff0000',
+                    padding: '20px',
+                    borderRadius: '8px',
+                },
+            }}
+            inputData={[
+                {
+                    id: 'input1',
+                    type: 'email',
+                    autocomplete: 'email',
+                    labelText: 'Your email address:',
+                    additionalStylingInput: { padding: '2px 5px' },
+                    additionalStylingLabel: { paddingRight: '15px' },
+                },
+            ]}
+            changedContextText={
+                <div>
+                    By pressing the Subscribe button, you are redirected to the
+                    home page.
+                </div>
+            }
+            submitData={{
+                type: 'submit',
+                value: 'Subscribe',
+                onClickFunction: () => console.log('clicking'),
+                onFocusFunction: () => console.log('focussing'),
+                onHoverFunction: () => console.log('hovering'),
+                additionalStyling: { padding: '4px 16px', margin: '8px 16px' },
+            }}
+        />
+    ),
+}
+
+export const StringInput: StoryWCAGG13H32H58H98 = {
+    render: () => (
+        <WCAGG13H32H58H98
             formData={{ method: 'post', id: 'form' }}
             inputData={[
                 {
@@ -435,7 +501,14 @@ export const StringInput: StoryWCAGH58H98 = {
                     labelText: 'Your password (no autocomplete):',
                 },
             ]}
+            changedContextText={
+                <div>
+                    By pressing the submit button, you are redirected to the
+                    home page.
+                </div>
+            }
             submitData={{
+                type: 'submit',
                 value: 'Submit',
                 onClickFunction: () => console.log('submitting'),
             }}
@@ -443,9 +516,9 @@ export const StringInput: StoryWCAGH58H98 = {
     ),
 }
 
-export const SpanLabelText: StoryWCAGH58H98 = {
+export const SpanLabelText: StoryWCAGG13H32H58H98 = {
     render: () => (
-        <WCAGH58H98
+        <WCAGG13H32H58H98
             formData={{ method: 'post', id: 'form' }}
             inputData={[
                 {
@@ -509,7 +582,14 @@ export const SpanLabelText: StoryWCAGH58H98 = {
                     ),
                 },
             ]}
+            changedContextText={
+                <div>
+                    By pressing the submit button, you are redirected to the
+                    home page.
+                </div>
+            }
             submitData={{
+                type: 'submit',
                 value: 'Submit',
                 onClickFunction: () => console.log('submitting'),
             }}
@@ -517,9 +597,92 @@ export const SpanLabelText: StoryWCAGH58H98 = {
     ),
 }
 
-export const WrongAttributes: StoryWCAGH58H98 = {
+export const ImageSubmitButton: StoryWCAGG13H32H58H98 = {
     render: () => (
-        <WCAGH58H98
+        <WCAGG13H32H58H98
+            formData={{ method: 'post', id: 'form' }}
+            inputData={[
+                {
+                    id: 'input1',
+                    type: 'text',
+                    autocomplete: 'name',
+                    labelText: (
+                        <span style={{ paddingRight: '25px', margin: '5px' }}>
+                            First name:
+                        </span>
+                    ),
+                },
+                {
+                    id: 'input2',
+                    type: 'text',
+                    autocomplete: 'family-name',
+                    labelText: (
+                        <span style={{ paddingRight: '25px', margin: '5px' }}>
+                            Family name:
+                        </span>
+                    ),
+                },
+                {
+                    id: 'input3',
+                    type: 'date',
+                    autocomplete: 'bday',
+                    labelText: (
+                        <span style={{ paddingRight: '25px', margin: '5px' }}>
+                            Your birthday:
+                        </span>
+                    ),
+                },
+                {
+                    id: 'input4',
+                    type: 'text',
+                    autocomplete: 'cc-name',
+                    labelText: (
+                        <span style={{ paddingRight: '25px', margin: '5px' }}>
+                            Your credit card number:
+                        </span>
+                    ),
+                },
+                {
+                    id: 'input5',
+                    type: 'month',
+                    autocomplete: 'cc-exp',
+                    labelText: (
+                        <span style={{ paddingRight: '25px', margin: '5px' }}>
+                            Expiry Date:
+                        </span>
+                    ),
+                },
+                {
+                    id: 'input6',
+                    type: 'password',
+                    autocomplete: 'off',
+                    labelText: (
+                        <span style={{ paddingRight: '25px', margin: '5px' }}>
+                            Your password (no autocomplete):
+                        </span>
+                    ),
+                },
+            ]}
+            changedContextText={
+                <div>
+                    By pressing the submit button, you are redirected to the
+                    home page.
+                </div>
+            }
+            submitData={{
+                type: 'image',
+                src: starImage,
+                value: 'Submit',
+                additionalStyling: { height: 50, width: 50 },
+                onClickFunction: () => console.log('submitting'),
+            }}
+        />
+    ),
+}
+
+export const WrongAttributes: StoryWCAGG13H32H58H98 = {
+    render: () => (
+        <WCAGG13H32H58H98
             formData={{ method: 'post', id: '' }}
             inputData={[
                 {
@@ -583,7 +746,14 @@ export const WrongAttributes: StoryWCAGH58H98 = {
                     ),
                 },
             ]}
+            changedContextText={
+                <div>
+                    By pressing the submit button, you are redirected to the
+                    home page.
+                </div>
+            }
             submitData={{
+                type: 'submit',
                 value: 'Submit',
                 onClickFunction: () => console.log('submitting'),
             }}

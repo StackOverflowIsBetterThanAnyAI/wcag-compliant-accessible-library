@@ -52,6 +52,8 @@ interface WCAGG117H58H97H101Props {
         lang?: LangAttributes
         new?: boolean
         onClickFunction?: () => void
+        onFocusFunction?: () => void
+        onHoverFunction?: () => void
     })[]
     role?:
         | 'doc-index'
@@ -124,6 +126,12 @@ const WCAGG117H58H97H101: React.FC<WCAGG117H58H97H101Props> = ({
                             href={data?.disabled ? undefined : data.href}
                             onClick={() =>
                                 data?.onClickFunction && data?.onClickFunction()
+                            }
+                            onFocus={() =>
+                                data?.onFocusFunction && data?.onFocusFunction()
+                            }
+                            onMouseOver={() =>
+                                data?.onHoverFunction && data?.onHoverFunction()
                             }
                             lang={data?.lang?.language}
                             download={data?.download}

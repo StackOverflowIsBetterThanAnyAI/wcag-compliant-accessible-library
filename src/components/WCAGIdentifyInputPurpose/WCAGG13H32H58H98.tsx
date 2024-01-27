@@ -4,10 +4,11 @@ import { InputAttributes } from '../interfaces/InputAttributes'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 import { LangAttributes } from '../interfaces/LangAttributes'
 
-interface WCAGH58H98Props {
+interface WCAGG13H32H58H98Props {
     formData: Omit<FormAttributes, 'autocomplete'> & { id: string }
     inputData: (Omit<
         InputAttributes,
+        | 'additionalStyling'
         | 'autocomplete'
         | 'checked'
         | 'form'
@@ -97,6 +98,8 @@ interface WCAGH58H98Props {
             | 'url'
             | 'week'
         labelText: ReactNode
+        additionalStylingInput?: CSSProperties
+        additionalStylingLabel?: CSSProperties
         lang?: LangAttributes
         className?: string
     })[]
@@ -139,23 +142,28 @@ interface WCAGH58H98Props {
         | 'valuenow'
         | 'valuetext'
     >
+    changedContextText?: ReactNode
     role?: 'presentation' | 'search'
     submitData?: {
+        type: 'submit' | 'image'
+        value: string
         dirname?: string
         formaction?: string
         formenctype?: string
         formmethod?: 'get' | 'post'
         formtarget?: string
         src?: string
-        value?: string
         onClickFunction?: () => void
+        onFocusFunction?: () => void
+        onHoverFunction?: () => void
         className?: string
         additionalStyling?: CSSProperties
     }
 }
 
-const WCAGH58H98: React.FC<WCAGH58H98Props> = ({
+const WCAGG13H32H58H98: React.FC<WCAGG13H32H58H98Props> = ({
     additionalAriaAttributes,
+    changedContextText,
     formData,
     inputData,
     role,
@@ -231,9 +239,15 @@ const WCAGH58H98: React.FC<WCAGH58H98Props> = ({
             aria-relevant={additionalAriaAttributes?.relevant}
             aria-roledescription={additionalAriaAttributes?.roledescription}
         >
+            {changedContextText}
             {inputData.map((data, dataIndex) => (
                 <div key={dataIndex} lang={data?.lang?.language}>
-                    <label htmlFor={data.id}>{data?.labelText}</label>
+                    <label
+                        htmlFor={data.id}
+                        style={{ ...data?.additionalStylingLabel }}
+                    >
+                        {data?.labelText}
+                    </label>
                     <input
                         id={data.id}
                         form={formData.id}
@@ -263,17 +277,25 @@ const WCAGH58H98: React.FC<WCAGH58H98Props> = ({
                         size={data?.size}
                         step={data?.step}
                         value={data?.value}
-                        style={{ ...data?.additionalStyling }}
+                        style={{ ...data?.additionalStylingInput }}
                     />
                 </div>
             ))}
             {submitData && (
                 <div>
                     <input
-                        type="submit"
+                        type={submitData.type}
                         onClick={() =>
                             submitData?.onClickFunction &&
                             submitData.onClickFunction()
+                        }
+                        onFocus={() =>
+                            submitData?.onFocusFunction &&
+                            submitData.onFocusFunction()
+                        }
+                        onMouseOver={() =>
+                            submitData?.onHoverFunction &&
+                            submitData.onHoverFunction()
                         }
                         className={submitData?.className}
                         dir={submitData?.dirname}
@@ -282,7 +304,7 @@ const WCAGH58H98: React.FC<WCAGH58H98Props> = ({
                         formMethod={submitData?.formmethod}
                         formTarget={submitData?.formtarget}
                         src={submitData?.src}
-                        value={submitData?.value}
+                        value={submitData.value}
                         style={{ ...submitData?.additionalStyling }}
                     />
                 </div>
@@ -291,4 +313,4 @@ const WCAGH58H98: React.FC<WCAGH58H98Props> = ({
     )
 }
 
-export default WCAGH58H98
+export default WCAGG13H32H58H98

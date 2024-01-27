@@ -270,13 +270,26 @@ const metaARIA2H36: Meta<typeof WCAGH36> = {
                             You can also pass a function{' '}
                             <strong>onClickFunction: void</strong> optionally
                             which is triggered by an onClick event.
+                            <br />
+                            If you set the formTarget of your link to{' '}
+                            <strong>_blank</strong> which means that the link is
+                            opened in a new window, you should add an alert that
+                            tells teh user that the a new window is opened. If
+                            you do so, you automatically fulfil{' '}
+                            <strong>
+                                WCAGG201: Giving users advanced warning when
+                                opening a new window
+                            </strong>{' '}
+                            which is an advisory technique for the success
+                            criterias 3.2.1 On Focus and 3.2.2 On Input.
                         </p>
                         <p>
-                            You can also add an optional customised{' '}
-                            <strong>className: string</strong> to your
-                            component, which allows you to apply your styling to
-                            your new accessible component. If you prefer styling
-                            your components inline, feel free to use the{' '}
+                            Additionally, you can also add an optional
+                            customised <strong>className: string</strong> to
+                            your component, which allows you to apply your
+                            styling to your new accessible component. If you
+                            prefer styling your components inline, feel free to
+                            use the{' '}
                             <strong>additionalStyling: CSSProperties</strong>{' '}
                             object inside of the <strong>inputData</strong>{' '}
                             object.

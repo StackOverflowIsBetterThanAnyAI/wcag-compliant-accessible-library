@@ -68,6 +68,22 @@ const metaG115H49A: Meta<typeof WCAGG115H49H58A> = {
                             </strong>{' '}
                             element: be it a string, a div element or a whole
                             different component.
+                            <br />
+                            If you set the target of your link to{' '}
+                            <strong>_blank</strong> inside the{' '}
+                            <strong>linkData</strong> object which means that
+                            the link is opened in a new window, you should
+                            either add a little bit of text to the{' '}
+                            <strong>child element</strong> that explains that
+                            the link is opened in a new tab, or add an alert
+                            that does the same. If you do so, you automatically
+                            fulfil{' '}
+                            <strong>
+                                WCAGG201: Giving users advanced warning when
+                                opening a new window
+                            </strong>{' '}
+                            which is an advisory technique for the success
+                            criterias 3.2.1 On Focus and 3.2.2 On Input.
                         </p>
                         <p>
                             If the human language of your child element is

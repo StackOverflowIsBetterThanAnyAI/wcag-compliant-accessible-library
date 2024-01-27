@@ -83,6 +83,8 @@ interface WCAGARIA2H58H71Props {
     }
     formData?: FormAttributes
     onClickFunction?: () => void
+    onFocusFunction?: () => void
+    onHoverFunction?: () => void
     role?: 'presentation' | 'radiogroup'
 }
 
@@ -93,6 +95,8 @@ const WCAGARIA2H58H71: React.FC<WCAGARIA2H58H71Props> = ({
     inputLabelData,
     legendData,
     onClickFunction,
+    onFocusFunction,
+    onHoverFunction,
     role,
 }) => {
     const [checkedStates, setCheckedStates] = useState(
@@ -209,6 +213,8 @@ const WCAGARIA2H58H71: React.FC<WCAGARIA2H58H71Props> = ({
                     <input
                         aria-required={data?.inputRequired}
                         onChange={() => handleChange(dataIndex, data.inputType)}
+                        onFocus={() => onFocusFunction && onFocusFunction()}
+                        onMouseOver={() => onHoverFunction && onHoverFunction()}
                         id={data.id}
                         type={data.inputType}
                         autoComplete={data?.inputAutocomplete}

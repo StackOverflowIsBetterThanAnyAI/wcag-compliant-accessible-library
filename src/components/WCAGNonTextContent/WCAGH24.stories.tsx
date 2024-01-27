@@ -92,6 +92,18 @@ const metaH24: Meta<typeof WCAGH24> = {
                             areas, assign this to the{' '}
                             <strong>onClickFunction: () =&gt; void</strong>{' '}
                             variable in this object array.
+                            <br />
+                            If you set the target of your link to{' '}
+                            <strong>_blank</strong> which means that the link is
+                            opened in a new window, you should add an alert that
+                            tells the user that the link is opened in a new
+                            window. If you do so, you automatically fulfil{' '}
+                            <strong>
+                                WCAGG201: Giving users advanced warning when
+                                opening a new window
+                            </strong>{' '}
+                            which is an advisory technique for the success
+                            criterias 3.2.1 On Focus and 3.2.2 On Input.
                         </p>
                         <p>
                             You can also add an optional customised{' '}

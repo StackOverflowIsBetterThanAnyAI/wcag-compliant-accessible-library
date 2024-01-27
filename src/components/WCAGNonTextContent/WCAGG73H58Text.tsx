@@ -14,6 +14,8 @@ interface WCAGG73H58Props extends GlobalAttributes {
     lang?: LangAttributes
     linkData?: Omit<LinkAttributes, 'href' | 'download' | 'hreflang'>
     onClickFunction?: () => void
+    onFocusFunction?: () => void
+    onHoverFunction?: () => void
     role?:
         | 'alert'
         | 'alertdialog'
@@ -87,6 +89,8 @@ const WCAGG73H58Text: React.FC<WCAGG73H58Props> = ({
     lang,
     linkData,
     onClickFunction,
+    onFocusFunction,
+    onHoverFunction,
     ownId,
     parentId,
     role,
@@ -136,6 +140,8 @@ const WCAGG73H58Text: React.FC<WCAGG73H58Props> = ({
                 <a
                     href={externalLink ? parentId : `#${parentId}`}
                     onClick={() => onClickFunction && onClickFunction()}
+                    onFocus={() => onFocusFunction && onFocusFunction()}
+                    onMouseOver={() => onHoverFunction && onHoverFunction()}
                     className={classNameLink}
                     media={linkData?.media}
                     ping={linkData?.ping}

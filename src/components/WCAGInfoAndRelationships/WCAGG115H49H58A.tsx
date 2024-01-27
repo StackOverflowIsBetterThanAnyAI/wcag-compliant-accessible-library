@@ -34,6 +34,8 @@ interface WCAGG115H49H58Props {
         | 'valuetext'
     >
     onClickFunction?: () => void
+    onFocusFunction?: () => void
+    onHoverFunction?: () => void
     className?: string
     lang?: LangAttributes
     role?: 'switch' | 'tab' | 'treeitem'
@@ -45,6 +47,8 @@ const G115H49A: React.FC<WCAGG115H49H58Props> = ({
     className,
     linkData,
     onClickFunction,
+    onFocusFunction,
+    onHoverFunction,
     lang,
     role,
     children,
@@ -59,6 +63,8 @@ const G115H49A: React.FC<WCAGG115H49H58Props> = ({
             <a
                 href={linkData?.disabled ? undefined : linkData.href}
                 onClick={() => onClickFunction && onClickFunction()}
+                onFocus={() => onFocusFunction && onFocusFunction()}
+                onMouseOver={() => onHoverFunction && onHoverFunction()}
                 lang={lang?.language}
                 download={linkData?.download}
                 hrefLang={linkData?.hreflang}

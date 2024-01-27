@@ -86,6 +86,21 @@ const metaG117H97H101: Meta<typeof WCAGG117H58H97H101> = {
                             <strong>new: boolean</strong>, it is visually and
                             programmatically hightlighted. But you should also
                             add something like '(new)' to the item.
+                            <br />
+                            If you set the target of your link to{' '}
+                            <strong>_blank</strong> which means that the link is
+                            opened in a new window, you should either add a
+                            little bit of text to the{' '}
+                            <strong>listData.displayedName</strong> variable
+                            that explains that the link is opened in a new tab,
+                            or add an alert that does the same. If you do so,
+                            you automatically fulfil{' '}
+                            <strong>
+                                WCAGG201: Giving users advanced warning when
+                                opening a new window
+                            </strong>{' '}
+                            which is an advisory technique for the success
+                            criterias 3.2.1 On Focus and 3.2.2 On Input.
                         </p>
                         <p>
                             If the human language inside your html element is

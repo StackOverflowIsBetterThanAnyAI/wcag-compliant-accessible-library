@@ -51,6 +51,8 @@ interface WCAGH2H58Props {
         | 'treeitem'
     textBeforeImage?: boolean
     onClickFunction?: () => void
+    onFocusFunction?: () => void
+    onHoverFunction?: () => void
     children: ReactNode
 }
 
@@ -67,6 +69,8 @@ const WCAGH2H58: React.FC<WCAGH2H58Props> = ({
     textBeforeImage,
     children,
     onClickFunction,
+    onFocusFunction,
+    onHoverFunction,
 }) => {
     const errors: string[] = []
 
@@ -96,6 +100,8 @@ const WCAGH2H58: React.FC<WCAGH2H58Props> = ({
             lang={lang?.language}
             className={classNameLink}
             onClick={() => onClickFunction && onClickFunction()}
+            onFocus={() => onFocusFunction && onFocusFunction()}
+            onMouseOver={() => onHoverFunction && onHoverFunction()}
             role={role}
             download={linkData?.download}
             hrefLang={linkData?.hreflang}

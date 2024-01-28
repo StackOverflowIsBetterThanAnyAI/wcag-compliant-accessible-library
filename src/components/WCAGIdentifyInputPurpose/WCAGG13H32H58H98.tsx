@@ -208,6 +208,19 @@ const WCAGG13H32H58H98: React.FC<WCAGG13H32H58H98Props> = ({
         return
     }
 
+    const areRequiredFieldsFilled = () => {
+        let allFieldsFilled = true
+
+        inputData.forEach((data) => {
+            if (data.required && !data.value) {
+                console.error(`Field ${data.id} is required but not filled.`)
+                allFieldsFilled = false
+            }
+        })
+
+        return allFieldsFilled
+    }
+
     return (
         <form
             role={role}
@@ -285,10 +298,16 @@ const WCAGG13H32H58H98: React.FC<WCAGG13H32H58H98Props> = ({
                 <div>
                     <input
                         type={submitData.type}
-                        onClick={() =>
-                            submitData?.onClickFunction &&
-                            submitData.onClickFunction()
-                        }
+                        onClick={() => {
+                            if (areRequiredFieldsFilled()) {
+                                submitData?.onClickFunction &&
+                                    submitData.onClickFunction()
+                            } else {
+                                console.error(
+                                    'Please fill in all required fields before submitting.'
+                                )
+                            }
+                        }}
                         onFocus={() =>
                             submitData?.onFocusFunction &&
                             submitData.onFocusFunction()

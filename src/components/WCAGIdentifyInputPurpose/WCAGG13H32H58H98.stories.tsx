@@ -423,8 +423,8 @@ export const OneInputElementStyled: StoryWCAGG13H32H58H98 = {
         <WCAGG13H32H58H98
             formData={{
                 method: 'post',
-                id: 'form',
-                action: '/subscribe',
+                id: 'form1',
+                action: '#form1',
                 additionalStylingForm: {
                     border: '4px solid #ff0000',
                     padding: '20px',
@@ -433,7 +433,7 @@ export const OneInputElementStyled: StoryWCAGG13H32H58H98 = {
             }}
             inputData={[
                 {
-                    id: 'input1',
+                    id: 'input11',
                     type: 'email',
                     autocomplete: 'email',
                     labelText: 'Your email address:',
@@ -462,40 +462,40 @@ export const OneInputElementStyled: StoryWCAGG13H32H58H98 = {
 export const StringInput: StoryWCAGG13H32H58H98 = {
     render: () => (
         <WCAGG13H32H58H98
-            formData={{ method: 'post', id: 'form' }}
+            formData={{ method: 'post', id: 'form2', action: '#form2' }}
             inputData={[
                 {
-                    id: 'input1',
+                    id: 'input12',
                     type: 'text',
                     autocomplete: 'name',
                     labelText: 'First Name:',
                 },
                 {
-                    id: 'input2',
+                    id: 'input22',
                     type: 'text',
                     autocomplete: 'family-name',
                     labelText: 'Family Name:',
                 },
                 {
-                    id: 'input3',
+                    id: 'input32',
                     type: 'date',
                     autocomplete: 'bday',
                     labelText: 'Your Birthday:',
                 },
                 {
-                    id: 'input4',
+                    id: 'input42',
                     type: 'text',
                     autocomplete: 'cc-name',
                     labelText: 'Your credit card number:',
                 },
                 {
-                    id: 'input5',
+                    id: 'input52',
                     type: 'month',
                     autocomplete: 'cc-exp',
                     labelText: 'Expiry Date:',
                 },
                 {
-                    id: 'input6',
+                    id: 'input62',
                     type: 'password',
                     autocomplete: 'off',
                     labelText: 'Your password (no autocomplete):',
@@ -516,13 +516,76 @@ export const StringInput: StoryWCAGG13H32H58H98 = {
     ),
 }
 
+export const RequiredInputElements: StoryWCAGG13H32H58H98 = {
+    render: () => (
+        <WCAGG13H32H58H98
+            formData={{ method: 'post', id: 'form3', action: '#form3' }}
+            inputData={[
+                {
+                    id: 'input13',
+                    type: 'text',
+                    autocomplete: 'name',
+                    labelText: 'First Name:',
+                    required: true,
+                },
+                {
+                    id: 'input23',
+                    type: 'text',
+                    autocomplete: 'family-name',
+                    labelText: 'Family Name:',
+                    required: true,
+                },
+                {
+                    id: 'input33',
+                    type: 'date',
+                    autocomplete: 'bday',
+                    labelText: 'Your Birthday:',
+                    required: true,
+                },
+                {
+                    id: 'input43',
+                    type: 'text',
+                    autocomplete: 'cc-name',
+                    labelText: 'Your credit card number:',
+                    required: true,
+                },
+                {
+                    id: 'input53',
+                    type: 'month',
+                    autocomplete: 'cc-exp',
+                    labelText: 'Expiry Date:',
+                    required: true,
+                },
+                {
+                    id: 'input63',
+                    type: 'password',
+                    autocomplete: 'off',
+                    labelText: 'Your password (no autocomplete):',
+                    required: true,
+                },
+            ]}
+            changedContextText={
+                <div>
+                    By pressing the submit button, you are redirected to the
+                    home page.
+                </div>
+            }
+            submitData={{
+                type: 'submit',
+                value: 'Submit',
+                onClickFunction: () => console.log('submitting'),
+            }}
+        />
+    ),
+}
+
 export const SpanLabelText: StoryWCAGG13H32H58H98 = {
     render: () => (
         <WCAGG13H32H58H98
-            formData={{ method: 'post', id: 'form' }}
+            formData={{ method: 'post', id: 'form4', action: '#form4' }}
             inputData={[
                 {
-                    id: 'input1',
+                    id: 'input14',
                     type: 'text',
                     autocomplete: 'name',
                     labelText: (
@@ -532,7 +595,7 @@ export const SpanLabelText: StoryWCAGG13H32H58H98 = {
                     ),
                 },
                 {
-                    id: 'input2',
+                    id: 'input24',
                     type: 'text',
                     autocomplete: 'family-name',
                     labelText: (
@@ -542,7 +605,7 @@ export const SpanLabelText: StoryWCAGG13H32H58H98 = {
                     ),
                 },
                 {
-                    id: 'input3',
+                    id: 'input34',
                     type: 'date',
                     autocomplete: 'bday',
                     labelText: (
@@ -552,7 +615,7 @@ export const SpanLabelText: StoryWCAGG13H32H58H98 = {
                     ),
                 },
                 {
-                    id: 'input4',
+                    id: 'input44',
                     type: 'text',
                     autocomplete: 'cc-name',
                     labelText: (
@@ -562,7 +625,7 @@ export const SpanLabelText: StoryWCAGG13H32H58H98 = {
                     ),
                 },
                 {
-                    id: 'input5',
+                    id: 'input54',
                     type: 'month',
                     autocomplete: 'cc-exp',
                     labelText: (
@@ -572,7 +635,7 @@ export const SpanLabelText: StoryWCAGG13H32H58H98 = {
                     ),
                 },
                 {
-                    id: 'input6',
+                    id: 'input64',
                     type: 'password',
                     autocomplete: 'off',
                     labelText: (
@@ -600,10 +663,10 @@ export const SpanLabelText: StoryWCAGG13H32H58H98 = {
 export const ImageSubmitButton: StoryWCAGG13H32H58H98 = {
     render: () => (
         <WCAGG13H32H58H98
-            formData={{ method: 'post', id: 'form' }}
+            formData={{ method: 'post', id: 'form5', action: '#form5' }}
             inputData={[
                 {
-                    id: 'input1',
+                    id: 'input15',
                     type: 'text',
                     autocomplete: 'name',
                     labelText: (
@@ -613,7 +676,7 @@ export const ImageSubmitButton: StoryWCAGG13H32H58H98 = {
                     ),
                 },
                 {
-                    id: 'input2',
+                    id: 'input25',
                     type: 'text',
                     autocomplete: 'family-name',
                     labelText: (
@@ -623,7 +686,7 @@ export const ImageSubmitButton: StoryWCAGG13H32H58H98 = {
                     ),
                 },
                 {
-                    id: 'input3',
+                    id: 'input35',
                     type: 'date',
                     autocomplete: 'bday',
                     labelText: (
@@ -633,7 +696,7 @@ export const ImageSubmitButton: StoryWCAGG13H32H58H98 = {
                     ),
                 },
                 {
-                    id: 'input4',
+                    id: 'input45',
                     type: 'text',
                     autocomplete: 'cc-name',
                     labelText: (
@@ -643,7 +706,7 @@ export const ImageSubmitButton: StoryWCAGG13H32H58H98 = {
                     ),
                 },
                 {
-                    id: 'input5',
+                    id: 'input55',
                     type: 'month',
                     autocomplete: 'cc-exp',
                     labelText: (
@@ -653,7 +716,7 @@ export const ImageSubmitButton: StoryWCAGG13H32H58H98 = {
                     ),
                 },
                 {
-                    id: 'input6',
+                    id: 'input65',
                     type: 'password',
                     autocomplete: 'off',
                     labelText: (
@@ -683,10 +746,10 @@ export const ImageSubmitButton: StoryWCAGG13H32H58H98 = {
 export const WrongAttributes: StoryWCAGG13H32H58H98 = {
     render: () => (
         <WCAGG13H32H58H98
-            formData={{ method: 'post', id: '' }}
+            formData={{ method: 'post', id: '', action: '#' }}
             inputData={[
                 {
-                    id: 'input1',
+                    id: 'input16',
                     type: 'text',
                     autocomplete: 'off',
                     labelText: (
@@ -706,7 +769,7 @@ export const WrongAttributes: StoryWCAGG13H32H58H98 = {
                     ),
                 },
                 {
-                    id: 'input3',
+                    id: 'input36',
                     type: 'date',
                     autocomplete: 'off',
                     labelText: (
@@ -726,7 +789,7 @@ export const WrongAttributes: StoryWCAGG13H32H58H98 = {
                     ),
                 },
                 {
-                    id: 'input5',
+                    id: 'input56',
                     type: 'month',
                     autocomplete: 'off',
                     labelText: (

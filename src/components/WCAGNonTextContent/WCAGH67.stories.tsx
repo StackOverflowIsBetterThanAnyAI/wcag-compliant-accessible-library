@@ -43,7 +43,13 @@ const metaH67: Meta<typeof WCAGH67> = {
                             </strong>{' '}
                             object. Since this component returns a simple img
                             element, you can store all global img attributes in
-                            this object.
+                            this object, eg.{' '}
+                            <strong>
+                                height: number | string or loading: 'eager' |
+                                'lazy'
+                            </strong>
+                            . The only mandatory parameter is{' '}
+                            <strong>imageData.imageSource</strong>.
                         </p>
                         <div>
                             Feel free to apply the following available WAI-ARIA
@@ -67,9 +73,6 @@ const metaH67: Meta<typeof WCAGH67> = {
                                         >
                                             name
                                         </th>
-                                        <th style={{ textAlign: 'left' }}>
-                                            information
-                                        </th>
                                     </tr>
                                     <tr>
                                         <td>presentation</td>
@@ -90,6 +93,11 @@ const metaH67: Meta<typeof WCAGH67> = {
                             <strong>additionalStyling: CSSProperties</strong>{' '}
                             object inside of the <strong>imageData</strong>{' '}
                             object.
+                        </p>
+                        <p>
+                            As this image should be ignored by assistive
+                            technologies, you are not able to add any WAI-ARIA
+                            attributes.
                         </p>
                         <p>
                             <a
@@ -128,6 +136,23 @@ export const IgnoredImage: StoryH67 = {
                     loading: 'lazy',
                     additionalStyling: { height: 75, width: 75 },
                 }}
+            />
+            <p>Text after image</p>
+        </>
+    ),
+}
+
+export const IgnoredImageWithRole: StoryH67 = {
+    render: () => (
+        <>
+            <p>Text before image</p>
+            <WCAGH67
+                imageData={{
+                    imageSource: starImage,
+                    loading: 'lazy',
+                    additionalStyling: { height: 75, width: 75 },
+                }}
+                role="presentation"
             />
             <p>Text after image</p>
         </>

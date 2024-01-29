@@ -98,9 +98,6 @@ const metaH86: Meta<typeof WCAGH58H86> = {
                                         >
                                             name
                                         </th>
-                                        <th style={{ textAlign: 'left' }}>
-                                            information
-                                        </th>
                                     </tr>
                                     <tr>
                                         <td>img</td>
@@ -112,19 +109,17 @@ const metaH86: Meta<typeof WCAGH58H86> = {
                             As this component renders a simple span, div or abbr
                             element, you are also welcome to assign every
                             possible property of these global elements to the
-                            element of this component optionally. These
-                            attributes can be applied to the{' '}
-                            <strong>elementData</strong> object.
+                            element of this component optionally, eg.{' '}
+                            <string>id: string</string>. These attributes can be
+                            applied to the <strong>elementData</strong> object.
                         </p>
                         <p>
-                            You can pass any element as a mandatory{' '}
+                            You can pass any string text as a mandatory{' '}
                             <strong style={{ color: '#ff0000' }}>
-                                child: ReactNode
+                                child: string
                             </strong>{' '}
-                            element: be it a string, another div element or a
-                            completely different component. But don't forget
-                            that the child element has to contain the emoji,
-                            emoticon, ASCII art or leetspeak.
+                            element which has to contain the emoji, emoticon,
+                            ASCII art or leetspeak.
                         </p>
                         <p>
                             If the human language of your{' '}
@@ -302,6 +297,16 @@ export const TextWithDiv: StoryH86 = {
             o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;o
             <br />o o o o o o o
         </WCAGH58H86>
+    ),
+}
+
+export const NoChildren: StoryH86 = {
+    render: () => (
+        <WCAGH58H86
+            element="span"
+            accessibleText="See you later!"
+            role="img"
+        ></WCAGH58H86>
     ),
 }
 

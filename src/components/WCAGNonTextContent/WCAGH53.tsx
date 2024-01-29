@@ -50,6 +50,24 @@ const WCAGH53: React.FC<WCAGH53Props> = ({
     role,
     children,
 }) => {
+    // checks if the child element is an image with no alt attribute
+    if (
+        React.isValidElement(children) &&
+        React.Children.count(children) === 1 &&
+        React.Children.only(children).type === 'img'
+    ) {
+        const imgElement = React.Children.only(children) as React.ReactElement<
+            React.ImgHTMLAttributes<HTMLImageElement>
+        >
+
+        if (!imgElement.props.alt) {
+            console.error(
+                'Your <img /> element must have the alt attribute for accessibility.'
+            )
+            return
+        }
+    }
+
     return (
         <object
             classID={objectData?.classId}

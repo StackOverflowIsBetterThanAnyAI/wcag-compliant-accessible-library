@@ -239,6 +239,23 @@ const metaH53: Meta<typeof WCAGH53> = {
                                     </tr>
                                 </tbody>
                             </table>
+                            These attributes can only be used if the{' '}
+                            <strong>role: string</strong> is set to{' '}
+                            <strong>application</strong>:
+                            <div
+                                style={{
+                                    backgroundColor: '#e9e9e9',
+                                }}
+                            >
+                                <ul>
+                                    <li>aria-activedescendant</li>
+                                    <li>aria-disabled</li>
+                                    <li>aria-errormessage</li>
+                                    <li>aria-expanded</li>
+                                    <li>aria-haspopup</li>
+                                    <li>aria-invalid</li>
+                                </ul>
+                            </div>
                         </div>
                         <p>
                             <a
@@ -267,7 +284,15 @@ type StoryH53 = StoryObj<typeof WCAGH53>
 
 // WCAGNonTextComponentH53
 
-export const ObjectWidthClassIdAndParagraph: StoryH53 = {
+export const ObjectString: StoryH53 = {
+    render: () => (
+        <WCAGH53 objectData={{ classId: 'id' }}>
+            This is some text that describes the object.
+        </WCAGH53>
+    ),
+}
+
+export const ObjectWithClassIdAndParagraph: StoryH53 = {
     render: () => (
         <WCAGH53 objectData={{ classId: 'id' }}>
             <p>This is some text that describes the object.</p>
@@ -275,10 +300,30 @@ export const ObjectWidthClassIdAndParagraph: StoryH53 = {
     ),
 }
 
-export const ObjectWidthClassIdAndAltText: StoryH53 = {
+export const ObjectWithClassIdAndAltText: StoryH53 = {
     render: () => (
         <WCAGH53 objectData={{ classId: 'id' }} role="img">
             <img src={starImage} alt="A happy star." height={75} width={75} />
+        </WCAGH53>
+    ),
+}
+
+export const ObjectWithImageThatHasNoAlt: StoryH53 = {
+    render: () => (
+        <WCAGH53 objectData={{ classId: 'id' }} role="img">
+            <img src={starImage} height={75} width={75} />
+        </WCAGH53>
+    ),
+}
+
+export const ObjectWithImageThatHasNoAltButDescriptiveText: StoryH53 = {
+    render: () => (
+        <WCAGH53 objectData={{ classId: 'id' }} role="img">
+            <div>
+                A happy star
+                <br />
+                <img src={starImage} height={75} width={75} />
+            </div>
         </WCAGH53>
     ),
 }

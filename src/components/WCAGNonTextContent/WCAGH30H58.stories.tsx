@@ -5,7 +5,7 @@ import WCAGH30H58 from './WCAGH30H58'
 // @ts-ignore
 import starImage from '../../images/star.png'
 
-const metaH30: Meta<typeof WCAGH30H58> = {
+const metaH30H58: Meta<typeof WCAGH30H58> = {
     component: WCAGH30H58,
     tags: ['autodocs'],
     parameters: {
@@ -447,7 +447,7 @@ const metaH30: Meta<typeof WCAGH30H58> = {
     },
 }
 
-export default metaH30
+export default metaH30H58
 
 type StoryH30 = StoryObj<typeof WCAGH30H58>
 
@@ -516,4 +516,34 @@ export const AnchorWithImageAndPreImageText: StoryH30 = {
 
 export const WrongLink: StoryH30 = {
     render: () => <WCAGH30H58 link="" preImageText="Go to the home page" />,
+}
+
+export const WrongImageData: StoryH30 = {
+    render: () => (
+        <WCAGH30H58
+            link="#"
+            preImageText="Go to the home page"
+            imageData={[{ imageSource: '' }]}
+        />
+    ),
+}
+
+export const ImageWithoutTextAndAlt: StoryH30 = {
+    render: () => (
+        <WCAGH30H58
+            link="#"
+            imageData={[
+                {
+                    imageSource: starImage,
+                    height: 75,
+                    width: 75,
+                },
+                {
+                    imageSource: starImage,
+                    height: 75,
+                    width: 75,
+                },
+            ]}
+        />
+    ),
 }

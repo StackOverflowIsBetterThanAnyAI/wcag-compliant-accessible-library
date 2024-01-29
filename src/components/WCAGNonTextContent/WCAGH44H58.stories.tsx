@@ -164,7 +164,18 @@ const metaH44: Meta<typeof WCAGH44H58> = {
                                 labelText
                             </strong>{' '}
                             contains the text that is describing the
-                            select/textarea/input element accuratelly.
+                            select/textarea/input element accuratelly. If you
+                            want to return a select element, you can store your
+                            options inside the optional{' '}
+                            <strong>selectOptionsNode: ReactNode</strong>{' '}
+                            parameter. But watch out: You need to save your
+                            options in the
+                            <br />
+                            <code>
+                                &lt;&gt;&lt;option&gt;...&lt;/option&gt;&lt;option&gt;...&lt;/option&gt;&lt;/&gt;
+                            </code>
+                            <br />
+                            format!
                         </p>
                         <p>
                             If the human language of any labelText item inside
@@ -487,6 +498,7 @@ export const TextArea: StoryH44 = {
                     name: 'Write an essay containing 250 words!',
                     id: 'essay',
                     labelText: 'My essay',
+                    value: 'Hello World!',
                 },
             ]}
             inputType="textarea"
@@ -539,7 +551,7 @@ export const Select: StoryH44 = {
                     name: 'car',
                     labelText: 'Choose a car:',
                     value: '0',
-                    selectoptions: (
+                    selectOptionsNode: (
                         <>
                             <option value="volvo">Volvo</option>
                             <option value="saab">Saab</option>

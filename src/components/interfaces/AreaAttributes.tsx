@@ -1,11 +1,13 @@
 import { CSSProperties } from 'react'
 
 export interface AreaAttributes {
-    additionalStyling?: CSSProperties
-    altText?: string // May only be omitted if ypu are creating a hollow shape
     coords: string
-    download?: string
+    shape: 'default' | 'rect' | 'circle' | 'poly'
+    altText?: string // May only be omitted if ypu are creating a hollow shape
     href?: string // May only be omitted if ypu are creating a hollow shape
+    hollow?: boolean
+    additionalStyling?: CSSProperties
+    download?: string
     hreflang?: string
     media?: string
     referrerpolicy?: React.HTMLAttributeReferrerPolicy
@@ -22,6 +24,5 @@ export interface AreaAttributes {
         | 'prev'
         | 'search'
         | 'tag'
-    shape: 'default' | 'rect' | 'circle' | 'poly'
     target?: '_blank' | '_parent' | '_self' | '_top'
 }

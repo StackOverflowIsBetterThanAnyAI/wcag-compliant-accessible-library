@@ -90,6 +90,30 @@ const WCAGH24: React.FC<WCAGH24Props> = ({
         }
     })
 
+    areaData.forEach((data, dataIndex) => {
+        if (!data.hollow && !data.altText) {
+            errors.push(
+                `You have to either set an altText in areaData[${dataIndex}] or mark this area as hollow!`
+            )
+        }
+    })
+
+    areaData.forEach((data, dataIndex) => {
+        if (!data.hollow && !data.href) {
+            errors.push(
+                `You have to either set an href in areaData[${dataIndex}] or mark this area as hollow!`
+            )
+        }
+    })
+
+    areaData.forEach((data, dataIndex) => {
+        if (data.hollow && (data.href || data.altText)) {
+            console.warn(
+                `You cannot set an href or altText in areaData[${dataIndex}] as it is marked as hollow!`
+            )
+        }
+    })
+
     if (errors.length) {
         for (let i in errors) {
             console.error(errors[i])
@@ -274,7 +298,7 @@ const WCAGH24: React.FC<WCAGH24Props> = ({
                 {areaData?.map((data, dataIndex) => (
                     <area
                         key={dataIndex}
-                        alt={data?.altText ?? ''}
+                        alt={data?.hollow ? '' : data?.altText}
                         onClick={() =>
                             data?.onClickFunction && data.onClickFunction()
                         }
@@ -288,7 +312,7 @@ const WCAGH24: React.FC<WCAGH24Props> = ({
                         download={data?.download}
                         referrerPolicy={data?.referrerpolicy}
                         rel={data?.rel}
-                        href={data?.href}
+                        href={data?.hollow ? undefined : data?.href}
                         hrefLang={data?.hreflang}
                         media={data?.media}
                         shape={data.shape}

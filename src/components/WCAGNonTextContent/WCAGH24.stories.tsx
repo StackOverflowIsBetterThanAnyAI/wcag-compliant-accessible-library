@@ -554,3 +554,46 @@ export const WrongAreaData: StoryH24 = {
         />
     ),
 }
+
+export const NotHollowButNoAltAndHref: StoryH24 = {
+    render: () => (
+        <WCAGH24
+            imageData={{
+                imageSource: starImage,
+                altText: 'Star',
+                height: 50,
+                width: 50,
+            }}
+            mapName="star-map"
+            areaData={[
+                {
+                    coords: '0, 0, 45, 45',
+                    shape: 'rect',
+                },
+            ]}
+        />
+    ),
+}
+
+export const HollowWithAltAndHref: StoryH24 = {
+    render: () => (
+        <WCAGH24
+            imageData={{
+                imageSource: starImage,
+                altText: 'Star',
+                height: 50,
+                width: 50,
+            }}
+            mapName="star-map"
+            areaData={[
+                {
+                    hollow: true,
+                    coords: '0, 0, 45, 45',
+                    shape: 'rect',
+                    altText: 'A little star!',
+                    href: '#',
+                },
+            ]}
+        />
+    ),
+}

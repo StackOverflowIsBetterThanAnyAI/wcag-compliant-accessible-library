@@ -21,10 +21,9 @@ interface WCAGH44H58Props {
         lang?: LangAttributes
         onFocusFunction?: () => void
         onHoverFunction?: () => void
-        selectoptions?: ReactNode
+        selectOptionsNode?: ReactNode // a wrapper that only contains <option>...</option>
         rows?: number
         src?: string
-        textareaText?: ReactNode
         wrap?: 'hard' | 'soft'
     })[]
     inputType:
@@ -247,6 +246,7 @@ const WCAGH44H58: React.FC<WCAGH44H58Props> = ({
                             {data.labelText}
                         </label>
                     )}
+
                     {inputType === 'select' && (
                         <select
                             onChange={(e) =>
@@ -289,9 +289,10 @@ const WCAGH44H58: React.FC<WCAGH44H58Props> = ({
                                 ...data?.additionalStylingInput,
                             }}
                         >
-                            {data.selectoptions}
+                            {data?.selectOptionsNode}
                         </select>
                     )}
+
                     {inputType === 'textarea' && (
                         <textarea
                             onChange={(e) =>
@@ -326,10 +327,9 @@ const WCAGH44H58: React.FC<WCAGH44H58Props> = ({
                                 width: data?.width,
                                 ...data?.additionalStylingInput,
                             }}
-                        >
-                            {data.selectoptions}
-                        </textarea>
+                        />
                     )}
+
                     {inputType !== 'select' && inputType !== 'textarea' && (
                         <input
                             onChange={(e) =>
@@ -387,6 +387,7 @@ const WCAGH44H58: React.FC<WCAGH44H58Props> = ({
                             }}
                         />
                     )}
+
                     {(inputType === 'checkbox' || inputType === 'radio') && (
                         <label
                             htmlFor={data.id}

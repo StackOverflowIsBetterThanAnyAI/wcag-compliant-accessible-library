@@ -308,7 +308,7 @@ export const ObjectWithClassIdAndAltText: StoryH53 = {
     ),
 }
 
-export const ObjectWithImageThatHasNoAlt: StoryH53 = {
+export const ImageThatHasNoAlt: StoryH53 = {
     render: () => (
         <WCAGH53 objectData={{ classId: 'id' }} role="img">
             <img src={starImage} height={75} width={75} />
@@ -316,7 +316,7 @@ export const ObjectWithImageThatHasNoAlt: StoryH53 = {
     ),
 }
 
-export const ObjectWithImageThatHasNoAltButDescriptiveText: StoryH53 = {
+export const ImageThatHasNoAltButDescriptiveText: StoryH53 = {
     render: () => (
         <WCAGH53 objectData={{ classId: 'id' }} role="img">
             <div>
@@ -324,6 +324,14 @@ export const ObjectWithImageThatHasNoAltButDescriptiveText: StoryH53 = {
                 <br />
                 <img src={starImage} height={75} width={75} />
             </div>
+        </WCAGH53>
+    ),
+}
+
+export const BooleanChild: StoryH53 = {
+    render: () => (
+        <WCAGH53 objectData={{ classId: 'id' }} role="img">
+            {false}
         </WCAGH53>
     ),
 }

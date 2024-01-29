@@ -9,10 +9,10 @@ interface WCAGH44H58Props {
         'additionalStyling' | 'id' | 'name' | 'type'
     > & {
         id: string
-        additionalStylingInput?: CSSProperties
-        additionalStylingLabel?: CSSProperties
         labelText: ReactNode
         name: string
+        additionalStylingInput?: CSSProperties
+        additionalStylingLabel?: CSSProperties
         title?: string
         altText?: string
         classNameLabel?: string
@@ -140,6 +140,7 @@ const WCAGH44H58: React.FC<WCAGH44H58Props> = ({
         return !isNaN(numericValue) && numericValue > 1
     }
 
+    // compares set role with inputType
     const isRoleAssignable = (role: string | undefined) => {
         if (!role) return false
         if (inputType === 'checkbox') {
@@ -163,7 +164,31 @@ const WCAGH44H58: React.FC<WCAGH44H58Props> = ({
         return false
     }
 
+    const checkForBadReactNode = (node: ReactNode): boolean => {
+        // checks for wrong types
+        if (typeof node === 'boolean') return true
+        if (typeof node === 'string') {
+            // checks for empty string
+            return node.trim() === ''
+        } else if (React.isValidElement(node)) {
+            // checks for empty child
+            const childNodes = React.Children.toArray(node.props.children)
+            return childNodes.every(checkForBadReactNode)
+        } else if (Array.isArray(node)) {
+            return node.every(checkForBadReactNode)
+        }
+        return false
+    }
+
     const errors: string[] = []
+
+    inputData.forEach((data, dataIndex) => {
+        if (checkForBadReactNode(data.labelText)) {
+            errors.push(
+                `The labelText in inputData[${dataIndex}] must not be empty or contain only empty elements and must not be a boolean value!`
+            )
+        }
+    })
 
     inputData.forEach((data, dataIndex) => {
         if (data.id.length < 1) {

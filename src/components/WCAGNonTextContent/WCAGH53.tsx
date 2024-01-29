@@ -50,6 +50,12 @@ const WCAGH53: React.FC<WCAGH53Props> = ({
     role,
     children,
 }) => {
+    // checks if the child element is a boolean value
+    if (typeof children === 'boolean') {
+        console.error('Your child element must not be a boolean value!')
+        return
+    }
+
     // checks if the child element is an image with no alt attribute
     if (
         React.isValidElement(children) &&
@@ -62,7 +68,7 @@ const WCAGH53: React.FC<WCAGH53Props> = ({
 
         if (!imgElement.props.alt) {
             console.error(
-                'Your <img /> element must have the alt attribute for accessibility.'
+                'Your <img /> element must have the alt attribute for accessibility!'
             )
             return
         }

@@ -152,8 +152,9 @@ const metaH44: Meta<typeof WCAGH44H58> = {
                             <strong style={{ color: '#ff0000' }}>
                                 labelText: ReactNode
                             </strong>{' '}
-                            which can either be a string, a Reactnode or a whole
-                            component and a{' '}
+                            which can either be a string, a div or a whole
+                            component, but no array, boolean or function values,
+                            and a{' '}
                             <strong style={{ color: '#ff0000' }}>
                                 name: string
                             </strong>{' '}
@@ -586,6 +587,66 @@ export const WrongName: StoryH44 = {
                     name: '',
                     id: 'markuplang',
                     labelText: 'CSS',
+                },
+            ]}
+            inputType="checkbox"
+        />
+    ),
+}
+
+export const EmptyLabelText: StoryH44 = {
+    render: () => (
+        <WCAGH44H58
+            inputData={[
+                {
+                    name: 'html',
+                    id: 'markuplang',
+                    labelText: '',
+                },
+                {
+                    name: 'css',
+                    id: 'markuplang',
+                    labelText: '',
+                },
+            ]}
+            inputType="checkbox"
+        />
+    ),
+}
+
+export const LabelTextContainsEmptyChild: StoryH44 = {
+    render: () => (
+        <WCAGH44H58
+            inputData={[
+                {
+                    name: 'html',
+                    id: 'markuplang',
+                    labelText: <div></div>,
+                },
+                {
+                    name: 'css',
+                    id: 'markuplang',
+                    labelText: <span></span>,
+                },
+            ]}
+            inputType="checkbox"
+        />
+    ),
+}
+
+export const LabelTextContainsWrongTypes: StoryH44 = {
+    render: () => (
+        <WCAGH44H58
+            inputData={[
+                {
+                    name: 'html',
+                    id: 'markuplang',
+                    labelText: true,
+                },
+                {
+                    name: 'css',
+                    id: 'markuplang',
+                    labelText: false,
                 },
             ]}
             inputType="checkbox"

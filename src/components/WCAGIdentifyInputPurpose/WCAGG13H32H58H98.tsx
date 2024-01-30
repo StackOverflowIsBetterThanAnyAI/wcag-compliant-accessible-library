@@ -186,6 +186,14 @@ const WCAGG13H32H58H98: React.FC<WCAGG13H32H58H98Props> = ({
     })
 
     inputData.forEach((data, dataIndex) => {
+        if (typeof data.labelText === 'boolean') {
+            errors.push(
+                `Your labelText attribute in inputData[${dataIndex}] must not have a boolean value!`
+            )
+        }
+    })
+
+    inputData.forEach((data, dataIndex) => {
         if (data.type === 'password' && data.autocomplete !== 'off') {
             errors.push(
                 `You cannot set a different autocomplete value than 'off' in inputData[${dataIndex}] if your input type is 'password'!`
@@ -200,6 +208,15 @@ const WCAGG13H32H58H98: React.FC<WCAGG13H32H58H98Props> = ({
             )
         }
     })
+
+    if (
+        typeof changedContextText === 'number' ||
+        typeof changedContextText === 'boolean'
+    ) {
+        errors.push(
+            `Your changedContextText must not have a ${typeof changedContextText} value!`
+        )
+    }
 
     if (errors.length) {
         for (let i in errors) {

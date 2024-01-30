@@ -25,17 +25,40 @@ const metaWCAGG13H32H58H98: Meta<typeof WCAGG13H32H58H98> = {
                         WCAGH98: Using HTML 5.2 autocomplete attributes
                     </Title>
                     <Subtitle>
-                        <strong>
-                            This component adds an autocomplete tag to an input
-                            element inside a form container. You may also add a
-                            submit button at the bottom of the form. If you do
-                            so, you should also add an additional text which
-                            explains the user what is about to happen when they
-                            press the button. It also allows you to specify the
-                            human language each label and input element uses if
-                            it is different than the human language of your web
-                            page.
-                        </strong>
+                        <p>
+                            <strong>
+                                This component fulfils the success criteria{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose">
+                                    1.3.5 Identify Input Purpose
+                                </a>
+                                ,{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">
+                                    3.1.2 Language of Parts
+                                </a>
+                                ,{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/on-input">
+                                    3.2.2 On Input
+                                </a>{' '}
+                                and{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions">
+                                    3.3.2 Labels or Instructions
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                This component adds an autocomplete tag to an
+                                input element inside a form container. You may
+                                also add a submit button at the bottom of the
+                                form. If you do so, you should also add an
+                                additional text which explains the user what is
+                                about to happen when they press the button. It
+                                also allows you to specify the human language
+                                each label and input element uses if it is
+                                different than the human language of your web
+                                page.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br />
@@ -792,29 +815,16 @@ export const WrongAttributes: StoryWCAGG13H32H58H98 = {
                     id: 'input56',
                     type: 'month',
                     autocomplete: 'off',
-                    labelText: (
-                        <span style={{ paddingRight: '25px', margin: '5px' }}>
-                            Expiry Date:
-                        </span>
-                    ),
+                    labelText: true,
                 },
                 {
                     id: '',
                     type: 'password',
                     autocomplete: 'on',
-                    labelText: (
-                        <span style={{ paddingRight: '25px', margin: '5px' }}>
-                            Your password (no autocomplete):
-                        </span>
-                    ),
+                    labelText: false,
                 },
             ]}
-            changedContextText={
-                <div>
-                    By pressing the submit button, you are redirected to the
-                    home page.
-                </div>
-            }
+            changedContextText={187}
             submitData={{
                 type: 'submit',
                 value: 'Submit',

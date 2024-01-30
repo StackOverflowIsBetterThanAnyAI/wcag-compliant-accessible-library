@@ -21,15 +21,33 @@ const metaARIA2H65: Meta<typeof WCAGARIA2H58H65> = {
                         controls when the label element cannot be used
                     </Title>
                     <Subtitle>
-                        <strong>
-                            This component adds a title attribute to an input
-                            element to provide an accessible name when the
-                            visual design doesn't include text an the screen
-                            which can be seen as a label for the element. It
-                            also allows you to specify the human language your
-                            element uses if it is different than the human
-                            language of your web page.
-                        </strong>
+                        <p>
+                            <strong>
+                                This component fulfils the success criteria{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">
+                                    1.1.1 Non.text Content
+                                </a>
+                                ,{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">
+                                    1.3.1 Info and Relationships
+                                </a>{' '}
+                                and{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">
+                                    3.1.2 Language of Parts
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                This component adds a title attribute to an
+                                input element to provide an accessible name when
+                                the visual design doesn't include text an the
+                                screen which can be seen as a label for the
+                                element. It also allows you to specify the human
+                                language your element uses if it is different
+                                than the human language of your web page.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br />
@@ -172,7 +190,7 @@ const metaARIA2H65: Meta<typeof WCAGARIA2H58H65> = {
                                 opening a new window
                             </strong>{' '}
                             which is an advisory technique for the success
-                            criterias 3.2.1 On Focus and 3.2.2 On Input.
+                            criteria 3.2.1 On Focus and 3.2.2 On Input.
                         </p>
                         <div>
                             Speaking of optional WAI-ARIA roles: Tese are the
@@ -503,7 +521,7 @@ const metaARIA2H65: Meta<typeof WCAGARIA2H58H65> = {
                             >
                                 You can find the full World Wide Web Consortium,
                                 Inc. WCAG2.2 documentation for this success
-                                criteria here.
+                                criterion here.
                             </a>
                         </p>
                         <br />

@@ -14,12 +14,31 @@ const metaH53: Meta<typeof WCAGH53> = {
                 <>
                     <Title>WCAGH53: Using the body of the object element</Title>
                     <Subtitle>
-                        <strong>
-                            This component returns an object element. It also
-                            contains a child element with either a text
-                            description or an element with an alt attribute that
-                            describes the object element.
-                        </strong>
+                        <p>
+                            <strong>
+                                This component fulfils the success criteria{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">
+                                    1.1.1 Non-text Content
+                                </a>{' '}
+                                ,{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/audio-description-or-media-alternative-prerecorded">
+                                    1.2.3 Audio Description or Media Alternative
+                                    (Prerecorded)
+                                </a>{' '}
+                                and{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/media-alternative-prerecorded">
+                                    1.2.8 Media Alternative (Prerecorded)
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                This component returns an object element. It
+                                also contains a child element with either a text
+                                description or an element with an alt attribute
+                                that describes the object element.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br />
@@ -264,7 +283,7 @@ const metaH53: Meta<typeof WCAGH53> = {
                             >
                                 You can find the full World Wide Web Consortium,
                                 Inc. WCAG2.2 documentation for this success
-                                criteria here.
+                                criterion here.
                             </a>
                         </p>
                         <br />

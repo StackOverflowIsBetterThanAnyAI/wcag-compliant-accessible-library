@@ -21,16 +21,30 @@ const metaARIA10: Meta<typeof WCAGARIA10H58> = {
                         in the human language
                     </Title>
                     <Subtitle>
-                        <strong>
-                            This component contains non-text content, which is
-                            described by an additional element with a text
-                            alternative. The purpose of this component is to
-                            provide a short description of an element which can
-                            be read aloud by assistive technology. It also
-                            allows you to specify the human language your
-                            element uses if it is different than the human
-                            language of your web page.
-                        </strong>
+                        <p>
+                            <strong>
+                                This component fulfils the success criteria{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">
+                                    1.1.1 Non-text Content
+                                </a>{' '}
+                                and{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">
+                                    3.1.2 Language of Parts
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                This component contains non-text content, which
+                                is described by an additional element with a
+                                text alternative. The purpose of this component
+                                is to provide a short description of an element
+                                which can be read aloud by assistive technology.
+                                It also allows you to specify the human language
+                                your element uses if it is different than the
+                                human language of your web page.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br /> WCAGARIA10H58:
@@ -677,7 +691,7 @@ const metaARIA10: Meta<typeof WCAGARIA10H58> = {
                             >
                                 You can find the full World Wide Web Consortium,
                                 Inc. WCAG2.2 documentation for this success
-                                criteria here.
+                                criterion here.
                             </a>
                         </p>
                         <br />

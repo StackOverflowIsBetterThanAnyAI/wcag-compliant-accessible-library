@@ -17,11 +17,23 @@ const metaARIA2H36: Meta<typeof WCAGH36> = {
                         buttons
                     </Title>
                     <Subtitle>
-                        <strong>
-                            This component adds an alt attribute to images which
-                            is visually displayed when the image cannot be
-                            loaded or is read aloud by assistive technology.
-                        </strong>
+                        <p>
+                            <strong>
+                                This component fulfils the WCAG2.2 success
+                                criterion{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">
+                                    1.1.1 Non-text Content
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                This component adds an alt attribute to images
+                                which is visually displayed when the image
+                                cannot be loaded or is read aloud by assistive
+                                technology.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br />
@@ -281,7 +293,7 @@ const metaARIA2H36: Meta<typeof WCAGH36> = {
                                 opening a new window
                             </strong>{' '}
                             which is an advisory technique for the success
-                            criterias 3.2.1 On Focus and 3.2.2 On Input.
+                            criteria 3.2.1 On Focus and 3.2.2 On Input.
                         </p>
                         <p>
                             Additionally, you can also add an optional
@@ -490,7 +502,7 @@ const metaARIA2H36: Meta<typeof WCAGH36> = {
                             >
                                 You can find the full World Wide Web Consortium,
                                 Inc. WCAG2.2 documentation for this success
-                                criteria here.
+                                criterion here.
                             </a>
                         </p>
                         <br />

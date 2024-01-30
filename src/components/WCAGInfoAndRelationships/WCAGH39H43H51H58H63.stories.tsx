@@ -764,7 +764,7 @@ const metaH39H43H51H63: Meta<typeof WCAGH39H43H51H58H63> = {
                             >
                                 You can find the full World Wide Web Consortium,
                                 Inc. WCAG2.2 documentation for this success
-                                criteria here.
+                                criterion here.
                             </a>
                         </p>
                         <br />

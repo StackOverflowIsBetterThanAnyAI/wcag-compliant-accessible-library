@@ -20,14 +20,36 @@ const metaH2: Meta<typeof WCAGH2H58> = {
                         in the human language
                     </Title>
                     <Subtitle>
-                        <strong>
-                            This component receives an img element as a child of
-                            an anchor element. This results in a larger
-                            clickable area for the user. It also allows you to
-                            specify the human language your element uses if it
-                            is different than the human language of your web
-                            page.
-                        </strong>
+                        <p>
+                            <strong>
+                                This component fulfils the success criteria{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">
+                                    1.1.1 Non.text Content
+                                </a>
+                                ,{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context">
+                                    2.4.4 Link Purpose (In Context)
+                                </a>
+                                ,{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-link-only">
+                                    2.4.9 Link Purpose (Link Only)
+                                </a>{' '}
+                                and{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">
+                                    3.1.2 Language of Parts
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                This component receives an img element as a
+                                child of an anchor element. This results in a
+                                larger clickable area for the user. It also
+                                allows you to specify the human language your
+                                element uses if it is different than the human
+                                language of your web page.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br />
@@ -123,7 +145,7 @@ const metaH2: Meta<typeof WCAGH2H58> = {
                                 opening a new window
                             </strong>{' '}
                             which is an advisory technique for the success
-                            criterias 3.2.1 On Focus and 3.2.2 On Input.
+                            criteria 3.2.1 On Focus and 3.2.2 On Input.
                         </p>
                         <div>
                             To provide assistive technologies with additional
@@ -434,7 +456,7 @@ const metaH2: Meta<typeof WCAGH2H58> = {
                             >
                                 You can find the full World Wide Web Consortium,
                                 Inc. WCAG2.2 documentation for this success
-                                criteria here.
+                                criterion here.
                             </a>
                         </p>
                         <br />

@@ -267,7 +267,7 @@ const metaARIA11: Meta<typeof WCAGARIA11H58> = {
                             >
                                 You can find the full World Wide Web Consortium,
                                 Inc. WCAG2.2 documentation for this success
-                                criteria here.
+                                criterion here.
                             </a>
                         </p>
                         <br />

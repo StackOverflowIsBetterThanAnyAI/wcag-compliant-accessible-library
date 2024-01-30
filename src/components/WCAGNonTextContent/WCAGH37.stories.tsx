@@ -14,11 +14,23 @@ const metaH37: Meta<typeof WCAGH37> = {
                 <>
                     <Title>WCAGH37: Using alt attributes on img elements</Title>
                     <Subtitle>
-                        <strong>
-                            This component adds an alt attribute to images which
-                            is visually displayed when the image cannot be
-                            loaded or is read aloud by assistive technology.
-                        </strong>
+                        <p>
+                            <strong>
+                                This component fulfils the WCAG2.2 success
+                                criterion{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">
+                                    1.1.1 Non-text Content
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                This component adds an alt attribute to images
+                                which is visually displayed when the image
+                                cannot be loaded or is read aloud by assistive
+                                technology.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br />
@@ -362,7 +374,7 @@ const metaH37: Meta<typeof WCAGH37> = {
                             >
                                 You can find the full World Wide Web Consortium,
                                 Inc. WCAG2.2 documentation for this success
-                                criteria here.
+                                criterion here.
                             </a>
                         </p>
                         <br />

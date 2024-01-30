@@ -604,7 +604,7 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                             >
                                 You can find the full World Wide Web Consortium,
                                 Inc. WCAG2.2 documentation for this success
-                                criteria here.
+                                criterion here.
                             </a>
                         </p>
                         <br />

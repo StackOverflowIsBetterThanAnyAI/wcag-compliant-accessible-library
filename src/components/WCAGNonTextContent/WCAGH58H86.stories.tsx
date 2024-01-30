@@ -19,14 +19,29 @@ const metaH86: Meta<typeof WCAGH58H86> = {
                         emoticons, ASCII art, and leetspeak
                     </Title>
                     <Subtitle>
-                        <strong>
-                            This component adds an attribute that contains an
-                            alternative text to either a div, span or abbr
-                            element for any kind of emoji, emoticon, ASCII art
-                            or leetspeak. It also allows you to specify the
-                            human language this element uses if it is different
-                            than the human language of your web page.
-                        </strong>
+                        <p>
+                            <strong>
+                                This component fulfils the success criteria{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">
+                                    1.1.1 Non-text Content
+                                </a>{' '}
+                                and{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">
+                                    3.1.2 Language of Parts
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                This component adds an attribute that contains
+                                an alternative text to either a div, span or
+                                abbr element for any kind of emoji, emoticon,
+                                ASCII art or leetspeak. It also allows you to
+                                specify the human language this element uses if
+                                it is different than the human language of your
+                                web page.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br />
@@ -249,7 +264,7 @@ const metaH86: Meta<typeof WCAGH58H86> = {
                             >
                                 You can find the full World Wide Web Consortium,
                                 Inc. WCAG2.2 documentation for this success
-                                criteria here.
+                                criterion here.
                             </a>
                         </p>
                         <br />

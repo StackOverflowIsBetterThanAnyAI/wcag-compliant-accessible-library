@@ -20,14 +20,16 @@ const metaG115H49Cite: Meta<typeof WCAGG115H49H58Cite> = {
                         in the human language
                     </Title>
                     <Subtitle>
-                        <strong>
-                            The goal of this component is to mark up the
-                            structure of the web content using appropriate
-                            semantic elements, in this case: the cite element.
-                            It also allows you to specify the human language
-                            your element uses if it is different than the human
-                            language of your web page.
-                        </strong>
+                        <p>
+                            <strong>
+                                The goal of this component is to mark up the
+                                structure of the web content using appropriate
+                                semantic elements, in this case: the cite
+                                element. It also allows you to specify the human
+                                language your element uses if it is different
+                                than the human language of your web page.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br />
@@ -626,7 +628,7 @@ const metaG115H49Cite: Meta<typeof WCAGG115H49H58Cite> = {
                             >
                                 You can find the full World Wide Web Consortium,
                                 Inc. WCAG2.2 documentation for this success
-                                criteria here.
+                                criterion here.
                             </a>
                         </p>
                         <br />

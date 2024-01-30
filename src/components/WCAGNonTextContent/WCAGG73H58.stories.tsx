@@ -22,17 +22,33 @@ const metaG73: Meta<typeof WCAGG73H58> = {
                         in the human language
                     </Title>
                     <Subtitle>
-                        <strong>
-                            This component creates a way to link a long
-                            description to elements that don't support long
-                            descriptions natively. The long description is in
-                            another location than the non-text content. There is
-                            a button right beside the non-text content which
-                            links to the long description and vice versa. It
-                            also allows you to specify the human language your
-                            element uses if it is different than the human
-                            language of your web page.
-                        </strong>
+                        <p>
+                            <strong>
+                                This component fulfils the WCAG2.2 success
+                                criteria{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">
+                                    1.1.1 Non-text Content
+                                </a>{' '}
+                                and{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">
+                                    3.1.2 Language of Parts
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                This component creates a way to link a long
+                                description to elements that don't support long
+                                descriptions natively. The long description is
+                                in another location than the non-text content.
+                                There is a button right beside the non-text
+                                content which links to the long description and
+                                vice versa. It also allows you to specify the
+                                human language your element uses if it is
+                                different than the human language of your web
+                                page.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br /> WCAGG73H58:
@@ -158,7 +174,7 @@ const metaG73: Meta<typeof WCAGG73H58> = {
                                 opening a new window
                             </strong>{' '}
                             which is an advisory technique for the success
-                            criterias 3.2.1 On Focus and 3.2.2 On Input.
+                            criteria 3.2.1 On Focus and 3.2.2 On Input.
                         </p>
                         <p>
                             If you want an additional function to be triggered
@@ -807,7 +823,7 @@ const metaG73: Meta<typeof WCAGG73H58> = {
                                 opening a new window
                             </strong>{' '}
                             which is an advisory technique for the success
-                            criterias 3.2.1 On Focus and 3.2.2 On Input.
+                            criteria 3.2.1 On Focus and 3.2.2 On Input.
                         </p>
                         <p>
                             If you want an additional function to be triggered
@@ -1112,7 +1128,7 @@ const metaG73: Meta<typeof WCAGG73H58> = {
                             >
                                 You can find the full World Wide Web Consortium,
                                 Inc. WCAG2.2 documentation for this success
-                                criteria here.
+                                criterion here.
                             </a>
                         </p>
                         <br />

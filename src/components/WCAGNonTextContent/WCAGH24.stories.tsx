@@ -17,11 +17,29 @@ const metaH24: Meta<typeof WCAGH24> = {
                         elements of image maps
                     </Title>
                     <Subtitle>
-                        <strong>
-                            This component adds text alternatives to an image
-                            map that serve the same purpose as the selectable
-                            region of the map.
-                        </strong>
+                        <p>
+                            <strong>
+                                This component fulfils the success criteria{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">
+                                    1.1.1 Non-text Content
+                                </a>
+                                ,{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context">
+                                    2.4.4 Link Purpose (In Context)
+                                </a>{' '}
+                                and{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-link-only">
+                                    2.4.9 Link Purpose (Link Only)
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                This component adds text alternatives to an
+                                image map that serve the same purpose as the
+                                selectable region of the map.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br />
@@ -103,7 +121,7 @@ const metaH24: Meta<typeof WCAGH24> = {
                                 opening a new window
                             </strong>{' '}
                             which is an advisory technique for the success
-                            criterias 3.2.1 On Focus and 3.2.2 On Input.
+                            criteria 3.2.1 On Focus and 3.2.2 On Input.
                         </p>
                         <p>
                             You can also add an optional customised{' '}
@@ -419,7 +437,7 @@ const metaH24: Meta<typeof WCAGH24> = {
                             >
                                 You can find the full World Wide Web Consortium,
                                 Inc. WCAG2.2 documentation for this success
-                                criteria here.
+                                criterion here.
                             </a>
                         </p>
                         <br />

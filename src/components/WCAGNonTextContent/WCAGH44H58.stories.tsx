@@ -18,14 +18,37 @@ const metaH44: Meta<typeof WCAGH44H58> = {
                         in the human language
                     </Title>
                     <Subtitle>
-                        <strong>
-                            This component links a label element directly to
-                            either an input or a select or a textarea element by
-                            requiring a unique ID for both elements. It also
-                            allows you to specify the human language your
-                            element uses if it is different than the human
-                            language of your web page.
-                        </strong>
+                        <p>
+                            <strong>
+                                This component fulfils the success criteria{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">
+                                    1.1.1 Non-text Content
+                                </a>
+                                ,{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">
+                                    1.3.1 Info and Relationships
+                                </a>
+                                ,{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">
+                                    3.1.2 Language of Parts
+                                </a>{' '}
+                                and{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions">
+                                    3.3.2 Labels or Instructions
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                This component links a label element directly to
+                                either an input or a select or a textarea
+                                element by requiring a unique ID for both
+                                elements. It also allows you to specify the
+                                human language your element uses if it is
+                                different than the human language of your web
+                                page.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br />
@@ -405,7 +428,7 @@ const metaH44: Meta<typeof WCAGH44H58> = {
                             >
                                 You can find the full World Wide Web Consortium,
                                 Inc. WCAG2.2 documentation for this success
-                                criteria here.
+                                criterion here.
                             </a>
                         </p>
                         <br />

@@ -404,7 +404,7 @@ const metaG117H48: Meta<typeof WCAGG117H48H58> = {
                             >
                                 You can find the full World Wide Web Consortium,
                                 Inc. WCAG2.2 documentation for this success
-                                criteria here.
+                                criterion here.
                             </a>
                         </p>
                         <br />

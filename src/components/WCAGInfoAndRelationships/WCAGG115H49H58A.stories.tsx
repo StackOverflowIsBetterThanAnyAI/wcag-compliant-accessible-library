@@ -83,7 +83,7 @@ const metaG115H49A: Meta<typeof WCAGG115H49H58A> = {
                                 opening a new window
                             </strong>{' '}
                             which is an advisory technique for the success
-                            criterias 3.2.1 On Focus and 3.2.2 On Input.
+                            criteria 3.2.1 On Focus and 3.2.2 On Input.
                         </p>
                         <p>
                             If the human language of your child element is
@@ -309,7 +309,7 @@ const metaG115H49A: Meta<typeof WCAGG115H49H58A> = {
                             >
                                 You can find the full World Wide Web Consortium,
                                 Inc. WCAG2.2 documentation for this success
-                                criteria here.
+                                criterion here.
                             </a>
                         </p>
                         <br />

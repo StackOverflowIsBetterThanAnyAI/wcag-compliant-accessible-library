@@ -17,11 +17,21 @@ const metaG196: Meta<typeof WCAGG196> = {
                         group of images that describes all items in the group
                     </Title>
                     <Subtitle>
-                        <strong>
-                            This component is used to summarise several images
-                            and describe them with a single alt attribute. This
-                            avoids duplication.
-                        </strong>
+                        <p>
+                            <strong>
+                                This component fulfils the success criterion{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">
+                                    1.1.1 Non.text Content
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                This component is used to summarise several
+                                images and describe them with a single alt
+                                attribute. This avoids duplication.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br />
@@ -376,7 +386,7 @@ const metaG196: Meta<typeof WCAGG196> = {
                             >
                                 You can find the full World Wide Web Consortium,
                                 Inc. WCAG2.2 documentation for this success
-                                criteria here.
+                                criterion here.
                             </a>
                         </p>
                         <br />

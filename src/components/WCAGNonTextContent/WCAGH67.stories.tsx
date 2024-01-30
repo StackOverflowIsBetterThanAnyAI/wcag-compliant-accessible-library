@@ -18,10 +18,21 @@ const metaH67: Meta<typeof WCAGH67> = {
                         ignore
                     </Title>
                     <Subtitle>
-                        <strong>
-                            This component returns an img element which can
-                            safely be ignored by assistive technologies.
-                        </strong>
+                        <p>
+                            <strong>
+                                This component fulfils the WCAG2.2 success
+                                criterion{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">
+                                    1.1.1 Non-text Content
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                This component returns an img element which can
+                                safely be ignored by assistive technologies.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br />
@@ -106,7 +117,7 @@ const metaH67: Meta<typeof WCAGH67> = {
                             >
                                 You can find the full World Wide Web Consortium,
                                 Inc. WCAG2.2 documentation for this success
-                                criteria here.
+                                criterion here.
                             </a>
                         </p>
                         <br />

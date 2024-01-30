@@ -415,8 +415,8 @@ const metaARIA15: Meta<typeof WCAGARIA15H58> = {
                             <strong style={{ color: '#ff0000' }}>
                                 child: ReactNode
                             </strong>{' '}
-                            element must be passed, which can be a string, a
-                            ReactNode or even an entire other component.
+                            element must be passed, which can be a string, a div
+                            or even an entire other component.
                         </p>
                         <p>
                             If the human language inside your descriping p html
@@ -835,6 +835,26 @@ export const WrongAccessibleIdsAndImageData: StoryARIA15 = {
                 This is the much longer text content of Paragraph 2 which
                 describes one happy star looking at you.
             </WCAGARIA15H58Text>
+        </>
+    ),
+}
+
+export const EmptyChild: StoryARIA15 = {
+    render: () => (
+        <>
+            <WCAGARIA15H58Text accessibleId="p1">{''}</WCAGARIA15H58Text>
+            <WCAGARIA15H58
+                accessibleIds="p1 p2"
+                imageData={[
+                    {
+                        altText: 'A happy star.',
+                        imageSource: starImage,
+                        height: 50,
+                        width: 50,
+                    },
+                ]}
+            />
+            <WCAGARIA15H58Text accessibleId="p2">{''}</WCAGARIA15H58Text>
         </>
     ),
 }

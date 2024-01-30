@@ -80,6 +80,21 @@ const WCAGH39H58: React.FC<WCAGH39H58Props> = ({
         )
     }
 
+    if (typeof preImageText === 'boolean' || typeof preImageText === 'number') {
+        errors.push(
+            `Your preImageText element must not be a ${typeof preImageText} value!`
+        )
+    }
+
+    if (
+        typeof postImageText === 'boolean' ||
+        typeof postImageText === 'number'
+    ) {
+        errors.push(
+            `Your postImageText element must not be a ${typeof postImageText} value!`
+        )
+    }
+
     imageData &&
         imageData.forEach((data, dataIndex) => {
             if (data.imageSource.length < 1) {

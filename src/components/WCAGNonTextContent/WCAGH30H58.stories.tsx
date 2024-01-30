@@ -73,7 +73,7 @@ const metaH30H58: Meta<typeof WCAGH30H58> = {
                             the option to display the text before, after or
                             before and after an optional image (or images). In
                             this case, you are welcome to pass a string value, a
-                            ReactNode or a whole different component to the{' '}
+                            div element or a whole different component to the{' '}
                             <strong>
                                 preImageText:ReactNode and/or postImageText:
                                 ReactNode
@@ -544,6 +544,23 @@ export const ImageWithoutTextAndAlt: StoryH30 = {
                     width: 75,
                 },
             ]}
+        />
+    ),
+}
+
+export const WrongPreAndPostTextTypes: StoryH30 = {
+    render: () => (
+        <WCAGH30H58
+            link="#"
+            imageData={[
+                {
+                    imageSource: starImage,
+                    height: 75,
+                    width: 75,
+                },
+            ]}
+            postImageText={false}
+            preImageText={187}
         />
     ),
 }

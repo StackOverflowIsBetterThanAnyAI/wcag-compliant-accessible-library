@@ -71,13 +71,13 @@ const metaH2: Meta<typeof WCAGH2H58> = {
                             In addition to that, you need to supply a{' '}
                             <strong>child: ReactNode</strong> element which
                             contains the clickable text. The type of this text
-                            could be a string, a ReactNode or even a whole
+                            could be a string, a div element or even a whole
                             different component.
                         </p>
                         <p>
                             If you want the text of the child element to be
                             displayed before the image, you must set the value
-                            of the <strong>textBeforeImage: boolean</strong>{' '}
+                            of the <strong>childrenBeforeImage: boolean</strong>{' '}
                             variable to true. Otherwise, the text is displayed
                             after the image by default.
                         </p>
@@ -497,7 +497,7 @@ export const TextContentIsADiv: StoryH2 = {
     ),
 }
 
-export const TextBeforeImage: StoryH2 = {
+export const childrenBeforeImage: StoryH2 = {
     render: () => (
         <WCAGH2H58
             imageData={{
@@ -505,7 +505,7 @@ export const TextBeforeImage: StoryH2 = {
                 additionalStyling: { height: 75, width: 75 },
             }}
             link="#home"
-            textBeforeImage
+            childrenBeforeImage
         >
             <div style={{ color: '#020202' }}>Go to the home page</div>
         </WCAGH2H58>
@@ -520,7 +520,7 @@ export const WrongLink: StoryH2 = {
                 additionalStyling: { height: 75, width: 75 },
             }}
             link=""
-            textBeforeImage
+            childrenBeforeImage
         >
             <div style={{ color: '#020202' }}>Go to the home page</div>
         </WCAGH2H58>
@@ -535,9 +535,24 @@ export const WrongImageSource: StoryH2 = {
                 additionalStyling: { height: 75, width: 75 },
             }}
             link="#home"
-            textBeforeImage
+            childrenBeforeImage
         >
             <div style={{ color: '#020202' }}>Go to the home page</div>
+        </WCAGH2H58>
+    ),
+}
+
+export const BooleanChildren: StoryH2 = {
+    render: () => (
+        <WCAGH2H58
+            imageData={{
+                imageSource: starImage,
+                additionalStyling: { height: 75, width: 75 },
+            }}
+            link="#home"
+            childrenBeforeImage
+        >
+            {false}
         </WCAGH2H58>
     ),
 }

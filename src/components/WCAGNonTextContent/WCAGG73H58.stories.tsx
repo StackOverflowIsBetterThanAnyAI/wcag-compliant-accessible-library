@@ -127,8 +127,8 @@ const metaG73: Meta<typeof WCAGG73H58> = {
                                 buttonText: ReactNode
                             </strong>{' '}
                             parameter of the <strong>WCAGG73H58</strong>{' '}
-                            component, which can be a string, a ReactNode or
-                            even an entire other component.
+                            component, which can be a string, a div or even an
+                            entire other component.
                         </p>
                         <p>
                             You are welcome to change this link with all global
@@ -170,8 +170,8 @@ const metaG73: Meta<typeof WCAGG73H58> = {
                             <strong style={{ color: '#ff0000' }}>
                                 child: ReactNode
                             </strong>{' '}
-                            element. This can be an image, a ReactNode or a
-                            whole different component.
+                            element. This can be an image, a div or a whole
+                            different component.
                         </p>
                         <p>
                             The non-text content is saved inside a regular div
@@ -195,8 +195,8 @@ const metaG73: Meta<typeof WCAGG73H58> = {
                             displayed directly below the link to the long
                             description and stored in the{' '}
                             <strong>shortText: ReactNode</strong> variable,
-                            which can be a string, a ReactNode or a whole
-                            different component.
+                            which can be a string, a div or a whole different
+                            component.
                         </p>
                         <p>
                             If the human language inside your html element is
@@ -751,8 +751,8 @@ const metaG73: Meta<typeof WCAGG73H58> = {
                                 child: ReactNode
                             </strong>{' '}
                             element of the <strong>WCAGG73H58Text</strong>{' '}
-                            component, which can be a string, a ReactNode or a
-                            whole different component.
+                            component, which can be a string, a div or a whole
+                            different component.
                         </p>
                         <p>
                             This long text content is saved inside a regular div
@@ -776,8 +776,8 @@ const metaG73: Meta<typeof WCAGG73H58> = {
                                 buttonText: ReactNode
                             </strong>{' '}
                             parameter of the <strong>WCAGG73H58Text</strong>{' '}
-                            component, which can be a string, a ReactNode or
-                            even an entire other component.
+                            component, which can be a string, a div or even an
+                            entire other component.
                         </p>
                         <p>
                             You are welcome to change this link with all global
@@ -1258,6 +1258,28 @@ export const WrongIds: StoryG73 = {
                 placed in two rows
                 <br />
                 with three stars each.
+            </WCAGG73H58Text>
+        </>
+    ),
+}
+
+export const WrongTypes: StoryG73 = {
+    render: () => (
+        <>
+            <WCAGG73H58
+                buttonText={false}
+                ownId="chart"
+                childId="long-description1"
+                shortText={187}
+            >
+                {true}
+            </WCAGG73H58>
+            <WCAGG73H58Text
+                buttonText={187}
+                ownId="long-description"
+                parentId="chart"
+            >
+                {false}
             </WCAGG73H58Text>
         </>
     ),

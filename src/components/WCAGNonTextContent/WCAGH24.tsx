@@ -109,7 +109,7 @@ const WCAGH24: React.FC<WCAGH24Props> = ({
     areaData.forEach((data, dataIndex) => {
         if (data.hollow && (data.href || data.altText)) {
             console.warn(
-                `You cannot set an href or altText in areaData[${dataIndex}] as it is marked as hollow!`
+                `Your href or altText have no affect in areaData[${dataIndex}] as it is marked as hollow!`
             )
         }
     })

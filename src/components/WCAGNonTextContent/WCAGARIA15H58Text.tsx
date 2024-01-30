@@ -79,37 +79,48 @@ const WCAGARIA15H58Text: React.FC<WCAGARIA15H58Props> = ({
     role,
     children,
 }) => {
-    try {
-        if (accessibleId.length < 1) {
-            throw new Error(
-                'Your accessibleId attribute hast to have a length of at least one character!'
-            )
-        }
-        return (
-            <p
-                id={accessibleId}
-                style={{ ...pData?.additionalStyling }}
-                lang={lang?.language}
-                className={className}
-                role={role}
-                accessKey={pData?.accesskey}
-                contentEditable={pData?.contenteditable}
-                dir={pData?.dir}
-                draggable={pData?.draggable}
-                hidden={pData?.hiddenElement}
-                inputMode={pData?.inputmode}
-                spellCheck={pData?.spellcheck}
-                tabIndex={pData?.tabindex}
-                title={pData?.title}
-                translate={pData?.translate}
-            >
-                {children}
-            </p>
+    const errors: string[] = []
+
+    if (accessibleId.length < 1) {
+        errors.push(
+            'Your accessibleId attribute hast to have a length of at least one character!'
         )
-    } catch (error: any) {
-        console.error(error.message)
+    }
+
+    if (children.length < 1) {
+        errors.push(
+            'Your child element hast to have a length of at least one character!'
+        )
+    }
+
+    if (errors.length) {
+        for (let i in errors) {
+            console.error(errors[i])
+        }
         return
     }
+
+    return (
+        <p
+            id={accessibleId}
+            style={{ ...pData?.additionalStyling }}
+            lang={lang?.language}
+            className={className}
+            role={role}
+            accessKey={pData?.accesskey}
+            contentEditable={pData?.contenteditable}
+            dir={pData?.dir}
+            draggable={pData?.draggable}
+            hidden={pData?.hiddenElement}
+            inputMode={pData?.inputmode}
+            spellCheck={pData?.spellcheck}
+            tabIndex={pData?.tabindex}
+            title={pData?.title}
+            translate={pData?.translate}
+        >
+            {children}
+        </p>
+    )
 }
 
 export default WCAGARIA15H58Text

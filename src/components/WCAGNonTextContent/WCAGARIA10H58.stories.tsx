@@ -776,3 +776,20 @@ export const WrongAriaLabelledById: StoryARIA10 = {
         </>
     ),
 }
+
+export const WringChildren: StoryARIA10 = {
+    render: () => (
+        <>
+            <WCAGARIA10H58
+                role="img"
+                ariaLabelledById="star-id1"
+                divData={{ additionalStyling: { margin: '5px 10px' } }}
+            >
+                {187}
+            </WCAGARIA10H58>
+            <WCAGARIA10H58Text ariaLabelledById="star-id1">
+                {false}
+            </WCAGARIA10H58Text>
+        </>
+    ),
+}

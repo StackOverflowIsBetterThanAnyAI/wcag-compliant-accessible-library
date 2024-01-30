@@ -49,7 +49,7 @@ interface WCAGH2H58Props {
         | 'switch'
         | 'tab'
         | 'treeitem'
-    textBeforeImage?: boolean
+    childrenBeforeImage?: boolean
     onClickFunction?: () => void
     onFocusFunction?: () => void
     onHoverFunction?: () => void
@@ -66,13 +66,17 @@ const WCAGH2H58: React.FC<WCAGH2H58Props> = ({
     linkData,
     lang,
     role,
-    textBeforeImage,
+    childrenBeforeImage,
     children,
     onClickFunction,
     onFocusFunction,
     onHoverFunction,
 }) => {
     const errors: string[] = []
+
+    if (typeof children === 'boolean' || typeof children === 'number') {
+        errors.push('Your child element must not be a boolean or number value!')
+    }
 
     if (link.length < 1) {
         errors.push(
@@ -201,7 +205,7 @@ const WCAGH2H58: React.FC<WCAGH2H58Props> = ({
                     : undefined
             }
         >
-            {textBeforeImage && children}
+            {childrenBeforeImage && children}
             <img
                 alt={altText ?? ''}
                 src={imageData.imageSource}
@@ -217,7 +221,7 @@ const WCAGH2H58: React.FC<WCAGH2H58Props> = ({
                     ...imageData?.additionalStyling,
                 }}
             />
-            {!textBeforeImage && children}
+            {!childrenBeforeImage && children}
         </a>
     )
 }

@@ -110,6 +110,18 @@ const WCAGG73H58Text: React.FC<WCAGG73H58Props> = ({
         )
     }
 
+    if (typeof children === 'boolean' || typeof children === 'number') {
+        errors.push(
+            `Your child element must not be a ${typeof children} value!`
+        )
+    }
+
+    if (typeof buttonText === 'boolean' || typeof buttonText === 'number') {
+        errors.push(
+            `Your buttonText element must not be a ${typeof buttonText} value!`
+        )
+    }
+
     if (errors.length) {
         for (let i in errors) {
             console.error(errors[i])

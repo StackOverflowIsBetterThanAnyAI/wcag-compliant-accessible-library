@@ -86,7 +86,7 @@ const metaG74G92: Meta<typeof WCAGG74G92H58> = {
                             <strong style={{ color: '#ff0000' }}>
                                 shortText: ReactNode
                             </strong>{' '}
-                            variable and can be a string, a ReactNode or a whole
+                            variable and can be a string, a div or a whole
                             different component.
                             <br />
                             But don't forget that there needs to be a reference
@@ -1078,6 +1078,18 @@ export const WrongAccessibleIds: StoryG74G92 = {
                 happy stars.
                 <br />
             </WCAGG74G92H58Text>
+        </>
+    ),
+}
+
+export const WrongTypes: StoryG74G92 = {
+    render: () => (
+        <>
+            <WCAGG74G92H58 accessibleIds="p1 p2" shortText={false}>
+                {true}
+            </WCAGG74G92H58>
+            <h3>Caption that devides both descriptions</h3>
+            <WCAGG74G92H58Text accessibleId="p2">{187}</WCAGG74G92H58Text>
         </>
     ),
 }

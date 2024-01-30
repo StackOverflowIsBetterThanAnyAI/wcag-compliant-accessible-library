@@ -79,37 +79,48 @@ const WCAGARIA10H58Text: React.FC<WCAGARIA10H58Props> = ({
     role,
     children,
 }) => {
-    try {
-        if (ariaLabelledById.length < 1) {
-            throw new Error(
-                'Your ariaLabelledById attribute hast to have a length of at least one character!'
-            )
-        }
-        return (
-            <div
-                id={ariaLabelledById}
-                style={{ ...divData?.additionalStyling }}
-                lang={lang?.language}
-                className={className}
-                role={role}
-                accessKey={divData?.accesskey}
-                contentEditable={divData?.contenteditable}
-                dir={divData?.dir}
-                draggable={divData?.draggable}
-                hidden={divData?.hiddenElement}
-                inputMode={divData?.inputmode}
-                spellCheck={divData?.spellcheck}
-                tabIndex={divData?.tabindex}
-                title={divData?.title}
-                translate={divData?.translate}
-            >
-                {children}
-            </div>
+    const errors: string[] = []
+
+    if (ariaLabelledById.length < 1) {
+        errors.push(
+            'Your ariaLabelledById attribute hast to have a length of at least one character!'
         )
-    } catch (error: any) {
-        console.error(error.message)
+    }
+
+    if (typeof children === 'boolean' || typeof children === 'number') {
+        errors.push(
+            `Your child element must not be a ${typeof children} value!`
+        )
+    }
+
+    if (errors.length) {
+        for (let i in errors) {
+            console.error(errors[i])
+        }
         return
     }
+
+    return (
+        <div
+            id={ariaLabelledById}
+            style={{ ...divData?.additionalStyling }}
+            lang={lang?.language}
+            className={className}
+            role={role}
+            accessKey={divData?.accesskey}
+            contentEditable={divData?.contenteditable}
+            dir={divData?.dir}
+            draggable={divData?.draggable}
+            hidden={divData?.hiddenElement}
+            inputMode={divData?.inputmode}
+            spellCheck={divData?.spellcheck}
+            tabIndex={divData?.tabindex}
+            title={divData?.title}
+            translate={divData?.translate}
+        >
+            {children}
+        </div>
+    )
 }
 
 export default WCAGARIA10H58Text

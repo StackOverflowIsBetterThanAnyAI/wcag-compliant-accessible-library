@@ -719,3 +719,11 @@ export const WrongAriaLabel: StoryARIA6 = {
         </WCAGARIA6H58>
     ),
 }
+
+export const WrongChild: StoryARIA6 = {
+    render: () => (
+        <WCAGARIA6H58 role="status" ariaLabel="This is a status!">
+            {false}
+        </WCAGARIA6H58>
+    ),
+}

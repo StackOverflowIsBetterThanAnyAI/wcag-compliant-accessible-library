@@ -3,6 +3,7 @@ import { FormAttributes } from '../interfaces/FormAttributes'
 import { InputAttributes } from '../interfaces/InputAttributes'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 import { LangAttributes } from '../interfaces/LangAttributes'
+import { SubmitAttributes } from '../interfaces/SubmitAttributes'
 
 interface WCAGG13H32H58H98Props {
     formData: Omit<FormAttributes, 'autocomplete'> & { id: string }
@@ -144,21 +145,7 @@ interface WCAGG13H32H58H98Props {
     >
     changedContextText?: ReactNode
     role?: 'presentation' | 'search'
-    submitData?: {
-        type: 'submit' | 'image'
-        value: string
-        dirname?: string
-        formaction?: string
-        formenctype?: string
-        formmethod?: 'get' | 'post'
-        formtarget?: string
-        src?: string
-        onClickFunction?: () => void
-        onFocusFunction?: () => void
-        onHoverFunction?: () => void
-        className?: string
-        additionalStyling?: CSSProperties
-    }
+    submitData?: SubmitAttributes
 }
 
 const WCAGG13H32H58H98: React.FC<WCAGG13H32H58H98Props> = ({

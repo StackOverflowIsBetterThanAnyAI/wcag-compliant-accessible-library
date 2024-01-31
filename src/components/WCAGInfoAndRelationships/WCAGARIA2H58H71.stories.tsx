@@ -21,14 +21,34 @@ const metaARIA2H71: Meta<typeof WCAGARIA2H58H71> = {
                         controls using fieldset and legend elements
                     </Title>
                     <Subtitle>
-                        <strong>
-                            This component allows a semantic grouping for
-                            related checkbox or radio typed form controls so
-                            users can understand the relationship fo them more
-                            easily. It also allows you to specify the human
-                            language each label element uses if it is different
-                            than the human language of your web page.
-                        </strong>
+                        <p>
+                            <strong>
+                                By using this component you fulfil the success
+                                criteria{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">
+                                    1.3.1 Info and Relationships
+                                </a>
+                                ,{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">
+                                    3.1.2 Language of Parts
+                                </a>{' '}
+                                and{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions">
+                                    3.3.2 Labels or Instructions
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                This component allows a semantic grouping for
+                                related checkbox or radio typed form controls so
+                                users can understand the relationship fo them
+                                more easily. It also allows you to specify the
+                                human language each label element uses if it is
+                                different than the human language of your web
+                                page.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:{' '}
                             <code>
@@ -42,9 +62,9 @@ const metaARIA2H71: Meta<typeof WCAGARIA2H58H71> = {
                                 <br />
                                 &emsp;&emsp;&lt;div lang="de"&gt;
                                 <br />
-                                &emsp;&emsp;&emsp;&lt;input/&gt;
+                                &emsp;&emsp;&emsp;&lt;input id="id"/&gt;
                                 <br />
-                                &emsp;&emsp;&emsp;&lt;label/&gt;
+                                &emsp;&emsp;&emsp;&lt;label htmlFor="id"&gt;
                                 <em>label text</em>&lt;/label&gt;
                                 <br />
                                 &emsp;&emsp;&lt;/div&gt;

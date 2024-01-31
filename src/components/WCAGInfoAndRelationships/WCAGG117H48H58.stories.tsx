@@ -23,7 +23,8 @@ const metaG117H48: Meta<typeof WCAGG117H48H58> = {
                     <Subtitle>
                         <p>
                             <strong>
-                                This component fulfils the success criteria{' '}
+                                By using this component you fulfil the success
+                                criteria{' '}
                                 <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">
                                     1.3.1 Info and Relationships
                                 </a>{' '}

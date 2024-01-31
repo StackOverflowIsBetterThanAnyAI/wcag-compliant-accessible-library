@@ -19,7 +19,8 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                     <Subtitle>
                         <p>
                             <strong>
-                                This component fulfils success criterion{' '}
+                                By using this component you fulfil success
+                                criterion{' '}
                                 <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">
                                     1.3.1 Info and Relationships
                                 </a>

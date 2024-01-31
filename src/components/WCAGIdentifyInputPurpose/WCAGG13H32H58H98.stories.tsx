@@ -27,7 +27,8 @@ const metaWCAGG13H32H58H98: Meta<typeof WCAGG13H32H58H98> = {
                     <Subtitle>
                         <p>
                             <strong>
-                                This component fulfils the success criteria{' '}
+                                By using this component you fulfil the success
+                                criteria{' '}
                                 <a href="https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose">
                                     1.3.5 Identify Input Purpose
                                 </a>

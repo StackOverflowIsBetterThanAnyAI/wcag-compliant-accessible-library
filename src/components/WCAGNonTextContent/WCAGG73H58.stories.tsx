@@ -24,8 +24,8 @@ const metaG73: Meta<typeof WCAGG73H58> = {
                     <Subtitle>
                         <p>
                             <strong>
-                                This component fulfils the WCAG2.2 success
-                                criteria{' '}
+                                By using this component you fulfil the WCAG2.2
+                                success criteria{' '}
                                 <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">
                                     1.1.1 Non-text Content
                                 </a>{' '}

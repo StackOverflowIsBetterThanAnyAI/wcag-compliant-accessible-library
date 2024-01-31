@@ -11,8 +11,7 @@ const metaARIA12: Meta<typeof WCAGARIA12H58> = {
             page: () => (
                 <>
                     <Title>
-                        WCAGARIA6: Using aria-label to provide labels for
-                        objects
+                        WCAGARIA12: Using role=heading to identify headings
                         <br />
                         WCAGH58: Using language attributes to identify changes
                         in the human language
@@ -20,7 +19,8 @@ const metaARIA12: Meta<typeof WCAGARIA12H58> = {
                     <Subtitle>
                         <p>
                             <strong>
-                                This component fulfils the success criteria{' '}
+                                By using this component you fulfil the success
+                                criteria{' '}
                                 <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">
                                     1.3.1 Info and Relationships
                                 </a>{' '}
@@ -43,7 +43,8 @@ const metaARIA12: Meta<typeof WCAGARIA12H58> = {
                             Abstract code preview:
                             <br />
                             <code>
-                                &lt;div lang="de"&gt; child element &lt;/div&gt;
+                                &lt;div ariaLevel="3" lang="de"&gt; child
+                                element &lt;/div&gt;
                             </code>
                         </p>
                         <p style={{ textAlign: 'center' }}>
@@ -65,7 +66,7 @@ const metaARIA12: Meta<typeof WCAGARIA12H58> = {
                             meta headings h1 to h6.
                         </p>
                         <p>
-                            You also must pass any element as a{' '}
+                            You also must pass any text element as a{' '}
                             <strong style={{ color: '#ff0000' }}>
                                 child: ReactNode
                             </strong>{' '}
@@ -245,6 +246,14 @@ export const HeadlinesOneToSeven: StoryARIA12 = {
     ),
 }
 
+export const NumberChild: StoryARIA12 = {
+    render: () => (
+        <>
+            <WCAGARIA12H58 ariaLevel={1}>{25}</WCAGARIA12H58>
+        </>
+    ),
+}
+
 export const FloatValue: StoryARIA12 = {
     render: () => (
         <>
@@ -265,14 +274,6 @@ export const NegativeValue: StoryARIA12 = {
     render: () => (
         <>
             <WCAGARIA12H58 ariaLevel={-1}>Headline Level 0</WCAGARIA12H58>
-        </>
-    ),
-}
-
-export const NumberChild: StoryARIA12 = {
-    render: () => (
-        <>
-            <WCAGARIA12H58 ariaLevel={1}>{25}</WCAGARIA12H58>
         </>
     ),
 }

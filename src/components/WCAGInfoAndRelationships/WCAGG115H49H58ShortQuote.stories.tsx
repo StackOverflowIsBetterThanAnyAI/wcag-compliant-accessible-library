@@ -22,7 +22,8 @@ const metaG115H49ShortQuote: Meta<typeof WCAGG115H49H58ShortQuote> = {
                     <Subtitle>
                         <p>
                             <strong>
-                                This component fulfils the success criteria{' '}
+                                By using this component you fulfil the success
+                                criteria{' '}
                                 <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">
                                     1.3.1 Info and Relationships
                                 </a>{' '}

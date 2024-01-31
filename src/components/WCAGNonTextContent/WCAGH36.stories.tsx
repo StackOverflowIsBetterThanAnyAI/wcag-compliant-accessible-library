@@ -19,8 +19,8 @@ const metaARIA2H36: Meta<typeof WCAGH36> = {
                     <Subtitle>
                         <p>
                             <strong>
-                                This component fulfils the WCAG2.2 success
-                                criterion{' '}
+                                By using this component you fulfil the WCAG2.2
+                                success criterion{' '}
                                 <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">
                                     1.1.1 Non-text Content
                                 </a>

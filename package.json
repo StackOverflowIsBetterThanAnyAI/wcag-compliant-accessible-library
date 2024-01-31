@@ -1,5 +1,4 @@
 {
-    "homepage": "http://StackOverflowIsBetterThanAnyAI.github.io/wcag-compliant-accessible-library",
     "name": "wcag-compliant-accessible-library",
     "version": "0.0.1",
     "description": "",
@@ -10,9 +9,6 @@
     ],
     "types": "dist/index.d.ts",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "predeploy": "npm run build-storybook",
-        "deploy-storybook": "gh-pages -d storybook-static",
         "rollup-build-lib": "rollup -c",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "build-storybook"
@@ -32,7 +28,6 @@
         "@storybook/react-vite": "^7.6.6",
         "@storybook/test": "^7.6.6",
         "@types/react": "^18.2.45",
-        "gh-pages": "^6.1.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "rollup": "^4.9.1",

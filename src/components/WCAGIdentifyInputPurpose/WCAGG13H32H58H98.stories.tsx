@@ -54,7 +54,7 @@ const metaWCAGG13H32H58H98: Meta<typeof WCAGG13H32H58H98> = {
                                 additional text which explains the user what is
                                 about to happen when they press the button. It
                                 also allows you to specify the human language
-                                each label and input element uses if it is
+                                each label and input element use if it is
                                 different than the human language of your web
                                 page.
                             </strong>
@@ -69,11 +69,11 @@ const metaWCAGG13H32H58H98: Meta<typeof WCAGG13H32H58H98> = {
                                 <br />
                                 &emsp;&lt;div&gt;
                                 <br />
-                                &emsp;&emsp;&lt;label&gt;<em> label text </em>
+                                &emsp;&emsp;&lt;label htmlFor="id"&gt; labelText
                                 &lt;/label&gt;
                                 <br />
                                 &emsp;&emsp;&lt;input type="month"
-                                autocomplete="bday-month" /&gt;
+                                autocomplete="bday-month" id="id"/&gt;
                                 <br />
                                 &emsp;&lt;/div&gt;
                                 <br />
@@ -232,7 +232,7 @@ const metaWCAGG13H32H58H98: Meta<typeof WCAGG13H32H58H98> = {
                                 new accessible component. If you prefer styling
                                 your components inline, feel free to use the{' '}
                                 <strong>
-                                    additionalStylingInput: CSSProperties nad
+                                    additionalStylingInput: CSSProperties and
                                     additionalStylingLabel: CSSProperties
                                 </strong>{' '}
                                 objects inside of the <strong>inputData</strong>{' '}

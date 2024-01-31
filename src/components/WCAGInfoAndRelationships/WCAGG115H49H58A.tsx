@@ -56,7 +56,7 @@ const G115H49A: React.FC<WCAGG115H49H58Props> = ({
     const errors: string[] = []
 
     // checks if href is an empty string
-    if (linkData.href.replace(' ', '').length < 1) {
+    if (linkData.href.trim().length < 1) {
         errors.push(
             'Your linkData.href attribute hast to have a length of at least one character!'
         )

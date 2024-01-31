@@ -82,7 +82,7 @@ const WCAGG74G92H58Text: React.FC<WCAGG74G92H58Props> = ({
     const errors: string[] = []
 
     // checks if accessibleId is an empty string
-    if (accessibleId.replace(' ', '').length < 1) {
+    if (accessibleId.trim().length < 1) {
         errors.push(
             'Your accessibleId attribute hast to have a length of at least one character!'
         )

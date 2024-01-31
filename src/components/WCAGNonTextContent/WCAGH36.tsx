@@ -82,14 +82,14 @@ const WCAGH36: React.FC<WCAGH36Props> = ({
     const errors: string[] = []
 
     // checks if altText is an empty string
-    if (altText.replace(' ', '').length < 1) {
+    if (altText.trim().length < 1) {
         errors.push(
             'Your altText attribute hast to have a length of at least one character!'
         )
     }
 
     // checks if src is an empty string
-    if (src.replace(' ', '').length < 1) {
+    if (src.trim().length < 1) {
         errors.push(
             'Your src attribute hast to have a length of at least one character!'
         )

@@ -80,14 +80,14 @@ const WCAGH2H58: React.FC<WCAGH2H58Props> = ({
     }
 
     // checks if link is an empty string
-    if (link.replace(' ', '').length < 1) {
+    if (link.trim().length < 1) {
         errors.push(
             'Your link attribute hast to have a length of at least one character!'
         )
     }
 
     // checks if imageSource is an empty string
-    if (imageData.imageSource.replace(' ', '').length < 1) {
+    if (imageData.imageSource.trim().length < 1) {
         errors.push(
             'Your imageData.imageSource attribute hast to have a length of at least one character!'
         )

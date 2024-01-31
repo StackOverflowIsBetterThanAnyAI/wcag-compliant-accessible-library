@@ -57,7 +57,7 @@ const WCAGARIA15H58: React.FC<WCAGARIA15H58Props> = ({
     const errors: string[] = []
 
     // checks if accessibleIds is an empty string
-    if (accessibleIds.replace(' ', '').length < 1) {
+    if (accessibleIds.trim().length < 1) {
         errors.push(
             'Your accessibleIds attribute hast to have a length of at least one character!'
         )
@@ -65,7 +65,7 @@ const WCAGARIA15H58: React.FC<WCAGARIA15H58Props> = ({
 
     // checks if altText is an empty string
     imageData.forEach((data, dataIndex) => {
-        if (data.altText.replace(' ', '').length < 1) {
+        if (data.altText.trim().length < 1) {
             errors.push(
                 `Your altText attribute in imageData[${dataIndex}] has to have a length of at least one character!`
             )
@@ -74,7 +74,7 @@ const WCAGARIA15H58: React.FC<WCAGARIA15H58Props> = ({
 
     // checks if imageSource is an empty string
     imageData.forEach((data, dataIndex) => {
-        if (data.imageSource.replace(' ', '').length < 1) {
+        if (data.imageSource.trim().length < 1) {
             errors.push(
                 `Your imageSource attribute in imageData[${dataIndex}] has to have a length of at least one character!`
             )

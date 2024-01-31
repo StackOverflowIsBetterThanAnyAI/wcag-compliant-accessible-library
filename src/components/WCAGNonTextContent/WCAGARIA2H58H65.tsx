@@ -96,7 +96,7 @@ const WCAGARIA2H58H65: React.FC<WCAGARIA2H58H65Props> = ({
     }
     try {
         // checks if title is an empty string
-        if (title.replace(' ', '').length < 1) {
+        if (title.trim().length < 1) {
             throw new Error(
                 'Your title attribute hast to have a length of at least one character!'
             )

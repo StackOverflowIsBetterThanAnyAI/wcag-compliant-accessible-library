@@ -75,7 +75,7 @@ const WCAGH39H58: React.FC<WCAGH39H58Props> = ({
     const errors: string[] = []
 
     // checks if link is an empty string
-    if (link.replace(' ', '').length < 1) {
+    if (link.trim().length < 1) {
         errors.push(
             'Your link attribute hast to have a length of at least one character!'
         )
@@ -101,7 +101,7 @@ const WCAGH39H58: React.FC<WCAGH39H58Props> = ({
     // checks for empty imageSource
     imageData &&
         imageData.forEach((data, dataIndex) => {
-            if (data.imageSource.replace(' ', '').length < 1) {
+            if (data.imageSource.trim().length < 1) {
                 errors.push(
                     `Your imageSource attribute in imageData[${dataIndex}] has to have a length of at least one character!`
                 )

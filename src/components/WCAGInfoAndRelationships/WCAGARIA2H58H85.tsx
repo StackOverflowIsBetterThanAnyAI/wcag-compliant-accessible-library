@@ -2,7 +2,7 @@ import React, { CSSProperties, ReactNode } from 'react'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 import { FormAttributes } from '../interfaces/FormAttributes'
 import { SelectAttributes } from '../interfaces/SelectAttributes'
-import { LangAttributes } from '../interfaces/LangAttributes'
+import { OptionAttributes } from '../interfaces/OptionAttributes'
 
 interface WCAGARIA2H58H85Props {
     formData: FormAttributes
@@ -18,16 +18,7 @@ interface WCAGARIA2H58H85Props {
         className?: string
         disabledGroup?: boolean
     }[][]
-    optionData: {
-        text: string
-        value: string
-        className?: string
-        disabled?: boolean
-        label?: string
-        lang?: LangAttributes
-        selected?: boolean
-        additionalStyling?: CSSProperties
-    }[][]
+    optionData: OptionAttributes[][]
     additionalAriaAttributes?: Omit<
         WAIARIAAttributes,
         | 'activedescendant'
@@ -79,32 +70,135 @@ const WCAGARIA2H58H85: React.FC<WCAGARIA2H58H85Props> = ({
     role,
     selectData,
 }) => {
-    const renderOptionGroups = () => {
-        return optionDataGroup.map((group, index) => {
-            const label = group[0]?.labelGroup || ''
-            const options = optionData[index]?.map((option) => (
-                <option
-                    key={option.value}
-                    className={option?.className}
-                    value={option.value}
-                    disabled={option?.disabled}
-                    label={option?.label}
-                    lang={option?.lang?.language}
-                    selected={option?.selected}
-                    style={{ ...option?.additionalStyling }}
-                >
-                    {option.text}
-                </option>
-            ))
+    const errors: string[] = []
 
-            return (
-                <optgroup key={label} label={label}>
+    // checks if labelText has a wrong value
+    if (typeof labelData.labelText === 'boolean') {
+        errors.push(
+            `Your labelText must not have a ${typeof labelData.labelText} value!`
+        )
+    }
+
+    // checks if selectData.id is an empty string
+    if (selectData.id.trim().length < 1) {
+        errors.push(
+            'Your selectData.id has to have a length of at least one character!'
+        )
+    }
+
+    // checks if selectData.name is an empty string
+    if (selectData.name.trim().length < 1) {
+        errors.push(
+            'Your selectData.name has to have a length of at least one character!'
+        )
+    }
+
+    //checks if all text or value parameters from optionData are empty
+    const checkForEmptyOptionData = () => {
+        const dataLength = optionData.length
+        let missingText = 0
+        let missingValue = 0
+
+        optionData.map((option) => {
+            const txt = option[0]?.text || ''
+            const val = option[0]?.value || ''
+
+            if (txt.trim().length < 1) missingText += 1
+            if (val.trim().length < 1) missingValue += 1
+        })
+
+        if (missingText === dataLength) {
+            console.error(
+                `Your text parameters of the optionData object have to have a length of at least one character!`
+            )
+            return true
+        }
+
+        if (missingValue === dataLength) {
+            console.error(
+                `Your value parameters of the optionData object have to have a length of at least one character!`
+            )
+            return true
+        }
+        return false
+    }
+
+    // checks if all labelGroups are empty
+    const checkForEmptyLabelGroup = () => {
+        const groupLength = optionDataGroup.length
+        let missingGroupLength = 0
+
+        optionDataGroup.map((group) => {
+            const label = group[0]?.labelGroup || ''
+            if (label.trim().length < 1) missingGroupLength += 1
+        })
+
+        if (missingGroupLength === groupLength) {
+            console.error(
+                `Your labelGroup parameters have to have a length of at least one character!`
+            )
+            return true
+        }
+        return false
+    }
+
+    // renders optionGroups and checks if any labelGroup is an empty string
+    const renderOptionGroups = () => {
+        return optionDataGroup.map((group, groupIndex) => {
+            const label = group[0]?.labelGroup || ''
+            if (label.trim().length < 1) {
+                console.error(
+                    `Your labelGroup in optionDataGroup[${groupIndex}] has to have a length of at least one character!`
+                )
+            }
+
+            // checks if any text or value paramters are empty
+            const options = optionData[groupIndex]?.map((option) => {
+                if (!option.text.trim().length) {
+                    console.error(
+                        `Your text in optionData[${groupIndex}] have to have a length of at least one character!`
+                    )
+                }
+
+                if (!option.value.trim().length) {
+                    console.error(
+                        `Your value in optionData[${groupIndex}] have to have a length of at least one character!`
+                    )
+                }
+
+                return option.value.trim().length &&
+                    option.text.trim().length ? (
+                    <option
+                        key={option.value}
+                        className={option?.className}
+                        value={option.value}
+                        disabled={option?.disabled}
+                        label={option?.label}
+                        lang={option?.lang?.language}
+                        selected={option?.selected}
+                        style={{ ...option?.additionalStyling }}
+                    >
+                        {option.text}
+                    </option>
+                ) : null
+            })
+
+            return label.trim().length ? (
+                <optgroup key={groupIndex} label={label}>
                     {options}
                 </optgroup>
-            )
+            ) : null
         })
     }
-    return (
+
+    if (errors.length) {
+        for (let i in errors) {
+            console.error(errors[i])
+        }
+        return
+    }
+
+    return !checkForEmptyLabelGroup() && !checkForEmptyOptionData() ? (
         <form
             role={role}
             className={formData?.classNameForm}
@@ -158,7 +252,7 @@ const WCAGARIA2H58H85: React.FC<WCAGARIA2H58H85Props> = ({
                 {renderOptionGroups()}
             </select>
         </form>
-    )
+    ) : null
 }
 
 export default WCAGARIA2H58H85

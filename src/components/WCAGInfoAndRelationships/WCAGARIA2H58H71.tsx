@@ -120,7 +120,7 @@ const WCAGARIA2H58H71: React.FC<WCAGARIA2H58H71Props> = ({
     const errors: string[] = []
 
     inputLabelData.forEach((data, dataIndex) => {
-        if (data.id.replace(' ', '').length < 1) {
+        if (data.id.trim().length < 1) {
             errors.push(
                 `Your id attribute in imageData[${dataIndex}] has to have a length of at least one character!`
             )
@@ -128,14 +128,14 @@ const WCAGARIA2H58H71: React.FC<WCAGARIA2H58H71Props> = ({
     })
 
     inputLabelData.forEach((data, dataIndex) => {
-        if (data.labelText.replace(' ', '').length < 1) {
+        if (data.labelText.trim().length < 1) {
             errors.push(
                 `Your labelText attribute in imageData[${dataIndex}] has to have a length of at least one character!`
             )
         }
     })
 
-    if (legendData.legendText.replace(' ', '').length < 1) {
+    if (legendData.legendText.trim().length < 1) {
         errors.push(
             `Your legendData.legendText has to have a length of at least one character!`
         )

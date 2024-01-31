@@ -66,7 +66,7 @@ const WCAGH58H86: React.FC<WCAGH58H86Props> = ({
     const errors: string[] = []
 
     // empty text which is read aloud
-    if (accessibleText.replace(' ', '').length < 1) {
+    if (accessibleText.trim().length < 1) {
         errors.push(
             'Your accessibleText attribute hast to have a length of at least one character!'
         )

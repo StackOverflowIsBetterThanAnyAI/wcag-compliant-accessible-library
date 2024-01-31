@@ -194,7 +194,7 @@ const WCAGH44H58: React.FC<WCAGH44H58Props> = ({
 
     // checks if id is an empty string
     inputData.forEach((data, dataIndex) => {
-        if (data.id.replace(' ', '').length < 1) {
+        if (data.id.trim().length < 1) {
             errors.push(
                 `Your id attribute in inputData[${dataIndex}] has to have a length of at least one character!`
             )
@@ -203,7 +203,7 @@ const WCAGH44H58: React.FC<WCAGH44H58Props> = ({
 
     // checks if name is an empty string
     inputData.forEach((data, dataIndex) => {
-        if (data.name.replace(' ', '').length < 1) {
+        if (data.name.trim().length < 1) {
             errors.push(
                 `Your name attribute in inputData[${dataIndex}] has to have a length of at least one character!`
             )

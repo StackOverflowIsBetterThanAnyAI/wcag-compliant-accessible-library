@@ -10,7 +10,7 @@ interface WCAGH67Props {
 const WCAGH67: React.FC<WCAGH67Props> = ({ className, imageData, role }) => {
     try {
         // empty image source
-        if (imageData.imageSource.replace(' ', '').length < 1) {
+        if (imageData.imageSource.trim().length < 1) {
             throw new Error(
                 'Your imageData.imageSource attribute hast to have a length of at least one character!'
             )

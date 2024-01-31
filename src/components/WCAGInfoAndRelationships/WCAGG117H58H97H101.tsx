@@ -118,7 +118,7 @@ const WCAGG117H58H97H101: React.FC<
     //checks if href is an empty string
     listData &&
         listData.forEach((data, dataIndex) => {
-            if (data.href.replace(' ', '').length < 1) {
+            if (data.href.trim().length < 1) {
                 errors.push(
                     `Your href attribute in listData[${dataIndex}] has to have a length of at least one character!`
                 )

@@ -93,7 +93,7 @@ const WCAGARIA6H58: React.FC<WCAGARIA6H58Props> = ({
     const errors: string[] = []
 
     // checks if ariaLabel is an empty string
-    if (ariaLabel.replace(' ', '').length < 1) {
+    if (ariaLabel.trim().length < 1) {
         errors.push(
             'Your altText attribute hast to have a length of at least one character!'
         )

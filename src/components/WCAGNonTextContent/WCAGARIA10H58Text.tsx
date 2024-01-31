@@ -82,7 +82,7 @@ const WCAGARIA10H58Text: React.FC<WCAGARIA10H58Props> = ({
     const errors: string[] = []
 
     // checks if arialabelledById is an empty string
-    if (ariaLabelledById.replace(' ', '').length < 1) {
+    if (ariaLabelledById.trim().length < 1) {
         errors.push(
             'Your ariaLabelledById attribute hast to have a length of at least one character!'
         )

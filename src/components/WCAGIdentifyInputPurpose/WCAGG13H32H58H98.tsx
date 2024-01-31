@@ -159,7 +159,7 @@ const WCAGG13H32H58H98: React.FC<WCAGG13H32H58H98Props> = ({
     const errors: string[] = []
 
     // checks if formdata.id is an empty string
-    if (formData.id.replace(' ', '').length < 1) {
+    if (formData.id.trim().length < 1) {
         errors.push(
             `Your formData.id attribute has to have a length of at least one character!`
         )
@@ -194,7 +194,7 @@ const WCAGG13H32H58H98: React.FC<WCAGG13H32H58H98Props> = ({
 
     // checks if there is any empty id
     inputData.forEach((data, dataIndex) => {
-        if (data.id.replace(' ', '').length < 1) {
+        if (data.id.trim().length < 1) {
             errors.push(
                 `Your id attribute in inputData[${dataIndex}] has to have a length of at least one character!`
             )

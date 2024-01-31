@@ -21,17 +21,31 @@ const metaARIA2H85: Meta<typeof WCAGARIA2H58H85> = {
                         a select
                     </Title>
                     <Subtitle>
-                        <strong>
-                            This component groups items in a selection list
-                            programmatically and visually. It returns a form
-                            element wrapped around a label which describes the
-                            following select element. Inside the select element
-                            there is also as many optgroup elements with the
-                            corressponing option elements as you wish. It also
-                            allows you to specify the human language your
-                            element uses if it is different than the human
-                            language of your web page.
-                        </strong>
+                        <p>
+                            <strong>
+                                This component fulfils the success criteria{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">
+                                    1.3.1 Info and Relationships
+                                </a>{' '}
+                                and{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">
+                                    3.1.2 Language of Parts
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                This component groups items in a selection list
+                                programmatically and visually. It returns a form
+                                element wrapped around a label which describes
+                                the following select element. Inside the select
+                                element there is also as many optgroup elements
+                                with the corressponing option elements as you
+                                wish. It also allows you to specify the human
+                                language your element uses if it is different
+                                than the human language of your web page.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br />
@@ -285,7 +299,7 @@ type StoryARIA2H85 = StoryObj<typeof WCAGARIA2H58H85>
 
 // WCAGNonTextComponentARIA2H85
 
-export const SeeMultiple: StoryARIA2H85 = {
+export const SeeMultipleTrue: StoryARIA2H85 = {
     render: () => (
         <WCAGARIA2H58H85
             formData={{
@@ -331,7 +345,7 @@ export const SeeMultiple: StoryARIA2H85 = {
     ),
 }
 
-export const SeeMultipleWrong: StoryARIA2H85 = {
+export const SeeMultipleFalse: StoryARIA2H85 = {
     render: () => (
         <WCAGARIA2H58H85
             formData={{ action: '/favorite-food/', method: 'post' }}
@@ -362,6 +376,338 @@ export const SeeMultipleWrong: StoryARIA2H85 = {
                     { value: '7', text: 'Apple Pie' },
                     { value: '8', text: 'Bagel' },
                     { value: '9', text: 'Chocolate Cake' },
+                ],
+            ]}
+        />
+    ),
+}
+
+export const WrongLabelText: StoryARIA2H85 = {
+    render: () => (
+        <WCAGARIA2H58H85
+            formData={{
+                action: '/animals/',
+                method: 'post',
+            }}
+            labelData={{
+                labelText: false,
+            }}
+            selectData={{
+                id: 'animals',
+                seeMultiple: true,
+                name: 'animals',
+                size: 10,
+            }}
+            optionDataGroup={[
+                [{ labelGroup: 'Dinosaurs' }],
+                [{ labelGroup: 'Ungulates' }],
+                [{ labelGroup: 'Household Pets' }],
+            ]}
+            optionData={[
+                [
+                    { value: 'brontosaurus', text: 'Brontosaurus' },
+                    { value: 'pterodactyl', text: 'Pterodactyl' },
+                    { value: 'trex', text: 'T-Rex' },
+                    { value: 'velociraptor', text: 'Velociraptor' },
+                ],
+                [
+                    { value: 'camel', text: 'Camel' },
+                    { value: 'giraffe', text: 'Giraffe' },
+                    { value: 'hippo', text: 'Hippo' },
+                    { value: 'horse', text: 'Horse' },
+                    { value: 'zebra', text: 'Zebra' },
+                ],
+                [
+                    { value: 'cat', text: 'Cat' },
+                    { value: 'dog', text: 'Dog' },
+                    { value: 'fish', text: 'Fish' },
+                    { value: 'rabbit', text: 'Rabbit' },
+                ],
+            ]}
+        />
+    ),
+}
+
+export const WrongSelectData: StoryARIA2H85 = {
+    render: () => (
+        <WCAGARIA2H58H85
+            formData={{
+                action: '/animals/',
+                method: 'post',
+            }}
+            labelData={{
+                labelText: 'Pick your favourite animals:',
+            }}
+            selectData={{
+                id: ' ',
+                seeMultiple: true,
+                name: ' ',
+                size: 10,
+            }}
+            optionDataGroup={[
+                [{ labelGroup: 'Dinosaurs' }],
+                [{ labelGroup: 'Ungulates' }],
+                [{ labelGroup: 'Household Pets' }],
+            ]}
+            optionData={[
+                [
+                    { value: 'brontosaurus', text: 'Brontosaurus' },
+                    { value: 'pterodactyl', text: 'Pterodactyl' },
+                    { value: 'trex', text: 'T-Rex' },
+                    { value: 'velociraptor', text: 'Velociraptor' },
+                ],
+                [
+                    { value: 'camel', text: 'Camel' },
+                    { value: 'giraffe', text: 'Giraffe' },
+                    { value: 'hippo', text: 'Hippo' },
+                    { value: 'horse', text: 'Horse' },
+                    { value: 'zebra', text: 'Zebra' },
+                ],
+                [
+                    { value: 'cat', text: 'Cat' },
+                    { value: 'dog', text: 'Dog' },
+                    { value: 'fish', text: 'Fish' },
+                    { value: 'rabbit', text: 'Rabbit' },
+                ],
+            ]}
+        />
+    ),
+}
+
+export const OneWrongLabelGroup: StoryARIA2H85 = {
+    render: () => (
+        <WCAGARIA2H58H85
+            formData={{ action: '/favorite-food/', method: 'post' }}
+            labelData={{
+                labelText: 'What is your favorite food?',
+            }}
+            selectData={{
+                id: 'food',
+                name: 'food',
+            }}
+            optionDataGroup={[
+                [{ labelGroup: 'Dinosaurs' }],
+                [{ labelGroup: 'Ungulates' }],
+                [{ labelGroup: ' ' }],
+            ]}
+            optionData={[
+                [
+                    { value: '1', text: 'Apples' },
+                    { value: '2', text: 'Bananas' },
+                    { value: '3', text: 'Peaches' },
+                ],
+                [
+                    { value: '4', text: 'Broccoli' },
+                    { value: '5', text: 'Carrots' },
+                    { value: '6', text: 'Cucmbers' },
+                ],
+                [
+                    { value: '7', text: 'Apple Pie' },
+                    { value: '8', text: 'Bagel' },
+                    { value: '9', text: 'Chocolate Cake' },
+                ],
+            ]}
+        />
+    ),
+}
+
+export const AllWrongLabelGroup: StoryARIA2H85 = {
+    render: () => (
+        <WCAGARIA2H58H85
+            formData={{ action: '/favorite-food/', method: 'post' }}
+            labelData={{
+                labelText: 'What is your favorite food?',
+            }}
+            selectData={{
+                id: 'food',
+                name: 'food',
+            }}
+            optionDataGroup={[
+                [{ labelGroup: '' }],
+                [{ labelGroup: ' ' }],
+                [{ labelGroup: '  ' }],
+            ]}
+            optionData={[
+                [
+                    { value: '1', text: 'Apples' },
+                    { value: '2', text: 'Bananas' },
+                    { value: '3', text: 'Peaches' },
+                ],
+                [
+                    { value: '4', text: 'Broccoli' },
+                    { value: '5', text: 'Carrots' },
+                    { value: '6', text: 'Cucmbers' },
+                ],
+                [
+                    { value: '7', text: 'Apple Pie' },
+                    { value: '8', text: 'Bagel' },
+                    { value: '9', text: 'Chocolate Cake' },
+                ],
+            ]}
+        />
+    ),
+}
+
+export const OneWrongText: StoryARIA2H85 = {
+    render: () => (
+        <WCAGARIA2H58H85
+            formData={{ action: '/favorite-food/', method: 'post' }}
+            labelData={{
+                labelText: 'What is your favorite food?',
+            }}
+            selectData={{
+                id: 'food',
+                name: 'food',
+            }}
+            optionDataGroup={[
+                [{ labelGroup: 'Dinosaurs' }],
+                [{ labelGroup: 'Ungulates' }],
+                [{ labelGroup: 'Household Pets' }],
+            ]}
+            optionData={[
+                [
+                    { value: '1', text: 'Item 1' },
+                    { value: '2', text: 'Item 2' },
+                    { value: '3', text: '  ' },
+                ],
+                [
+                    { value: '4', text: 'Item 4' },
+                    { value: '5', text: '   ' },
+                    { value: '6', text: 'Item 6' },
+                ],
+                [
+                    { value: '7', text: '' },
+                    { value: '8', text: 'Item 8' },
+                    { value: '9', text: 'Item 9' },
+                ],
+            ]}
+        />
+    ),
+}
+
+export const AllWrongText: StoryARIA2H85 = {
+    render: () => (
+        <WCAGARIA2H58H85
+            formData={{ action: '/favorite-food/', method: 'post' }}
+            labelData={{
+                labelText: 'What is your favorite food?',
+            }}
+            selectData={{
+                id: 'food',
+                name: 'food',
+            }}
+            optionDataGroup={[
+                [{ labelGroup: 'Dinosaurs' }],
+                [{ labelGroup: 'Ungulates' }],
+                [{ labelGroup: 'Household Pets' }],
+            ]}
+            optionData={[
+                [
+                    { value: '1', text: '' },
+                    { value: '2', text: '' },
+                    { value: '3', text: ' ' },
+                ],
+                [
+                    { value: '4', text: '  ' },
+                    { value: '5', text: '' },
+                    { value: '6', text: '    ' },
+                ],
+                [
+                    { value: '7', text: '' },
+                    { value: '8', text: ' ' },
+                    { value: '9', text: '  ' },
+                ],
+            ]}
+        />
+    ),
+}
+
+export const OneWrongValue: StoryARIA2H85 = {
+    render: () => (
+        <WCAGARIA2H58H85
+            formData={{
+                action: '/animals/',
+                method: 'post',
+            }}
+            labelData={{
+                labelText: 'Pick your favourite animals:',
+            }}
+            selectData={{
+                id: 'food',
+                seeMultiple: true,
+                name: 'food',
+                size: 10,
+            }}
+            optionDataGroup={[
+                [{ labelGroup: 'Dinosaurs' }],
+                [{ labelGroup: 'Ungulates' }],
+                [{ labelGroup: 'Household Pets' }],
+            ]}
+            optionData={[
+                [
+                    { value: '1', text: 'Brontosaurus' },
+                    { value: '2', text: 'Pterodactyl' },
+                    { value: '3', text: 'T-Rex' },
+                    { value: ' ', text: 'Velociraptor' },
+                ],
+                [
+                    { value: '5', text: 'Camel' },
+                    { value: '   ', text: 'Giraffe' },
+                    { value: '7', text: 'Hippo' },
+                    { value: '8', text: 'Horse' },
+                    { value: ' ', text: 'Zebra' },
+                ],
+                [
+                    { value: '10', text: 'Cat' },
+                    { value: '11', text: 'Dog' },
+                    { value: '  ', text: 'Fish' },
+                    { value: ' ', text: 'Rabbit' },
+                ],
+            ]}
+        />
+    ),
+}
+
+export const AllWrongValue: StoryARIA2H85 = {
+    render: () => (
+        <WCAGARIA2H58H85
+            formData={{
+                action: '/animals/',
+                method: 'post',
+            }}
+            labelData={{
+                labelText: 'Pick your favourite animals:',
+            }}
+            selectData={{
+                id: 'food',
+                seeMultiple: true,
+                name: 'food',
+                size: 10,
+            }}
+            optionDataGroup={[
+                [{ labelGroup: 'Dinosaurs' }],
+                [{ labelGroup: 'Ungulates' }],
+                [{ labelGroup: 'Household Pets' }],
+            ]}
+            optionData={[
+                [
+                    { value: '', text: 'Brontosaurus' },
+                    { value: ' ', text: 'Pterodactyl' },
+                    { value: '', text: 'T-Rex' },
+                    { value: '  ', text: 'Velociraptor' },
+                ],
+                [
+                    { value: '', text: 'Camel' },
+                    { value: ' ', text: 'Giraffe' },
+                    { value: ' ', text: 'Hippo' },
+                    { value: '', text: 'Horse' },
+                    { value: '   ', text: 'Zebra' },
+                ],
+                [
+                    { value: '', text: 'Cat' },
+                    { value: ' ', text: 'Dog' },
+                    { value: ' ', text: 'Fish' },
+                    { value: '  ', text: 'Rabbit' },
                 ],
             ]}
         />

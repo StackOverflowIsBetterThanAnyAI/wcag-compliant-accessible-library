@@ -65,21 +65,21 @@ const WCAGH24: React.FC<WCAGH24Props> = ({
     const errors: string[] = []
 
     // checks if mapName is an empty string
-    if (mapName.replace(' ', '').length < 1) {
+    if (mapName.trim().length < 1) {
         errors.push(
             'Your mapName attribute hast to have a length of at least one character!'
         )
     }
 
     // checks if altText is an empty string
-    if (imageData.altText.replace(' ', '').length < 1) {
+    if (imageData.altText.trim().length < 1) {
         errors.push(
             'Your imageData.altText attribute hast to have a length of at least one character!'
         )
     }
 
     // checks if imageSource is an empty string
-    if (imageData.imageSource.replace(' ', '').length < 1) {
+    if (imageData.imageSource.trim().length < 1) {
         errors.push(
             'Your imageData.imageSource attribute hast to have a length of at least one character!'
         )
@@ -87,7 +87,7 @@ const WCAGH24: React.FC<WCAGH24Props> = ({
 
     // checks if coords is an empty string
     areaData.forEach((data, dataIndex) => {
-        if (data.coords.replace(' ', '').length < 1) {
+        if (data.coords.trim().length < 1) {
             errors.push(
                 `Your coords attribute in areaData[${dataIndex}] has to have a length of at least one character!`
             )

@@ -99,14 +99,14 @@ const WCAGG73H58Text: React.FC<WCAGG73H58Props> = ({
     const errors: string[] = []
 
     // checks if parentId is an empty string
-    if (parentId.replace(' ', '').length < 1) {
+    if (parentId.trim().length < 1) {
         errors.push(
             'Your parentId attribute hast to have a length of at least one character!'
         )
     }
 
     // checks if ownId is an empty string
-    if (ownId.replace(' ', '').length < 1) {
+    if (ownId.trim().length < 1) {
         errors.push(
             'Your ownId attribute hast to have a length of at least one character!'
         )

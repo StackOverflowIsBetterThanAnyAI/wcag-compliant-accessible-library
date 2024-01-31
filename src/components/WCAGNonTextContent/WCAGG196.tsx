@@ -55,13 +55,15 @@ const WCAGG196: React.FC<WCAGG196Props> = ({
 }) => {
     const errors: string[] = []
 
-    if (altText.length < 1) {
+    // checks if altText is an empty string
+    if (altText.replace(' ', '').length < 1) {
         errors.push(
             'Your altText attribute hast to have a length of at least one character!'
         )
     }
+    // checks if imageSource is an empty string
     imageData.forEach((data, dataIndex) => {
-        if (data.imageSource.length < 1) {
+        if (data.imageSource.replace(' ', '').length < 1) {
             errors.push(
                 `Your imageSource attribute in imageData[${dataIndex}] has to have a length of at least one character!`
             )

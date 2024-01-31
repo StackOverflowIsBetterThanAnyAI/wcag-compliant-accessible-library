@@ -1,18 +1,9 @@
 import React, { CSSProperties } from 'react'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
-import { LangAttributes } from '../interfaces/LangAttributes'
+import { TableAttributes } from '../interfaces/TableAttributes'
 
 interface WCAGH39H43H51H58H63Props {
-    tableContent: {
-        text: string
-        isHeader?: boolean
-        rowspan?: number
-        colspan?: number
-        headers?: string
-        id?: string
-        lang?: LangAttributes
-        scope?: 'col' | 'colgroup' | 'row' | 'rowgroup'
-    }[][]
+    tableContent: TableAttributes[][]
     tableType: 'data' | 'layout'
     additionalAriaAttributes?: Omit<
         WAIARIAAttributes,

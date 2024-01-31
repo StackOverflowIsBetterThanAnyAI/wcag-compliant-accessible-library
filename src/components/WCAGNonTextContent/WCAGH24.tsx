@@ -64,32 +64,37 @@ const WCAGH24: React.FC<WCAGH24Props> = ({
 }) => {
     const errors: string[] = []
 
-    if (mapName.length < 1) {
+    // checks if mapName is an empty string
+    if (mapName.replace(' ', '').length < 1) {
         errors.push(
             'Your mapName attribute hast to have a length of at least one character!'
         )
     }
 
-    if (imageData.altText.length < 1) {
+    // checks if altText is an empty string
+    if (imageData.altText.replace(' ', '').length < 1) {
         errors.push(
             'Your imageData.altText attribute hast to have a length of at least one character!'
         )
     }
 
-    if (imageData.imageSource.length < 1) {
+    // checks if imageSource is an empty string
+    if (imageData.imageSource.replace(' ', '').length < 1) {
         errors.push(
             'Your imageData.imageSource attribute hast to have a length of at least one character!'
         )
     }
 
+    // checks if coords is an empty string
     areaData.forEach((data, dataIndex) => {
-        if (data.coords.length < 1) {
+        if (data.coords.replace(' ', '').length < 1) {
             errors.push(
                 `Your coords attribute in areaData[${dataIndex}] has to have a length of at least one character!`
             )
         }
     })
 
+    // checks if either an altText or hollow is set
     areaData.forEach((data, dataIndex) => {
         if (!data.hollow && !data.altText) {
             errors.push(
@@ -98,6 +103,7 @@ const WCAGH24: React.FC<WCAGH24Props> = ({
         }
     })
 
+    // checks if either an href or hollow is set
     areaData.forEach((data, dataIndex) => {
         if (!data.hollow && !data.href) {
             errors.push(
@@ -106,6 +112,7 @@ const WCAGH24: React.FC<WCAGH24Props> = ({
         }
     })
 
+    // checks if either an altText and/or href and hollow are set at the same time
     areaData.forEach((data, dataIndex) => {
         if (data.hollow && (data.href || data.altText)) {
             console.warn(

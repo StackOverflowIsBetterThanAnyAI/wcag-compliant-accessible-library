@@ -782,7 +782,7 @@ export const WrongAttributes: StoryWCAGG13H32H58H98 = {
                     ),
                 },
                 {
-                    id: '',
+                    id: ' ',
                     type: 'text',
                     autocomplete: 'family-name',
                     labelText: (
@@ -802,7 +802,7 @@ export const WrongAttributes: StoryWCAGG13H32H58H98 = {
                     ),
                 },
                 {
-                    id: '',
+                    id: ' ',
                     type: 'text',
                     autocomplete: 'cc-name',
                     labelText: (
@@ -818,7 +818,7 @@ export const WrongAttributes: StoryWCAGG13H32H58H98 = {
                     labelText: true,
                 },
                 {
-                    id: '',
+                    id: ' ',
                     type: 'password',
                     autocomplete: 'on',
                     labelText: false,

@@ -20,14 +20,28 @@ const metaG115H49Quote: Meta<typeof WCAGG115H49H58Quote> = {
                         in the human language
                     </Title>
                     <Subtitle>
-                        <strong>
-                            The goal of this component is to mark up the
-                            structure of the web content using appropriate
-                            semantic elements, in this case: the blockquote
-                            element. It also allows you to specify the human
-                            language your element uses if it is different than
-                            the human language of your web page.
-                        </strong>
+                        <p>
+                            <strong>
+                                This component fulfils the success criteria{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">
+                                    1.3.1 Info and Relationships
+                                </a>{' '}
+                                and{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">
+                                    3.1.2 Language of Parts
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                The goal of this component is to mark up the
+                                structure of the web content using appropriate
+                                semantic elements, in this case: the blockquote
+                                element. It also allows you to specify the human
+                                language your element uses if it is different
+                                than the human language of your web page.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br />
@@ -674,10 +688,25 @@ export const QuoteWithSpan: StoryG115H49Quote = {
     render: () => (
         <>
             <WCAGG115H49H58Quote>
-                The greatest glory in living lies not in never falling, but in
-                rising every time we fall.
+                <span>
+                    The greatest glory in living lies not in never falling, but
+                    in rising every time we fall.
+                </span>
             </WCAGG115H49H58Quote>
             <span>-Nelson Mandela</span>
         </>
     ),
+}
+
+export const Number: StoryG115H49Quote = {
+    render: () => (
+        <>
+            <WCAGG115H49H58Quote>{25}</WCAGG115H49H58Quote>
+            -Nelson Mandela
+        </>
+    ),
+}
+
+export const Boolean: StoryG115H49Quote = {
+    render: () => <WCAGG115H49H58Quote>{false}</WCAGG115H49H58Quote>,
 }

@@ -20,14 +20,28 @@ const metaG115H49A: Meta<typeof WCAGG115H49H58A> = {
                         in the human language
                     </Title>
                     <Subtitle>
-                        <strong>
-                            The goal of this component is to mark up the
-                            structure of the web content using appropriate
-                            semantic elements, in this case: the anchor element.
-                            It also allows you to specify the human language
-                            your element uses if it is different than the human
-                            language of your web page.
-                        </strong>
+                        <p>
+                            <strong>
+                                This component fulfils the success criteria{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">
+                                    1.3.1 Info and Relationships
+                                </a>{' '}
+                                and{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">
+                                    3.1.2 Language of Parts
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                The goal of this component is to mark up the
+                                structure of the web content using appropriate
+                                semantic elements, in this case: the anchor
+                                element. It also allows you to specify the human
+                                language your element uses if it is different
+                                than the human language of your web page.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br />
@@ -348,5 +362,17 @@ export const AWithSpan: StoryG115H49A = {
 export const WrongHref: StoryG115H49A = {
     render: () => (
         <WCAGG115H49H58A linkData={{ href: '' }}>Download now!</WCAGG115H49H58A>
+    ),
+}
+
+export const Number: StoryG115H49A = {
+    render: () => (
+        <WCAGG115H49H58A linkData={{ href: '/' }}>{25}</WCAGG115H49H58A>
+    ),
+}
+
+export const Boolean: StoryG115H49A = {
+    render: () => (
+        <WCAGG115H49H58A linkData={{ href: '/' }}>{false}</WCAGG115H49H58A>
     ),
 }

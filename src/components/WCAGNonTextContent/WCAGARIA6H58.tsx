@@ -92,12 +92,14 @@ const WCAGARIA6H58: React.FC<WCAGARIA6H58Props> = ({
 }) => {
     const errors: string[] = []
 
-    if (ariaLabel.length < 1) {
+    // checks if ariaLabel is an empty string
+    if (ariaLabel.replace(' ', '').length < 1) {
         errors.push(
             'Your altText attribute hast to have a length of at least one character!'
         )
     }
 
+    // checks if children have a wrong type
     if (typeof children === 'boolean') {
         errors.push(`Your child element must not be a boolean value!`)
     }

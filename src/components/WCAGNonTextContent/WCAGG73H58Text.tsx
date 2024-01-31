@@ -98,24 +98,28 @@ const WCAGG73H58Text: React.FC<WCAGG73H58Props> = ({
 }) => {
     const errors: string[] = []
 
-    if (parentId.length < 1) {
+    // checks if parentId is an empty string
+    if (parentId.replace(' ', '').length < 1) {
         errors.push(
             'Your parentId attribute hast to have a length of at least one character!'
         )
     }
 
-    if (ownId.length < 1) {
+    // checks if ownId is an empty string
+    if (ownId.replace(' ', '').length < 1) {
         errors.push(
             'Your ownId attribute hast to have a length of at least one character!'
         )
     }
 
+    // checks if children have a wrong type
     if (typeof children === 'boolean' || typeof children === 'number') {
         errors.push(
             `Your child element must not be a ${typeof children} value!`
         )
     }
 
+    // checks if buttonText has a wrong type
     if (typeof buttonText === 'boolean' || typeof buttonText === 'number') {
         errors.push(
             `Your buttonText element must not be a ${typeof buttonText} value!`

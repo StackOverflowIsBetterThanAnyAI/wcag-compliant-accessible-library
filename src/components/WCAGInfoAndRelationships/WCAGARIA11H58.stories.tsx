@@ -74,9 +74,6 @@ const metaARIA11: Meta<typeof WCAGARIA11H58> = {
                                         >
                                             name
                                         </th>
-                                        <th style={{ textAlign: 'left' }}>
-                                            information
-                                        </th>
                                     </tr>
                                     <tr>
                                         <td>banner</td>
@@ -290,14 +287,30 @@ type StoryARIA11 = StoryObj<typeof WCAGARIA11H58>
 export const AllRoles: StoryARIA11 = {
     render: () => (
         <>
-            <WCAGARIA11H58 role="banner">Banner</WCAGARIA11H58>
-            <WCAGARIA11H58 role="search">Search</WCAGARIA11H58>
-            <WCAGARIA11H58 role="navigation">Navigation</WCAGARIA11H58>
-            <WCAGARIA11H58 role="form">Form</WCAGARIA11H58>
-            <WCAGARIA11H58 role="main">Main</WCAGARIA11H58>
-            <WCAGARIA11H58 role="region">Region</WCAGARIA11H58>
-            <WCAGARIA11H58 role="complementary">Complementary</WCAGARIA11H58>
-            <WCAGARIA11H58 role="contentinfo">Contentinfo</WCAGARIA11H58>
+            <WCAGARIA11H58 role="banner" ariaLabel="Banner">
+                Banner
+            </WCAGARIA11H58>
+            <WCAGARIA11H58 role="search" ariaLabel="Search">
+                Search
+            </WCAGARIA11H58>
+            <WCAGARIA11H58 role="navigation" ariaLabel="Navigation">
+                Navigation
+            </WCAGARIA11H58>
+            <WCAGARIA11H58 role="form" ariaLabel="Form">
+                Form
+            </WCAGARIA11H58>
+            <WCAGARIA11H58 role="main" ariaLabel="Main">
+                Main
+            </WCAGARIA11H58>
+            <WCAGARIA11H58 role="region" ariaLabel="Region">
+                Region
+            </WCAGARIA11H58>
+            <WCAGARIA11H58 role="complementary" ariaLabel="Complementary">
+                Complementary
+            </WCAGARIA11H58>
+            <WCAGARIA11H58 role="contentinfo" ariaLabel="Contentinfo">
+                Contentinfo
+            </WCAGARIA11H58>
         </>
     ),
 }
@@ -379,6 +392,28 @@ export const AriaLabel: StoryARIA11 = {
 export const Search: StoryARIA11 = {
     render: () => (
         <WCAGARIA11H58 role="search" ariaLabelledById="search-label">
+            <>
+                <label
+                    htmlFor="product-search"
+                    id="search-label"
+                    style={{ paddingRight: '2px' }}
+                >
+                    Search
+                </label>
+                <input
+                    id="product-search"
+                    placeholder="title, author, or ISBN"
+                    type="text"
+                />
+                <button type="submit">Find Books</button>
+            </>
+        </WCAGARIA11H58>
+    ),
+}
+
+export const NoAriaLabelAndNoAriaLabelledById: StoryARIA11 = {
+    render: () => (
+        <WCAGARIA11H58 role="search">
             <>
                 <label
                     htmlFor="product-search"

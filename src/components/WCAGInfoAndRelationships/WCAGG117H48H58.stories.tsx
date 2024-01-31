@@ -21,14 +21,28 @@ const metaG117H48: Meta<typeof WCAGG117H48H58> = {
                         in the human language
                     </Title>
                     <Subtitle>
-                        <strong>
-                            The goal of this component is to create lists of
-                            related items using list elements appropriate for
-                            their purpuses (ul, ol and dl elements). It also
-                            allows you to specify the human language each
-                            element uses if it is different than the human
-                            language of your web page.
-                        </strong>
+                        <p>
+                            <strong>
+                                This component fulfils the success criteria{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">
+                                    1.3.1 Info and Relationships
+                                </a>{' '}
+                                and{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">
+                                    3.1.2 Language of Parts
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                The goal of this component is to create lists of
+                                related items using list elements appropriate
+                                for their purpuses (ul, ol and dl elements). It
+                                also allows you to specify the human language
+                                each element uses if it is different than the
+                                human language of your web page.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br />
@@ -123,7 +137,8 @@ const metaG117H48: Meta<typeof WCAGG117H48H58> = {
                                 child: ReactNode
                             </strong>{' '}
                             element. But watch out: It has to be a sequence of
-                            either ul, ol or dt/dd items.
+                            either li or dt/dd items. It cannot be wrapped
+                            inside a wrapper!
                         </p>
                         <p>
                             If the human language inside your html element is
@@ -424,7 +439,7 @@ type StoryG117H48 = StoryObj<typeof WCAGG117H48H58>
 
 // WCAGNonTextComponentG117H48
 
-export const OrderedAnimalsWithChildren: StoryG117H48 = {
+export const OrderedItemsWithChildren: StoryG117H48 = {
     render: () => (
         <WCAGG117H48H58 listType="ordered">
             <li>
@@ -450,7 +465,7 @@ export const OrderedAnimalsWithChildren: StoryG117H48 = {
     ),
 }
 
-export const OrderedAnimals: StoryG117H48 = {
+export const OrderedItems: StoryG117H48 = {
     render: () => (
         <WCAGG117H48H58
             listType="ordered"
@@ -477,7 +492,7 @@ export const OrderedAnimals: StoryG117H48 = {
     ),
 }
 
-export const UnorderedAnimals: StoryG117H48 = {
+export const UnorderedItems: StoryG117H48 = {
     render: () => (
         <WCAGG117H48H58
             listType="unordered"
@@ -550,4 +565,44 @@ export const DescriptionWithMapping: StoryG117H48 = {
             ]}
         ></WCAGG117H48H58>
     ),
+}
+
+export const WrappedChildren: StoryG117H48 = {
+    render: () => (
+        <WCAGG117H48H58 listType="ordered">
+            <>
+                <li>
+                    <a href="kitchen.html">
+                        <strong>Kitchen (new)</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="bedbath.html">
+                        <strong>Bed &amp; Bath (new)</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="dining.html">Fine Dining</a>
+                </li>
+                <li>
+                    <a href="lighting.html">Lighting</a>
+                </li>
+                <li>
+                    <a href="storage.html">Storage</a>
+                </li>
+            </>
+        </WCAGG117H48H58>
+    ),
+}
+
+export const WrongChildren: StoryG117H48 = {
+    render: () => (
+        <WCAGG117H48H58 listType="ordered">
+            <div>wrong children</div>
+        </WCAGG117H48H58>
+    ),
+}
+
+export const NoChildAndNoListData: StoryG117H48 = {
+    render: () => <WCAGG117H48H58 listType="ordered"></WCAGG117H48H58>,
 }

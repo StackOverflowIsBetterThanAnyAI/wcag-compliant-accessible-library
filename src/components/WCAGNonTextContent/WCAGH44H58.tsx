@@ -105,9 +105,11 @@ const WCAGH44H58: React.FC<WCAGH44H58Props> = ({
     onClickFunction,
     role,
 }) => {
+    // stores checked / unchecked values for checkbox and radio
     const [checkedStatesRadioCheckbox, setCheckedStatesRadioCheckbox] =
         useState(inputData.map((data) => data?.checked ?? false))
 
+    // stores values for any other input type than checkbox and radio
     const [inputValues, setInputValues] = useState<string[]>(
         inputData.map((data) => data?.value || '')
     )
@@ -133,6 +135,7 @@ const WCAGH44H58: React.FC<WCAGH44H58Props> = ({
         onClickFunction && onClickFunction()
     }
 
+    // role = 'menu' can only be set if this function returns false
     const hasNumberGreaterThanOne = (value: string | undefined): boolean => {
         if (!value) return true
         const numericValue = parseInt(value, 10)
@@ -189,16 +192,18 @@ const WCAGH44H58: React.FC<WCAGH44H58Props> = ({
         }
     })
 
+    // checks if id is an empty string
     inputData.forEach((data, dataIndex) => {
-        if (data.id.length < 1) {
+        if (data.id.replace(' ', '').length < 1) {
             errors.push(
                 `Your id attribute in inputData[${dataIndex}] has to have a length of at least one character!`
             )
         }
     })
 
+    // checks if name is an empty string
     inputData.forEach((data, dataIndex) => {
-        if (data.name.length < 1) {
+        if (data.name.replace(' ', '').length < 1) {
             errors.push(
                 `Your name attribute in inputData[${dataIndex}] has to have a length of at least one character!`
             )

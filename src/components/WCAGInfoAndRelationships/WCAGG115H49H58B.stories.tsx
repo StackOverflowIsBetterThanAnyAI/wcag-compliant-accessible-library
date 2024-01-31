@@ -20,14 +20,28 @@ const metaG115H49B: Meta<typeof WCAGG115H49H58B> = {
                         in the human language
                     </Title>
                     <Subtitle>
-                        <strong>
-                            The goal of this component is to mark up the
-                            structure of the web content using appropriate
-                            semantic elements, in this case: the b element. It
-                            also allows you to specify the human language your
-                            element uses if it is different than the human
-                            language of your web page.
-                        </strong>
+                        <p>
+                            <strong>
+                                This component fulfils the success criteria{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">
+                                    1.3.1 Info and Relationships
+                                </a>{' '}
+                                and{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">
+                                    3.1.2 Language of Parts
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                The goal of this component is to mark up the
+                                structure of the web content using appropriate
+                                semantic elements, in this case: the b element.
+                                It also allows you to specify the human language
+                                your element uses if it is different than the
+                                human language of your web page.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br />
@@ -664,4 +678,17 @@ export const BWtihSpan: StoryG115H49B = {
             .
         </div>
     ),
+}
+
+export const Number: StoryG115H49B = {
+    render: () => (
+        <div>
+            Hello, my favourite number is{' '}
+            <WCAGG115H49H58B>{25}</WCAGG115H49H58B>.
+        </div>
+    ),
+}
+
+export const Boolean: StoryG115H49B = {
+    render: () => <WCAGG115H49H58B>{false}</WCAGG115H49H58B>,
 }

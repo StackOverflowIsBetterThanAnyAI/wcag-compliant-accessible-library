@@ -81,13 +81,15 @@ const WCAGARIA15H58Text: React.FC<WCAGARIA15H58Props> = ({
 }) => {
     const errors: string[] = []
 
-    if (accessibleId.length < 1) {
+    // checks if accessibleId is an empty string
+    if (accessibleId.replace(' ', '').length < 1) {
         errors.push(
             'Your accessibleId attribute hast to have a length of at least one character!'
         )
     }
 
-    if (children.length < 1) {
+    // checks if children is an empty string
+    if (children.replace(' ', '').length < 1) {
         errors.push(
             'Your child element hast to have a length of at least one character!'
         )

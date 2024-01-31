@@ -18,13 +18,27 @@ const metaARIA12: Meta<typeof WCAGARIA12H58> = {
                         in the human language
                     </Title>
                     <Subtitle>
-                        <strong>
-                            This component adds a way for assistive technologies
-                            to identify some content as a heading. It also
-                            allows you to specify the human language your
-                            element uses if it is different than the human
-                            language of your web page.
-                        </strong>
+                        <p>
+                            <strong>
+                                This component fulfils the success criteria{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">
+                                    1.3.1 Info and Relationships
+                                </a>{' '}
+                                and{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">
+                                    3.1.2 Language of Parts
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                This component adds a way for assistive
+                                technologies to identify some content as a
+                                heading. It also allows you to specify the human
+                                language your element uses if it is different
+                                than the human language of your web page.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br />
@@ -243,6 +257,30 @@ export const ZeroValue: StoryARIA12 = {
     render: () => (
         <>
             <WCAGARIA12H58 ariaLevel={0}>Headline Level 0</WCAGARIA12H58>
+        </>
+    ),
+}
+
+export const NegativeValue: StoryARIA12 = {
+    render: () => (
+        <>
+            <WCAGARIA12H58 ariaLevel={-1}>Headline Level 0</WCAGARIA12H58>
+        </>
+    ),
+}
+
+export const NumberChild: StoryARIA12 = {
+    render: () => (
+        <>
+            <WCAGARIA12H58 ariaLevel={1}>{25}</WCAGARIA12H58>
+        </>
+    ),
+}
+
+export const BooleanChild: StoryARIA12 = {
+    render: () => (
+        <>
+            <WCAGARIA12H58 ariaLevel={1}>{false}</WCAGARIA12H58>
         </>
     ),
 }

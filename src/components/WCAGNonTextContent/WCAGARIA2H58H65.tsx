@@ -82,6 +82,7 @@ const WCAGARIA2H58H65: React.FC<WCAGARIA2H58H65Props> = ({
     role,
     title,
 }) => {
+    // stores the pre-set and real-time value of the input
     const [inputValue, setInputValue] = useState<string | number | undefined>(
         inputData?.value || ''
     )
@@ -94,7 +95,8 @@ const WCAGARIA2H58H65: React.FC<WCAGARIA2H58H65Props> = ({
         }
     }
     try {
-        if (title.length < 1) {
+        // checks if title is an empty string
+        if (title.replace(' ', '').length < 1) {
             throw new Error(
                 'Your title attribute hast to have a length of at least one character!'
             )

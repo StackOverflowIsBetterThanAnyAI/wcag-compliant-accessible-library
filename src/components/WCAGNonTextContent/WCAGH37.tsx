@@ -55,13 +55,15 @@ const WCAGH37: React.FC<WCAGH37Props> = ({
 }) => {
     const errors: string[] = []
 
-    if (altText.length < 1) {
+    // checks if altText is an empty string
+    if (altText.replace(' ', '').length < 1) {
         errors.push(
             'Your altText attribute hast to have a length of at least one character!'
         )
     }
 
-    if (imageData.imageSource.length < 1) {
+    // checks if imageSource is an empty string
+    if (imageData.imageSource.replace(' ', '').length < 1) {
         errors.push(
             'Your imageData.imageSource attribute hast to have a length of at least one character!'
         )

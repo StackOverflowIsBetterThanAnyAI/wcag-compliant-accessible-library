@@ -4,11 +4,6 @@ import { LangAttributes } from '../interfaces/LangAttributes'
 
 interface WCAGG117H48H58Props {
     listType: 'description' | 'ordered' | 'unordered'
-    listItems?: {
-        itemName: string
-        lang?: LangAttributes
-        new?: boolean
-    }[]
     additionalAriaAttributes?: Omit<
         WAIARIAAttributes,
         | 'autocomplete'
@@ -54,10 +49,23 @@ interface WCAGG117H48H58Props {
         | 'tablist'
         | 'toolbar'
         | 'tree' //should be avoided
-    children?: ReactNode
 }
 
-const WCAGG117H48H58: React.FC<WCAGG117H48H58Props> = ({
+type ConditionalProps =
+    | {
+          listItems?: {
+              itemName: string
+              lang?: LangAttributes
+              new?: boolean
+          }[]
+          children?: never
+      }
+    | {
+          listItems?: never
+          children?: ReactNode
+      }
+
+const WCAGG117H48H58: React.FC<WCAGG117H48H58Props & ConditionalProps> = ({
     additionalAriaAttributes,
     additionalStylingChildren,
     additionalStylingParent,
@@ -68,6 +76,38 @@ const WCAGG117H48H58: React.FC<WCAGG117H48H58Props> = ({
     role,
     children,
 }) => {
+    const errors: string[] = []
+
+    // checks if there are neither children nur listItems
+    if (!listItems && !children) {
+        errors.push(
+            `You have to either provide a value for "listItems" or "children"!`
+        )
+    }
+
+    // checks if children contain either <li>, <dd> or <dt> elements
+    if (
+        children &&
+        React.Children.toArray(children).some(
+            (child) =>
+                !React.isValidElement(child) ||
+                (child.type !== 'li' &&
+                    child.type !== 'dd' &&
+                    child.type !== 'dt')
+        )
+    ) {
+        errors.push(
+            'Your child elements must be a sequence of <li>, <dd>, or <dt> elements!'
+        )
+    }
+
+    if (errors.length) {
+        for (let i in errors) {
+            console.error(errors[i])
+        }
+        return
+    }
+
     switch (listType) {
         case 'description':
             return (

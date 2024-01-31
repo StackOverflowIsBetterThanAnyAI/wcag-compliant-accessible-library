@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactNode } from 'react'
+import React, { CSSProperties, ReactElement, ReactNode } from 'react'
 import { WAIARIAAttributes } from '../interfaces/WAIARIAAttributes'
 import { LinkAttributes } from '../interfaces/LinkAttributes'
 import { LangAttributes } from '../interfaces/LangAttributes'
@@ -46,15 +46,6 @@ interface WCAGG117H58H97H101Props {
     ariaLabelledById?: string
     className?: string
     headline?: string
-    listData?: (LinkAttributes & {
-        displayedName: ReactNode
-        href: string
-        lang?: LangAttributes
-        new?: boolean
-        onClickFunction?: () => void
-        onFocusFunction?: () => void
-        onHoverFunction?: () => void
-    })[]
     role?:
         | 'doc-index'
         | 'doc-pagelist'
@@ -63,10 +54,29 @@ interface WCAGG117H58H97H101Props {
         | 'menubar'
         | 'presentation'
         | 'tablist'
-    children?: ReactNode
 }
 
-const WCAGG117H58H97H101: React.FC<WCAGG117H58H97H101Props> = ({
+type ConditionalProps =
+    | {
+          listData?: (LinkAttributes & {
+              displayedText: ReactNode
+              href: string
+              lang?: LangAttributes
+              new?: boolean
+              onClickFunction?: () => void
+              onFocusFunction?: () => void
+              onHoverFunction?: () => void
+          })[]
+          children?: never
+      }
+    | {
+          listData?: never
+          children?: ReactElement<{ type: 'ul' }>
+      }
+
+const WCAGG117H58H97H101: React.FC<
+    WCAGG117H58H97H101Props & ConditionalProps
+> = ({
     additionalAriaAttributes,
     ariaLabel,
     ariaLabelledById,
@@ -77,6 +87,51 @@ const WCAGG117H58H97H101: React.FC<WCAGG117H58H97H101Props> = ({
     role,
     children,
 }) => {
+    const errors: string[] = []
+
+    // checks if there are neither children nor a listData object array
+    if (!children && !listData) {
+        errors.push('Specify either "children" or "listData"!')
+    }
+
+    // checks if the child element is a <ul> element
+    if (
+        children &&
+        (!React.isValidElement(children) || children.type !== 'ul')
+    ) {
+        errors.push('Your child element must be a <ul> element!')
+    }
+
+    // checks if displayedText has a wrong type
+    listData &&
+        listData.forEach((data, dataIndex) => {
+            if (
+                typeof data.displayedText === 'boolean' ||
+                typeof data.displayedText === 'number'
+            ) {
+                errors.push(
+                    `Your displayedText attribute in listData[${dataIndex}] must not be a ${typeof data.displayedText} value!`
+                )
+            }
+        })
+
+    //checks if href is an empty string
+    listData &&
+        listData.forEach((data, dataIndex) => {
+            if (data.href.replace(' ', '').length < 1) {
+                errors.push(
+                    `Your href attribute in listData[${dataIndex}] has to have a length of at least one character!`
+                )
+            }
+        })
+
+    if (errors.length) {
+        for (let i in errors) {
+            console.error(errors[i])
+        }
+        return
+    }
+
     return (
         <nav
             aria-labelledby={
@@ -145,9 +200,9 @@ const WCAGG117H58H97H101: React.FC<WCAGG117H58H97H101Props> = ({
                             style={{ ...data?.additionalStyling }}
                         >
                             {data?.new ? (
-                                <strong>{data.displayedName}</strong>
+                                <strong>{data.displayedText}</strong>
                             ) : (
-                                data.displayedName
+                                data.displayedText
                             )}
                         </a>
                     </li>

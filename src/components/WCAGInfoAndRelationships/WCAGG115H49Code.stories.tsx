@@ -17,11 +17,22 @@ const metaG115H49Code: Meta<typeof WCAGG115H49HCode> = {
                         special text
                     </Title>
                     <Subtitle>
-                        <strong>
-                            The goal of this component is to mark up the
-                            structure of the web content using appropriate
-                            semantic elements, in this case: the code element.
-                        </strong>
+                        <p>
+                            <strong>
+                                This component fulfils success criterion{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">
+                                    1.3.1 Info and Relationships
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                The goal of this component is to mark up the
+                                structure of the web content using appropriate
+                                semantic elements, in this case: the code
+                                element.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br />
@@ -634,4 +645,12 @@ export const CodeWithSpan: StoryG115H49Code = {
             <span>let num: number = 15</span>
         </WCAGG115H49HCode>
     ),
+}
+
+export const Number: StoryG115H49Code = {
+    render: () => <WCAGG115H49HCode>{25}</WCAGG115H49HCode>,
+}
+
+export const Boolean: StoryG115H49Code = {
+    render: () => <WCAGG115H49HCode>{false}</WCAGG115H49HCode>,
 }

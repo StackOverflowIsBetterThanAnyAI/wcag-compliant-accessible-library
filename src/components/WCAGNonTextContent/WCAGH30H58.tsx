@@ -74,18 +74,21 @@ const WCAGH39H58: React.FC<WCAGH39H58Props> = ({
 }) => {
     const errors: string[] = []
 
-    if (link.length < 1) {
+    // checks if link is an empty string
+    if (link.replace(' ', '').length < 1) {
         errors.push(
             'Your link attribute hast to have a length of at least one character!'
         )
     }
 
+    // checks for wrong text types
     if (typeof preImageText === 'boolean' || typeof preImageText === 'number') {
         errors.push(
             `Your preImageText element must not be a ${typeof preImageText} value!`
         )
     }
 
+    // checks for wrong text types
     if (
         typeof postImageText === 'boolean' ||
         typeof postImageText === 'number'
@@ -95,15 +98,17 @@ const WCAGH39H58: React.FC<WCAGH39H58Props> = ({
         )
     }
 
+    // checks for empty imageSource
     imageData &&
         imageData.forEach((data, dataIndex) => {
-            if (data.imageSource.length < 1) {
+            if (data.imageSource.replace(' ', '').length < 1) {
                 errors.push(
                     `Your imageSource attribute in imageData[${dataIndex}] has to have a length of at least one character!`
                 )
             }
         })
 
+    // checks if there is any text or altText
     let altTextErrorPushed = false
 
     imageData &&

@@ -74,17 +74,20 @@ const WCAGH2H58: React.FC<WCAGH2H58Props> = ({
 }) => {
     const errors: string[] = []
 
+    // checks if children have a wrong type
     if (typeof children === 'boolean' || typeof children === 'number') {
         errors.push('Your child element must not be a boolean or number value!')
     }
 
-    if (link.length < 1) {
+    // checks if link is an empty string
+    if (link.replace(' ', '').length < 1) {
         errors.push(
             'Your link attribute hast to have a length of at least one character!'
         )
     }
 
-    if (imageData.imageSource.length < 1) {
+    // checks if imageSource is an empty string
+    if (imageData.imageSource.replace(' ', '').length < 1) {
         errors.push(
             'Your imageData.imageSource attribute hast to have a length of at least one character!'
         )

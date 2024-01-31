@@ -23,17 +23,36 @@ const metaG117H97H101: Meta<typeof WCAGG117H58H97H101> = {
                         of a page
                     </Title>
                     <Subtitle>
-                        <strong>
-                            The goal of this component is to group navigation
-                            links using the nav element. This also means that
-                            programmatic access to sections of a web page is
-                            provided by using a landmark role. Because this
-                            component returns a list, there is also an option to
-                            highlight recently added items in these lists. It
-                            also allows you to specify the human language your
-                            element uses if it is different than the human
-                            language of your web page.
-                        </strong>
+                        <p>
+                            <strong>
+                                This component fulfils the success criteria{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">
+                                    1.3.1 Info and Relationships
+                                </a>
+                                ,{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/bypass-blocks">
+                                    2.4.1 Bypass Blocks
+                                </a>{' '}
+                                and{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">
+                                    3.1.2 Language of Parts
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                The goal of this component is to group
+                                navigation links using the nav element. This
+                                also means that programmatic access to sections
+                                of a web page is provided by using a landmark
+                                role. Because this component returns a list,
+                                there is also an option to highlight recently
+                                added items in these lists. It also allows you
+                                to specify the human language your element uses
+                                if it is different than the human language of
+                                your web page.
+                            </strong>
+                        </p>
                         <p>
                             Abstract code preview:
                             <br />
@@ -79,7 +98,7 @@ const metaG117H97H101: Meta<typeof WCAGG117H58H97H101> = {
                             <strong>listData</strong> object array with its
                             mandatory parameters{' '}
                             <strong style={{ color: '#ff0000' }}>
-                                listData.displayedName: ReactNode and
+                                listData.displayedText: ReactNode and
                                 listData.href: string
                             </strong>
                             . If you mark an item as{' '}
@@ -91,7 +110,7 @@ const metaG117H97H101: Meta<typeof WCAGG117H58H97H101> = {
                             <strong>_blank</strong> which means that the link is
                             opened in a new window, you should either add a
                             little bit of text to the{' '}
-                            <strong>listData.displayedName</strong> variable
+                            <strong>listData.displayedText</strong> variable
                             that explains that the link is opened in a new tab,
                             or add an alert that does the same. If you do so,
                             you automatically fulfil{' '}
@@ -326,9 +345,9 @@ export const AriaLabelledBy: StoryG117H97H101 = {
             ariaLabelledById="site-nav-heading"
             headline="Site"
             listData={[
-                { displayedName: 'News', href: '/news' },
-                { displayedName: 'Weather (new)', href: '/weather', new: true },
-                { displayedName: 'Sport', href: '/sport' },
+                { displayedText: 'News', href: '/news' },
+                { displayedText: 'Weather (new)', href: '/weather', new: true },
+                { displayedText: 'Sport', href: '/sport' },
             ]}
         />
     ),
@@ -339,9 +358,9 @@ export const AriaLabel: StoryG117H97H101 = {
         <WCAGG117H58H97H101
             ariaLabel="Navigation"
             listData={[
-                { displayedName: 'News', href: '/news' },
-                { displayedName: 'Weather (new)', href: '/weather', new: true },
-                { displayedName: 'Sport', href: '/sport' },
+                { displayedText: 'News', href: '/news' },
+                { displayedText: 'Weather (new)', href: '/weather', new: true },
+                { displayedText: 'Sport', href: '/sport' },
             ]}
         />
     ),
@@ -349,7 +368,7 @@ export const AriaLabel: StoryG117H97H101 = {
 
 export const Children: StoryG117H97H101 = {
     render: () => (
-        <WCAGG117H58H97H101 ariaLabel="Navigation" listData={[]}>
+        <WCAGG117H58H97H101 ariaLabel="Navigation">
             <ul>
                 <li style={{ color: 'red' }}>
                     <a
@@ -373,4 +392,31 @@ export const Children: StoryG117H97H101 = {
             </ul>
         </WCAGG117H58H97H101>
     ),
+}
+
+export const WrongChildren: StoryG117H97H101 = {
+    render: () => (
+        <WCAGG117H58H97H101 ariaLabel="Navigation">
+            <div>
+                <a href="#">Bikes</a>
+            </div>
+        </WCAGG117H58H97H101>
+    ),
+}
+
+export const WrongListDataItems: StoryG117H97H101 = {
+    render: () => (
+        <WCAGG117H58H97H101
+            ariaLabel="Navigation"
+            listData={[
+                { displayedText: 187, href: '' },
+                { displayedText: false, href: '', new: true },
+                { displayedText: true, href: '' },
+            ]}
+        />
+    ),
+}
+
+export const NoListDataAndNoChildren: StoryG117H97H101 = {
+    render: () => <WCAGG117H58H97H101 ariaLabel="Navigation" />,
 }

@@ -96,19 +96,22 @@ const WCAGG74G92H58: React.FC<WCAGG74G92H58Props> = ({
 }) => {
     const errors: string[] = []
 
+    // checks if children have a wrong type
     if (typeof children === 'boolean' || typeof children === 'number') {
         errors.push(
             `Your child element must not be a ${typeof children} value!`
         )
     }
 
+    // checks if shortText has a wrong type
     if (typeof shortText === 'boolean' || typeof shortText === 'number') {
         errors.push(
             `Your shortText element must not be a ${typeof children} value!`
         )
     }
 
-    if (accessibleIds.length < 1) {
+    // checks if accessibleIds is an empty string
+    if (accessibleIds.replace(' ', '').length < 1) {
         errors.push(
             'Your accessibleIds attribute hast to have a length of at least one character!'
         )

@@ -22,6 +22,18 @@ const metaG115H49Cite: Meta<typeof WCAGG115H49H58Cite> = {
                     <Subtitle>
                         <p>
                             <strong>
+                                This component fulfils the success criteria{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">
+                                    1.3.1 Info and Relationships
+                                </a>{' '}
+                                and{' '}
+                                <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">
+                                    3.1.2 Language of Parts
+                                </a>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
                                 The goal of this component is to mark up the
                                 structure of the web content using appropriate
                                 semantic elements, in this case: the cite
@@ -658,4 +670,12 @@ export const CiteWithSpan: StoryG115H49Cite = {
             <span>Michael Smiths, 1999</span>
         </WCAGG115H49H58Cite>
     ),
+}
+
+export const Number: StoryG115H49Cite = {
+    render: () => <WCAGG115H49H58Cite>{25}</WCAGG115H49H58Cite>,
+}
+
+export const Boolean: StoryG115H49Cite = {
+    render: () => <WCAGG115H49H58Cite>{false}</WCAGG115H49H58Cite>,
 }

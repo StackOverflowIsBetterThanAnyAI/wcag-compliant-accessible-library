@@ -81,12 +81,14 @@ const WCAGARIA10H58Text: React.FC<WCAGARIA10H58Props> = ({
 }) => {
     const errors: string[] = []
 
-    if (ariaLabelledById.length < 1) {
+    // checks if arialabelledById is an empty string
+    if (ariaLabelledById.replace(' ', '').length < 1) {
         errors.push(
             'Your ariaLabelledById attribute hast to have a length of at least one character!'
         )
     }
 
+    // checks if children have a wrong type
     if (typeof children === 'boolean' || typeof children === 'number') {
         errors.push(
             `Your child element must not be a ${typeof children} value!`

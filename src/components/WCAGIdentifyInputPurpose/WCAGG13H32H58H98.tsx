@@ -158,12 +158,14 @@ const WCAGG13H32H58H98: React.FC<WCAGG13H32H58H98Props> = ({
 }) => {
     const errors: string[] = []
 
-    if (formData.id.length < 1) {
+    // checks if formdata.id is an empty string
+    if (formData.id.replace(' ', '').length < 1) {
         errors.push(
             `Your formData.id attribute has to have a length of at least one character!`
         )
     }
 
+    // checks if you are allowed to use no autocompletion
     inputData.forEach((data, dataIndex) => {
         if (data.autocomplete === 'off' && data.type !== 'password') {
             errors.push(
@@ -172,6 +174,7 @@ const WCAGG13H32H58H98: React.FC<WCAGG13H32H58H98Props> = ({
         }
     })
 
+    // checks if labelText has a wrong type
     inputData.forEach((data, dataIndex) => {
         if (typeof data.labelText === 'boolean') {
             errors.push(
@@ -180,6 +183,7 @@ const WCAGG13H32H58H98: React.FC<WCAGG13H32H58H98Props> = ({
         }
     })
 
+    // checks if you are using the correct autocomplete value if your input type is 'password'
     inputData.forEach((data, dataIndex) => {
         if (data.type === 'password' && data.autocomplete !== 'off') {
             errors.push(
@@ -188,14 +192,16 @@ const WCAGG13H32H58H98: React.FC<WCAGG13H32H58H98Props> = ({
         }
     })
 
+    // checks if there is any empty id
     inputData.forEach((data, dataIndex) => {
-        if (data.id.length < 1) {
+        if (data.id.replace(' ', '').length < 1) {
             errors.push(
                 `Your id attribute in inputData[${dataIndex}] has to have a length of at least one character!`
             )
         }
     })
 
+    // checks if changedContextText has a wrong type
     if (
         typeof changedContextText === 'number' ||
         typeof changedContextText === 'boolean'

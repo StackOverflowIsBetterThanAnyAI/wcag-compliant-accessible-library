@@ -36,5 +36,5 @@
         "skipLibCheck": true
     },
     "include": ["src/**/*.ts", "src/**/*.tsx"],
-    "exclude": ["dist", "node_modules"]
+    "exclude": ["dist", "node_modules", "**/*.stories.tsx"]
 }

@@ -4,7 +4,7 @@
 
 Using npm:
 
-<code>$ npm i wcag-compliant-accessible-library</code>
+<code>$ npm i wcag-compliant-accessible-library</code><button onClick="(function() {navigator.clipboard.writeText(npm i wcag-compliant-accessible-library)})">Copy</button>
 
 <h2>Usage</h2>
 

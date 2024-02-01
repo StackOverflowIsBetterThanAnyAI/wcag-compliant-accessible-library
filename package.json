@@ -1,6 +1,6 @@
 {
     "name": "wcag-compliant-accessible-library",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
@@ -14,6 +14,19 @@
         "build-storybook": "storybook build",
         "chromatic": "npx chromatic --project-token=chpt_f9daac5ac324b13"
     },
+    "keywords": [
+        "a11y",
+        "accessibility",
+        "aria",
+        "assistive technology",
+        "identify input purpose",
+        "info and relationships",
+        "non-text content",
+        "standard",
+        "wai-aria",
+        "wcag",
+        "web accessibility"
+    ],
     "author": {
         "name": "StackOverflowIsBetterThanAnyAI"
     },

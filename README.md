@@ -28,7 +28,7 @@ Using npm:
 
 <code>$ npm i wcag-compliant-accessible-library</code>
 
-
+<br/>
 
 <h2>Usage</h2>
 
@@ -54,21 +54,21 @@ import WCAGH2H58 from 'WCAGNonTextContent/WCAGH2H58'
 
 ```
 
-
+<br/>
 
 <h2>What is it about?</h2>
 
-
+<br/>
 
 <h2>Content</h2>
 
-
+<br/>
 
 <h2>Documentation</h2>
 
 <a href="https://65bb731e4f345bcada479e35-sofvqptifk.chromatic.com/">You can find the Storybook here.</a>
 
-
+<br/>
 
 <h2>License</h2>
 

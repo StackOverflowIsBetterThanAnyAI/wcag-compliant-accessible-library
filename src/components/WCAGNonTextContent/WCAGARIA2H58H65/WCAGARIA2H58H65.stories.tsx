@@ -55,7 +55,7 @@ const metaARIA2H65: Meta<typeof WCAGARIA2H58H65> = {
                             Abstract code preview:
                             <br />
                             <code>
-                                &lt;/input title="description" lang="de"&gt;
+                                &lt;input title="description" lang="de" /&gt;
                             </code>
                         </p>
                         <p style={{ textAlign: 'center' }}>

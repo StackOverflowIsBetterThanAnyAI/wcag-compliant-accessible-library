@@ -114,19 +114,66 @@ These defined techniques and components have been implemented in this library:
 
 <a href="https://65bb731e4f345bcada479e35-sofvqptifk.chromatic.com/">You can find the Storybook here.</a>
 
-WCAGNonTextContent:
+The technologies used are listed in sequence according to the WCAG prefix.
+
+They start with either ARIA, G or H.
+
+<em>WCAGNonTextContent</em>:
 
 WCAGARIA2H58H65:
 
-By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a>and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
 
 Code snippet:
 
 ```
+<input title="description" lang="de" />
+```
 
-<input title="description" lang="de"/>
+WCAGARIA6H58:
+
+ By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+ Code snippet:
+
+ ```
+ <div aria-label="description" lang="de"> children </div>
+ ```
+
+WCAGARIA10H58:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non-text Content</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+Code snippet:
 
 ```
+WCAGARIA10H58:
+<div aria-labelledbyid="id" lang="de"> children </div>
+
+WCAGARIA10H58Text:
+<div id="id" lang="de"> children </div>
+```
+
+WCAGARIA15H58:
+
+ By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+ Code snippet:
+
+ ```
+ WCAGARIA15H58:
+ <>
+    <img aria-describedby="id" />
+    <img aria-describedby="id" />
+</>
+
+WCAGARIA15H58Text:
+<p id="id" lang="de"> children </p>
+ ```
+
+
+
+
 
 <a href="https://65bb731e4f345bcada479e35-sofvqptifk.chromatic.com/">You can find the Storybook here.</a>
 

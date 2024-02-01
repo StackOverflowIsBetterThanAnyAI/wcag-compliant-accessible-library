@@ -8,7 +8,7 @@ Using npm:
 
 <h2>Usage</h2>
 
-<code>import WCAGH2H58 from 'WCAGNonTextContent/WCAGH2H58'<br/><br/>
+<code>import WCAGH2H58 from 'WCAGNonTextContent/WCAGH2H58'
 
         <WCAGH2H58
             imageData={{

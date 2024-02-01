@@ -8,14 +8,15 @@ Using npm:
 
 <h2>Usage</h2>
 
-```import WCAGH2H58 from 'WCAGNonTextContent/WCAGH2H58'
+```
+import WCAGH2H58 from 'WCAGNonTextContent/WCAGH2H58'
 
 <WCAGH2H58
     imageData={{
         imageSource: starImage,
         additionalStyling: { height: 75, width: 75 },
     }}
-    link=""
+    link="/star-id"
     childrenBeforeImage
 >
     <div>Go to the home page</div>

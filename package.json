@@ -11,9 +11,12 @@
     "scripts": {
         "rollup-build-lib": "rollup -c",
         "storybook": "storybook dev -p 6006",
-        "build-storybook": "build-storybook"
+        "build-storybook": "storybook build",
+        "chromatic": "npx chromatic --project-token=chpt_f9daac5ac324b13"
     },
-    "author": "StackOverflowIsBetterThanAnyAI",
+    "author": {
+        "name": "StackOverflowIsBetterThanAnyAI"
+    },
     "license": "ISC",
     "devDependencies": {
         "@rollup/plugin-commonjs": "^25.0.7",
@@ -28,6 +31,7 @@
         "@storybook/react-vite": "^7.6.6",
         "@storybook/test": "^7.6.6",
         "@types/react": "^18.2.45",
+        "chromatic": "^10.6.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "rollup": "^4.9.1",

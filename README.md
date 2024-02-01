@@ -102,12 +102,31 @@ The success criteria covered in this library are:
 
 <a href="https://www.w3.org/WAI/WCAG22/Understanding/on-input.html">3.2.2 On Input</a>
 
+Each of these success criteria is given certain techniques by the W3C which fulfil these criteria.
+
+These defined techniques and components have been implemented in this library:
 
 (World Wide Web Consortium, Inc., 2023)
 
 <br/>
 
 <h2>Documentation</h2>
+
+<a href="https://65bb731e4f345bcada479e35-sofvqptifk.chromatic.com/">You can find the Storybook here.</a>
+
+WCAGNonTextContent:
+
+WCAGARIA2H58H65:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a>and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+Code snippet:
+
+```
+
+<input title="description" lang="de"/>
+
+```
 
 <a href="https://65bb731e4f345bcada479e35-sofvqptifk.chromatic.com/">You can find the Storybook here.</a>
 

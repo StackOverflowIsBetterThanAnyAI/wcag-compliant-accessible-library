@@ -4,21 +4,24 @@
 
 Using npm:
 
-<code>$ npm i wcag-compliant-accessible-library</code><button onclick="copyToClipboard('npm i wcag-compliant-accessible-library')">Copy to Clipboard</button>
-
-<script>
-function copyToClipboard(text) {
-    const textarea = document.createElement('textarea');
-    textarea.value = text;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textarea);
-    alert('Text copied to clipboard: ' + text);
-}
-</script>
+<code>$ npm i wcag-compliant-accessible-library</code>
 
 <h2>Usage</h2>
+
+<code>import WCAGH2H58 from 'WCAGNonTextContent/WCAGH2H58'<br/><br/>
+
+        <WCAGH2H58
+            imageData={{
+                imageSource: starImage,
+                additionalStyling: { height: 75, width: 75 },
+            }}
+            link=""
+            childrenBeforeImage
+        >
+            <div style={{ color: '#020202' }}>Go to the home page</div>
+        </WCAGH2H58>
+
+</code>
 
 <h2>Documentation</h2>
 

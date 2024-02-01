@@ -38,4 +38,4 @@ import WCAGH2H58 from 'WCAGNonTextContent/WCAGH2H58'
 
 <h2>License</h2>
 
-<a href="">MIT</a>
+<a href="https://github.com/StackOverflowIsBetterThanAnyAI/wcag-compliant-accessible-library/blob/master/LICENSE">MIT</a>

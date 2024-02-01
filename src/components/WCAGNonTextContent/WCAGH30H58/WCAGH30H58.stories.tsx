@@ -58,12 +58,12 @@ const metaH30H58: Meta<typeof WCAGH30H58> = {
                             Abstract code preview:
                             <br />
                             <code>
-                                &lt;a lang="de"&gt;
+                                &lt;a href="link" lang="de"&gt;
                                 <br />
                                 &emsp; preImageText <br />
-                                &emsp;&lt;img/&gt;
+                                &emsp;&lt;img src="imageSource-1" /&gt;
                                 <br />
-                                &emsp;&lt;img/&gt;
+                                &emsp;&lt;img src="imageSource-2" /&gt;
                                 <br />
                                 &emsp;postImageText
                                 <br />

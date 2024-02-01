@@ -22,7 +22,7 @@ const metaH53: Meta<typeof WCAGH53> = {
                                 criteria{' '}
                                 <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">
                                     1.1.1 Non-text Content
-                                </a>{' '}
+                                </a>
                                 ,{' '}
                                 <a href="https://www.w3.org/WAI/WCAG22/Understanding/audio-description-or-media-alternative-prerecorded">
                                     1.2.3 Audio Description or Media Alternative

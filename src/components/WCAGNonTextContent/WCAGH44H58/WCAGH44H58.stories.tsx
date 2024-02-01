@@ -58,10 +58,10 @@ const metaH44: Meta<typeof WCAGH44H58> = {
                             <code>
                                 &lt;&gt;
                                 <br />
-                                &emsp;&lt;label lang="de"&gt; labelText
-                                &lt;/label&gt;
+                                &emsp;&lt;label htmlFor="id" lang="de"&gt;
+                                labelText &lt;/label&gt;
                                 <br />
-                                &emsp;&lt;select/textarea/input&gt;
+                                &emsp;&lt;select/textarea/input id="id"&gt;
                                 <em> options </em>&lt;/
                                 select/textarea/input&gt;
                                 <br />

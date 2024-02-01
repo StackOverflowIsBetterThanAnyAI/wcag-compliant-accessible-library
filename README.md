@@ -171,8 +171,8 @@ WCAGARIA10H58Text:
  ```
  WCAGARIA15H58:
  <>
-    <img aria-describedby="id" />
-    <img aria-describedby="id" />
+    <img aria-describedby="id" src="imageSource-1" />
+    <img aria-describedby="id" src="imageSource-2" />
 </>
 
 WCAGARIA15H58Text:
@@ -272,17 +272,101 @@ Code snippet:
 
 <br/>
 
+<strong>WCAGH30H58</strong>:
 
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context">2.4.4 Link Purpose (In Context)</a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-link-only">2.4.9 Link Purpose (Link Only)</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
 
+Code snippet:
 
+```
+<a href="link" lang="de">
+    preImageText
+    <img src="imageSource-1" />
+    <img src="imageSource-2" />
+    postImageText
+</a>
+```
 
+<br/>
 
+<strong>WCAGH36</strong>:
 
+By using this component you fulfil the success criterion <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a>
 
+Code snippet:
 
+```
+<input type="image" alt="description" />
+```
 
+<br/>
 
+<strong>WCAGH37</strong>:
 
+By using this component you fulfil the success criterion <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a>
+
+Code snippet:
+
+```
+<img alt="description" src="imageSource" />
+```
+
+<br/>
+
+<strong>WCAGH44H58</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non-text Content</a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions">3.3.2 Labels or Instructions</a>
+
+Code snippet:
+
+```
+<>
+    <label htmlFor="id" lang="de"> labelText </label>
+    <select/textarea/input id="id"> options </select/textarea/input>
+</>
+```
+
+<br/>
+
+<strong>WCAGH53</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non-text Content</a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/audio-description-or-media-alternative-prerecorded">1.2.3 Audio Description or Media Alternative (Prerecorded)</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/media-alternative-prerecorded">1.2.8 Media Alternative (Prerecorded)</a>
+
+Code snippet:
+
+```
+<object> children </object>
+```
+
+<br/>
+
+<strong>WCAGH58H86</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content"> 1.1.1 Non-text Content</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+Code snippet:
+
+```
+<span aria-label="description" lang="de"> emoji </span> or
+
+<div aria-label="description" lang="de"> emoji </div> or
+
+<abbr title="description" lang="de"> emoji </abbr>
+```
+
+<br/>
+
+<strong>WCAGH67</strong>:
+
+By using this component you fulfil the WCAG2.2 success criterion  <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non-text Content</a>
+
+Code snippet:
+
+```
+<img alt="" src="imageSource" />
+```
+
+<br/>
 
 <a href="https://65bb731e4f345bcada479e35-sofvqptifk.chromatic.com/">You can find the Storybook here.</a>
 

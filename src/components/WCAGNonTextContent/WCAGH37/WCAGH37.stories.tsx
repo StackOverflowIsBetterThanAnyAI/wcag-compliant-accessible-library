@@ -36,7 +36,10 @@ const metaH37: Meta<typeof WCAGH37> = {
                         <p>
                             Abstract code preview:
                             <br />
-                            <code>&lt;img alt="description" /&gt;</code>
+                            <code>
+                                &lt;img alt="description" src="imageSource"
+                                /&gt;
+                            </code>
                         </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>

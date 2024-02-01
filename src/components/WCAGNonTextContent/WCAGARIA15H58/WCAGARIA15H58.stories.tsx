@@ -57,9 +57,11 @@ const metaARIA15: Meta<typeof WCAGARIA15H58> = {
                             <code>
                                 &lt;&gt;
                                 <br />
-                                &emsp;&lt;img aria-describedby="id" /&gt;
+                                &emsp;&lt;img aria-describedby="id"
+                                src="imageSource-1" /&gt;
                                 <br />
-                                &emsp;&lt;img aria-describedby="id" /&gt;
+                                &emsp;&lt;img aria-describedby="id"
+                                src="imageSource-2" /&gt;
                                 <br />
                                 &lt;/&gt;
                             </code>

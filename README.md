@@ -10,16 +10,16 @@ Using npm:
 
 <code>import WCAGH2H58 from 'WCAGNonTextContent/WCAGH2H58'
 
-        <WCAGH2H58
-            imageData={{
-                imageSource: starImage,
-                additionalStyling: { height: 75, width: 75 },
-            }}
-            link=""
-            childrenBeforeImage
-        >
-            <div style={{ color: '#020202' }}>Go to the home page</div>
-        </WCAGH2H58>
+<WCAGH2H58
+    imageData={{
+        imageSource: starImage,
+        additionalStyling: { height: 75, width: 75 },
+    }}
+    link=""
+    childrenBeforeImage
+>
+    <div>Go to the home page</div>
+</WCAGH2H58>
 
 </code>
 

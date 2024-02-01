@@ -2,21 +2,21 @@
 
 <h2>I need your help</h2>
 
-I'm currently writing my <strong>bachelor's thesis</strong>.
+    I'm currently writing my <strong>bachelor's thesis</strong>.
 
-I am focussing on digital accessibility on the internet.
+    I am focussing on digital accessibility on the internet.
 
-In order to improve digital accessibility, I have created this component library as part of this work.
+    In order to improve digital accessibility, I have created this component library as part of this work.
 
-In order to be able to analyse this library <strong>scientifically</strong>, I need <strong>your feedback</strong>!
+    In order to be able to analyse this library <strong>scientifically</strong>, I need <strong>your feedback</strong>!
 
-If you have tested this library - even if it is <strong>only one</strong> component - please answer a few questions about it.
+    If you have tested this library - even if it is <strong>only one</strong> component - please answer a few questions about it.
 
-<a href="https://www.survio.com/survey/d/E3R7X9M7V8N9E9V9W" target="_blank">The survey</a> will take about <strong>5 to 10 minutes</strong>.
+    <a href="https://www.survio.com/survey/d/E3R7X9M7V8N9E9V9W" target="_blank">The survey</a> will take about <strong>5 to 10 minutes</strong>.
 
-Thank you very much.
+    Thank you very much.
 
-Kind regards, Michael
+    Kind regards, Michael
 
 <a href="https://www.survio.com/survey/d/E3R7X9M7V8N9E9V9W" target="_blank">Link to the survey.</a>
 

@@ -118,6 +118,8 @@ The technologies used are listed in sequence according to the WCAG prefix.
 
 They start with either ARIA, G or H.
 
+<br/>
+
 <em>WCAGNonTextContent</em>:
 
 <strong>WCAGARIA2H58H65</strong>:
@@ -178,6 +180,105 @@ WCAGARIA15H58Text:
  ```
 
  <br/>
+
+<strong>WCAGG73H58</strong>:
+
+By using this component you fulfil the WCAG2.2 success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non-text Content</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+Code snippet:
+
+```
+WCAGG73H58:
+<div aria-describedby="long-desc" id="div-id" lang="de">
+    children 
+    <a href="#long-desc"> buttonText </a>
+    shortText
+</div>
+
+WCAGG73H58Text:
+<div id="long-desc" lang="de">
+    children
+    <p>
+        <a href="#div-id"> buttonText </a>
+    </p>
+</div>
+```
+
+<br/>
+
+<strong>WCAGG74G92H58</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+Code snippet:
+
+```
+WCAGG74G92H58:
+<div aria-describedby="long-desc" lang="de">
+    children
+    shortText
+</div>
+
+WCAGG74G92H58Text:
+<p id="long-desc" lang="de"> children </p>
+```
+
+<br/>
+
+<strong>WCAGG196</strong>:
+
+By using this component you fulfil the success criterion <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a>
+
+Code snippet:
+
+```
+<>
+    <img alt="description" src="imageSource-1"/>
+    <img src="imageSource-2"/>
+</>
+```
+
+<br/>
+
+<strong>WCAGH2H58</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a>,  <a href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context">2.4.4 Link Purpose (In Context)</a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-link-only">2.4.9 Link Purpose (Link Only)</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+Code snippet:
+
+```
+<a href="link" lang="de">
+    children
+    <img src="imageSource"/>
+</a>
+```
+
+<br/>
+
+<strong>WCAGH24</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non-text Content</a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context">2.4.4 Link Purpose (In Context)</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-link-only">2.4.9 Link Purpose (Link Only)</a>
+
+Code snippet:
+
+```
+<>
+    <img useMap"#mapName" src="imageSource" />
+    <map name="mapName">
+        <area coords="0 0 0 0" shape"rect" />
+    </map>
+</>
+```
+
+<br/>
+
+
+
+
+
+
+
+
 
 
 

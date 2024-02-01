@@ -57,11 +57,11 @@ const metaH2: Meta<typeof WCAGH2H58> = {
                             Abstract code preview:
                             <br />
                             <code>
-                                &lt;a lang="de"&gt;
+                                &lt;a href="link" lang="de"&gt;
                                 <br />
                                 &emsp;children
                                 <br />
-                                &emsp;&lt;img/&gt;
+                                &emsp;&lt;img src="imageSource"/&gt;
                                 <br />
                                 &lt;/a&gt;
                             </code>

@@ -41,9 +41,10 @@ const metaG196: Meta<typeof WCAGG196> = {
                             <code>
                                 &lt;&gt;
                                 <br />
-                                &emsp;&lt;img alt="description" /&gt;
+                                &emsp;&lt;img alt="description"
+                                src="imageSource-1" /&gt;
                                 <br />
-                                &emsp;&lt;img/&gt;
+                                &emsp;&lt;img src="imageSource-2" /&gt;
                                 <br />
                                 &lt;/&gt;
                             </code>

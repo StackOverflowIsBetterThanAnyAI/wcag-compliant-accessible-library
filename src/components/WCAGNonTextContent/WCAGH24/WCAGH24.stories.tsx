@@ -49,13 +49,13 @@ const metaH24: Meta<typeof WCAGH24> = {
                             <code>
                                 &lt;&gt;
                                 <br />
-                                &emsp;&lt;img useMap="#mapName"/&gt;
+                                &emsp;&lt;img useMap="#mapName"
+                                src="imageSource" /&gt;
                                 <br />
                                 &emsp;&lt;map name="mapName"&gt;
                                 <br />
-                                &emsp;&emsp;&lt;area&gt;
-                                <br />
-                                &emsp;&emsp;&lt;/area&gt;
+                                &emsp;&emsp;&lt;area coords="0 0 0 0"
+                                shape="rect" /&gt;
                                 <br />
                                 &emsp;&lt;/map&gt;
                                 <br />

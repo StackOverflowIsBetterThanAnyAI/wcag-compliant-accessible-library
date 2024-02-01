@@ -12,13 +12,13 @@ In order to be able to analyse this library scientifically, I need your feedback
 
 If you have tested this library - even if it is only one component - please answer a few questions about it.
 
-<a href="https://www.survio.com/survey/d/E3R7X9M7V8N9E9V9W">The survey</a> will take about 5 to 10 minutes.
+<a href="https://www.survio.com/survey/d/E3R7X9M7V8N9E9V9W" target="_blank">The survey</a> will take about 5 to 10 minutes.
 
 Thank you very much.
 
 Kind regards, Michael
 
-<a href="https://www.survio.com/survey/d/E3R7X9M7V8N9E9V9W">Link to the survey.</a>
+<a href="https://www.survio.com/survey/d/E3R7X9M7V8N9E9V9W" target="_blank">Link to the survey.</a>
 
 <h2>Installation</h2>
 

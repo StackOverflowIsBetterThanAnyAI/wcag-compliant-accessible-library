@@ -70,13 +70,40 @@ However, people without these disabilities will also benefit from these guidelin
 
 These guidelines apply to web content for desktops, laptops, tablets and mobile devices.
 
-WCAG 2.2 is divided into four chapters: 1) Perceivable, 2) Operable, 3) Understandable and 4) Robust
+WCAG 2.2 is divided into four chapters:
+
+1) Perceivable,
+
+2) Operable,
+
+3) Understandable and
+
+4) Robust.
+
+For each of these four principles, the W3C provides a set of success criteria that should be met to ensure digital accessibility.
 
 (World Wide Web Consortium, Inc., 2023)
 
 <br/>
 
 <h2>Content</h2>
+
+This library takes up two of these four principles: 1) Perceivable and 3) Understandable.
+
+The success criteria covered in this library are:
+
+<a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html">1.1.1 Non-text Content</a>,
+
+<a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html">1.3.1 Info and Relationships</a>,
+
+<a href="https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html">1.3.5 Identify Input Purpose</a>,
+
+<a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts.html">3.1.2 Language of Parts</a> and
+
+<a href="https://www.w3.org/WAI/WCAG22/Understanding/on-input.html">3.2.2 On Input</a>
+
+
+(World Wide Web Consortium, Inc., 2023)
 
 <br/>
 

@@ -11,6 +11,8 @@ Using npm:
 ```
 import WCAGH2H58 from 'WCAGNonTextContent/WCAGH2H58'
 
+    ...
+
 <WCAGH2H58
     imageData={{
         imageSource: starImage,
@@ -21,6 +23,9 @@ import WCAGH2H58 from 'WCAGNonTextContent/WCAGH2H58'
 >
     <div>Go to the home page</div>
 </WCAGH2H58>
+
+    ...
+
 ```
 
 <h2>Documentation</h2>

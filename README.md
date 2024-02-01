@@ -4,7 +4,19 @@
 
 Using npm:
 
-<code>$ npm i wcag-compliant-accessible-library</code><button onClick="(function() {navigator.clipboard.writeText(npm i wcag-compliant-accessible-library)})">Copy</button>
+<code>$ npm i wcag-compliant-accessible-library</code><button onclick="copyToClipboard('npm i wcag-compliant-accessible-library')">Copy to Clipboard</button>
+
+<script>
+function copyToClipboard(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    alert('Text copied to clipboard: ' + text);
+}
+</script>
 
 <h2>Usage</h2>
 

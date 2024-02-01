@@ -120,7 +120,7 @@ They start with either ARIA, G or H.
 
 <em>WCAGNonTextContent</em>:
 
-WCAGARIA2H58H65:
+<strong>WCAGARIA2H58H65</strong>:
 
 By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
 
@@ -130,7 +130,9 @@ Code snippet:
 <input title="description" lang="de" />
 ```
 
-WCAGARIA6H58:
+<br/>
+
+<strong>WCAGARIA6H58</strong>:
 
  By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
 
@@ -140,7 +142,9 @@ WCAGARIA6H58:
  <div aria-label="description" lang="de"> children </div>
  ```
 
-WCAGARIA10H58:
+ <br/>
+
+<strong>WCAGARIA10H58</strong>:
 
 By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non-text Content</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
 
@@ -154,7 +158,9 @@ WCAGARIA10H58Text:
 <div id="id" lang="de"> children </div>
 ```
 
-WCAGARIA15H58:
+<br/>
+
+<strong>WCAGARIA15H58</strong>:
 
  By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
 
@@ -170,6 +176,8 @@ WCAGARIA15H58:
 WCAGARIA15H58Text:
 <p id="id" lang="de"> children </p>
  ```
+
+ <br/>
 
 
 

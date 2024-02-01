@@ -30,7 +30,7 @@
     "author": {
         "name": "StackOverflowIsBetterThanAnyAI"
     },
-    "license": "ISC",
+    "license": "MIT",
     "devDependencies": {
         "@rollup/plugin-commonjs": "^25.0.7",
         "@rollup/plugin-node-resolve": "^15.2.3",

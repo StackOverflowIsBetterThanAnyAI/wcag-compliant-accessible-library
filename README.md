@@ -8,6 +8,8 @@ Using npm:
 
 <h2>Usage</h2>
 
+This library can be used with ESM and CommonJS.
+
 ```
 import WCAGH2H58 from 'WCAGNonTextContent/WCAGH2H58'
 
@@ -28,6 +30,12 @@ import WCAGH2H58 from 'WCAGNonTextContent/WCAGH2H58'
 
 ```
 
+<h2>What is it about?</h2>
+
 <h2>Documentation</h2>
 
 <a href="https://65bb731e4f345bcada479e35-sofvqptifk.chromatic.com/">You can find the Storybook here.</a>
+
+<h2>License</h2>
+
+<a href="">MIT</a>

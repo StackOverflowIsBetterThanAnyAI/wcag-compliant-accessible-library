@@ -112,7 +112,7 @@ These defined techniques and components have been implemented in this library:
 
 <h2>Documentation</h2>
 
-<a href="https://65bb731e4f345bcada479e35-sofvqptifk.chromatic.com/">You can find the Storybook here.</a>
+<a href="https://65bb731e4f345bcada479e35-ydvtfeiafv.chromatic.com/">You can find the Storybook here.</a>
 
 The technologies used are listed in sequence according to the WCAG prefix.
 
@@ -654,7 +654,7 @@ Code snippet:
 
 <br/>
 
-<a href="https://65bb731e4f345bcada479e35-sofvqptifk.chromatic.com/">You can find the Storybook here.</a>
+<a href="https://65bb731e4f345bcada479e35-ydvtfeiafv.chromatic.com/">You can find the Storybook here.</a>
 
 <br/>
 

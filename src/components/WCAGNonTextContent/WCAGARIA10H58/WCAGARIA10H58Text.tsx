@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import { GlobalAttributes } from '../../interfaces/GlobalAttributes'
 import { LangAttributes } from '../../interfaces/LangAttributes'
 
-interface WCAGARIA10H58Props extends GlobalAttributes {
+interface WCAGARIA10H58TextProps extends GlobalAttributes {
     ariaLabelledById: string
     className?: string
     divData?: GlobalAttributes
@@ -71,7 +71,7 @@ interface WCAGARIA10H58Props extends GlobalAttributes {
     children: ReactNode
 }
 
-const WCAGARIA10H58Text: React.FC<WCAGARIA10H58Props> = ({
+const WCAGARIA10H58Text: React.FC<WCAGARIA10H58TextProps> = ({
     ariaLabelledById,
     className,
     divData,

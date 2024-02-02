@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import { GlobalAttributes } from '../../interfaces/GlobalAttributes'
 import { LangAttributes } from '../../interfaces/LangAttributes'
 
-interface WCAGG74G92H58Props {
+interface WCAGG74G92H58TextProps {
     accessibleId: string
     className?: string
     lang?: LangAttributes
@@ -71,7 +71,7 @@ interface WCAGG74G92H58Props {
     children: ReactNode
 }
 
-const WCAGG74G92H58Text: React.FC<WCAGG74G92H58Props> = ({
+const WCAGG74G92H58Text: React.FC<WCAGG74G92H58TextProps> = ({
     accessibleId,
     className,
     lang,

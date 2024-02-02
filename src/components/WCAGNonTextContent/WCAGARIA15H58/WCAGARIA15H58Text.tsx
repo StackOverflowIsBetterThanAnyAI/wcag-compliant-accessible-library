@@ -2,7 +2,7 @@ import React from 'react'
 import { GlobalAttributes } from '../../interfaces/GlobalAttributes'
 import { LangAttributes } from '../../interfaces/LangAttributes'
 
-interface WCAGARIA15H58Props {
+interface WCAGARIA15H58TextProps {
     accessibleId: string
     pData?: Omit<GlobalAttributes, 'id'>
     lang?: LangAttributes
@@ -71,7 +71,7 @@ interface WCAGARIA15H58Props {
     children: string
 }
 
-const WCAGARIA15H58Text: React.FC<WCAGARIA15H58Props> = ({
+const WCAGARIA15H58Text: React.FC<WCAGARIA15H58TextProps> = ({
     accessibleId,
     className,
     pData,

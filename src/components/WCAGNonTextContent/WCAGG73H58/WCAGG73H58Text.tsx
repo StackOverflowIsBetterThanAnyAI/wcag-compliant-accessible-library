@@ -3,7 +3,7 @@ import { GlobalAttributes } from '../../interfaces/GlobalAttributes'
 import { LinkAttributes } from '../../interfaces/LinkAttributes'
 import { LangAttributes } from '../../interfaces/LangAttributes'
 
-interface WCAGG73H58Props extends GlobalAttributes {
+interface WCAGG73H58TextProps extends GlobalAttributes {
     buttonText: ReactNode
     ownId: string
     parentId: string
@@ -80,7 +80,7 @@ interface WCAGG73H58Props extends GlobalAttributes {
     children: ReactNode
 }
 
-const WCAGG73H58Text: React.FC<WCAGG73H58Props> = ({
+const WCAGG73H58Text: React.FC<WCAGG73H58TextProps> = ({
     buttonText,
     classNameDiv,
     classNameLink,

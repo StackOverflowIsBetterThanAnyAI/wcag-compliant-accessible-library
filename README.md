@@ -4,7 +4,7 @@
 
 I'm currently writing my <strong>bachelor's thesis</strong>.
 
-I am focussing on digital accessibility on the internet.
+The topic is about digital accessibility on the internet.
 
 In order to improve digital accessibility, I have created this TypeScript React component library as part of this work.
 
@@ -364,6 +364,292 @@ Code snippet:
 
 ```
 <img alt="" src="imageSource" />
+```
+
+<br/>
+
+<em>WCAGInfoAndRelationships</em>:
+
+<strong>WCAGARIA2H58H71</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions">3.3.2 Labels or Instructions</a>
+
+Code snippet:
+
+```
+<form (optional)>
+    <fieldset>
+        <legend> legendText </legend>
+        <div lang="de">
+            <input id="id" />
+            <label htmlFor="id"> labelText </label>
+        </div>
+    </fieldset>
+</form>
+```
+
+<br/>
+
+<strong>WCAGARIA2H58H85</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+Code snippet:
+
+```
+<form>
+    <label htmlFor="id"> labelText </label>
+    <select id="id">
+        <optgroup>
+            <option lang="de"> option </option>
+            <option lang="de"> option </option>
+        </optgroup>
+    </select>
+</form>
+```
+
+<br/>
+
+<strong>WCAGARIA11H58</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/identify-purpose">1.3.6 Identify Purpose </a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/bypass-blocks">2.4.1 Bypass Blocks</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+Code snippet:
+
+```
+<div lang="de" aria-label="description"> children </div> or
+
+<form lang="de" aria-label="description"> children </form>
+```
+
+<br/>
+
+<strong>WCAGARIA12H58</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+Code snippet:
+
+```
+<div aria-level="3" lang="de"> children </div>
+```
+
+<br/>
+
+<strong>WCAGG115H49Code</strong>:
+
+By using this component you fulfil success criterion <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a>
+
+Code snippet:
+
+```
+<code> children </code>
+```
+
+<br/>
+
+<strong>WCAGG115H49H58A</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+Code snippet:
+
+```
+<a href="link" lang="de"> children </a>
+```
+
+<br/>
+
+<strong>WCAGG115H49H58B</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+Code snippet:
+
+```
+<b lang="de"> children </b>
+```
+
+<br/>
+
+<strong>WCAGG115H49H58Cite</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+Code snippet:
+
+```
+<cite lang="de"> children </cite>
+```
+
+<br/>
+
+<strong>WCAGG115H49H58Em</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+Code snippet:
+
+```
+<em lang="de"> children </em>
+```
+
+<br/>
+
+<strong>WCAGG115H49H58Quote</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+Code snippet:
+
+```
+<blockquote lang="de"> children </blockquote>
+```
+
+<br/>
+
+<strong>WCAGG115H49H58ShortQuote</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+Code snippet:
+
+```
+<q lang="de"> children </q>
+```
+
+<br/>
+
+<strong>WCAGG115H49H58Strong</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+Code snippet:
+
+```
+<strong lang="de"> children </strong>
+```
+
+<br/>
+
+<strong>WCAGG115H49H58Sub</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+Code snippet:
+
+```
+<sub lang="de"> children </sub>
+```
+
+<br/>
+
+<strong>WCAGG115H49H58Sup</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+Code snippet:
+
+```
+<sup lang="de"> children </sup>
+```
+
+<br/>
+
+<strong>WCAGG117H48H58</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+Code snippet:
+
+```
+<ul>
+    <li lang="de"> item </li>
+    <li lang="de"> item </li>
+</ul>
+
+or
+
+<ol>
+    <li lang="de"> item </li>
+    <li lang="de"> item </li>
+</ol>
+
+or
+
+<dl>
+    <div>
+        <dt lang="de"> name </dt>
+        <dd lang="de"> description </dd>
+    </div>
+</dl>
+```
+
+<br/>
+
+<strong>WCAGG117H58H97H101</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/bypass-blocks">2.4.1 Bypass Blocks</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+Code snippet:
+
+```
+<nav>
+    <ul>
+        <li>
+            <a href="link" lang="de"> displayedText </a>
+            <a href="link" lang="de"> displayedText </a>
+        </li>
+    </ul>
+</nav>
+```
+
+<br/>
+
+<strong>WCAGH39H43H51H58H63</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non-text Content</a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/audio-description-or-media-alternative-prerecorded">1.2.3 Audio Description or Media Alternative (Prerecorded)</a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/media-alternative-prerecorded">1.2.8 Media Alternative (Prerecorded)</a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+
+Code snippet:
+
+```
+<table>
+    <caption> captionText </caption>
+    <tbody>
+        <tr>
+            <th id="id" scope"col" lang="de"> header </th>
+        </tr>
+        <tr headers="id">
+            <td lang="de"> item </td>
+        </tr>
+        <tr headers="id">
+            <td lang="de"> item </td>
+        </tr>
+    </tbody>
+</table>
+```
+
+<br/>
+
+<em>WCAGIdentifyInputPurpose</em>
+
+<strong>WCAGG13H32H58H98</strong>:
+
+By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose">1.3.5 Identify Input Purpose</a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/on-input">3.2.2 On Input</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions">3.3.2 Labels or Instructions</a>
+
+Code snippet:
+
+```
+<form>
+    changedContextText (optional)
+    <div>
+        <label htmlFor="id"> labelText </label>
+        <input type="month" autocomplete="bday-month" id="id" />
+    </div>
+    <div>
+        <input type="submit" /> (div and submit are optional)
+    </div>
+</form>
 ```
 
 <br/>

@@ -45,8 +45,8 @@ const metaARIA12: Meta<typeof WCAGARIA12H58> = {
                             Abstract code preview:
                             <br />
                             <code>
-                                &lt;div ariaLevel="3" lang="de"&gt; child
-                                element &lt;/div&gt;
+                                &lt;div aria-level="3" lang="de"&gt; children
+                                &lt;/div&gt;
                             </code>
                         </p>
                         <p style={{ textAlign: 'center' }}>

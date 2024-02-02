@@ -55,18 +55,18 @@ const metaARIA2H85: Meta<typeof WCAGARIA2H58H85> = {
                             <code>
                                 &lt;form&gt;
                                 <br />
-                                &emsp;&lt;label&gt; labelData.labelText
+                                &emsp;&lt;label htmlFor="id"&gt; labelText
                                 &lt;/label&gt;
                                 <br />
-                                &emsp;&emsp;&lt;select&gt;
+                                &emsp;&lt;select id="id"&gt;
                                 <br />
-                                &emsp;&emsp;&emsp;&lt;optgroup&gt;
+                                &emsp;&emsp;&lt;optgroup&gt;
                                 <br />
-                                &emsp;&emsp;&emsp;&emsp;&lt;option lang="de"&gt;
+                                &emsp;&emsp;&emsp;&lt;option lang="de"&gt;
                                 <em> option </em>
                                 &lt;/option&gt;
                                 <br />
-                                &emsp;&emsp;&emsp;&emsp;&lt;option lang="de"&gt;
+                                &emsp;&emsp;&emsp;&lt;option lang="de"&gt;
                                 <em> option </em>
                                 &lt;/option&gt;
                                 <br />

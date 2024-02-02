@@ -48,9 +48,7 @@ const metaG115H49ShortQuote: Meta<typeof WCAGG115H49H58ShortQuote> = {
                         <p>
                             Abstract code preview:
                             <br />
-                            <code>
-                                &lt;q lang="de"&gt; child element &lt;/q&gt;
-                            </code>
+                            <code>&lt;q lang="de"&gt; children &lt;/q&gt;</code>
                         </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>

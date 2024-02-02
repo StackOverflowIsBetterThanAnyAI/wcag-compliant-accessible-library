@@ -66,13 +66,11 @@ const metaG117H58H97H101: Meta<typeof WCAGG117H58H97H101> = {
                                 <br />
                                 &emsp;&emsp;&lt;li&gt;
                                 <br />
-                                &emsp;&emsp;&emsp;&lt;a lang="de"&gt;
-                                <em> link text </em>
-                                &lt;/a&gt;
+                                &emsp;&emsp;&emsp;&lt;a href="link"
+                                lang="de"&gt; displayedText &lt;/a&gt;
                                 <br />
-                                &emsp;&emsp;&emsp;&lt;a lang="de"&gt;
-                                <em> link text </em>
-                                &lt;/a&gt;
+                                &emsp;&emsp;&emsp;&lt;a href="link"
+                                lang="de"&gt; displayedText &lt;/a&gt;
                                 <br />
                                 &emsp;&emsp;&lt;/li&gt;
                                 <br />

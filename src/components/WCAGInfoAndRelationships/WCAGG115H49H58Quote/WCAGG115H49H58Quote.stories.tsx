@@ -49,7 +49,7 @@ const metaG115H49Quote: Meta<typeof WCAGG115H49H58Quote> = {
                             Abstract code preview:
                             <br />
                             <code>
-                                &lt;blockquote lang="de"&gt; child element
+                                &lt;blockquote lang="de"&gt; children
                                 &lt;/blockquote&gt;
                             </code>
                         </p>

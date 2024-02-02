@@ -55,14 +55,14 @@ const metaARIA11: Meta<typeof WCAGARIA11H58> = {
                             Abstract code preview:
                             <br />
                             <code>
-                                &lt;div lang="de" ariaLabel="description"&gt;
-                                child element &lt;/div&gt;
+                                &lt;div lang="de" aria-label="description"&gt;
+                                children &lt;/div&gt;
                             </code>{' '}
                             or
                             <br />
                             <code>
-                                &lt;form lang="de" ariaLabel="description"&gt;
-                                child element &lt;/form&gt;
+                                &lt;form lang="de" aria-label="description"&gt;
+                                children &lt;/form&gt;
                             </code>
                         </p>
                         <p style={{ textAlign: 'center' }}>

@@ -76,7 +76,7 @@ const metaWCAGG13H32H58H98: Meta<typeof WCAGG13H32H58H98> = {
                                 &lt;/label&gt;
                                 <br />
                                 &emsp;&emsp;&lt;input type="month"
-                                autocomplete="bday-month" id="id"/&gt;
+                                autocomplete="bday-month" id="id" /&gt;
                                 <br />
                                 &emsp;&lt;/div&gt;
                                 <br />

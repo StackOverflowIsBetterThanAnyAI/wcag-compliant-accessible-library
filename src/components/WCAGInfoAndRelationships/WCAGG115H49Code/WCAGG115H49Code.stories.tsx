@@ -39,9 +39,7 @@ const metaG115H49Code: Meta<typeof WCAGG115H49Code> = {
                         <p>
                             Abstract code preview:
                             <br />
-                            <code>
-                                &lt;code&gt; child element &lt;/code&gt;
-                            </code>
+                            <code>&lt;code&gt; children &lt;/code&gt;</code>
                         </p>
                         <p style={{ textAlign: 'center' }}>
                             <strong>

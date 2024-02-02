@@ -59,15 +59,15 @@ const metaARIA2H71: Meta<typeof WCAGARIA2H58H71> = {
                                 <br />
                                 &emsp;&lt;fieldset&gt;
                                 <br />
-                                &emsp;&emsp;&lt;legend&gt; legendData.legendText
+                                &emsp;&emsp;&lt;legend&gt; legendText
                                 &lt;/legend&gt;
                                 <br />
                                 &emsp;&emsp;&lt;div lang="de"&gt;
                                 <br />
-                                &emsp;&emsp;&emsp;&lt;input id="id"/&gt;
+                                &emsp;&emsp;&emsp;&lt;input id="id" /&gt;
                                 <br />
                                 &emsp;&emsp;&emsp;&lt;label htmlFor="id"&gt;
-                                <em>label text</em>&lt;/label&gt;
+                                labelText &lt;/label&gt;
                                 <br />
                                 &emsp;&emsp;&lt;/div&gt;
                                 <br />

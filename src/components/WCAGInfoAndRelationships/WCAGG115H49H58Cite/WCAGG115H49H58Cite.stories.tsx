@@ -49,8 +49,7 @@ const metaG115H49Cite: Meta<typeof WCAGG115H49H58Cite> = {
                             Abstract code preview:
                             <br />
                             <code>
-                                &lt;cite lang="de"&gt; child element
-                                &lt;/cite&gt;
+                                &lt;cite lang="de"&gt; children &lt;/cite&gt;
                             </code>
                         </p>
                         <p style={{ textAlign: 'center' }}>

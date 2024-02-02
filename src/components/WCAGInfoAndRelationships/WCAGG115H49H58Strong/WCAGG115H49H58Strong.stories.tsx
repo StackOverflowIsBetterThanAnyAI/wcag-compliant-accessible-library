@@ -49,7 +49,7 @@ const metaG115H49Strong: Meta<typeof WCAGG115H49H58Strong> = {
                             Abstract code preview:
                             <br />
                             <code>
-                                &lt;strong lang="de"&gt; child element
+                                &lt;strong lang="de"&gt; children
                                 &lt;/strong&gt;
                             </code>
                         </p>

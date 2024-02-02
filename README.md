@@ -86,6 +86,12 @@ For each of these four principles, the W3C provides a set of success criteria th
 
 (World Wide Web Consortium, Inc., 2023)
 
+This library fulfils a number of these criteria for success.
+
+A number of components are provided which are not styled at all.
+
+This means that you can easily integrate your own designs.
+
 <br/>
 
 <h2>Content</h2>
@@ -635,7 +641,7 @@ Code snippet:
 
 <em>WCAGIdentifyInputPurpose</em>
 
-<strong>WCAGG13H32H58H98</strong>:
+<a href="https://65bb731e4f345bcada479e35-ydvtfeiafv.chromatic.com/?path=/docs/components-wcagidentifyinputpurpose-wcagg13h32h58h98--docs"><strong>WCAGG13H32H58H98</strong></a>:
 
 By using this component you fulfil the success criteria <a href="https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose">1.3.5 Identify Input Purpose</a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>, <a href="https://www.w3.org/WAI/WCAG22/Understanding/on-input">3.2.2 On Input</a> and <a href="https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions">3.3.2 Labels or Instructions</a>
 

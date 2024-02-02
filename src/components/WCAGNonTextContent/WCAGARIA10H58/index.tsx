@@ -1,1 +1,2 @@
-export { default } from './WCAGARIA10H58'
+export * as WCAGARIA10H58 from './WCAGARIA10H58'
+export * as WCAGARIA10H58Text from './WCAGARIA10H58Text'

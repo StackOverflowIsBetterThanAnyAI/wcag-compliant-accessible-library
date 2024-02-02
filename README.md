@@ -1,6 +1,6 @@
 <h1>WCAG-compliant-accessible-library</h1>
 
-<h2>I need your help</h2>
+<h2>I need your <strong>help</strong></h2>
 
 I'm currently writing my <strong>bachelor's thesis</strong>.
 

@@ -1,9 +1,9 @@
-import { CSSProperties, ReactNode } from 'react'
-import { FormAttributes } from '../../interfaces/FormAttributes'
-import { InputAttributes } from '../../interfaces/InputAttributes'
-import { WAIARIAAttributes } from '../../interfaces/WAIARIAAttributes'
-import { LangAttributes } from '../../interfaces/LangAttributes'
-import { SubmitAttributes } from '../../interfaces/SubmitAttributes'
+import React, { CSSProperties, ReactNode } from 'react'
+import { FormAttributes } from '../../../interfaces/FormAttributes'
+import { InputAttributes } from '../../../interfaces/InputAttributes'
+import { WAIARIAAttributes } from '../../../interfaces/WAIARIAAttributes'
+import { LangAttributes } from '../../../interfaces/LangAttributes'
+import { SubmitAttributes } from '../../../interfaces/SubmitAttributes'
 
 interface WCAGG13H32H58H98Props {
     formData: Omit<FormAttributes, 'autocomplete'> & { id: string }

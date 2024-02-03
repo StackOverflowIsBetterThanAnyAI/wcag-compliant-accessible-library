@@ -2,3 +2,8 @@
 /dist
 /.storybook
 /storybook-static
+.chromatic-script.json
+/.prettierignore
+/.prettierrc.json
+/.gitignore
+/rollup.config.js

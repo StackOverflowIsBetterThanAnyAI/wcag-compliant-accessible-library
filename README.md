@@ -37,7 +37,7 @@ This library can be used with either ESM or CommonJS.
 In the following example, you can see the import and passing of the properties using an example component.
 
 ```
-import WCAGH2H58 from 'WCAGNonTextContent/WCAGH2H58'
+import WCAGH2H58 from 'wcag-compliant-accessible-library'
 
     ...
 

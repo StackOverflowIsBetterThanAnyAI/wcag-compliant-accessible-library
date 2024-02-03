@@ -1,7 +1,7 @@
 import React from 'react'
-import { ImageAttributes } from '../../interfaces/ImageAttributes'
-import { AreaAttributes } from '../../interfaces/AreaAttributes'
-import { WAIARIAAttributes } from '../../interfaces/WAIARIAAttributes'
+import { ImageAttributes } from '../../../interfaces/ImageAttributes'
+import { AreaAttributes } from '../../../interfaces/AreaAttributes'
+import { WAIARIAAttributes } from '../../../interfaces/WAIARIAAttributes'
 
 interface WCAGH24Props {
     areaData: (AreaAttributes & {

@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
-import { GlobalAttributes } from '../../interfaces/GlobalAttributes'
-import { WAIARIAAttributes } from '../../interfaces/WAIARIAAttributes'
-import { LangAttributes } from '../../interfaces/LangAttributes'
+import { GlobalAttributes } from '../../../interfaces/GlobalAttributes'
+import { WAIARIAAttributes } from '../../../interfaces/WAIARIAAttributes'
+import { LangAttributes } from '../../../interfaces/LangAttributes'
 
 interface WCAGARIA11H58Props extends GlobalAttributes {
     role:

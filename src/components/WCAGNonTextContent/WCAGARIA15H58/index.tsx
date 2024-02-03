@@ -1,2 +1,0 @@
-export * as WCAGARIA15H58 from './WCAGARIA15H58'
-export * as WCAGARIA15H58Text from './WCAGARIA15H58Text'

@@ -1,7 +1,7 @@
 import React, { CSSProperties, useState } from 'react'
-import { WAIARIAAttributes } from '../../interfaces/WAIARIAAttributes'
-import { FormAttributes } from '../../interfaces/FormAttributes'
-import { LangAttributes } from '../../interfaces/LangAttributes'
+import { WAIARIAAttributes } from '../../../interfaces/WAIARIAAttributes'
+import { FormAttributes } from '../../../interfaces/FormAttributes'
+import { LangAttributes } from '../../../interfaces/LangAttributes'
 
 interface WCAGARIA2H58H71Props {
     inputLabelData: {

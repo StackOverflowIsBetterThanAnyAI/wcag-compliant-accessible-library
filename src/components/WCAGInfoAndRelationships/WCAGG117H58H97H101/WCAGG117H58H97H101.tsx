@@ -1,7 +1,7 @@
 import React, { CSSProperties, ReactElement, ReactNode } from 'react'
-import { WAIARIAAttributes } from '../../interfaces/WAIARIAAttributes'
-import { LinkAttributes } from '../../interfaces/LinkAttributes'
-import { LangAttributes } from '../../interfaces/LangAttributes'
+import { WAIARIAAttributes } from '../../../interfaces/WAIARIAAttributes'
+import { LinkAttributes } from '../../../interfaces/LinkAttributes'
+import { LangAttributes } from '../../../interfaces/LangAttributes'
 
 interface WCAGG117H58H97H101Props {
     additionalAriaAttributes?: Omit<

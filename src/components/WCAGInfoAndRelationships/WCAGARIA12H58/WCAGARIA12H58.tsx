@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
-import { GlobalAttributes } from '../../interfaces/GlobalAttributes'
-import { WAIARIAAttributes } from '../../interfaces/WAIARIAAttributes'
-import { LangAttributes } from '../../interfaces/LangAttributes'
+import { GlobalAttributes } from '../../../interfaces/GlobalAttributes'
+import { WAIARIAAttributes } from '../../../interfaces/WAIARIAAttributes'
+import { LangAttributes } from '../../../interfaces/LangAttributes'
 
 interface WCAGARIA12H58Props extends GlobalAttributes {
     ariaLevel: number

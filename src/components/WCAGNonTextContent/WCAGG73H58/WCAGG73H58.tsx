@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react'
-import { GlobalAttributes } from '../../interfaces/GlobalAttributes'
-import { WAIARIAAttributes } from '../../interfaces/WAIARIAAttributes'
-import { LinkAttributes } from '../../interfaces/LinkAttributes'
-import { LangAttributes } from '../../interfaces/LangAttributes'
+import { GlobalAttributes } from '../../../interfaces/GlobalAttributes'
+import { WAIARIAAttributes } from '../../../interfaces/WAIARIAAttributes'
+import { LinkAttributes } from '../../../interfaces/LinkAttributes'
+import { LangAttributes } from '../../../interfaces/LangAttributes'
 
 interface WCAGG73H58Props extends GlobalAttributes {
     buttonText: ReactNode

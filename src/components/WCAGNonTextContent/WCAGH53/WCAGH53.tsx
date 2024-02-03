@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
-import { ObjectAttributes } from '../../interfaces/ObjectAttributes'
-import { WAIARIAAttributes } from '../../interfaces/WAIARIAAttributes'
+import { ObjectAttributes } from '../../../interfaces/ObjectAttributes'
+import { WAIARIAAttributes } from '../../../interfaces/WAIARIAAttributes'
 
 interface WCAGH53Props {
     objectData: ObjectAttributes

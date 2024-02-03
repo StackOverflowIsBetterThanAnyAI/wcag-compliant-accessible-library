@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react'
-import { LinkAttributes } from '../../interfaces/LinkAttributes'
-import { ImageAttributes } from '../../interfaces/ImageAttributes'
-import { WAIARIAAttributes } from '../../interfaces/WAIARIAAttributes'
-import { LangAttributes } from '../../interfaces/LangAttributes'
+import { LinkAttributes } from '../../../interfaces/LinkAttributes'
+import { ImageAttributes } from '../../../interfaces/ImageAttributes'
+import { WAIARIAAttributes } from '../../../interfaces/WAIARIAAttributes'
+import { LangAttributes } from '../../../interfaces/LangAttributes'
 
 interface WCAGH2H58Props {
     imageData: ImageAttributes

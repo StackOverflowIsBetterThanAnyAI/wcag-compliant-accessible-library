@@ -1,5 +1,5 @@
 import React from 'react'
-import { ImageAttributes } from '../../interfaces/ImageAttributes'
+import { ImageAttributes } from '../../../interfaces/ImageAttributes'
 
 interface WCAGH67Props {
     imageData: ImageAttributes

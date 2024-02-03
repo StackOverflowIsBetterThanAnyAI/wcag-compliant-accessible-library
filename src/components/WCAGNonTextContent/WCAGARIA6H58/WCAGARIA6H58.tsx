@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
-import { WAIARIAAttributes } from '../../interfaces/WAIARIAAttributes'
-import { GlobalAttributes } from '../../interfaces/GlobalAttributes'
-import { LangAttributes } from '../../interfaces/LangAttributes'
+import { WAIARIAAttributes } from '../../../interfaces/WAIARIAAttributes'
+import { GlobalAttributes } from '../../../interfaces/GlobalAttributes'
+import { LangAttributes } from '../../../interfaces/LangAttributes'
 
 interface WCAGARIA6H58Props {
     ariaLabel: string

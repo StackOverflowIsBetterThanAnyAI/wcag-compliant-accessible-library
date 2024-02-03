@@ -1,8 +1,8 @@
 import React, { CSSProperties, ReactNode } from 'react'
-import { WAIARIAAttributes } from '../../interfaces/WAIARIAAttributes'
-import { FormAttributes } from '../../interfaces/FormAttributes'
-import { SelectAttributes } from '../../interfaces/SelectAttributes'
-import { OptionAttributes } from '../../interfaces/OptionAttributes'
+import { WAIARIAAttributes } from '../../../interfaces/WAIARIAAttributes'
+import { FormAttributes } from '../../../interfaces/FormAttributes'
+import { SelectAttributes } from '../../../interfaces/SelectAttributes'
+import { OptionAttributes } from '../../../interfaces/OptionAttributes'
 
 interface WCAGARIA2H58H85Props {
     formData: FormAttributes

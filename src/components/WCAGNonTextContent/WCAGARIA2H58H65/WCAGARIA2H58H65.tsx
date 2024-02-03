@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState } from 'react'
-import { InputAttributes } from '../../interfaces/InputAttributes'
-import { WAIARIAAttributes } from '../../interfaces/WAIARIAAttributes'
-import { LangAttributes } from '../../interfaces/LangAttributes'
+import { InputAttributes } from '../../../interfaces/InputAttributes'
+import { WAIARIAAttributes } from '../../../interfaces/WAIARIAAttributes'
+import { LangAttributes } from '../../../interfaces/LangAttributes'
 
 interface WCAGARIA2H58H65Props {
     inputData: Omit<InputAttributes, 'type' | 'required'> & {

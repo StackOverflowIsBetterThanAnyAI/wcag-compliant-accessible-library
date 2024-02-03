@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
-import { LinkAttributes } from '../../interfaces/LinkAttributes'
-import { WAIARIAAttributes } from '../../interfaces/WAIARIAAttributes'
-import { LangAttributes } from '../../interfaces/LangAttributes'
+import { LinkAttributes } from '../../../interfaces/LinkAttributes'
+import { WAIARIAAttributes } from '../../../interfaces/WAIARIAAttributes'
+import { LangAttributes } from '../../../interfaces/LangAttributes'
 
 interface WCAGG115H49H58AProps {
     linkData: LinkAttributes & { href: string }

@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react'
-import { WAIARIAAttributes } from '../../interfaces/WAIARIAAttributes'
-import { TableAttributes } from '../../interfaces/TableAttributes'
+import { WAIARIAAttributes } from '../../../interfaces/WAIARIAAttributes'
+import { TableAttributes } from '../../../interfaces/TableAttributes'
 
 interface WCAGH39H43H51H58H63Props {
     tableContent: TableAttributes[][]

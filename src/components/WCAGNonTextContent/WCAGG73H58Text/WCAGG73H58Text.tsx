@@ -1,12 +1,21 @@
 import React, { ReactNode } from 'react'
-import { GlobalAttributes } from '../../interfaces/GlobalAttributes'
-import { LangAttributes } from '../../interfaces/LangAttributes'
+import { GlobalAttributes } from '../../../interfaces/GlobalAttributes'
+import { LinkAttributes } from '../../../interfaces/LinkAttributes'
+import { LangAttributes } from '../../../interfaces/LangAttributes'
 
-interface WCAGARIA10H58TextProps extends GlobalAttributes {
-    ariaLabelledById: string
-    className?: string
+interface WCAGG73H58TextProps extends GlobalAttributes {
+    buttonText: ReactNode
+    ownId: string
+    parentId: string
+    classNameDiv?: string
+    classNameLink?: string
     divData?: GlobalAttributes
+    externalLink?: string
     lang?: LangAttributes
+    linkData?: Omit<LinkAttributes, 'href' | 'download' | 'hreflang'>
+    onClickFunction?: () => void
+    onFocusFunction?: () => void
+    onHoverFunction?: () => void
     role?:
         | 'alert'
         | 'alertdialog'
@@ -71,20 +80,35 @@ interface WCAGARIA10H58TextProps extends GlobalAttributes {
     children: ReactNode
 }
 
-const WCAGARIA10H58Text: React.FC<WCAGARIA10H58TextProps> = ({
-    ariaLabelledById,
-    className,
+const WCAGG73H58Text: React.FC<WCAGG73H58TextProps> = ({
+    buttonText,
+    classNameDiv,
+    classNameLink,
     divData,
+    externalLink,
     lang,
+    linkData,
+    onClickFunction,
+    onFocusFunction,
+    onHoverFunction,
+    ownId,
+    parentId,
     role,
     children,
 }) => {
     const errors: string[] = []
 
-    // checks if arialabelledById is an empty string
-    if (ariaLabelledById.trim().length < 1) {
+    // checks if parentId is an empty string
+    if (parentId.trim().length < 1) {
         errors.push(
-            'Your ariaLabelledById attribute hast to have a length of at least one character!'
+            'Your parentId attribute hast to have a length of at least one character!'
+        )
+    }
+
+    // checks if ownId is an empty string
+    if (ownId.trim().length < 1) {
+        errors.push(
+            'Your ownId attribute hast to have a length of at least one character!'
         )
     }
 
@@ -92,6 +116,13 @@ const WCAGARIA10H58Text: React.FC<WCAGARIA10H58TextProps> = ({
     if (typeof children === 'boolean' || typeof children === 'number') {
         errors.push(
             `Your child element must not be a ${typeof children} value!`
+        )
+    }
+
+    // checks if buttonText has a wrong type
+    if (typeof buttonText === 'boolean' || typeof buttonText === 'number') {
+        errors.push(
+            `Your buttonText element must not be a ${typeof buttonText} value!`
         )
     }
 
@@ -104,10 +135,10 @@ const WCAGARIA10H58Text: React.FC<WCAGARIA10H58TextProps> = ({
 
     return (
         <div
-            id={ariaLabelledById}
+            id={ownId}
             style={{ ...divData?.additionalStyling }}
             lang={lang?.language}
-            className={className}
+            className={classNameDiv}
             role={role}
             accessKey={divData?.accesskey}
             contentEditable={divData?.contenteditable}
@@ -121,8 +152,26 @@ const WCAGARIA10H58Text: React.FC<WCAGARIA10H58TextProps> = ({
             translate={divData?.translate}
         >
             {children}
+            <p>
+                <a
+                    href={externalLink ? parentId : `#${parentId}`}
+                    onClick={() => onClickFunction && onClickFunction()}
+                    onFocus={() => onFocusFunction && onFocusFunction()}
+                    onMouseOver={() => onHoverFunction && onHoverFunction()}
+                    className={classNameLink}
+                    media={linkData?.media}
+                    ping={linkData?.ping}
+                    referrerPolicy={linkData?.referrerpolicy}
+                    rel={linkData?.rel}
+                    style={{ ...linkData?.additionalStyling }}
+                    target={linkData?.target}
+                    type={linkData?.type}
+                >
+                    {buttonText}
+                </a>
+            </p>
         </div>
     )
 }
 
-export default WCAGARIA10H58Text
+export default WCAGG73H58Text

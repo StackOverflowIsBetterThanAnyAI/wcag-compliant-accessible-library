@@ -1,12 +1,11 @@
-import React, { ReactNode } from 'react'
-import { GlobalAttributes } from '../../interfaces/GlobalAttributes'
-import { LangAttributes } from '../../interfaces/LangAttributes'
+import React from 'react'
+import { GlobalAttributes } from '../../../interfaces/GlobalAttributes'
+import { LangAttributes } from '../../../interfaces/LangAttributes'
 
-interface WCAGG74G92H58TextProps {
+interface WCAGARIA15H58TextProps {
     accessibleId: string
-    className?: string
+    pData?: Omit<GlobalAttributes, 'id'>
     lang?: LangAttributes
-    pData?: GlobalAttributes
     role?:
         | 'alert'
         | 'alertdialog'
@@ -68,14 +67,15 @@ interface WCAGG74G92H58TextProps {
         | 'toolbar'
         | 'tooltip'
         | 'treegrid'
-    children: ReactNode
+    className?: string
+    children: string
 }
 
-const WCAGG74G92H58Text: React.FC<WCAGG74G92H58TextProps> = ({
+const WCAGARIA15H58Text: React.FC<WCAGARIA15H58TextProps> = ({
     accessibleId,
     className,
-    lang,
     pData,
+    lang,
     role,
     children,
 }) => {
@@ -88,10 +88,10 @@ const WCAGG74G92H58Text: React.FC<WCAGG74G92H58TextProps> = ({
         )
     }
 
-    // checks if children have a wrong type
-    if (typeof children === 'boolean' || typeof children === 'number') {
+    // checks if children is an empty string
+    if (children.trim().length < 1) {
         errors.push(
-            `Your child element must not be a ${typeof children} value!`
+            'Your child element hast to have a length of at least one character!'
         )
     }
 
@@ -101,6 +101,7 @@ const WCAGG74G92H58Text: React.FC<WCAGG74G92H58TextProps> = ({
         }
         return
     }
+
     return (
         <p
             id={accessibleId}
@@ -124,4 +125,4 @@ const WCAGG74G92H58Text: React.FC<WCAGG74G92H58TextProps> = ({
     )
 }
 
-export default WCAGG74G92H58Text
+export default WCAGARIA15H58Text

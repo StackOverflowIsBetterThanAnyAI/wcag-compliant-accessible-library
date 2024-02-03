@@ -1,7 +1,7 @@
 import React, { CSSProperties, ReactNode, useState } from 'react'
-import { InputAttributes } from '../../interfaces/InputAttributes'
-import { WAIARIAAttributes } from '../../interfaces/WAIARIAAttributes'
-import { LangAttributes } from '../../interfaces/LangAttributes'
+import { InputAttributes } from '../../../interfaces/InputAttributes'
+import { WAIARIAAttributes } from '../../../interfaces/WAIARIAAttributes'
+import { LangAttributes } from '../../../interfaces/LangAttributes'
 
 interface WCAGH44H58Props {
     inputData: (Omit<

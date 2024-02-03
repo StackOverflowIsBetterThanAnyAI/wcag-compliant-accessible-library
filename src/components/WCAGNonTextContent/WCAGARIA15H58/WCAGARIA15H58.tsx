@@ -1,6 +1,6 @@
 import React from 'react'
-import { ImageAttributes } from '../../interfaces/ImageAttributes'
-import { WAIARIAAttributes } from '../../interfaces/WAIARIAAttributes'
+import { ImageAttributes } from '../../../interfaces/ImageAttributes'
+import { WAIARIAAttributes } from '../../../interfaces/WAIARIAAttributes'
 
 interface WCAGARIA15H58Props {
     accessibleIds: string

@@ -1,6 +1,6 @@
 import React from 'react'
-import { InputAttributes } from '../../interfaces/InputAttributes'
-import { WAIARIAAttributes } from '../../interfaces/WAIARIAAttributes'
+import { InputAttributes } from '../../../interfaces/InputAttributes'
+import { WAIARIAAttributes } from '../../../interfaces/WAIARIAAttributes'
 
 interface WCAGH36Props {
     altText: string

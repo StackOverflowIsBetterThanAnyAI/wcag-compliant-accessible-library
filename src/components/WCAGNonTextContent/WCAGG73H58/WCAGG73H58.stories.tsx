@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Controls, Source, Stories, Subtitle, Title } from '@storybook/blocks'
 
 import WCAGG73H58 from './WCAGG73H58'
-import WCAGG73H58Text from './WCAGG73H58Text'
+import WCAGG73H58Text from '../WCAGG73H58Text/WCAGG73H58Text'
 // @ts-ignore
 import starImage from '../../../images/star.png'
 

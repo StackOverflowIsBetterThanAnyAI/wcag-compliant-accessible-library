@@ -1,7 +1,7 @@
 import React from 'react'
-import { GlobalAttributes } from '../../interfaces/GlobalAttributes'
-import { WAIARIAAttributes } from '../../interfaces/WAIARIAAttributes'
-import { LangAttributes } from '../../interfaces/LangAttributes'
+import { GlobalAttributes } from '../../../interfaces/GlobalAttributes'
+import { WAIARIAAttributes } from '../../../interfaces/WAIARIAAttributes'
+import { LangAttributes } from '../../../interfaces/LangAttributes'
 
 interface WCAGH58H86Props {
     accessibleText: string

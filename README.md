@@ -1,27 +1,3 @@
-<h1>WCAG-compliant-accessible-library</h1>
-
-<h2>I need your help</h2>
-
-I'm currently writing my <strong>bachelor's thesis</strong>.
-
-The topic is about digital accessibility on the internet.
-
-In order to improve digital accessibility, I have created this TypeScript React component library as part of this work.
-
-In order to be able to analyse this library <strong>scientifically</strong>, I need <strong>your feedback</strong>!
-
-If you have tested this library - even if it is <strong>only one</strong> component - please answer a few questions about it.
-
-<a target="_blank" href="https://www.survio.com/survey/d/E3R7X9M7V8N9E9V9W" >The survey</a> will take about <strong>5 to 10 minutes</strong>.
-
-Thank you very much.
-
-Kind regards, Michael
-
-<a target="_blank" href="https://www.survio.com/survey/d/E3R7X9M7V8N9E9V9W" >Link to the survey.</a>
-
-
-
 <h2>Installation</h2>
 
 Using npm:
@@ -37,7 +13,7 @@ This library can be used with either ESM or CommonJS.
 In the following example, you can see the import and passing of the properties using an example component.
 
 ```
-import WCAGH2H58 from 'wcag-compliant-accessible-library'
+import { WCAGH2H58 } from 'wcag-compliant-accessible-library'
 
     ...
 

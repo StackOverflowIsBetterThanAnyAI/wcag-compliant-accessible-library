@@ -108,7 +108,7 @@ They start with either ARIA, G or H.
 
 <a target="_blank" href="https://65bb731e4f345bcada479e35-ydvtfeiafv.chromatic.com/?path=/docs/components-wcagnontextcontent-wcagaria2h58h65--docs"><strong>WCAGARIA2H58H65</strong></a>:
 
-By using this component you fulfil the success criteria <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a>, <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a> and <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+By using this component you fulfil the success criteria <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non-text Content</a>, <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships">1.3.1 Info and Relationships</a> and <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
 
 Code snippet:
 
@@ -120,7 +120,7 @@ Code snippet:
 
 <a target="_blank" href="https://65bb731e4f345bcada479e35-ydvtfeiafv.chromatic.com/?path=/docs/components-wcagnontextcontent-wcagaria6h58--docs"><strong>WCAGARIA6H58</strong></a>:
 
- By using this component you fulfil the success criteria <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a> and <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+ By using this component you fulfil the success criteria <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non-text Content</a> and <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
 
  Code snippet:
 
@@ -148,7 +148,7 @@ WCAGARIA10H58Text:
 
 <a target="_blank" href="https://65bb731e4f345bcada479e35-ydvtfeiafv.chromatic.com/?path=/docs/components-wcagnontextcontent-wcagaria15h58--docs"><strong>WCAGARIA15H58</strong></a>:
 
- By using this component you fulfil the success criteria <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a> and <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+ By using this component you fulfil the success criteria <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non-text Content</a> and <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
 
  Code snippet:
 
@@ -192,7 +192,7 @@ WCAGG73H58Text:
 
 <a target="_blank" href="https://65bb731e4f345bcada479e35-ydvtfeiafv.chromatic.com/?path=/docs/components-wcagnontextcontent-wcagg74g92h58--docs"><strong>WCAGG74G92H58</strong></a>:
 
-By using this component you fulfil the success criteria <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a> and <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+By using this component you fulfil the success criteria <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non-text Content</a> and <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
 
 Code snippet:
 
@@ -211,7 +211,7 @@ WCAGG74G92H58Text:
 
 <a target="_blank" href="https://65bb731e4f345bcada479e35-ydvtfeiafv.chromatic.com/?path=/docs/components-wcagnontextcontent-wcagg196--docs"><strong>WCAGG196</strong></a>:
 
-By using this component you fulfil the success criterion <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a>
+By using this component you fulfil the success criterion <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non-text Content</a>
 
 Code snippet:
 
@@ -226,7 +226,7 @@ Code snippet:
 
 <a target="_blank" href="https://65bb731e4f345bcada479e35-ydvtfeiafv.chromatic.com/?path=/docs/components-wcagnontextcontent-wcagh2h58--docs"><strong>WCAGH2H58</strong></a>:
 
-By using this component you fulfil the success criteria <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a>,  <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context">2.4.4 Link Purpose (In Context)</a>, <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-link-only">2.4.9 Link Purpose (Link Only)</a> and <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+By using this component you fulfil the success criteria <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non-text Content</a>,  <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context">2.4.4 Link Purpose (In Context)</a>, <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-link-only">2.4.9 Link Purpose (Link Only)</a> and <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
 
 Code snippet:
 
@@ -258,7 +258,7 @@ Code snippet:
 
 <a target="_blank" href="https://65bb731e4f345bcada479e35-ydvtfeiafv.chromatic.com/?path=/docs/components-wcagnontextcontent-wcagh30h58--docs"><strong>WCAGH30H58</strong></a>:
 
-By using this component you fulfil the success criteria <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a>, <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context">2.4.4 Link Purpose (In Context)</a>, <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-link-only">2.4.9 Link Purpose (Link Only)</a> and <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
+By using this component you fulfil the success criteria <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non-text Content</a>, <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context">2.4.4 Link Purpose (In Context)</a>, <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-link-only">2.4.9 Link Purpose (Link Only)</a> and <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts">3.1.2 Language of Parts</a>
 
 Code snippet:
 
@@ -275,7 +275,7 @@ Code snippet:
 
 <a target="_blank" href="https://65bb731e4f345bcada479e35-ydvtfeiafv.chromatic.com/?path=/docs/components-wcagnontextcontent-wcagh36--docs"><strong>WCAGH36</strong></a>:
 
-By using this component you fulfil the success criterion <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a>
+By using this component you fulfil the success criterion <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non-text Content</a>
 
 Code snippet:
 
@@ -287,7 +287,7 @@ Code snippet:
 
 <a target="_blank" href="https://65bb731e4f345bcada479e35-ydvtfeiafv.chromatic.com/?path=/docs/components-wcagnontextcontent-wcagh37--docs"><strong>WCAGH37</strong></a>:
 
-By using this component you fulfil the success criterion <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non.text Content</a>
+By using this component you fulfil the success criterion <a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">1.1.1 Non-text Content</a>
 
 Code snippet:
 

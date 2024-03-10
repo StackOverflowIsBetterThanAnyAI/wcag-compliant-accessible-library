@@ -19,7 +19,7 @@ import { WCAGH2H58 } from 'wcag-compliant-accessible-library'
 
 <WCAGH2H58
     imageData={{
-        imageSource: starImage,
+        imageSource: image,
         additionalStyling: { height: 75, width: 75 },
     }}
     link="/star-id"

@@ -155,8 +155,8 @@ WCAGARIA10H58Text:
  ```
  WCAGARIA15H58:
  <>
-    <img aria-describedby="id" src="imageSource-1" />
-    <img aria-describedby="id" src="imageSource-2" />
+    <img aria-describedby="id" src={imageSource-1} />
+    <img aria-describedby="id" src={imageSource-2} />
 </>
 
 WCAGARIA15H58Text:
@@ -217,8 +217,8 @@ Code snippet:
 
 ```
 <>
-    <img alt="description" src="imageSource-1"/>
-    <img src="imageSource-2"/>
+    <img alt="description" src={imageSource-1} />
+    <img src={imageSource-2} />
 </>
 ```
 
@@ -233,7 +233,7 @@ Code snippet:
 ```
 <a target="_blank" href="link" lang="de">
     children
-    <img src="imageSource"/>
+    <img src={imageSource} />
 </a>
 ```
 
@@ -247,7 +247,7 @@ Code snippet:
 
 ```
 <>
-    <img useMap"#mapName" src="imageSource" />
+    <img useMap"#mapName" src={imageSource} />
     <map name="mapName">
         <area coords="0 0 0 0" shape"rect" />
     </map>
@@ -265,8 +265,8 @@ Code snippet:
 ```
 <a target="_blank" href="link" lang="de">
     preImageText
-    <img src="imageSource-1" />
-    <img src="imageSource-2" />
+    <img src={imageSource-1} />
+    <img src={imageSource-2} />
     postImageText
 </a>
 ```
@@ -292,7 +292,7 @@ By using this component you fulfil the success criterion <a target="_blank" href
 Code snippet:
 
 ```
-<img alt="description" src="imageSource" />
+<img alt="description" src={imageSource} />
 ```
 
 <br/>
@@ -347,7 +347,7 @@ By using this component you fulfil the WCAG2.2 success criterion  <a target="_bl
 Code snippet:
 
 ```
-<img alt="" src="imageSource" />
+<img alt="" src={imageSource} />
 ```
 
 <br/>

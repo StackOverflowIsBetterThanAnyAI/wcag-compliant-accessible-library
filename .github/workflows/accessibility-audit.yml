@@ -1,0 +1,13 @@
+name: Accessibility Audit
+
+on:
+    push:
+        branches: [master]
+    pull_request:
+
+jobs:
+    full-accessibility-audit:
+        uses: StackOverflowIsBetterThanAnyAI/full-accessibility-audit/.github/workflows/full-accessibility-audit.yml@master
+        with:
+            app_port: "6006"
+            start_command: "npm run audit:serve"

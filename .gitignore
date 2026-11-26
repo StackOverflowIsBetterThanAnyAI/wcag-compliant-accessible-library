@@ -1,9 +1,6 @@
-/node_modules
-/dist
-/.storybook
-/storybook-static
-/.chromatic-script.json
-/.prettierignore
-/.prettierrc.json
-/.npmignore
-/rollup.config.js
+node_modules
+dist
+storybook-static
+coverage
+.claude
+cypress

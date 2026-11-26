@@ -1,0 +1,35 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Introduction" />
+
+# wcag-compliant-accessible-library
+
+Unstyled React components that are **accessible by default**.
+
+The components render plain, native HTML elements and bring no CSS. What they do bring is the part
+that is easy to get wrong: text alternatives, labels, names, ID references and ARIA attributes.
+
+## Principles
+
+- **Accessible by construction.** Required accessibility information is a required prop.
+  `<Image src="…" />` does not compile: you have to pass `alt` or `decorative`.
+- **Native first.** Every component renders the semantic HTML element. ARIA is only added where HTML
+  alone is not enough.
+- **Bring your own styles.** Every component accepts `className`, `style`, `ref`, event handlers and every
+  native attribute. Interactive parts expose state as attributes (`data-invalid`, `data-required`,
+  `data-disabled`, `aria-current`), so you can style them with any CSS solution.
+- **Warn, never break.** Mistakes the type system cannot catch (an empty `alt`, a control without label)
+  are reported as console warnings in development. Components always render.
+
+## Overview
+
+| Area              | Components                                                                                   |
+| ----------------- | -------------------------------------------------------------------------------------------- |
+| Text alternatives | Image, ImageLink, Graphic, Emoji, Figure, EmbeddedObject                                     |
+| Forms             | Field (+ Label, Input, Select, Textarea, Description, Error), useFieldControlProps, Fieldset |
+| Structure         | Heading, HeadingLevel, Landmark, List, Table, TableHeaderCell                                |
+| Navigation        | Link, Nav, NavLink, SkipLink                                                                 |
+| Utilities         | VisuallyHidden, visuallyHiddenStyle                                                          |
+
+Each component's documentation lists the WCAG 2.2 success criteria and W3C techniques it implements.
+Open the **Accessibility** panel to see the axe-core checks for every story.

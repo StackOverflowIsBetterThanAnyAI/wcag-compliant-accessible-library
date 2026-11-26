@@ -1,6 +1,6 @@
 import type { AriaAttributes, ComponentProps, ReactNode } from 'react'
 
-import { warnA11y } from '../../utils/dev.js'
+import { checkRoleWord } from '../../utils/roleWords.js'
 import { Link, type LinkProps } from '../Link/Link.js'
 
 type NavName =
@@ -23,9 +23,6 @@ export type NavProps = Omit<
         /** Props for the inner `<ul>`, e.g. `className`. */
         listProps?: Omit<ComponentProps<'ul'>, 'children' | 'role'>
     }
-
-// Matches "Main navigation", "Hauptnavigation", "Footer nav", but not "Navy".
-const REDUNDANT_ROLE_WORD = /(navigation|\bnav)\b/i
 
 /**
  * A named navigation landmark with its links in a list, so screen readers announce
@@ -50,12 +47,7 @@ export function Nav({
     children,
     ...props
 }: NavProps) {
-    if (label != null && REDUNDANT_ROLE_WORD.test(label)) {
-        warnA11y(
-            'Nav',
-            `label="${label}" contains the word "navigation". Screen readers already announce the role, so users hear it twice. Use e.g. label="Main".`
-        )
-    }
+    checkRoleWord('Nav', 'nav', label)
 
     return (
         <nav {...props} aria-label={label} aria-labelledby={labelledBy}>

@@ -1,0 +1,192 @@
+/*
+ * Demo styles for Storybook only. The library itself ships no CSS:
+ * these rules show how to style components through className and state attributes.
+ */
+:root {
+    color-scheme: light;
+}
+
+body {
+    background: #fff;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    color: #1d1d1f;
+}
+
+.demo-field {
+    display: grid;
+    gap: 0.25rem;
+    max-width: 22rem;
+    margin-block-end: 1rem;
+}
+
+.demo-field label {
+    font-weight: 600;
+}
+
+.demo-field[data-required] label::after {
+    content: ' *';
+    color: #b3261e;
+}
+
+.demo-field input,
+.demo-field select,
+.demo-field textarea {
+    font: inherit;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #8a8a8e;
+    border-radius: 0.5rem;
+}
+
+.demo-field input:focus-visible,
+.demo-field select:focus-visible,
+.demo-field textarea:focus-visible {
+    outline: 3px solid #0b57d0;
+    outline-offset: 2px;
+}
+
+.demo-field [data-invalid]:is(input, select, textarea) {
+    border-color: #b3261e;
+}
+
+.demo-field .demo-description,
+.demo-fieldset .demo-description {
+    color: #555;
+    font-size: 0.875rem;
+}
+
+.demo-field .demo-error,
+.demo-fieldset .demo-error {
+    color: #b3261e;
+    font-size: 0.875rem;
+}
+
+.demo-fieldset {
+    border: 1px solid #c7c7cc;
+    border-radius: 0.75rem;
+    padding: 1rem;
+}
+
+.demo-fieldset[data-invalid] {
+    border-color: #b3261e;
+}
+
+.demo-fieldset legend {
+    font-weight: 700;
+    padding-inline: 0.25rem;
+}
+
+.demo-nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.demo-nav a {
+    color: #0b57d0;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+}
+
+.demo-nav a[aria-current='page'] {
+    background: #0b57d0;
+    color: white;
+}
+
+.demo-table {
+    border-collapse: collapse;
+}
+
+.demo-table caption {
+    font-weight: 700;
+    text-align: start;
+    padding-block-end: 0.5rem;
+}
+
+.demo-table th,
+.demo-table td {
+    border: 1px solid #c7c7cc;
+    padding: 0.375rem 0.75rem;
+    text-align: start;
+}
+
+.demo-skip-link:focus {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    background: #1d1d1f;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    z-index: 10;
+}
+
+.demo-image-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #0b57d0;
+}
+
+.demo-graphic {
+    font-size: 1.5rem;
+    color: #e8a400;
+    letter-spacing: 0.1em;
+}
+
+.demo-figure {
+    margin: 0;
+    max-width: 24rem;
+}
+
+.demo-figure figcaption {
+    font-weight: 600;
+}
+
+.demo-figure .demo-description {
+    font-size: 0.875rem;
+    color: #555;
+}
+
+/* A visible new-tab hint. Screen readers get the text hint from <Link> instead. */
+.demo-link[target='_blank']::after {
+    content: ' ↗' / '';
+}
+
+.demo-nav-tree ul {
+    list-style: none;
+    margin: 0;
+    padding-inline-start: 1rem;
+}
+
+.demo-nav-tree > ul {
+    padding: 0;
+}
+
+.demo-nav-tree a[aria-current='page'] {
+    font-weight: 700;
+}
+
+.demo-table-scroll {
+    max-width: 20rem;
+    overflow-x: auto;
+}
+
+.demo-table-scroll:focus-visible {
+    outline: 2px solid #0b57d0;
+    outline-offset: 2px;
+}
+
+.demo-sort-button {
+    all: unset;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.demo-sort-button:focus-visible {
+    outline: 2px solid #0b57d0;
+    outline-offset: 2px;
+}

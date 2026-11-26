@@ -23,5 +23,11 @@ export default tseslint.config(
                 { ignoreRestSiblings: true },
             ],
         },
+    },
+    {
+        files: ['scripts/**', '*.config.*'],
+        languageOptions: {
+            globals: { ...globals.node },
+        },
     }
 )

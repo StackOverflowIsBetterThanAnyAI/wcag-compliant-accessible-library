@@ -17,7 +17,7 @@ export type LinkProps = ComponentProps<'a'> & {
      * Render a different element, e.g. your router's link component.
      * Receives all props the anchor would have received; spread them onto your element.
      *
-     * @example render={(props) => <NextLink {...props} />}
+     * Example: `render={(props) => <NextLink {...props} />}`
      */
     render?: (props: ComponentProps<'a'> & { href: string }) => ReactElement
 }

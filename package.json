@@ -32,7 +32,9 @@
         "test:watch": "vitest",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
-        "prepublishOnly": "npm run typecheck && npm run lint && npm run test && npm run build"
+        "prepublishOnly": "npm run typecheck && npm run lint && npm run test && npm run build",
+        "audit:sitemap": "node scripts/audit-sitemap.mjs",
+        "audit:serve": "npm run build-storybook && npm run audit:sitemap && vite preview --outDir storybook-static --port 6006 --strictPort --host"
     },
     "repository": {
         "type": "git",
@@ -87,5 +89,8 @@
         "typescript-eslint": "^8.74.0",
         "vite": "^8.4.0",
         "vitest": "^5.1.2"
+    },
+    "allowScripts": {
+        "esbuild@0.28.2": true
     }
 }

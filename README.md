@@ -1,4 +1,4 @@
-# wcag-compliant-accessible-library
+# WCAG-Compliant Accessible Library
 
 Unstyled React components that are **accessible by default**.
 
@@ -154,7 +154,3 @@ Other changes:
 - `lang` is a plain string (`lang="de"`) instead of `{ language: 'de' }`.
 - Components never render nothing on invalid input; they render and warn in development.
 - React 19+ and ESM only.
-
-## License
-
-[MIT](./LICENSE)

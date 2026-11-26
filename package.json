@@ -1,68 +1,91 @@
 {
     "name": "wcag-compliant-accessible-library",
-    "version": "1.0.0",
-    "description": "WCAG2.2 compliant components of the Perceivable and Understandable principles, which have been closely based on W3C techniques",
-    "main": "dist/cjs/index.js",
-    "module": "dist/esm/index.js",
+    "version": "2.0.0",
+    "description": "Unstyled, accessible-by-default React components that enforce correct semantics and ARIA through their types, while leaving every bit of styling to you.",
+    "type": "module",
+    "sideEffects": false,
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "default": "./dist/index.js"
+        },
+        "./package.json": "./package.json"
+    },
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
     "files": [
-        "dist"
+        "dist",
+        "src",
+        "!src/**/*.test.tsx",
+        "!src/**/*.test-d.tsx",
+        "!src/**/*.stories.tsx",
+        "!src/**/*.mdx",
+        "!src/test"
     ],
+    "scripts": {
+        "build": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\" && tsc -p tsconfig.build.json",
+        "typecheck": "tsc --noEmit",
+        "lint": "eslint .",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build",
+        "prepublishOnly": "npm run typecheck && npm run lint && npm run test && npm run build"
+    },
     "repository": {
         "type": "git",
-        "url": "https://github.com/StackOverflowIsBetterThanAnyAI/wcag-compliant-accessible-library.git"
+        "url": "git+https://github.com/StackOverflowIsBetterThanAnyAI/wcag-compliant-accessible-library.git"
     },
-    "types": "dist/index.d.ts",
-    "scripts": {
-        "rollup-build-lib": "rollup -c",
-        "rollup": "rollup -c --bundleConfigAsCjs",
-        "storybook": "storybook dev -p 6006",
-        "build-storybook": "storybook build"
+    "homepage": "https://github.com/StackOverflowIsBetterThanAnyAI/wcag-compliant-accessible-library#readme",
+    "bugs": {
+        "url": "https://github.com/StackOverflowIsBetterThanAnyAI/wcag-compliant-accessible-library/issues"
     },
     "keywords": [
         "a11y",
         "accessibility",
         "aria",
-        "assistive technology",
-        "identify input purpose",
-        "info and relationships",
-        "non-text content",
+        "headless",
         "react",
-        "standard",
         "typescript",
+        "unstyled",
         "wai-aria",
         "wcag",
-        "web accessibility"
+        "wcag22"
     ],
     "author": {
         "name": "StackOverflowIsBetterThanAnyAI"
     },
     "license": "MIT",
-    "type": "module",
-    "devDependencies": {
-        "@rollup/plugin-commonjs": "^25.0.7",
-        "@rollup/plugin-node-resolve": "^15.2.3",
-        "@rollup/plugin-terser": "^0.4.4",
-        "@rollup/plugin-typescript": "^11.1.5",
-        "@storybook/addon-essentials": "^7.6.6",
-        "@storybook/addon-interactions": "^7.6.6",
-        "@storybook/addon-links": "^7.6.6",
-        "@storybook/blocks": "^7.6.8",
-        "@storybook/react": "^7.6.6",
-        "@storybook/react-vite": "^7.6.6",
-        "@storybook/test": "^7.6.6",
-        "@types/react": "^18.2.45",
-        "chromatic": "^10.6.1",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "rollup": "^4.9.1",
-        "rollup-plugin-dts": "^6.1.0",
-        "rollup-plugin-peer-deps-external": "^2.2.4",
-        "storybook": "^7.6.6",
-        "tslib": "^2.6.2",
-        "typescript": "^5.3.3"
-    },
     "peerDependencies": {
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react": ">=19.0.0"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.39.5",
+        "@storybook/addon-a11y": "^10.6.9",
+        "@storybook/addon-docs": "^10.6.9",
+        "@storybook/react-vite": "^10.6.9",
+        "@testing-library/jest-dom": "^8.0.0",
+        "@testing-library/react": "^16.3.3",
+        "@testing-library/user-event": "^14.6.13",
+        "@types/react": "^19.3.3",
+        "@types/react-dom": "^19.3.0",
+        "@vitejs/plugin-react": "^6.3.0",
+        "axe-core": "^4.14.1",
+        "eslint": "^9.39.5",
+        "eslint-plugin-jsx-a11y": "^6.10.2",
+        "eslint-plugin-react-hooks": "^7.1.1",
+        "eslint-plugin-storybook": "^10.6.9",
+        "globals": "^17.14.0",
+        "jsdom": "^31.0.1",
+        "prettier": "^3.10.1",
+        "react": "^19.3.1",
+        "react-dom": "^19.3.1",
+        "storybook": "^10.6.9",
+        "typescript": "~6.0.3",
+        "typescript-eslint": "^8.74.0",
+        "vite": "^8.4.0",
+        "vitest": "^5.1.2"
     }
 }

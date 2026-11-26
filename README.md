@@ -108,10 +108,13 @@ Each component's JSDoc and Storybook page lists the W3C techniques it implements
 ```sh
 npm install
 npm run storybook   # component workshop with the axe accessibility panel
-npm test            # unit, accessibility (axe-core) and type-level tests
+npm test            # unit, type-level and axe-core tests, including every story
 npm run lint
 npm run build
 ```
+
+Every pull request also runs the [Full Accessibility Audit](https://github.com/StackOverflowIsBetterThanAnyAI/full-accessibility-audit)
+against every story in a real browser, on mobile and desktop (`npm run audit:serve` starts the same setup locally).
 
 ## Background
 
